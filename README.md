@@ -118,28 +118,30 @@ python ./scripts/sync_skills.py --force
 
 ## 🎨 各專案落地指引 (How to Apply)
 
-### 1. `mkdocs-life`
-- 將 [mkdocs-life.css](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/skills/skill-ux-mkdocs-life/resources/mkdocs-life.css) 複製到 `mkdocs-life` 專案的 `docs/stylesheets/extra.css`。
-- 在 `mkdocs.yml` 啟用 Noto Serif TC 與雙主題切換設定（參考 [examples/mkdocs.yml](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/skills/skill-ux-mkdocs-life/examples/mkdocs.yml)）。
+### 1. `GoogleAlertManager` (SaaS 情報過濾) — ✅ 已落地完成
+- **部署指南**：[deploy/google-alert-manager/DEPLOYMENT.md](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/google-alert-manager/DEPLOYMENT.md)
+- **吉祥物意象**：精密雷達隼 🦅 (`#icon-falcon-radar`)，象徵高空雷達偵察與雜訊剃除。
+- **亮點**：常駐頂部品牌欄、跨專案藥丸按鈕導航、Docsify 即時利多/利空分析結論 Callout 容器與 SaaS 表格升級。
 
-### 2. `GoogleAlertManager`
-- 引入 [alert-manager-theme.css](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/skills/skill-ux-google-alert-manager/resources/alert-manager-theme.css)。
-- 警示列表與操作卡片採用 [examples/alert-card-component.html](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/skills/skill-ux-google-alert-manager/examples/alert-card-component.html) 的無障礙結構。
+### 2. `mkdocs-life` (溫潤人文日誌) — ✅ 已落地完成
+- **部署指南**：[deploy/mkdocs-life/DEPLOYMENT.md](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/mkdocs-life/DEPLOYMENT.md)
+- **吉祥物意象**：幾何林鹿 🦌 (`#icon-deer-life`)，象徵從容沉思與生活記錄。
+- **亮點**：`life-theme.css` 暖白紙感排版、卡片網格、頂部靈鹿徽章與跨專案導航按鈕。
 
-### 3. `YoutubeAudio.Fetch`
-- 引入 [media-player-theme.css](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/skills/skill-ux-youtube-audio-fetch/resources/media-player-theme.css)。
-- 底部播放器與音軌下載卡片結構參考 [examples/player-interface.html](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/skills/skill-ux-youtube-audio-fetch/examples/player-interface.html)。
+### 3. `YoutubeAudio.Fetch` (大氣深邃媒體) — ✅ 已落地完成
+- **部署指南**：[deploy/youtube-audio-fetch/DEPLOYMENT.md](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/youtube-audio-fetch/DEPLOYMENT.md)
+- **吉祥物意象**：流暢聲波鯨 🐋 (`#icon-whale-sonic`)，象徵深海聽覺共鳴與音頻光芒。
+- **亮點**：常駐頂部海洋微光品牌列、即時逐字稿同步、跨專案快捷導航。
 
-### 4. `mkdocs-investment`
-- 將 [mkdocs-investment.css](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/skills/skill-ux-mkdocs-investment/resources/mkdocs-investment.css) 複製至 `docs/stylesheets/extra.css`。
-- 首頁與標的分析報告使用 [examples/kpi-widget.html](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/skills/skill-ux-mkdocs-investment/examples/kpi-widget.html) 呈現關鍵投資數據。
+### 4. `My-TW-Coverage` (台股個股深度調研) — ✅ 已落地完成
+- **部署指南**：[deploy/tw-coverage/DEPLOYMENT.md](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/tw-coverage/DEPLOYMENT.md)
+- **吉祥物意象**：拍拍翅萌萌鴞 🦉 (`#icon-owl-coverage`)，象徵犀利個股洞見。
+- **亮點**：頂部浮動萌鴞品牌欄、showcase.html 統一配色徽章、圓角搜尋偏移防重疊、隱藏冗餘 corner。
 
-### 5. `HomeAssistant` (Android TV 10-Foot HUD 部署套件)
+### 5. `HomeAssistant` (Android TV 10-Foot HUD) — ✅ 已實機上線
 - **實體部署套件**：專屬部署目錄位於 [deploy/android-tv/](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/android-tv/)，內含完整指南 [DEPLOYMENT.md](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/android-tv/DEPLOYMENT.md)。
-- **Home Assistant 主題**：複製 [themes/tv_frosted_hud.yaml](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/android-tv/themes/tv_frosted_hud.yaml) 至 HA `/config/themes/`。
-- **電視專屬看版**：匯入 [dashboards/tv_dashboard.yaml](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/android-tv/dashboards/tv_dashboard.yaml) 支援 4K 大螢幕與遙控器 D-pad 操作。
-- **自動化通知**：參考 [automations/tv_notifications.yaml](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/android-tv/automations/tv_notifications.yaml)（支援門鈴、相機快照、家電完成等右上角 HUD 彈窗）。
-- **本地互動式模擬器**：直接在瀏覽器開啟 [simulator.html](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/android-tv/simulator.html)，支援鍵盤方向鍵、OK 與情境按鍵模擬真實遙控器操作。
+- **吉祥物意象**：客廳守護柴柴 🐕 (`#icon-sentinel-tv`)。
+- **實機落地**：更新客廳 1F 電視 PiPup 通知至右上角 10-Foot 曜石毛玻璃 HUD，行程提醒與家電狀態全部自動同步。
 
 ---
 
