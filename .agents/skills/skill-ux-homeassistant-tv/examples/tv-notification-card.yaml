@@ -1,0 +1,37 @@
+# Home Assistant Automation Example: Android TV 10-foot Glancable Toast
+# Uses 'notify.android_tv_living_room' (Notifications for Android TV integration)
+
+alias: "TV Popup: 大門訪客與智能偵測"
+description: "在電視右上角顯示毛玻璃通知，附帶即時串流快照或按鍵操作"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.front_door_motion
+    to: "on"
+action:
+  - service: notify.android_tv_living_room
+    data:
+      title: "門鈴偵測提醒"
+      message: "玄關有人按門鈴，門鎖已保持上鎖狀態。"
+      data:
+        duration: 8
+        position: "top-right"
+        fontsize: "large"
+        transparency: "25%"
+        color: "#0a0c12"
+        interrupt: false
+        icon:
+          url: "https://brands.home-assistant.io/_/doorbell/icon.png"
+
+# Alternative: Lovelace Browser Mod Popup (for Fully Kiosk / Webview TV)
+# service: browser_mod.popup
+# data:
+#   title: "客廳安全防護 (Living Room Sentinel)"
+#   card:
+#     type: custom:button-card
+#     template: tv_frosted_hud
+#     custom_fields:
+#       mascot_icon: |
+#         [[[
+#           return `<svg class="ux-icon ux-icon-sentinel" style="width:36px;height:36px;"><use href="#icon-sentinel-tv"/></svg>`;
+#         ]]]
+

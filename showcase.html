@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UX-Deck: 跨專案設計系統展示台 (Design System & Mascot Showcase)</title>
+  <link rel="stylesheet" href="./tokens/tokens.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* White Basis & Crisp Light Theme Palette */
+      --bg-studio: #ffffff;
+      --bg-subtle: #f8fafc;
+      --surface-card: #ffffff;
+      --surface-elevated: #f1f5f9;
+      --border-light: #e2e8f0;
+      --border-subtle: #edf2f7;
+      --border-hover: #cbd5e1;
+      
+      --text-main: #0f172a;       /* Slate 900 */
+      --text-muted: #475569;      /* Slate 600 */
+      --text-dim: #94a3b8;        /* Slate 400 */
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+      --shadow-card: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+      --shadow-hover: 0 12px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-studio);
+      color: var(--text-main);
+      font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      padding: 3.5rem 1.75rem 6rem;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 10% 8%, rgba(56, 189, 248, 0.04) 0%, transparent 35%),
+        radial-gradient(circle at 90% 15%, rgba(139, 92, 246, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 50% 95%, rgba(13, 148, 136, 0.03) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* Studio Header */
+    header {
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eff6ff;
+      color: #2563eb;
+      border: 1px solid #bfdbfe;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      width: fit-content;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      color: #0f172a;
+      font-family: "Plus Jakarta Sans", "Noto Sans TC", sans-serif;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.125rem;
+      max-width: 920px;
+      line-height: 1.65;
+    }
+
+    /* Section Headers */
+    .section-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      margin: 4rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #0f172a;
+      font-family: "Plus Jakarta Sans", "Noto Sans TC", sans-serif;
+      letter-spacing: -0.015em;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: -0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Mascot Icons Standard Styling */
+    .ux-icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      flex-shrink: 0;
+      stroke-width: 1.6;
+      stroke: currentColor;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+    }
+    .ux-icon-xs { width: 14px; height: 14px; }
+    .ux-icon-sm { width: 18px; height: 18px; }
+    .ux-icon-md { width: 24px; height: 24px; }
+    .ux-icon-lg { width: 32px; height: 32px; }
+    .ux-icon-xl { width: 48px; height: 48px; }
+    .ux-icon-tv { width: 64px; height: 64px; stroke-width: 2.0; }
+
+    /* Mascot Brand Colors & Micro-Interactions on Light Background */
+    .ux-icon-deer { color: #0d9488; }
+    .ux-icon-deer:hover { transform: translateY(-3px) scale(1.08); color: #0f766e; }
+
+    .ux-icon-falcon { color: #4f46e5; }
+    .ux-icon-falcon:hover { transform: rotate(-6deg) scale(1.1); color: #4338ca; }
+
+    .ux-icon-whale { color: #9333ea; }
+    .ux-icon-whale:hover { transform: translateY(-3px) rotate(3deg); color: #7e22ce; }
+
+    .ux-icon-bull { color: #dc2626; }
+    .ux-icon-bull:hover { transform: translateY(-3px) scale(1.1); color: #b91c1c; }
+
+    .ux-icon-bear { color: #16a34a; }
+    .ux-icon-bear:hover { transform: translateY(3px) scale(1.08); color: #15803d; }
+
+    .ux-icon-sentinel { color: #0284c7; }
+    .ux-icon-sentinel:hover { transform: scale(1.12); color: #0369a1; }
+
+    .ux-icon-owl { color: #059669; }
+    .ux-icon-owl:hover { transform: translateY(-3px) scale(1.1); color: #047857; }
+
+    /* Mascot Grid (White Card Basis) */
+    .mascot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .mascot-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .mascot-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: transparent;
+      transition: all 0.25s ease;
+    }
+    .mascot-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-hover);
+      box-shadow: var(--shadow-hover);
+    }
+    .mascot-card.card-deer:hover::before { background: #0d9488; }
+    .mascot-card.card-falcon:hover::before { background: #4f46e5; }
+    .mascot-card.card-whale:hover::before { background: #9333ea; }
+    .mascot-card.card-bull:hover::before { background: #dc2626; }
+    .mascot-card.card-bear:hover::before { background: #16a34a; }
+    .mascot-card.card-sentinel:hover::before { background: #0284c7; }
+    .mascot-card.card-owl:hover::before { background: #059669; }
+
+    .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      transition: all 0.25s ease;
+    }
+    .wrapper-deer { background: #f0fdfa; border: 1px solid #ccfbf1; }
+    .wrapper-falcon { background: #eef2ff; border: 1px solid #e0e7ff; }
+    .wrapper-whale { background: #faf5ff; border: 1px solid #f3e8ff; }
+    .wrapper-bull { background: #fef2f2; border: 1px solid #fee2e2; }
+    .wrapper-bear { background: #f0fdf4; border: 1px solid #dcfce7; }
+    .wrapper-sentinel { background: #f0f9ff; border: 1px solid #e0f2fe; }
+    .wrapper-owl { background: #ecfdf5; border: 1px solid #a7f3d0; }
+
+    .mascot-card:hover .icon-wrapper {
+      transform: scale(1.05);
+    }
+    .mascot-name {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.35rem;
+      color: #0f172a;
+    }
+    .mascot-project {
+      font-size: 0.82rem;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 3px 12px;
+      border-radius: 9999px;
+      margin-bottom: 0.85rem;
+      font-weight: 500;
+    }
+    .mascot-desc {
+      font-size: 0.875rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* Section 2: Color Palette & Typography Matrix (Light Basis) */
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .matrix-card {
+      background: var(--surface-card);
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      box-shadow: var(--shadow-card);
+    }
+    .matrix-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 1rem;
+    }
+    .matrix-title {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .matrix-swatches {
+      display: flex;
+      gap: 8px;
+    }
+    .swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .swatch:hover {
+      transform: scale(1.15);
+    }
+    .font-sample-box {
+      background: #f8fafc;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.15rem;
+    }
+    .font-name-tag {
+      font-size: 0.75rem;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .font-preview-text {
+      font-size: 1.05rem;
+      color: #1e293b;
+      line-height: 1.55;
+    }
+
+    /* Section 3: Live Component Previews (Clean High-Contrast Cards) */
+    .components-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    /* 1. Life Warm Editorial Card */
+    .preview-life {
+      background: #faf8f5;
+      color: #292524;
+      border-radius: 20px;
+      padding: 2.25rem;
+      border: 1px solid #e7e5e4;
+      box-shadow: 0 6px 24px -4px rgba(13, 148, 136, 0.06);
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      position: relative;
+    }
+    .life-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(13, 148, 136, 0.1);
+      color: #0d9488;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-bottom: 1.15rem;
+      font-family: "Noto Sans TC", sans-serif;
+    }
+    .life-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #1c1917;
+      margin-bottom: 0.85rem;
+      line-height: 1.4;
+    }
+    .life-body {
+      font-size: 1rem;
+      color: #57534e;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .life-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #e7e5e4;
+      padding-top: 1.15rem;
+      font-family: "Noto Sans TC", sans-serif;
+      font-size: 0.85rem;
+      color: #78716c;
+    }
+    .life-btn {
+      color: #0d9488;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s ease;
+    }
+    .life-btn:hover { color: #0f766e; }
+
+    /* 2. GoogleAlertManager Feed Card */
+    .preview-alert {
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 20px;
+      padding: 2.25rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-card);
+      font-family: "Inter", "Noto Sans TC", sans-serif;
+    }
+    .alert-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .alert-badge-urgent {
+      background: #fef2f2;
+      color: #dc2626;
+      border: 1px solid #fecaca;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .alert-score {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #4f46e5;
+      background: #eef2ff;
+      border: 1px solid #e0e7ff;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+    .alert-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.6rem;
+      line-height: 1.4;
+    }
+    .alert-snippet {
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .alert-snippet mark {
+      background: #fef08a;
+      color: #854d0e;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .alert-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-alert-primary {
+      background: #4f46e5;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .btn-alert-primary:hover { background: #4338ca; }
+    .btn-alert-secondary {
+      background: #f8fafc;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .btn-alert-secondary:hover { background: #f1f5f9; }
+
+    /* 3. YoutubeAudio.Fetch Tactile Soundwave Player (Clean White Studio Basis) */
+    .preview-soundwave {
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 20px;
+      padding: 2.25rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-card);
+      font-family: "Plus Jakarta Sans", "Noto Sans TC", sans-serif;
+    }
+    .player-top {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+    .album-art {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(139, 92, 246, 0.25);
+    }
+    .player-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .track-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0f172a;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 0.25rem;
+    }
+    .track-artist {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+    .waveform-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 24px;
+      margin-top: 0.45rem;
+    }
+    .wave-bar {
+      width: 4px;
+      background: #8b5cf6;
+      border-radius: 2px;
+      animation: wavePulse 1.2s ease-in-out infinite alternate;
+    }
+    .wave-bar:nth-child(2) { animation-delay: 0.2s; height: 18px; background: #06b6d4; }
+    .wave-bar:nth-child(3) { animation-delay: 0.4s; height: 12px; }
+    .wave-bar:nth-child(4) { animation-delay: 0.1s; height: 22px; background: #c084fc; }
+    .wave-bar:nth-child(5) { animation-delay: 0.5s; height: 14px; }
+    @keyframes wavePulse {
+      0% { height: 6px; }
+      100% { height: 24px; }
+    }
+    .scrubber-bar {
+      width: 100%;
+      height: 6px;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
+      border-radius: 9999px;
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    .scrubber-fill {
+      width: 42%;
+      height: 100%;
+      background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+      border-radius: 9999px;
+    }
+    .time-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.78rem;
+      color: #64748b;
+    }
+
+    /* 4. mkdocs-investment Fintech Card (White / Crisp Slate Basis) */
+    .preview-fintech {
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 20px;
+      padding: 2.25rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-card);
+      font-family: "Inter", "Noto Sans TC", sans-serif;
+    }
+    .fintech-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .fintech-kpi-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .fintech-metric-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+    .metric-label {
+      font-size: 0.78rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+    }
+    .metric-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #0f172a;
+      font-family: "JetBrains Mono", monospace;
+      font-variant-numeric: tabular-nums;
+      margin-bottom: 0.35rem;
+    }
+    .metric-gain {
+      color: #dc2626; /* TW Gain Red */
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .metric-safe {
+      color: #16a34a; /* Defense Green */
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* 5. My-TW-Coverage Taiwan Stock Research Radar Card */
+    .preview-coverage {
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 20px;
+      padding: 2.25rem;
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-card);
+      font-family: "Inter", "Noto Sans TC", sans-serif;
+    }
+    .coverage-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .coverage-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.25rem;
+    }
+    .coverage-action-pill {
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: "JetBrains Mono", monospace;
+      letter-spacing: 0.05em;
+    }
+    .coverage-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+    .coverage-subcard {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 0.95rem;
+      text-align: center;
+    }
+    .coverage-subcard-label {
+      font-size: 0.72rem;
+      color: #64748b;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+    .coverage-subcard-val {
+      font-size: 1.15rem;
+      font-weight: 800;
+      font-family: "JetBrains Mono", monospace;
+      color: #0f172a;
+    }
+
+    /* 6. HomeAssistant Android TV 10-foot Frosted HUD Widescreen Preview */
+    .preview-tv {
+      background: #000000;
+      border-radius: 20px;
+      padding: 2.25rem;
+      border: 1px solid #334155;
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.4);
+      background-image: radial-gradient(circle at center, rgba(30, 41, 59, 0.5) 0%, #000000 85%);
+    }
+    .tv-mock-backdrop {
+      position: absolute;
+      inset: 0;
+      opacity: 0.3;
+      background: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=60') center/cover;
+      filter: blur(2px);
+    }
+    .tv-hud-toast {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      width: 440px;
+      background: rgba(10, 12, 18, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 14px;
+      padding: 1.15rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(56, 189, 248, 0.2);
+      z-index: 10;
+    }
+    .tv-hud-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      color: #38bdf8;
+      filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.7));
+    }
+    .tv-hud-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .tv-hud-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 0.15rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tv-hud-message {
+      font-size: 0.88rem;
+      color: #ffffff;
+      line-height: 1.4;
+      opacity: 0.95;
+    }
+    .tv-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 65%;
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+      border-radius: 0 0 0 14px;
+    }
+    .tv-footer-hint {
+      position: relative;
+      z-index: 5;
+      font-size: 0.82rem;
+      color: #e2e8f0;
+      background: rgba(0, 0, 0, 0.65);
+      padding: 6px 12px;
+      border-radius: 8px;
+      width: fit-content;
+    }
+
+    /* Section 4: Scale Row (White Basis) */
+    .scale-row {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      padding: 2.25rem;
+      background: #ffffff;
+      border-radius: 18px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-card);
+    }
+    .scale-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      color: #64748b;
+      font-size: 0.85rem;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Direct Inline SVG Sprite (settled ask-bridge & Lucide aesthetic, stroke-width: 1.6px) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <!-- 1. mkdocs-life: Scandinavian Line Deer -->
+    <symbol id="icon-deer-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 3c0 2 1 3 4 3c2 0 3 1 3 3" />
+      <path d="M21 3c0 2-1 3-4 3c-2 0-3 .3-3 3" />
+      <path d="M7 3c0 1.3.3 2.3 1 3" />
+      <path d="M17 3c0 1.3-.3 2.3-1 3" />
+      <path d="M12 19c-1 0-4-3-4-6.5 0-2 1.3-3.5 4-3.5s4 1.5 4 3.5c0 3.5-3 6.5-4 6.5" />
+      <path d="M8 10.5l-2-1.5" />
+      <path d="M16 10.5l2-1.5" />
+      <path d="M10 13v.01" />
+      <path d="M14 13v.01" />
+      <path d="M12 16.5h.01" />
+    </symbol>
+
+    <!-- 2. GoogleAlertManager: Precision Radar Falcon -->
+    <symbol id="icon-falcon-radar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M19 4a4 4 0 0 1 2 3.5" />
+      <path d="M16 8h.01" />
+      <path d="M3.5 18H12a8 8 0 0 0 8-8V8a4 4 0 0 0-7.3-2.3L2 20" />
+      <path d="m20 8 2.5.5-2.5.5" />
+      <path d="M7 18a6 6 0 0 0 3.8-10.6" />
+      <path d="M10 18v3" />
+      <path d="M14 18v3" />
+    </symbol>
+
+    <!-- 3. YoutubeAudio.Fetch: Fluid Wave Whale -->
+    <symbol id="icon-whale-sonic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 9V5a2 2 0 0 0-4 0" />
+      <path d="M18 5a2 2 0 0 1 4 0" />
+      <path d="M6 9.7 3.9 8.4C2.7 7.7 2 6.4 2 5V3c2 0 4 2 4 2s2-2 4-2v2c0 1.4-.7 2.7-1.9 3.4l-3.8 2.4A5 5 0 0 0 7 20h12c1.7 0 3-1.3 3-3v-3c0-2.8-2.2-5-5-5-2.7 0-5.1 1.4-6.4 3.6L9.7 14A2 2 0 0 1 6 13Z" />
+      <path d="M15 15h.01" />
+    </symbol>
+
+    <!-- 4. mkdocs-investment: Wall Street Geometric Bull -->
+    <symbol id="icon-bull-fintech" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 10a5 5 0 0 1-4-8 4 4 0 0 0 4 4h10a4 4 0 0 0 4-4 5 5 0 0 1-4 8" />
+      <path d="M6.4 15c-.3-.6-.4-1.3-.4-2 0-4 3-3 3-7" />
+      <path d="M17.6 15c.3-.6.4-1.3.4-2 0-4-3-3-3-7" />
+      <path d="M10 12.5v1.5" />
+      <path d="M14 12.5v1.5" />
+      <path d="M15 22a4 4 0 1 0-3-6.7A4 4 0 1 0 9 22Z" />
+      <path d="M9 18h.01" />
+      <path d="M15 18h.01" />
+    </symbol>
+
+    <!-- 5. mkdocs-investment: Nordic Geometric Bear -->
+    <symbol id="icon-bear-defense" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m6 7 .5.5" />
+      <path d="m18 7-.5.5" />
+      <path d="M20.8 4.2c-1.6-1.6-4.1-1.6-5.7 0l-1 1a13.6 13.6 0 0 0-4.2 0l-1-1a4 4 0 0 0-5.8 5.6A7 7 0 0 0 2 13.5C2 18.2 6.5 22 12 22s10-3.8 10-8.5a7 7 0 0 0-1.1-3.8c1.5-1.6 1.5-4-.1-5.5" />
+      <path d="M10 12v-.5" />
+      <path d="M14 12v-.5" />
+      <path d="M14 16h-4" />
+      <path d="M12 16v2" />
+    </symbol>
+
+    <!-- 6. HomeAssistant TV: 10-ft Sentinel Guardian Dog -->
+    <symbol id="icon-sentinel-tv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8.5 8.5c-.38 1.05-1.08 2.03-2.34 2.5-1.93.72-3.58-.3-3.66-1-.11-.99 1.18-6.53 4-7 1.92-.32 3.65.85 3.65 2.24A7.5 7.5 0 0 1 14 5.28c0-1.39 1.84-2.6 3.77-2.28 2.82.47 4.11 6.01 4 7-.08.7-1.73 1.72-3.66 1-1.26-.47-1.85-1.45-2.24-2.5" />
+      <path d="M4.42 11.25A13.15 13.15 0 0 0 4 14.56C4 18.73 7.58 21 12 21s8-2.27 8-6.44a11.7 11.7 0 0 0-.49-3.31" />
+      <path d="M8 14v.5" />
+      <path d="M16 14v.5" />
+      <path d="M11.25 16.25h1.5L12 17z" />
+    </symbol>
+
+    <!-- 7. My-TW-Coverage: Chubby Flapping Owlet (Cute Insight Research Owl) -->
+    <symbol id="icon-owl-coverage" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 6c-1.5-1.5-2.5-1-3 0 0 1.5 1 2.5 2 3" />
+      <path d="M17 6c1.5-1.5 2.5-1 3 0 0 1.5-1 2.5-2 3" />
+      <path d="M12 4C7 4 4 7 4 13c0 4.5 3.5 8 8 8s8-3.5 8-8c0-6-3-9-8-9z" />
+      <path d="M4 12c-1.5 2-1 4.5 1 6" />
+      <path d="M20 12c1.5 2 1 4.5-1 6" />
+      <circle cx="8.5" cy="11" r="2.5" />
+      <circle cx="15.5" cy="11" r="2.5" />
+      <path d="M8.5 10.5v1" stroke-width="2.2" />
+      <path d="M15.5 10.5v1" stroke-width="2.2" />
+      <path d="m11.2 13 1 1.8 1-1.8" />
+      <path d="M8.5 21v1" />
+      <path d="M15.5 21v1" />
+    </symbol>
+  </svg>
+
+  <div class="container">
+    <header>
+      <div class="header-badge">✨ UX-DECK UNIFIED DESIGN SYSTEM</div>
+      <h1>跨專案設計調性、風格與字體總覽</h1>
+      <div class="subtitle">以極簡白底（White Basis）為視覺根基，結合六大兄弟端點的精準品牌色調、人文/科技專屬字體排版與 ask-bridge 極簡幾何幾何吉祥物。</div>
+    </header>
+
+    <!-- SECTION 1: MASCOTS (WHITE BASIS) -->
+    <div class="section-title">🐾 1. 七大專案象徵幾何吉祥物 (Settled Geometric Mascots)</div>
+    <div class="section-desc">延續 ask-bridge 與 Lucide 的極簡幾何線條哲學，以 1.6px 標準線寬呈現高辨識度與親和感。</div>
+    <div class="mascot-grid">
+      <!-- Deer -->
+      <div class="mascot-card card-deer">
+        <div class="icon-wrapper wrapper-deer">
+          <svg class="ux-icon ux-icon-xl ux-icon-deer"><use href="#icon-deer-life"></use></svg>
+        </div>
+        <div class="mascot-name">幾何林鹿 🦌</div>
+        <div class="mascot-project">mkdocs-life (生活日誌)</div>
+        <div class="mascot-desc">純粹向外開展的幾何鹿角與優雅面部弧線，傳遞北歐漫步沉思的簡約與純淨。</div>
+      </div>
+
+      <!-- Falcon -->
+      <div class="mascot-card card-falcon">
+        <div class="icon-wrapper wrapper-falcon">
+          <svg class="ux-icon ux-icon-xl ux-icon-falcon"><use href="#icon-falcon-radar"></use></svg>
+        </div>
+        <div class="mascot-name">精密雷達隼 🦅</div>
+        <div class="mascot-project">GoogleAlertManager (SaaS)</div>
+        <div class="mascot-desc">流線型羽翼輪廓與銳利鳥喙，搭配上方雷達聲納弧線，象徵第一時間捕捉關鍵情報。</div>
+      </div>
+
+      <!-- Whale -->
+      <div class="mascot-card card-whale">
+        <div class="icon-wrapper wrapper-whale">
+          <svg class="ux-icon ux-icon-xl ux-icon-whale"><use href="#icon-whale-sonic"></use></svg>
+        </div>
+        <div class="mascot-name">流暢聲波鯨 🐋</div>
+        <div class="mascot-project">YoutubeAudio.Fetch (多媒體)</div>
+        <div class="mascot-desc">海洋般的流線型身軀與噴氣音符水柱，象徵無窮盡的音訊串流與共鳴節奏。</div>
+      </div>
+
+      <!-- Bull -->
+      <div class="mascot-card card-bull">
+        <div class="icon-wrapper wrapper-bull">
+          <svg class="ux-icon ux-icon-xl ux-icon-bull"><use href="#icon-bull-fintech"></use></svg>
+        </div>
+        <div class="mascot-name">幾何狂牛 🐂</div>
+        <div class="mascot-project">mkdocs-investment (多頭攻堅)</div>
+        <div class="mascot-desc">向上挺拔的牛角弧度與力量感十足的面部輪廓，代表資本增長動能與市場 Alpha。</div>
+      </div>
+
+      <!-- Bear -->
+      <div class="mascot-card card-bear">
+        <div class="icon-wrapper wrapper-bear">
+          <svg class="ux-icon ux-icon-xl ux-icon-bear"><use href="#icon-bear-defense"></use></svg>
+        </div>
+        <div class="mascot-name">北歐守護熊 🐻</div>
+        <div class="mascot-project">mkdocs-investment (防禦避險)</div>
+        <div class="mascot-desc">幾何圓耳與厚重安心的面部弧線，象徵固若金湯的資產避風港與下檔風險保護。</div>
+      </div>
+
+      <!-- Sentinel -->
+      <div class="mascot-card card-sentinel">
+        <div class="icon-wrapper wrapper-sentinel">
+          <svg class="ux-icon ux-icon-xl ux-icon-sentinel"><use href="#icon-sentinel-tv"></use></svg>
+        </div>
+        <div class="mascot-name">客廳小管家 柴柴 🐕</div>
+        <div class="mascot-project">HomeAssistant (Android TV)</div>
+        <div class="mascot-desc">忠誠靈巧的豎耳幾何柴柴，代表隨時留意全家生活動態（門鈴叮咚、家電完成、居家提醒）的貼心夥伴。</div>
+      </div>
+
+      <!-- Owl -->
+      <div class="mascot-card card-owl">
+        <div class="icon-wrapper wrapper-owl">
+          <svg class="ux-icon ux-icon-xl ux-icon-owl"><use href="#icon-owl-coverage"></use></svg>
+        </div>
+        <div class="mascot-name">拍拍翅萌萌鴞 🦉</div>
+        <div class="mascot-project">My-TW-Coverage (台股個股覆蓋)</div>
+        <div class="mascot-desc">圓滾滾的治癒身軀配上一對拍動小肉翅與水汪汪大眼，以親和可愛的神態陪伴穿透台股基本面與估值安全邊際。</div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: PALETTE & TYPOGRAPHY MATRIX (WHITE BASIS) -->
+    <div class="section-title">🎨 2. 色彩基調與專屬字體矩陣 (Color Palette & Typography Matrix)</div>
+    <div class="section-desc">依據各專案之領域屬性（生活文藝、SaaS情報、黑曜多媒體、精密財經、客廳HUD）精選專屬色票與字體組合。</div>
+    <div class="matrix-grid">
+      
+      <!-- mkdocs-life -->
+      <div class="matrix-card">
+        <div class="matrix-header">
+          <div class="matrix-title">
+            <svg class="ux-icon ux-icon-deer" style="width: 20px; height: 20px;"><use href="#icon-deer-life"></use></svg>
+            mkdocs-life · 暖陽人文誌
+          </div>
+          <div class="matrix-swatches">
+            <div class="swatch" style="background: #0d9488;" title="Primary: #0d9488 (Deep Sage)"></div>
+            <div class="swatch" style="background: #e07a5f;" title="Accent: #e07a5f (Terracotta)"></div>
+            <div class="swatch" style="background: #faf8f5;" title="Surface: #faf8f5 (Warm Paper)"></div>
+          </div>
+        </div>
+        <div class="font-sample-box">
+          <div class="font-name-tag">
+            <span>標題與人文內文</span>
+            <span>Noto Serif TC + Newsreader</span>
+          </div>
+          <div class="font-preview-text" style="font-family: 'Noto Serif TC', serif;">
+            漫步於清晨薄霧的林道，生活細節如詩句般沉靜舒展。
+          </div>
+        </div>
+      </div>
+
+      <!-- GoogleAlertManager -->
+      <div class="matrix-card">
+        <div class="matrix-header">
+          <div class="matrix-title">
+            <svg class="ux-icon ux-icon-falcon" style="width: 20px; height: 20px;"><use href="#icon-falcon-radar"></use></svg>
+            GoogleAlertManager · SaaS 敏捷情報
+          </div>
+          <div class="matrix-swatches">
+            <div class="swatch" style="background: #4f46e5;" title="Primary: #4f46e5 (Electric Indigo)"></div>
+            <div class="swatch" style="background: #06b6d4;" title="Accent: #06b6d4 (Signal Cyan)"></div>
+            <div class="swatch" style="background: #ffffff;" title="Surface: #ffffff (Pure White)"></div>
+          </div>
+        </div>
+        <div class="font-sample-box">
+          <div class="font-name-tag">
+            <span>高信息密度 UI</span>
+            <span>Inter + Noto Sans TC</span>
+          </div>
+          <div class="font-preview-text" style="font-family: 'Inter', 'Noto Sans TC', sans-serif;">
+            即時監測 32 組關鍵字動態，第一時間排除雜訊鎖定核心情報。
+          </div>
+        </div>
+      </div>
+
+      <!-- YoutubeAudio.Fetch -->
+      <div class="matrix-card">
+        <div class="matrix-header">
+          <div class="matrix-title">
+            <svg class="ux-icon ux-icon-whale" style="width: 20px; height: 20px;"><use href="#icon-whale-sonic"></use></svg>
+            YoutubeAudio.Fetch · 潮流多媒體
+          </div>
+          <div class="matrix-swatches">
+            <div class="swatch" style="background: #9333ea;" title="Primary: #9333ea (Sonic Violet)"></div>
+            <div class="swatch" style="background: #06b6d4;" title="Accent: #06b6d4 (Soundwave Cyan)"></div>
+            <div class="swatch" style="background: #ffffff;" title="Surface: #ffffff (Studio White)"></div>
+          </div>
+        </div>
+        <div class="font-sample-box">
+          <div class="font-name-tag">
+            <span>現代工作室白底 + 時間標籤</span>
+            <span>Plus Jakarta Sans + JetBrains Mono</span>
+          </div>
+          <div class="font-preview-text" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+            Hi-Res Lossless Audio Extraction <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.85em; color: #7e22ce; font-weight: 700;">[03:42 / 96kHz]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- mkdocs-investment -->
+      <div class="matrix-card">
+        <div class="matrix-header">
+          <div class="matrix-title">
+            <svg class="ux-icon ux-icon-bull" style="width: 20px; height: 20px;"><use href="#icon-bull-fintech"></use></svg>
+            mkdocs-investment · 嚴謹精準財經
+          </div>
+          <div class="matrix-swatches">
+            <div class="swatch" style="background: #2563eb;" title="Primary: #2563eb (Royal Blue)"></div>
+            <div class="swatch" style="background: #dc2626;" title="TW Gain: #dc2626"></div>
+            <div class="swatch" style="background: #16a34a;" title="US Gain / TW Loss: #16a34a"></div>
+            <div class="swatch" style="background: #f8fafc;" title="Surface: #f8fafc (Crisp Slate)"></div>
+          </div>
+        </div>
+        <div class="font-sample-box">
+          <div class="font-name-tag">
+            <span>財經指標與等寬數字</span>
+            <span>Inter + JetBrains Mono (Tabular)</span>
+          </div>
+          <div class="font-preview-text" style="font-family: 'Inter', sans-serif;">
+            TAIEX 權重報酬率 <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #dc2626;">+14.82%</span> · 本益比 16.4x
+          </div>
+        </div>
+      </div>
+
+      <!-- My-TW-Coverage -->
+      <div class="matrix-card">
+        <div class="matrix-header">
+          <div class="matrix-title">
+            <svg class="ux-icon ux-icon-owl" style="width: 20px; height: 20px;"><use href="#icon-owl-coverage"></use></svg>
+            My-TW-Coverage · 台股個股深度調研
+          </div>
+          <div class="matrix-swatches">
+            <div class="swatch" style="background: #059669;" title="Primary: #059669 (Taiwan Pine Emerald)"></div>
+            <div class="swatch" style="background: #d97706;" title="Accent: #d97706 (Research Amber)"></div>
+            <div class="swatch" style="background: #dc2626;" title="TW Gain: #dc2626"></div>
+            <div class="swatch" style="background: #16a34a;" title="TW Loss: #16a34a"></div>
+            <div class="swatch" style="background: #ffffff;" title="Surface: #ffffff"></div>
+          </div>
+        </div>
+        <div class="font-sample-box">
+          <div class="font-name-tag">
+            <span>估值雷達與財務指標</span>
+            <span>Plus Jakarta Sans + JetBrains Mono (Tabular)</span>
+          </div>
+          <div class="font-preview-text" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+            2330.TW 評級 <span style="font-weight: 700; color: #059669;">BUY ↗</span> · 目標價 <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #dc2626;">NT$1,250</span> (PER 18.2x)
+          </div>
+        </div>
+      </div>
+
+      <!-- HomeAssistant TV -->
+      <div class="matrix-card">
+        <div class="matrix-header">
+          <div class="matrix-title">
+            <svg class="ux-icon ux-icon-sentinel" style="width: 20px; height: 20px;"><use href="#icon-sentinel-tv"></use></svg>
+            HomeAssistant TV · 10 呎客廳毛玻璃 HUD
+          </div>
+          <div class="matrix-swatches">
+            <div class="swatch" style="background: #0284c7;" title="Focus Cyan Glow: #0284c7"></div>
+            <div class="swatch" style="background: #ee0a0c12;" title="Translucent Dark Slate: #ee0a0c12"></div>
+            <div class="swatch" style="background: #ffffff;" title="High-contrast Text: #ffffff"></div>
+          </div>
+        </div>
+        <div class="font-sample-box">
+          <div class="font-name-tag">
+            <span>10 英呎遠距一覽字體</span>
+            <span>Noto Sans TC (Bold 28px) + Inter</span>
+          </div>
+          <div class="font-preview-text" style="font-family: 'Noto Sans TC', sans-serif; font-size: 1.15rem; font-weight: 700; color: #0284c7;">
+            客廳小管家 🐕 · 玄關訪客叮咚，門鎖安全上鎖中
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SECTION 3: LIVE COMPONENT PREVIEWS (WHITE BASIS) -->
+    <div class="section-title">💡 3. 六大專案真實實體元件展示 (Live Component Previews)</div>
+    <div class="section-desc">以白底為基準（White Basis），體驗在各專案的真實材質、陰影深度與字型組合下，吉祥物與介面元件的真實落地效果。</div>
+    <div class="components-grid">
+
+      <!-- 1. mkdocs-life -->
+      <div class="preview-life">
+        <div class="life-tag">
+          <svg class="ux-icon ux-icon-deer" style="width: 14px; height: 14px;"><use href="#icon-deer-life"></use></svg>
+          2026-10-17 · 漫步手記
+        </div>
+        <div class="life-title">秋陽微風中的森林慢行哲學</div>
+        <div class="life-body">
+          踩在覆蓋金黃松針的小徑上，微風吹拂帶起樹梢沙沙輕響。偶遇駐足凝望的幾何林鹿，在光影斑駁間，心神重拾久違的清明與靜謐。
+        </div>
+        <div class="life-footer">
+          <span>閱讀時間約 4 分鐘 · 筆記分類：生活觀察</span>
+          <a href="#" class="life-btn">閱讀全文 ↗</a>
+        </div>
+      </div>
+
+      <!-- 2. GoogleAlertManager -->
+      <div class="preview-alert">
+        <div class="alert-header">
+          <div class="alert-badge-urgent">
+            <svg class="ux-icon ux-icon-falcon" style="width: 13px; height: 13px; color: #dc2626;"><use href="#icon-falcon-radar"></use></svg>
+            緊急情報
+          </div>
+          <div class="alert-score">相關度 96%</div>
+        </div>
+        <div class="alert-title">TSMC 與 OpenAI 深度合作新進展：矽光子封裝架構全面升級</div>
+        <div class="alert-snippet">
+          最新供應鏈動態顯示，關鍵封裝製程良率已突破臨界點。<mark>台積電 CoWoS</mark> 產能擴產計畫預期提前一季完成，滿足下一代算力架構需求...
+        </div>
+        <div class="alert-actions">
+          <button class="btn-alert-primary">標記已讀</button>
+          <button class="btn-alert-secondary">封存情報</button>
+        </div>
+      </div>
+
+      <!-- 3. YoutubeAudio.Fetch -->
+      <div class="preview-soundwave">
+        <div class="player-top">
+          <div class="album-art">
+            <svg class="ux-icon ux-icon-whale" style="width: 38px; height: 38px; color: #ffffff;"><use href="#icon-whale-sonic"></use></svg>
+          </div>
+          <div class="player-info">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="track-title">Deep Sea Soundwave Resonance</div>
+              <span style="background: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; font-size: 0.72rem; padding: 2px 8px; border-radius: 9999px; font-weight: 700; font-family: 'JetBrains Mono', monospace;">FLAC · 96kHz</span>
+            </div>
+            <div class="track-artist">Ambient Oceanics · Episode #42</div>
+            <div class="waveform-bars">
+              <div class="wave-bar" style="height: 14px;"></div>
+              <div class="wave-bar" style="height: 20px;"></div>
+              <div class="wave-bar" style="height: 10px;"></div>
+              <div class="wave-bar" style="height: 24px;"></div>
+              <div class="wave-bar" style="height: 16px;"></div>
+              <div class="wave-bar" style="height: 12px;"></div>
+              <div class="wave-bar" style="height: 18px;"></div>
+              <div class="wave-bar" style="height: 22px;"></div>
+              <div class="wave-bar" style="height: 15px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="scrubber-bar">
+          <div class="scrubber-fill"></div>
+        </div>
+        <div class="time-row" style="margin-bottom: 1rem;">
+          <span>03:42</span>
+          <span style="color: #0284c7; font-weight: 700; display: flex; align-items: center; gap: 4px;">
+            <span style="width: 6px; height: 6px; background: #0284c7; border-radius: 50%; display: inline-block;"></span>
+            STREAMING ACTIVE
+          </span>
+          <span>12:15</span>
+        </div>
+        <!-- Tactile Controls Row -->
+        <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #f1f5f9; padding-top: 0.85rem;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <button style="background: #8b5cf6; border: none; color: #ffffff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.35); font-size: 0.85rem; transition: transform 0.2s ease;">⏸</button>
+            <span style="font-size: 0.82rem; color: #64748b; font-weight: 500;">立體雙聲道 · 320 kbps</span>
+          </div>
+          <button style="background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+            <span>儲存音訊 ⬇</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 4. mkdocs-investment -->
+      <div class="preview-fintech">
+        <div class="fintech-header">
+          <div style="font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
+            <span>核心配置與即時指標 (Portfolio Radar)</span>
+          </div>
+          <span style="font-size: 0.75rem; color: #64748b; font-family: 'JetBrains Mono', monospace; font-weight: 600;">LAST: 13:30:00</span>
+        </div>
+        <div class="fintech-kpi-row">
+          <div class="fintech-metric-card">
+            <div class="metric-label">加權指數 (TAIEX)</div>
+            <div class="metric-value">22,850.40</div>
+            <div class="metric-gain">
+              <svg class="ux-icon ux-icon-bull" style="width: 15px; height: 15px;"><use href="#icon-bull-fintech"></use></svg>
+              +182.35 (+0.80%) 多頭增長
+            </div>
+          </div>
+          <div class="fintech-metric-card">
+            <div class="metric-label">總體下檔防禦比例</div>
+            <div class="metric-value">36.5%</div>
+            <div class="metric-safe">
+              <svg class="ux-icon ux-icon-bear" style="width: 15px; height: 15px;"><use href="#icon-bear-defense"></use></svg>
+              +1.2% 防禦熊避風港穩健
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. My-TW-Coverage Taiwan Stock Valuation Radar -->
+      <div class="preview-coverage">
+        <div class="coverage-header">
+          <div>
+            <div class="coverage-badge-row">
+              <span class="coverage-action-pill">BUY ↗ 強力買進</span>
+              <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">半導體龍頭 · 核心覆蓋</span>
+            </div>
+            <div style="font-size: 1.35rem; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+              <span>2330.TW 台積電</span>
+              <svg class="ux-icon ux-icon-owl" style="width: 20px; height: 20px;"><use href="#icon-owl-coverage"></use></svg>
+            </div>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-size: 0.72rem; color: #64748b; text-transform: uppercase; font-weight: 600;">現價 / 目標價</div>
+            <div style="font-size: 1.4rem; font-weight: 800; font-family: 'JetBrains Mono', monospace; color: #dc2626;">
+              $1,085 <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">/ $1,250</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-size: 0.85rem; color: #475569; line-height: 1.6; margin-bottom: 0.5rem;">
+          洞察貓頭鷹調研亮點：受惠於 3nm 滿載與 CoWoS-L 擴產進度超前，Q3 毛利率攀升至 57.8%，下檔本益比安全邊際具備高防禦力。
+        </div>
+
+        <div class="coverage-metrics-grid">
+          <div class="coverage-subcard">
+            <div class="coverage-subcard-label">預估 PER</div>
+            <div class="coverage-subcard-val">18.2x</div>
+          </div>
+          <div class="coverage-subcard">
+            <div class="coverage-subcard-label">預估 ROE</div>
+            <div class="coverage-subcard-val" style="color: #059669;">29.8%</div>
+          </div>
+          <div class="coverage-subcard">
+            <div class="coverage-subcard-label">全年 EPS</div>
+            <div class="coverage-subcard-val">$45.80</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 5. Full-width HomeAssistant TV Preview -->
+    <div style="margin-bottom: 3.5rem;">
+      <div style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.85rem; display: flex; align-items: center; gap: 8px; color: #0f172a;">
+        <svg class="ux-icon ux-icon-sentinel" style="width: 22px; height: 22px;"><use href="#icon-sentinel-tv"></use></svg>
+        HomeAssistant on Android TV: 10-Foot 實況電視畫面模擬 (智慧居家生活動態)
+      </div>
+      <div class="preview-tv">
+        <div class="tv-mock-backdrop"></div>
+        <!-- Actual HUD Toast Component Matching 1F TV Real Output -->
+        <div class="tv-hud-toast">
+          <svg class="ux-icon tv-hud-icon"><use href="#icon-sentinel-tv"></use></svg>
+          <div class="tv-hud-content">
+            <div class="tv-hud-title">玄關訪客叮咚 🔔</div>
+            <div class="tv-hud-message">大門有人按門鈴，門鎖維持安全上鎖中 🐾</div>
+          </div>
+          <div class="tv-progress"></div>
+        </div>
+        <div class="tv-footer-hint">📺 模擬 1F 客廳 Android TV 1920x1080 視角 (沙發觀看距離 3~4 公尺 · 隨生活情境動態推播)</div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: VECTOR SCALE LADDER (WHITE BASIS) -->
+    <div class="section-title">📐 4. 向量尺寸梯階測試 (14px ~ 64px)</div>
+    <div class="section-desc">驗證七大幾何吉祥物自桌面小圖示 (14px) 至客廳電視大螢幕 (64px) 之邊角清晰度與筆畫比例。</div>
+    <div class="scale-row">
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-xs ux-icon-deer"><use href="#icon-deer-life"></use></svg>
+        <span>14px (xs)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-sm ux-icon-falcon"><use href="#icon-falcon-radar"></use></svg>
+        <span>18px (sm)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-md ux-icon-whale"><use href="#icon-whale-sonic"></use></svg>
+        <span>24px (md 預設)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-lg ux-icon-bull"><use href="#icon-bull-fintech"></use></svg>
+        <span>32px (lg)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-xl ux-icon-bear"><use href="#icon-bear-defense"></use></svg>
+        <span>48px (xl)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-xl ux-icon-owl"><use href="#icon-owl-coverage"></use></svg>
+        <span>48px (研究貓頭鷹)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-tv ux-icon-sentinel"><use href="#icon-sentinel-tv"></use></svg>
+        <span>64px (tv 10英呎)</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

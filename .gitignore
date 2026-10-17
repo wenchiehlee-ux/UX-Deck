@@ -1,0 +1,29 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Temporary Render & Comparison Test Artifacts
+owl_compare.html
+owl_compare.png
+owl_cute_explore.html
+owl_cute_explore.png
+owl_explore_new.html
+owl_explore_new.png
+owl_test*.png
+render_icon.html
+sentinel_icon.png
+sentinel_mascot_*.png
+tv_capture*.png
+tv_screen.png
+tv_final.png
+tv_behance.png
+showcase_updated.png
+pipup_base.apk
