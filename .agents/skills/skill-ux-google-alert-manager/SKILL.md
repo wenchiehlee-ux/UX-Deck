@@ -16,9 +16,10 @@ This skill provides the design system, component patterns, and interaction rules
 2. **Rapid Triage Workflows**: Support 1-click archiving, snoozing, and starring, complete with keyboard shortcuts (`j`/`k` navigation, `e` archive, `s` star).
 3. **Adaptive Density**: Offer comfortable card view vs compact table view for scanning 100+ alert entries effortlessly.
 4. **Instant Visual Status**: Unread indicator dots, source badges (News, Web, Forum), and sentiment/urgency chips.
-5. **Animal Mascot (銳眼遊隼 Peregrine Radar Falcon 🦅)**:
-   - **Symbol**: `#icon-falcon-radar` (from [animal-icons.svg](../../tokens/icons/animal-icons.svg)).
-   - **Purpose**: Symbolizes high-altitude radar scanning, instant target lock, and aggressive clutter elimination.
+5. **Animal Mascot (破曉警報鳥 Alert Bird 🐦)**:
+   - **Symbol**: `#icon-falcon-radar` (from [animal-icons.svg](../../tokens/icons/animal-icons.svg), Lucide 官方原生 `bird`).
+   - **Color Tone**: **活力警報橘 (Alert Orange `#ea580c`)**，搭配 `#ffedd5` 底卡與 `#fed7aa` 邊框，徹底摒除偏紫冷色。
+   - **Purpose**: 象徵第一時間破曉啼鳴、高敏感度穿透資訊雜訊的敏捷情報雷達。
    - **Application**: Placed on top header scout badge, rapid triage buttons, and high-urgency notifications.
 
 ---
