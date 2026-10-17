@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UX-Deck: 跨專案設計系統展示台 (Design System & Mascot Showcase)</title>
+  <title>UX-Deck: 跨專案設計系統與入口導航平台 (Design System & Ecosystem Portal)</title>
   <link rel="stylesheet" href="./tokens/tokens.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -196,6 +196,123 @@
     .mascot-card.card-bear:hover::before { background: #16a34a; }
     .mascot-card.card-sentinel:hover::before { background: #0284c7; }
     .mascot-card.card-owl:hover::before { background: #059669; }
+
+    .ux-icon-pangolin { color: #0284c7; }
+    .ux-icon-pangolin:hover { transform: scale(1.12); color: #0369a1; }
+    .mascot-card.card-pangolin:hover::before { background: #0284c7; }
+    .wrapper-pangolin { background: #f0f9ff; border: 1px solid #bae6fd; }
+
+    /* Preview: Synology NAS Cyber Slate DevOps HUD */
+    .preview-nas {
+      background: #0f172a;
+      color: #f8fafc;
+      border-radius: 20px;
+      padding: 2.25rem;
+      border: 1px solid #1e293b;
+      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.4);
+      font-family: "Roboto", "Noto Sans TC", sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    .preview-nas::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #0284c7, #38bdf8);
+    }
+    .nas-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+    .nas-title-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nas-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+    .nas-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      color: #4ade80;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      font-family: "JetBrains Mono", monospace;
+    }
+    .nas-desc-text {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .nas-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-bottom: 1.5rem;
+    }
+    .nas-subcard {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid #334155;
+      padding: 12px 14px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+    }
+    .nas-subcard-label {
+      font-size: 0.72rem;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+    .nas-subcard-val {
+      font-size: 1.15rem;
+      font-weight: 700;
+      font-family: "JetBrains Mono", monospace;
+      color: #38bdf8;
+    }
+    .nas-footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #1e293b;
+      padding-top: 1rem;
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+    .nas-btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #0284c7;
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .nas-btn-link:hover {
+      background: #0369a1;
+      transform: translateY(-1px);
+    }
+
 
     .icon-wrapper {
       width: 80px;
@@ -854,6 +971,18 @@
       <path d="M11.25 16.25h1.5L12 17z" />
     </symbol>
 
+
+    <!-- 8. wenchiehlee.quickconnect.to: Armored Pangolin (Data Shield & Private Cloud Sentinel) -->
+    <symbol id="icon-pangolin-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21.5C7.5 20 4 16 4 11V5.5l8-3 8 3V11c0 5-3.5 9-8 10.5z" />
+      <path d="M9 7.5L12 5l3 2.5c.7.6 1 1.4 1 2.2 0 1.8-1.5 3.3-4 3.3s-4-1.5-4-3.3c0-.8.3-1.6 1-2.2z" />
+      <circle cx="10.2" cy="9.3" r="0.6" fill="currentColor" />
+      <circle cx="13.8" cy="9.3" r="0.6" fill="currentColor" />
+      <path d="M12 11.5v.01" stroke-width="2.2" />
+      <path d="M7 14.5l5 3 5-3" />
+      <path d="M8.5 17.2l3.5 2.1 3.5-2.1" />
+    </symbol>
+
     <!-- 7. My-TW-Coverage: Chubby Flapping Owlet (Cute Insight Research Owl) -->
     <symbol id="icon-owl-coverage" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M7 6c-1.5-1.5-2.5-1-3 0 0 1.5 1 2.5 2 3" />
@@ -875,11 +1004,11 @@
     <header>
       <div class="header-badge">✨ UX-DECK UNIFIED DESIGN SYSTEM</div>
       <h1>跨專案設計調性、風格與字體總覽</h1>
-      <div class="subtitle">以極簡白底（White Basis）為視覺根基，結合六大兄弟端點的精準品牌色調、人文/科技專屬字體排版與 ask-bridge 極簡幾何幾何吉祥物。</div>
+      <div class="subtitle">以極簡白底（White Basis）為視覺根基，結合七大兄弟端點的精準品牌色調、人文/科技專屬字體排版與 ask-bridge 極簡幾何吉祥物矩陣。</div>
     </header>
 
     <!-- SECTION 1: MASCOTS (WHITE BASIS) -->
-    <div class="section-title">🐾 1. 七大專案象徵幾何吉祥物 (Settled Geometric Mascots)</div>
+    <div class="section-title">🐾 1. 八大專案象徵幾何吉祥物 (Settled Geometric Mascots)</div>
     <div class="section-desc">延續 ask-bridge 與 Lucide 的極簡幾何線條哲學，以 1.6px 標準線寬呈現高辨識度與親和感。</div>
     <div class="mascot-grid">
       <!-- Deer -->
@@ -941,6 +1070,19 @@
         <div class="mascot-project">HomeAssistant (Android TV)</div>
         <div class="mascot-desc">忠誠靈巧的豎耳幾何柴柴，代表隨時留意全家生活動態（門鈴叮咚、家電完成、居家提醒）的貼心夥伴。</div>
       </div>
+
+
+      <!-- Pangolin -->
+      <a href="https://wenchiehlee.synology.me" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+        <div class="mascot-card card-pangolin">
+          <div class="icon-wrapper wrapper-pangolin">
+            <svg class="ux-icon ux-icon-xl ux-icon-pangolin"><use href="#icon-pangolin-shield"></use></svg>
+          </div>
+          <div class="mascot-name">裝甲穿山甲 🛡️</div>
+          <div class="mascot-project">wenchiehlee.quickconnect.to (Synology NAS)</div>
+          <div class="mascot-desc">堅不可摧的幾何盾牌輪廓搭配層疊裝甲鱗片，守護私人雲端數據資產與私有化 DevOps 服務。</div>
+        </div>
+      </a>
 
       <!-- Owl -->
       <div class="mascot-card card-owl">
@@ -1081,6 +1223,33 @@
         </div>
       </div>
 
+
+      <!-- wenchiehlee.quickconnect.to -->
+      <div class="matrix-card">
+        <div class="matrix-header">
+          <div class="matrix-title">
+            <svg class="ux-icon ux-icon-pangolin" style="width: 20px; height: 20px;"><use href="#icon-pangolin-shield"></use></svg>
+            wenchiehlee.quickconnect.to · 私人雲端 DevOps 堡壘
+          </div>
+          <div class="matrix-swatches">
+            <div class="swatch" style="background: #0284c7;" title="Synology Blue: #0284c7"></div>
+            <div class="swatch" style="background: #0f172a;" title="Cyber Slate: #0f172a"></div>
+            <div class="swatch" style="background: #38bdf8;" title="Neon Shield Glow: #38bdf8"></div>
+            <div class="swatch" style="background: #22c55e;" title="Healthy Green: #22c55e"></div>
+            <div class="swatch" style="background: #ffffff;" title="White: #ffffff"></div>
+          </div>
+        </div>
+        <div class="font-sample-box">
+          <div class="font-name-tag">
+            <span>DevOps 與系統架構</span>
+            <span>Roboto + Roboto Mono (Code) + LXGW WenKai TC</span>
+          </div>
+          <div class="font-preview-text" style="font-family: 'Roboto', sans-serif;">
+            Container Runner <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #0284c7;">Active</span> · Tailscale Funnel <span style="font-weight: 700; color: #22c55e;">Online 🛡️</span>
+          </div>
+        </div>
+      </div>
+
       <!-- HomeAssistant TV -->
       <div class="matrix-card">
         <div class="matrix-header">
@@ -1108,7 +1277,7 @@
     </div>
 
     <!-- SECTION 3: LIVE COMPONENT PREVIEWS (WHITE BASIS) -->
-    <div class="section-title">💡 3. 六大專案真實實體元件展示 (Live Component Previews)</div>
+    <div class="section-title">💡 3. 七大專案真實實體元件展示 (Live Component Previews)</div>
     <div class="section-desc">以白底為基準（White Basis），體驗在各專案的真實材質、陰影深度與字型組合下，吉祥物與介面元件的真實落地效果。</div>
     <div class="components-grid">
 
@@ -1223,6 +1392,42 @@
         </div>
       </div>
 
+
+      <!-- 6. wenchiehlee.quickconnect.to (Synology NAS Cyber HUD) -->
+      <div class="preview-nas">
+        <div class="nas-header-row">
+          <div class="nas-title-box">
+            <svg class="ux-icon ux-icon-pangolin" style="width: 24px; height: 24px; color: #38bdf8;"><use href="#icon-pangolin-shield"></use></svg>
+            <div class="nas-title">wenchiehlee.synology.me</div>
+          </div>
+          <div class="nas-status-badge">
+            <span style="width: 6px; height: 6px; background: #22c55e; border-radius: 50%; display: inline-block;"></span>
+            SERVICES OPERATIONAL 🛡️
+          </div>
+        </div>
+        <div class="nas-desc-text">
+          裝甲穿山甲安全衛士：Synology NAS 自建私有雲運算中心，託管自動化 GitHub Actions Runner、反向代理、與個人知識庫站點。
+        </div>
+        <div class="nas-metrics-grid">
+          <div class="nas-subcard">
+            <div class="nas-subcard-label">系統 Uptime</div>
+            <div class="nas-subcard-val">48d 14h</div>
+          </div>
+          <div class="nas-subcard">
+            <div class="nas-subcard-label">Docker 容器</div>
+            <div class="nas-subcard-val" style="color: #4ade80;">12 運行中</div>
+          </div>
+          <div class="nas-subcard">
+            <div class="nas-subcard-label">儲存集 1 狀態</div>
+            <div class="nas-subcard-val">Normal</div>
+          </div>
+        </div>
+        <div class="nas-footer-row">
+          <span>Tailscale 私有網狀通道加密保護中</span>
+          <a href="https://wenchiehlee.synology.me" target="_blank" rel="noopener noreferrer" class="nas-btn-link">前往 NAS 站點 ↗</a>
+        </div>
+      </div>
+
       <!-- 5. My-TW-Coverage Taiwan Stock Valuation Radar -->
       <div class="preview-coverage">
         <div class="coverage-header">
@@ -1289,7 +1494,7 @@
 
     <!-- SECTION 4: VECTOR SCALE LADDER (WHITE BASIS) -->
     <div class="section-title">📐 4. 向量尺寸梯階測試 (14px ~ 64px)</div>
-    <div class="section-desc">驗證七大幾何吉祥物自桌面小圖示 (14px) 至客廳電視大螢幕 (64px) 之邊角清晰度與筆畫比例。</div>
+    <div class="section-desc">驗證八大幾何吉祥物自桌面小圖示 (14px) 至客廳電視大螢幕 (64px) 之邊角清晰度與筆畫比例。</div>
     <div class="scale-row">
       <div class="scale-item">
         <svg class="ux-icon ux-icon-xs ux-icon-deer"><use href="#icon-deer-life"></use></svg>
@@ -1310,6 +1515,11 @@
       <div class="scale-item">
         <svg class="ux-icon ux-icon-xl ux-icon-bear"><use href="#icon-bear-defense"></use></svg>
         <span>48px (xl)</span>
+      </div>
+
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-xl ux-icon-pangolin"><use href="#icon-pangolin-shield"></use></svg>
+        <span>48px (裝甲穿山甲)</span>
       </div>
       <div class="scale-item">
         <svg class="ux-icon ux-icon-xl ux-icon-owl"><use href="#icon-owl-coverage"></use></svg>

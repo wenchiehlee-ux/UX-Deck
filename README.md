@@ -7,25 +7,25 @@
 
 ## 🎯 專案定位與設計理念
 
-本倉庫是六大關聯兄弟端點的 **視覺體驗中樞 (UX Deck)** 與 **Antigravity 技能發布庫 (Skills Hub)**，與外部 ../skills 自動保持同步：
+本倉庫是七大關聯兄弟端點的 **視覺體驗中樞 (UX Deck)** 與 **Antigravity 技能發布庫 (Skills Hub)**，與外部 ../skills 自動保持同步：
 
-`
-                                      +-------------------------+
-                                      |      UX-Deck Tokens     |
-                                      | 8pt Grid · Shadows · AA |
-                                      +-------------------------+
-                                                   |
-    +-------------------+------------------+-------+----------+-------------------+-------------------+
-    |                   |                  |                  |                   |                   |
-    v                   v                  v                  v                   v                   v
-[mkdocs-life]    [GoogleAlert]     [YoutubeAudio]      [mkdocs-invest]     [My-TW-Coverage]    [HomeAssistant TV]
-  溫潤人文雜誌     SaaS 情報儀表板    白底工作室播放器      大盤配置與金融      台股個股估值雷達      10英呎客廳毛玻璃
-  (GitHub Pages)   (GitHub Pages)     (GitHub Pages)     (GitHub Pages)      (GitHub Pages)      (Android TV 彈窗)
-`
+```
+                                              +-------------------------+
+                                              |      UX-Deck Tokens     |
+                                              | 8pt Grid · Shadows · AA |
+                                              +-------------------------+
+                                                           |
+    +-------------------+------------------+-------+-------+--+-------------------+-------------------+--------------------+
+    |                   |                  |                  |                   |                   |                    |
+    v                   v                  v                  v                   v                   v                    v
+[mkdocs-life]    [GoogleAlert]     [YoutubeAudio]      [mkdocs-invest]     [My-TW-Coverage]    [HomeAssistant TV]   [Synology NAS]
+  溫潤人文雜誌     SaaS 情報儀表板    白底工作室播放器      大盤配置與金融      台股個股估值雷達      10英呎客廳毛玻璃     私人雲端DevOps堡壘
+  (GitHub Pages)   (GitHub Pages)     (GitHub Pages)     (GitHub Pages)      (GitHub Pages)      (Android TV 彈窗)    (Web Station/Docker)
+```
 
 ### 核心哲學：一致底層，獨特個性 (Consistent Foundation, Differentiated Soul)
 - **一致性 (Consistency)**：所有專案共享相同間距規範、圓角梯度、陰影深度層級、流暢的 Bézier 曲線動效，以及對比度無障礙標準。
-- **差異化 (Differentiation)**：依據不同載體（文件/日誌、生產力儀表板、多媒體播放器、大盤金融、台股個股調研、客廳大螢幕）塑造最適化視覺風格與操作心智模型。
+- **差異化 (Differentiation)**：依據不同載體（文件/日誌、生產力儀表板、多媒體播放器、大盤金融、台股個股調研、客廳大螢幕、私人雲端 DevOps）塑造最適化視覺風格與操作心智模型。
 
 ---
 
@@ -38,8 +38,8 @@
 | **[YoutubeAudio.Fetch](#3-skill-ux-youtube-audio-fetch)** | GitHub Pages (Web App) | 白底工作室多媒體 (Studio Soundwave) | **流暢聲波鯨 🐋 (Sonic Whale)**<br>#icon-whale-sonic | 幻紫 (#8b5cf6)、聲波青藍 (#06b6d4)、純白底 (#ffffff) | 底部懸浮播放列、音軌波形動態、FLAC 96kHz 規格膠囊 |
 | **[mkdocs-investment](#4-skill-ux-mkdocs-investment)** | GitHub Pages (MkDocs) | 大盤資產配置 (Fintech Slate) | **幾何狂牛 🐂 / 守護熊 🐻**<br>#icon-bull-fintech / #icon-bear-defense | 皇室藍 (#2563eb)、大盤紅漲綠跌、安全防禦指標 | KPI 指標看板、等寬對齊數據表、多頭/避險多維圖表 |
 | **[My-TW-Coverage](#5-skill-ux-tw-coverage)** | GitHub Pages (MkDocs) | 台股個股深度調研 (Equity Radar) | **拍拍翅萌萌鴞 🦉 (Flapping Owlet)**<br>#icon-owl-coverage | 台灣冷杉綠 (#059669)、調研琥珀金 (#d97706)、紅漲綠跌 | BUY/HOLD 投資評級膠囊、目標價試算、PER/ROE/EPS 估值雷達 |
-| **[HomeAssistant](#6-skill-ux-homeassistant-tv)** | Android TV (Popup/HUD) | 10英呎客廳毛玻璃 (Frosted Glass HUD) | **客廳小管家 柴柴 🐕 (Faithful Shiba)**<br>#icon-sentinel-tv | 天際青輝光 (#0284c7)、毛玻璃深幕 (
-gba(10,12,18,0.92)) | 3–4米超清晰大字階、電視遙控 D-pad 焦點框、生活事件自動倒數光條 |
+| **[HomeAssistant](#6-skill-ux-homeassistant-tv)** | Android TV (Popup/HUD) | 10英呎客廳毛玻璃 (Frosted Glass HUD) | **客廳小管家 柴柴 🐕 (Faithful Shiba)**<br>#icon-sentinel-tv | 天際青輝光 (#0284c7)、毛玻璃深幕 (rgba(10,12,18,0.92)) | 3–4米超清晰大字階、電視遙控 D-pad 焦點框、生活事件自動倒數光條 |
+| **[wenchiehlee.quickconnect.to](#7-skill-ux-synology-nas)** | Synology NAS (Web Station) | 私人雲端 DevOps 堡壘 (Cyber Slate) | **裝甲穿山甲 🛡️ (Armored Pangolin)**<br>#icon-pangolin-shield | 群暉藍 (#0284c7)、黑曜賽博岩板 (#0f172a)、霓虹盾光 (#38bdf8) | 原生導航膠囊、Docker 容器狀態 HUD、Tailscale 私有通道徽章 |
 ---
 
 ## 📦 技能庫架構 (Skills Structure)
