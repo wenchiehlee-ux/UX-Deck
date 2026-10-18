@@ -321,7 +321,14 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 1.25rem;
-      transition: all 0.25s ease;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+    }
+    .icon-wrapper:hover {
+      transform: scale(1.12) translateY(-2px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
     }
     .wrapper-deer { background: #f0fdfa; border: 1px solid #ccfbf1; }
     .wrapper-falcon { background: #fff7ed; border: 1px solid #fed7aa; }
@@ -330,15 +337,20 @@
     .wrapper-bear { background: #f0fdf4; border: 1px solid #dcfce7; }
     .wrapper-sentinel { background: #fffbeb; border: 1px solid #fde68a; }
     .wrapper-owl { background: #ecfdf5; border: 1px solid #a7f3d0; }
+    .wrapper-pangolin { background: #f0f9ff; border: 1px solid #bae6fd; }
 
-    .mascot-card:hover .icon-wrapper {
-      transform: scale(1.05);
+    .mascot-card {
+      user-select: text;
+      -webkit-user-select: text;
     }
     .mascot-name {
       font-weight: 700;
       font-size: 1.2rem;
       margin-bottom: 0.35rem;
       color: #0f172a;
+      user-select: text;
+      -webkit-user-select: text;
+      cursor: text;
     }
     .mascot-project {
       font-size: 0.82rem;
@@ -348,11 +360,17 @@
       border-radius: 9999px;
       margin-bottom: 0.85rem;
       font-weight: 500;
+      user-select: text;
+      -webkit-user-select: text;
+      cursor: text;
     }
     .mascot-desc {
       font-size: 0.875rem;
       color: #475569;
       line-height: 1.6;
+      user-select: text;
+      -webkit-user-select: text;
+      cursor: text;
     }
 
     /* Section 2: Color Palette & Typography Matrix (Light Basis) */
@@ -999,18 +1017,18 @@
     <header>
       <div class="header-badge">✨ UX-DECK UNIFIED DESIGN SYSTEM</div>
       <h1>跨專案設計調性、風格與字體總覽</h1>
-      <div class="subtitle">以極簡白底（White Basis）為視覺根基，結合七大兄弟端點的精準品牌色調、人文/科技專屬字體排版與 ask-bridge 極簡幾何吉祥物矩陣。</div>
+      <div class="subtitle">以極簡白底（White Basis）為視覺根基，結合七大兄弟端點的精準品牌色調、人文/科技專屬字體排版與 Lucide 極簡幾何吉祥物矩陣。</div>
     </header>
 
     <!-- SECTION 1: MASCOTS (WHITE BASIS) -->
     <div class="section-title">🐾 1. 八大專案象徵幾何吉祥物 (Settled Geometric Mascots)</div>
-    <div class="section-desc">延續 ask-bridge 與 Lucide 的極簡幾何線條哲學，以 1.6px 標準線寬呈現高辨識度與親和感。</div>
+    <div class="section-desc">延續 Lucide 的極簡幾何線條哲學，以 1.8px 標準線寬呈現高辨識度與親和感。點擊吉祥物圖示可直達各站點，面板內文字均支援自由反白與複製。</div>
     <div class="mascot-grid">
       <!-- Deer -->
       <div class="mascot-card card-deer">
-        <div class="icon-wrapper wrapper-deer">
+        <a href="https://wenchiehlee.github.io/mkdocs-life/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-deer" title="造訪 mkdocs-life ↗">
           <svg class="ux-icon ux-icon-xl ux-icon-deer"><use href="#icon-deer-life"></use></svg>
-        </div>
+        </a>
         <div class="mascot-name">幾何林鹿 🦌</div>
         <div class="mascot-project">mkdocs-life (生活日誌)</div>
         <div class="mascot-desc">純粹向外開展的幾何鹿角與優雅面部弧線，傳遞北歐漫步沉思的簡約與純淨。</div>
@@ -1018,9 +1036,9 @@
 
       <!-- Bird (GoogleAlertManager) -->
       <div class="mascot-card card-falcon">
-        <div class="icon-wrapper wrapper-falcon">
+        <a href="https://wenchiehlee-money.github.io/GoogleAlertManager/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-falcon" title="造訪 GoogleAlertManager ↗">
           <svg class="ux-icon ux-icon-xl ux-icon-falcon"><use href="#icon-falcon-radar"></use></svg>
-        </div>
+        </a>
         <div class="mascot-name">破曉警報鳥 🐦</div>
         <div class="mascot-project">GoogleAlertManager (SaaS)</div>
         <div class="mascot-desc">Lucide 官方原生飛鳥搭配活力警報橘，象徵第一時間破曉啼鳴、高敏感度穿透海量資訊雜訊的敏捷情報雷達。</div>
@@ -1028,9 +1046,9 @@
 
       <!-- Whale -->
       <div class="mascot-card card-whale">
-        <div class="icon-wrapper wrapper-whale">
+        <a href="https://wenchiehlee.github.io/YoutubeAudio.Fetch/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-whale" title="造訪 YoutubeAudio.Fetch ↗">
           <svg class="ux-icon ux-icon-xl ux-icon-whale"><use href="#icon-whale-sonic"></use></svg>
-        </div>
+        </a>
         <div class="mascot-name">流暢聲波鯨 🐋</div>
         <div class="mascot-project">YoutubeAudio.Fetch (多媒體)</div>
         <div class="mascot-desc">海洋般的流線型身軀與噴氣音符水柱，象徵無窮盡的音訊串流與共鳴節奏。</div>
@@ -1038,9 +1056,9 @@
 
       <!-- Bull -->
       <div class="mascot-card card-bull">
-        <div class="icon-wrapper wrapper-bull">
+        <a href="https://wenchiehlee.github.io/mkdocs-investment/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-bull" title="造訪 mkdocs-investment ↗">
           <svg class="ux-icon ux-icon-xl ux-icon-bull"><use href="#icon-bull-fintech"></use></svg>
-        </div>
+        </a>
         <div class="mascot-name">幾何狂牛 🐂</div>
         <div class="mascot-project">mkdocs-investment (多頭攻堅)</div>
         <div class="mascot-desc">向上挺拔的牛角弧度與力量感十足的面部輪廓，代表資本增長動能與市場 Alpha。</div>
@@ -1048,9 +1066,9 @@
 
       <!-- Bear -->
       <div class="mascot-card card-bear">
-        <div class="icon-wrapper wrapper-bear">
+        <a href="https://wenchiehlee.github.io/mkdocs-investment/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-bear" title="造訪 mkdocs-investment ↗">
           <svg class="ux-icon ux-icon-xl ux-icon-bear"><use href="#icon-bear-defense"></use></svg>
-        </div>
+        </a>
         <div class="mascot-name">北歐守護熊 🐻</div>
         <div class="mascot-project">mkdocs-investment (防禦避險)</div>
         <div class="mascot-desc">幾何圓耳與厚重安心的面部弧線，象徵固若金湯的資產避風港與下檔風險保護。</div>
@@ -1058,32 +1076,29 @@
 
       <!-- Sentinel -->
       <div class="mascot-card card-sentinel">
-        <div class="icon-wrapper wrapper-sentinel">
+        <a href="https://github.com/wenchiehlee-ux/UX-Deck/tree/main/deploy/android-tv" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-sentinel" title="查看 Android TV 部署方案 ↗">
           <svg class="ux-icon ux-icon-xl ux-icon-sentinel"><use href="#icon-sentinel-tv"></use></svg>
-        </div>
+        </a>
         <div class="mascot-name">客廳小管家 柴柴 🐕</div>
         <div class="mascot-project">HomeAssistant (Android TV)</div>
         <div class="mascot-desc">忠誠靈巧的豎耳幾何柴柴，代表隨時留意全家生活動態（門鈴叮咚、家電完成、居家提醒）的貼心夥伴。</div>
       </div>
 
-
-      <!-- Pangolin -->
-      <a href="https://wenchiehlee.synology.me" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-        <div class="mascot-card card-pangolin">
-          <div class="icon-wrapper wrapper-pangolin">
-            <svg class="ux-icon ux-icon-xl ux-icon-pangolin"><use href="#icon-pangolin-shield"></use></svg>
-          </div>
-          <div class="mascot-name">敏捷守護貓 🐱</div>
-          <div class="mascot-project">wenchiehlee.quickconnect.to (Synology NAS)</div>
-          <div class="mascot-desc">Lucide 官方原生幾何守護貓，以立體三角耳與沉靜眼神，象徵在後台巡守家庭伺服器與私有化 DevOps 服務的敏捷夥伴。</div>
-        </div>
-      </a>
+      <!-- Cat (wenchiehlee.quickconnect.to) -->
+      <div class="mascot-card card-pangolin">
+        <a href="https://wenchiehlee.synology.me" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-pangolin" title="造訪 wenchiehlee.synology.me ↗">
+          <svg class="ux-icon ux-icon-xl ux-icon-pangolin"><use href="#icon-pangolin-shield"></use></svg>
+        </a>
+        <div class="mascot-name">敏捷守護貓 🐱</div>
+        <div class="mascot-project">wenchiehlee.quickconnect.to (Synology NAS)</div>
+        <div class="mascot-desc">Lucide 官方原生幾何守護貓，以立體三角耳與沉靜眼神，象徵在後台巡守家庭伺服器與私有化 DevOps 服務的敏捷夥伴。</div>
+      </div>
 
       <!-- Owl -->
       <div class="mascot-card card-owl">
-        <div class="icon-wrapper wrapper-owl">
+        <a href="https://wenchiehlee-money.github.io/My-TW-Coverage/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-owl" title="造訪 My-TW-Coverage ↗">
           <svg class="ux-icon ux-icon-xl ux-icon-owl"><use href="#icon-owl-coverage"></use></svg>
-        </div>
+        </a>
         <div class="mascot-name">拍拍翅萌萌鴞 🦉</div>
         <div class="mascot-project">My-TW-Coverage (台股個股覆蓋)</div>
         <div class="mascot-desc">圓滾滾的治癒身軀配上一對拍動小肉翅與水汪汪大眼，以親和可愛的神態陪伴穿透台股基本面與估值安全邊際。</div>
@@ -1521,12 +1536,4 @@
         <span>48px (研究貓頭鷹)</span>
       </div>
       <div class="scale-item">
-        <svg class="ux-icon ux-icon-tv ux-icon-sentinel"><use href="#icon-sentinel-tv"></use></svg>
-        <span>64px (tv 10英呎)</span>
-      </div>
-    </div>
-
-  </div>
-
-</body>
-</html>
+        <s
