@@ -202,13 +202,13 @@
     .mascot-card.card-pangolin:hover::before { background: #0284c7; }
     .wrapper-pangolin { background: #f0f9ff; border: 1px solid #bae6fd; }
 
-    /* 6. wenchiehlee.quickconnect.to Top Bar Preview (Cyber Slate NAS 控制列) */
+    /* 6. wenchiehlee.quickconnect.to Top Bar Preview (Synology Blue NAS 控制列) */
     .preview-nas-menubar {
-      background: #0f172a;
+      background: #ffffff;
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.3);
-      border: 1px solid #334155;
+      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.16);
+      border: 1px solid #bae6fd;
       font-family: "JetBrains Mono", "Inter", sans-serif;
       margin-bottom: 1.15rem;
     }
@@ -217,8 +217,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 16px;
-      background: #0f172a;
-      border-bottom: 1px solid #1e293b;
+      background: #0284c7;
+      border-bottom: 1px solid #0369a1;
       gap: 12px;
       flex-wrap: wrap;
     }
@@ -230,13 +230,13 @@
     .nas-mock-brand svg {
       width: 22px;
       height: 22px;
-      color: #38bdf8;
-      filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));
+      color: #bae6fd;
+      filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.55));
     }
     .nas-mock-site-title {
       font-size: 0.94rem;
       font-weight: 700;
-      color: #f8fafc;
+      color: #ffffff;
       letter-spacing: -0.01em;
     }
     .nas-mock-badges {
@@ -251,50 +251,60 @@
       gap: 5px;
       font-size: 0.72rem;
       font-weight: 700;
-      color: #4ade80;
-      background: rgba(34, 197, 94, 0.15);
-      border: 1px solid rgba(34, 197, 94, 0.35);
+      color: #ffffff;
+      background: #22c55e;
+      border: 1px solid rgba(255, 255, 255, 0.3);
       padding: 2px 8px;
       border-radius: 9999px;
+      box-shadow: 0 1px 3px rgba(34, 197, 94, 0.3);
     }
     .nas-mock-pill {
-      background: rgba(56, 189, 248, 0.15);
-      border: 1px solid rgba(56, 189, 248, 0.35);
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.32);
       padding: 2px 8px;
       border-radius: 9999px;
       font-size: 0.72rem;
       font-weight: 600;
-      color: #38bdf8;
+      color: #ffffff;
       white-space: nowrap;
     }
     .nas-mock-tabs {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       padding: 6px 16px 8px;
-      background: #1e293b;
+      background: #0369a1;
       overflow-x: auto;
       scrollbar-width: none;
     }
     .nas-mock-tabs::-webkit-scrollbar { display: none; }
     .nas-mock-tab {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      color: #94a3b8;
-      padding: 3px 10px;
-      border-radius: 6px;
+      color: rgba(255, 255, 255, 0.85);
+      padding: 2px 0;
+      position: relative;
       cursor: pointer;
       white-space: nowrap;
-      transition: all 0.18s ease;
+      transition: color 0.18s ease;
     }
     .nas-mock-tab:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: #f1f5f9;
+      color: #ffffff;
     }
     .nas-mock-tab.active {
-      background: #0284c7;
       color: #ffffff;
       font-weight: 700;
+    }
+    .nas-mock-tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2.5px;
+      background: #38bdf8;
+      border-radius: 2px;
+      box-shadow: 0 0 6px rgba(56, 189, 248, 0.8);
     }
 
     /* Preview: Synology NAS White Basis DevOps HUD */
@@ -1115,12 +1125,12 @@
       color: #64748b;
     }
 
-    /* 4. mkdocs-investment Top Bar Preview (Fintech Navy MkDocs 導航選單列) */
+    /* 4. mkdocs-investment Top Bar Preview (Royal Blue MkDocs 導航選單列) */
     .preview-fintech-menubar {
       background: #ffffff;
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(30, 58, 138, 0.15);
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.16);
       border: 1px solid #bfdbfe;
       font-family: "Inter", "Noto Sans TC", sans-serif;
       margin-bottom: 1.15rem;
@@ -1130,7 +1140,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 16px;
-      background: #1e3a8a;
+      background: #2563eb;
       border-bottom: 1px solid #1d4ed8;
       gap: 12px;
       flex-wrap: wrap;
@@ -1143,8 +1153,8 @@
     .fintech-mock-brand svg {
       width: 22px;
       height: 22px;
-      color: #93c5fd;
-      filter: drop-shadow(0 0 6px rgba(147, 197, 253, 0.5));
+      color: #bfdbfe;
+      filter: drop-shadow(0 0 6px rgba(191, 219, 254, 0.55));
     }
     .fintech-mock-site-title {
       font-size: 0.96rem;
@@ -1161,7 +1171,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      background: rgba(0, 0, 0, 0.22);
+      background: rgba(0, 0, 0, 0.18);
       padding: 4px 10px;
       border-radius: 6px;
       font-size: 0.78rem;
@@ -1182,7 +1192,7 @@
       align-items: center;
       gap: 14px;
       padding: 6px 16px 8px;
-      background: #172554;
+      background: #1d4ed8;
       overflow-x: auto;
       scrollbar-width: none;
     }
@@ -1190,7 +1200,7 @@
     .fintech-mock-tab {
       font-size: 0.82rem;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.88);
       padding: 2px 0;
       position: relative;
       cursor: pointer;
@@ -1211,7 +1221,7 @@
       left: 0;
       right: 0;
       height: 2.5px;
-      background: #38bdf8;
+      background: #ffffff;
       border-radius: 2px;
     }
 
@@ -2426,3 +2436,4 @@
 
 </body>
 </html>
+                                                                                                                     
