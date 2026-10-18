@@ -1545,6 +1545,125 @@
       width: fit-content;
     }
 
+    /* TV HUD Scenarios Tabs & Cases Grid */
+    .tv-scenario-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 1.25rem;
+    }
+    .tv-scenario-tab {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+    }
+    .tv-scenario-tab:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .tv-scenario-tab.active {
+      background: #0f172a;
+      color: #38bdf8;
+      border-color: #38bdf8;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.25);
+    }
+    .tv-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+    .tv-case-card {
+      background: #0b1120;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .tv-case-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.5);
+    }
+    .tv-case-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .tv-case-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      letter-spacing: 0.04em;
+    }
+    .tv-case-trigger {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      font-family: "JetBrains Mono", monospace;
+    }
+    .tv-case-toast {
+      background: rgba(15, 23, 42, 0.50);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1rem 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .tv-case-toast .tv-hud-icon {
+      width: 44px;
+      height: 44px;
+    }
+    .tv-case-toast .tv-hud-title {
+      font-size: 1.15rem;
+      margin-bottom: 0.2rem;
+    }
+    .tv-case-toast .tv-hud-message {
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+    .tv-case-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+      padding-top: 0.65rem;
+    }
+    .tv-case-link {
+      color: #38bdf8;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 600;
+    }
+    .tv-case-link:hover {
+      text-decoration: underline;
+    }
+
+
     /* Section 4: Scale Row (White Basis) */
     .scale-row {
       display: flex;
@@ -2378,19 +2497,191 @@
         </div>
 
         <div class="live-preview-section">
-          <div class="preview-section-header">⚡ 10-Foot 實況電視畫面模擬 (沙發觀看距離 3~4 公尺)</div>
+          <div class="preview-section-header">⚡ 10-Foot 實況電視畫面模擬 (沙發觀看距離 3~4 公尺 · 點擊切換情境)</div>
+
+          <!-- Scenario Switcher Tabs -->
+          <div class="tv-scenario-tabs">
+            <button class="tv-scenario-tab active" data-scenario="doorbell">
+              <span>🔔</span><span>玄關訪客</span>
+            </button>
+            <button class="tv-scenario-tab" data-scenario="washer_done">
+              <span>🧺</span><span>洗衣完成</span>
+            </button>
+            <button class="tv-scenario-tab" data-scenario="washer_running">
+              <span>⏱️</span><span>洗衣進度</span>
+            </button>
+            <button class="tv-scenario-tab" data-scenario="dryer_done">
+              <span>👕</span><span>乾衣完成</span>
+            </button>
+            <button class="tv-scenario-tab" data-scenario="calendar">
+              <span>📅</span><span>今日行程</span>
+            </button>
+            <button class="tv-scenario-tab" data-scenario="battery_low">
+              <span>🪫</span><span>設備電量</span>
+            </button>
+            <button class="tv-scenario-tab" data-scenario="delivery">
+              <span>🛵</span><span>外送到達</span>
+            </button>
+          </div>
+
           <div class="preview-tv">
             <div class="tv-mock-backdrop"></div>
-            <!-- Actual HUD Toast Component Matching 1F TV Real Output -->
-            <div class="tv-hud-toast">
-              <svg class="ux-icon tv-hud-icon"><use href="#icon-sentinel-tv"></use></svg>
+            <!-- Actual Dynamic HUD Toast Matching 1F Physical Android TV Output -->
+            <div class="tv-hud-toast" id="tv-main-toast">
+              <svg class="ux-icon tv-hud-icon" id="tv-main-icon"><use href="#icon-sentinel-tv"></use></svg>
               <div class="tv-hud-content">
-                <div class="tv-hud-title">玄關訪客叮咚 🔔</div>
-                <div class="tv-hud-message">大門有人按門鈴，門鎖維持安全上鎖中 🐾</div>
+                <div class="tv-hud-title" id="tv-main-title">玄關訪客叮咚 🔔</div>
+                <div class="tv-hud-message" id="tv-main-msg">大門有人按門鈴，門鎖維持安全上鎖中 🐾</div>
               </div>
-              <div class="tv-progress"></div>
+              <div class="tv-progress" id="tv-main-prog" style="width: 65%;"></div>
             </div>
-            <div class="tv-footer-hint">📺 模擬 1F 客廳 Android TV 1920x1080 視角 (隨生活情境動態推播)</div>
+            <div class="tv-footer-hint">📺 模擬 1F 客廳 Android TV 1920x1080 視角 (點擊上方頁籤切換 7 大生活情境)</div>
+          </div>
+
+          <!-- 7 Core HomeAssistant TV Scenarios Matrix Grid -->
+          <div class="preview-section-header" style="margin-top: 2rem;">📋 7 大客廳生活通知情境矩陣 (Living Room Scenario Cases Matrix)</div>
+          <div class="tv-cases-grid">
+
+            <!-- Case 1: Doorbell -->
+            <div class="tv-case-card">
+              <div class="tv-case-header">
+                <span class="tv-case-badge" style="background: rgba(217, 119, 6, 0.2); color: #fbbf24; border: 1px solid rgba(217, 119, 6, 0.4);">安防門禁 · 即時通報</span>
+                <span class="tv-case-trigger">binary_sensor.doorbell</span>
+              </div>
+              <div class="tv-case-toast" style="border-color: rgba(56, 189, 248, 0.35);">
+                <svg class="ux-icon tv-hud-icon" style="color: #d97706; filter: drop-shadow(0 0 10px rgba(217, 119, 6, 0.6));"><use href="#icon-sentinel-tv"></use></svg>
+                <div class="tv-hud-content">
+                  <div class="tv-hud-title" style="color: #38bdf8;">玄關訪客叮咚 🔔</div>
+                  <div class="tv-hud-message">大門有人按門鈴，門鎖維持安全上鎖中 🐾</div>
+                </div>
+                <div class="tv-progress" style="width: 65%; background: #38bdf8; box-shadow: 0 0 8px #38bdf8;"></div>
+              </div>
+              <div class="tv-case-footer">
+                <span>重點：赤柴守護犬、18px 圓角、高對比白字</span>
+                <a href="deploy/android-tv/huds/doorbell.png" target="_blank" class="tv-case-link">下載 PNG ↗</a>
+              </div>
+            </div>
+
+            <!-- Case 2: Washer Done -->
+            <div class="tv-case-card">
+              <div class="tv-case-header">
+                <span class="tv-case-badge" style="background: rgba(52, 211, 153, 0.2); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.4);">家電遙測 · 洗衣完成</span>
+                <span class="tv-case-trigger">sensor.xi_yi_ji_status == 'done'</span>
+              </div>
+              <div class="tv-case-toast" style="border-color: rgba(52, 211, 153, 0.35);">
+                <svg class="ux-icon tv-hud-icon" style="color: #34d399; filter: drop-shadow(0 0 10px rgba(52, 211, 153, 0.6));"><use href="#icon-sentinel-tv"></use></svg>
+                <div class="tv-hud-content">
+                  <div class="tv-hud-title" style="color: #34d399;">洗衣完成！ 🧺</div>
+                  <div class="tv-hud-message">衣服已洗好，記得及時晾曬衣物喔 ✨</div>
+                </div>
+                <div class="tv-progress" style="width: 100%; background: #34d399; box-shadow: 0 0 8px #34d399;"></div>
+              </div>
+              <div class="tv-case-footer">
+                <span>重點：翡翠薄荷綠完成光暈、100% 滿格進度</span>
+                <a href="deploy/android-tv/huds/washer_done.png" target="_blank" class="tv-case-link">下載 PNG ↗</a>
+              </div>
+            </div>
+
+            <!-- Case 3: Washer Running -->
+            <div class="tv-case-card">
+              <div class="tv-case-header">
+                <span class="tv-case-badge" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4);">家電遙測 · 運轉進度</span>
+                <span class="tv-case-trigger">sensor.xi_yi_ji_remaining_time</span>
+              </div>
+              <div class="tv-case-toast" style="border-color: rgba(56, 189, 248, 0.35);">
+                <svg class="ux-icon tv-hud-icon" style="color: #38bdf8; filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.6));"><use href="#icon-sentinel-tv"></use></svg>
+                <div class="tv-hud-content">
+                  <div class="tv-hud-title" style="color: #38bdf8;">洗衣機運轉中 ⏱️</div>
+                  <div class="tv-hud-message">運轉中... 預計 15:45 洗滌完成 🫧</div>
+                </div>
+                <div class="tv-progress" style="width: 45%; background: #38bdf8; box-shadow: 0 0 8px #38bdf8;"></div>
+              </div>
+              <div class="tv-case-footer">
+                <span>重點：冰晶藍進度光條、即時預估剩餘時間</span>
+                <a href="deploy/android-tv/huds/washer_running.png" target="_blank" class="tv-case-link">下載 PNG ↗</a>
+              </div>
+            </div>
+
+            <!-- Case 4: Dryer Done -->
+            <div class="tv-case-card">
+              <div class="tv-case-header">
+                <span class="tv-case-badge" style="background: rgba(251, 146, 60, 0.2); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.4);">家電遙測 · 乾衣完成</span>
+                <span class="tv-case-trigger">sensor.gan_yi_ji_status == 'done'</span>
+              </div>
+              <div class="tv-case-toast" style="border-color: rgba(251, 146, 60, 0.35);">
+                <svg class="ux-icon tv-hud-icon" style="color: #fb923c; filter: drop-shadow(0 0 10px rgba(251, 146, 60, 0.6));"><use href="#icon-sentinel-tv"></use></svg>
+                <div class="tv-hud-content">
+                  <div class="tv-hud-title" style="color: #fb923c;">乾衣完成！ 👕</div>
+                  <div class="tv-hud-message">烘衣行程已結束，請取出柔軟衣物 ✨</div>
+                </div>
+                <div class="tv-progress" style="width: 100%; background: #fb923c; box-shadow: 0 0 8px #fb923c;"></div>
+              </div>
+              <div class="tv-case-footer">
+                <span>重點：溫暖烘乾橘金、取出衣物貼心叮嚀</span>
+                <a href="deploy/android-tv/huds/dryer_done.png" target="_blank" class="tv-case-link">下載 PNG ↗</a>
+              </div>
+            </div>
+
+            <!-- Case 5: Calendar -->
+            <div class="tv-case-card">
+              <div class="tv-case-header">
+                <span class="tv-case-badge" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4);">生活行事曆 · 日程規劃</span>
+                <span class="tv-case-trigger">calendar.timetree_schedule</span>
+              </div>
+              <div class="tv-case-toast" style="border-color: rgba(56, 189, 248, 0.35);">
+                <svg class="ux-icon tv-hud-icon" style="color: #d97706; filter: drop-shadow(0 0 10px rgba(217, 119, 6, 0.6));"><use href="#icon-sentinel-tv"></use></svg>
+                <div class="tv-hud-content">
+                  <div class="tv-hud-title" style="color: #38bdf8;">今日行程提醒 📅</div>
+                  <div class="tv-hud-message">今天整天：家庭聚餐、採買食材 ⏰</div>
+                </div>
+                <div class="tv-progress" style="width: 30%; background: #38bdf8; box-shadow: 0 0 8px #38bdf8;"></div>
+              </div>
+              <div class="tv-case-footer">
+                <span>重點：家庭全日/定時行程、3~4 米視距清晰讀取</span>
+                <a href="deploy/android-tv/huds/calendar.png" target="_blank" class="tv-case-link">下載 PNG ↗</a>
+              </div>
+            </div>
+
+            <!-- Case 6: Battery Low -->
+            <div class="tv-case-card">
+              <div class="tv-case-header">
+                <span class="tv-case-badge" style="background: rgba(251, 191, 36, 0.2); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.4);">維護警告 · 設備電量</span>
+                <span class="tv-case-trigger">sensor.nightlight_battery &lt; 10</span>
+              </div>
+              <div class="tv-case-toast" style="border-color: rgba(251, 191, 36, 0.35);">
+                <svg class="ux-icon tv-hud-icon" style="color: #fbbf24; filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.6));"><use href="#icon-sentinel-tv"></use></svg>
+                <div class="tv-hud-content">
+                  <div class="tv-hud-title" style="color: #fbbf24;">設備電量警告 🪫</div>
+                  <div class="tv-hud-message">客廳夜燈電量低於 10%，請及時充電 ⚡</div>
+                </div>
+                <div class="tv-progress" style="width: 10%; background: #fbbf24; box-shadow: 0 0 8px #fbbf24;"></div>
+              </div>
+              <div class="tv-case-footer">
+                <span>重點：醒目琥珀警戒黃、即早預警防止設備離線</span>
+                <a href="deploy/android-tv/huds/battery_low.png" target="_blank" class="tv-case-link">下載 PNG ↗</a>
+              </div>
+            </div>
+
+            <!-- Case 7: Foodpanda Delivery -->
+            <div class="tv-case-card">
+              <div class="tv-case-header">
+                <span class="tv-case-badge" style="background: rgba(251, 146, 60, 0.2); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.4);">即時快遞 · 外送到達</span>
+                <span class="tv-case-trigger">sensor.foodpanda_order_status</span>
+              </div>
+              <div class="tv-case-toast" style="border-color: rgba(251, 146, 60, 0.35);">
+                <svg class="ux-icon tv-hud-icon" style="color: #fb923c; filter: drop-shadow(0 0 10px rgba(251, 146, 60, 0.6));"><use href="#icon-sentinel-tv"></use></svg>
+                <div class="tv-hud-content">
+                  <div class="tv-hud-title" style="color: #fb923c;">外送到達！ 🛵</div>
+                  <div class="tv-hud-message">Foodpanda 外送員已抵達，請至門口取餐 🍱</div>
+                </div>
+                <div class="tv-progress" style="width: 90%; background: #fb923c; box-shadow: 0 0 8px #fb923c;"></div>
+              </div>
+              <div class="tv-case-footer">
+                <span>重點：亮眼珊瑚粉橘、免看手機立即取餐</span>
+                <a href="deploy/android-tv/huds/delivery.png" target="_blank" class="tv-case-link">下載 PNG ↗</a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -2438,6 +2729,86 @@
 
   </div>
 
+  <!-- Interactive Script for Card 7 Scenario Tabs -->
+  <script>
+    const tvScenarios = {
+      doorbell: {
+        title: "玄關訪客叮咚 🔔",
+        msg: "大門有人按門鈴，門鎖維持安全上鎖中 🐾",
+        accent: "#38bdf8",
+        iconColor: "#d97706",
+        progress: "65%"
+      },
+      washer_done: {
+        title: "洗衣完成！ 🧺",
+        msg: "衣服已洗好，記得及時晾曬衣物喔 ✨",
+        accent: "#34d399",
+        iconColor: "#34d399",
+        progress: "100%"
+      },
+      washer_running: {
+        title: "洗衣機運轉中 ⏱️",
+        msg: "運轉中... 預計 15:45 洗滌完成 🫧",
+        accent: "#38bdf8",
+        iconColor: "#38bdf8",
+        progress: "45%"
+      },
+      dryer_done: {
+        title: "乾衣完成！ 👕",
+        msg: "烘衣行程已結束，請取出柔軟衣物 ✨",
+        accent: "#fb923c",
+        iconColor: "#fb923c",
+        progress: "100%"
+      },
+      calendar: {
+        title: "今日行程提醒 📅",
+        msg: "今天整天：家庭聚餐、採買食材 ⏰",
+        accent: "#38bdf8",
+        iconColor: "#d97706",
+        progress: "30%"
+      },
+      battery_low: {
+        title: "設備電量警告 🪫",
+        msg: "客廳夜燈電量低於 10%，請及時充電 ⚡",
+        accent: "#fbbf24",
+        iconColor: "#fbbf24",
+        progress: "10%"
+      },
+      delivery: {
+        title: "外送到達！ 🛵",
+        msg: "Foodpanda 外送員已抵達，請至門口取餐 🍱",
+        accent: "#fb923c",
+        iconColor: "#fb923c",
+        progress: "90%"
+      }
+    };
+
+    document.querySelectorAll('.tv-scenario-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tv-scenario-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const sc = tvScenarios[tab.dataset.scenario];
+        if (sc) {
+          const toast = document.getElementById('tv-main-toast');
+          const title = document.getElementById('tv-main-title');
+          const msg = document.getElementById('tv-main-msg');
+          const prog = document.getElementById('tv-main-prog');
+          const icon = document.getElementById('tv-main-icon');
+
+          title.textContent = sc.title;
+          title.style.color = sc.accent;
+          msg.textContent = sc.msg;
+          icon.style.color = sc.iconColor;
+          icon.style.filter = `drop-shadow(0 0 10px ${sc.iconColor}99)`;
+          prog.style.width = sc.progress;
+          prog.style.background = sc.accent;
+          prog.style.boxShadow = `0 0 8px ${sc.accent}`;
+          toast.style.borderColor = `${sc.accent}55`;
+          toast.style.boxShadow = `0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px ${sc.accent}25`;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
                                                                                                                      
