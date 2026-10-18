@@ -29,13 +29,11 @@
           icon:
             url: "/local/ux-deck/animal-icons.svg#icon-sentinel-tv"
 
-    # 方案 B: 使用 PiPup (已在 1F Android TV 實測驗證的最佳化 10-Foot HUD 參數)
+    # 方案 B: 使用 PiPup (已在 1F/2F Android TV 實測驗證的最佳化 10-Foot HUD 參數)
     # - service: rest_command.pipup_notify_1f
     #   data:
-    #     title: "玄關訪客叮咚 🔔"
-    #     message: "大門有人按門鈴，門鎖維持安全上鎖狀態 🐾"
-    #     duration: 15
-    #     image_width: 80
+    #     payload_json: >-
+    #       {"duration":15,"position":1,"title":"玄關訪客叮咚 🔔","titleColor":"#38bdf8","titleSize":20,"message":"大門有人按門鈴，門鎖維持安全上鎖中 🐾","messageColor":"#f1f5f9","messageSize":16,"backgroundColor":"#ee0f172a","media":{"image":{"uri":"https://img.icons8.com/fluency/96/doorbell.png","width":64}}}
 
 # ------------------------------------------------------------------------------
 # 2. 家電運作完畢提醒 (Laundry / Dishwasher Complete Toast)
@@ -89,10 +87,16 @@
 
 # ==============================================================================
 # 附錄：Home Assistant configuration.yaml 中的 rest_command 配置
-# （搭配 PiPup 實現與 showcase.html 100% 一致的 10-Foot Frosted HUD）
+# （搭配 PiPup 實現與 UX-Deck 100% 一致的 10-Foot Frosted HUD）
 # ==============================================================================
 # rest_command:
 #   pipup_notify_1f:
-#     url: >-
-#       http://192.168.31.232:7979/notify?title={{ title | urlencode }}&message={{ message | urlencode }}&duration={{ duration | default(10) }}&imageWidth={{ image_width | default(80) }}&titleColor=%2338bdf8&messageColor=%23ffffff&backgroundColor=%23ee0a0c12
+#     url: "http://192.168.31.232:7979/notify"
 #     method: POST
+#     content_type: "application/json"
+#     payload: "{{ payload_json }}"
+#   pipup_notify_2f:
+#     url: "http://192.168.31.215:7979/notify"
+#     method: POST
+#     content_type: "application/json"
+#     payload: "{{ payload_json }}"
