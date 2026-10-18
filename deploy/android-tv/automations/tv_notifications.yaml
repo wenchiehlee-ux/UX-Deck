@@ -1,93 +1,131 @@
 # ==============================================================================
-# Home Assistant Automations & Scripts: Android TV 10-foot HUD Notifications
-# Path in HA: /config/automations/tv_notifications.yaml
+# Home Assistant Automations: Android TV 10-Foot Frosted HUD (PiPup)
+# File: deploy/android-tv/automations/tv_notifications.yaml
+# Production Standard: 60% Translucent Dark Slate with 18px True Rounded Corners
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
-# 1. 門鈴偵測與即時快照提醒 (Doorbell / Front Door Visitor Popup)
+# 1. 訪客門鈴即時提醒 (Doorbell Visitor Alert)
 # ------------------------------------------------------------------------------
 - id: "tv_notify_doorbell_visitor"
   alias: "TV HUD: 門鈴訪客即時提醒"
-  description: "當門鈴觸發或玄關偵測到訪客時，於客廳 Android TV 顯示 8 秒毛玻璃 HUD 通知"
+  description: "當門鈴觸發或玄關偵測到訪客時，於客廳 Android TV 顯示 15 秒 18px 圓角毛玻璃 HUD"
   trigger:
     - platform: state
-      entity_id: binary_sensor.front_door_doorbell # 請替換為您的門鈴感測實體
+      entity_id: binary_sensor.front_door_doorbell
       to: "on"
   action:
-    # 方案 A: 使用 Notifications for Android TV (NFATV 廣播)
-    - service: notify.android_tv_living_room # 請替換為您的 Android TV notify 實體名稱
+    # 【方案 B 首選】：極致美感 18px 圓角透明 HUD (零白框、完美穿透電視畫面)
+    - service: rest_command.pipup_notify_1f
       data:
-        title: "客廳守護犬提醒 🐕 · 玄關訪客"
-        message: "大門有人按門鈴，門鎖維持安全上鎖狀態。"
-        data:
-          duration: 8
-          position: "top-right"
-          fontsize: "large"
-          transparency: "20%"
-          color: "#0a0c12"
-          interrupt: false
-          icon:
-            url: "/local/ux-deck/animal-icons.svg#icon-sentinel-tv"
-
-    # 方案 B: 使用 PiPup (已在 1F/2F Android TV 實測驗證的最佳化 10-Foot HUD 參數)
-    # - service: rest_command.pipup_notify_1f
-    #   data:
-    #     payload_json: >-
-    #       {"duration":15,"position":0,"title":"玄關訪客叮咚 🔔","titleColor":"#38bdf8","titleSize":20,"message":"大門有人按門鈴，門鎖維持安全上鎖中 🐾","messageColor":"#f1f5f9","messageSize":16,"backgroundColor":"#660f172a","media":{"image":{"uri":"https://img.icons8.com/fluency/96/doorbell.png","width":64}}}
+        payload_json: >-
+          {"duration":15,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/doorbell.png","width":480}}}
+    - service: rest_command.pipup_notify_2f
+      data:
+        payload_json: >-
+          {"duration":15,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/doorbell.png","width":480}}}
 
 # ------------------------------------------------------------------------------
-# 2. 家電運作完畢提醒 (Laundry / Dishwasher Complete Toast)
+# 2. 洗衣機完成提醒 (Washer Complete Toast)
 # ------------------------------------------------------------------------------
-- id: "tv_notify_laundry_complete"
-  alias: "TV HUD: 洗衣機清洗完畢"
-  description: "洗衣機清洗完畢時，在電視右上角低干擾提示"
+- id: "tv_notify_washer_complete"
+  alias: "TV HUD: 洗衣完成提醒"
+  description: "洗衣機清洗完畢時，於電視右上角推播綠色完成狀態 HUD"
   trigger:
     - platform: state
-      entity_id: sensor.washing_machine_status # 請替換為您的家電感測實體
-      to: "finish"
+      entity_id: sensor.xi_yi_ji_current_status
+      to: "complete"
   action:
-    - service: notify.android_tv_living_room
+    - service: rest_command.pipup_notify_1f
       data:
-        title: "智慧家電提示 🧺"
-        message: "洗衣機清洗程序已完成，請記得晾曬衣物。"
-        data:
-          duration: 6
-          position: "top-right"
-          fontsize: "medium"
-          transparency: "20%"
-          color: "#0a0c12"
-          interrupt: false
+        payload_json: >-
+          {"duration":25,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/washer_done.png","width":480}}}
+    - service: rest_command.pipup_notify_2f
+      data:
+        payload_json: >-
+          {"duration":25,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/washer_done.png","width":480}}}
 
 # ------------------------------------------------------------------------------
-# 3. 客廳安全守護夜間警戒 (Security Night Sentinel Alert)
+# 3. 洗衣機運轉進度 (Washer Running Status)
 # ------------------------------------------------------------------------------
-- id: "tv_notify_perimeter_alert"
-  alias: "TV HUD: 周邊警戒警報"
-  description: "夜間庭院或後門感測器觸發時的高對比警報"
+- id: "tv_notify_washer_running"
+  alias: "TV HUD: 洗衣機運轉進度"
+  description: "洗衣機運轉中階段推播冰晶藍進度通知"
   trigger:
     - platform: state
-      entity_id: binary_sensor.backyard_motion
-      to: "on"
-  condition:
-    - condition: state
-      entity_id: sun.sun
-      state: "below_horizon"
+      entity_id: sensor.xi_yi_ji_current_status
+      to: "running"
   action:
-    - service: notify.android_tv_living_room
+    - service: rest_command.pipup_notify_1f
       data:
-        title: "⚠️ 周邊警戒偵測"
-        message: "後院感應燈已觸發，偵測到動態移動。"
-        data:
-          duration: 12
-          position: "top-right"
-          fontsize: "large"
-          transparency: "10%"
-          color: "#7f1d1d" # 警示深紅
-          interrupt: true
+        payload_json: >-
+          {"duration":15,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/washer_running.png","width":480}}}
+
+# ------------------------------------------------------------------------------
+# 4. 乾衣完成提醒 (Dryer Complete Toast)
+# ------------------------------------------------------------------------------
+- id: "tv_notify_dryer_complete"
+  alias: "TV HUD: 乾衣完成提醒"
+  description: "乾衣機烘乾程序結束時，於電視右上角推播溫暖橘金 HUD"
+  trigger:
+    - platform: state
+      entity_id: sensor.gan_yi_ji_current_status
+      to: "complete"
+  action:
+    - service: rest_command.pipup_notify_1f
+      data:
+        payload_json: >-
+          {"duration":25,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/dryer_done.png","width":480}}}
+
+# ------------------------------------------------------------------------------
+# 5. 家庭行事曆日程提醒 (TimeTree Calendar Alert)
+# ------------------------------------------------------------------------------
+- id: "tv_notify_calendar_schedule"
+  alias: "TV HUD: 今日日程提醒"
+  description: "全天行程（早上08:00）或即將到來事件於電視推播"
+  trigger:
+    - platform: time
+      at: "08:00:00"
+  action:
+    - service: rest_command.pipup_notify_1f
+      data:
+        payload_json: >-
+          {"duration":20,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar.png","width":480}}}
+
+# ------------------------------------------------------------------------------
+# 6. 設備低電量警告 (Battery Low Warning)
+# ------------------------------------------------------------------------------
+- id: "tv_notify_battery_low"
+  alias: "TV HUD: 設備電量警告"
+  description: "客廳夜燈或感測器電量低於 10% 時於電視警示"
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.nightlight_battery
+      below: 10
+  action:
+    - service: rest_command.pipup_notify_1f
+      data:
+        payload_json: >-
+          {"duration":20,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/battery_low.png","width":480}}}
+
+# ------------------------------------------------------------------------------
+# 7. 外送到達提醒 (Foodpanda Delivery Alert)
+# ------------------------------------------------------------------------------
+- id: "tv_notify_foodpanda_delivery"
+  alias: "TV HUD: 外送到達提醒"
+  description: "外送員抵達時於電視右上角推播亮橘 HUD"
+  trigger:
+    - platform: state
+      entity_id: sensor.foodpanda_order_status
+      to: "arrived"
+  action:
+    - service: rest_command.pipup_notify_1f
+      data:
+        payload_json: >-
+          {"duration":30,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/delivery.png","width":480}}}
 
 # ==============================================================================
-# 附錄：Home Assistant configuration.yaml 中的 rest_command 配置
-# （搭配 PiPup 實現與 UX-Deck 100% 一致的 10-Foot Frosted HUD）
+# 附錄：Home Assistant configuration.yaml 必備 rest_command 配置
 # ==============================================================================
 # rest_command:
 #   pipup_notify_1f:

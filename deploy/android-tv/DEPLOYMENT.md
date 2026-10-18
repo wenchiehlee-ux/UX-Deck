@@ -1,6 +1,6 @@
-# HomeAssistant on Android TV: 10-Foot Frosted HUD 部署指南
+# HomeAssistant on Android TV: 10-Foot Frosted HUD 完整部署指南
 
-本指南提供將 **UX-Deck 10-Foot Frosted HUD** 部署至真實客廳 **Android TV (Google TV)** 與 **Home Assistant** 的完整步驟。
+本指南提供將 **UX-Deck 10-Foot 客廳毛玻璃 HUD（Card 7）** 完整部署至真實客廳 **Android TV (1F / 2F)** 與 **Home Assistant** 的標準作業程序。
 
 ---
 
@@ -8,69 +8,149 @@
 
 | 設計維度 | 規範標準 | 理由與效益 |
 | :--- | :--- | :--- |
-| **觀看距離** | 3 ~ 4 公尺客廳沙發視角 | 文字最小 20px，標題 26px~32px，高對比白字配深色毛玻璃 |
-| **停駐位置** | 螢幕右上角 (`top: 48px, right: 56px`) | 完全避開中央電影主體畫面與下方字幕條（無碰撞干擾） |
-| **遙控器 D-pad** | 亮青色焦點外框 (`border: 2px solid #38bdf8`) | 高可見度發光 Focus 動效，支援電視遙控器左右切換與 OK 鍵 |
-| **自動關閉進度條** | 底部動態倒數收合條 (預設 8 秒) | 讓觀影者一目了然通知剩餘停留時間 |
-| **象徵吉祥物** | 客廳守護犬 🐕 (`#icon-sentinel-tv`) | 守護家庭安全，具備呼吸光暈微動態 |
+| **觀看距離** | 3 ~ 4 公尺客廳沙發視角 | 標題 `20pt` (約 26~32px)，內文 `16pt`，高對比白字配深色毛玻璃 |
+| **字體體系** | `Zen Maru Gothic` (日雜圓體 700) + `Comfortaa` | 溫暖柔和、視覺親和力高，搭配彩色 3D Emoji（🔔, 🧺, 🐾） |
+| **停駐位置** | 螢幕右上角 (`position: 0` = TopRight) | 完全避開中央視線主體與底部電影字幕條（零視覺干擾） |
+| **背景透光度** | 60% 透光 Cyber Dark Slate (`#660f172a` / 40% 不透明) | 兼顧文字極高辨識度與電視畫面穿透感 |
+| **象徵吉祥物** | 客廳守護靈犬 🐕 (`#icon-sentinel-tv`) | 暖心赤柴金琥珀色 (`#d97706`)，守護居家安防與生活進度 |
+| **邊角效果** | **18px ~ 24px 平滑真圓角** (透過 Solution B 實現) | 圓角外部 100% 透明無白框，極致客廳美感 |
 
 ---
 
-## 🚀 部署步驟 (Deployment Steps)
+## 🚀 兩大實體部署方案選擇
 
-### 步驟 1：部署靜態資源至 Home Assistant
+### 方案 B（首選推薦）：極致美感 18px 圓角透明 HUD (Solution B)
+- **技術原理**：透過 32-bit RGBA 透明 PNG 預渲染技術，PiPup 設定 `backgroundColor: "#00000000"`（100% 全透明底）。
+- **優勢**：
+  - **100% 杜絕 Android WebView 預設白畫布產生的白框瑕疵**。
+  - 真正實現 **18px 平滑圓角**、**柔和發光邊框**、**日雜圓體** 與 **赤柴吉祥物 🐕**。
+  - 本地快取預渲染 PNG，零延遲瞬間彈出。
 
-將本專案 `deploy/android-tv/www/` 內的所有檔案複製到 Home Assistant 的 `/config/www/ux-deck/` 目錄：
+### 方案 A：極簡原生直角 Scrim (Mode A)
+- **技術原理**：直接使用 PiPup 原生 TextView 與背景色彩值 `#660f172a`。
+- **優勢**：零外部依賴、純文字即時傳遞。受限於 Android 原生限制為俐落的 90° 直角。
+
+---
+
+## 🛠️ 完整部署步驟
+
+### 步驟 1：部署靜態資源至 Home Assistant `/config/www/`
+
+將本目錄下的 `www/` 內所有檔案（包含 `huds/` 7 大情境 PNG、`sentinel_icon.png`、`animal-icons.svg`）複製至 Home Assistant：
 
 ```bash
-# 透過 SSH 或 Samba 將資源放置於 HA www 目錄
+# 在 Home Assistant 伺服器 (Synology NAS / Linux) 執行：
 mkdir -p /config/www/ux-deck/
-cp ./deploy/android-tv/www/tv-popup.css /config/www/ux-deck/
-cp ./deploy/android-tv/www/animal-icons.svg /config/www/ux-deck/
+cp -r ./deploy/android-tv/www/* /config/www/ux-deck/
 ```
 
-> **驗證連結**：在瀏覽器造訪 `http://<YOUR_HA_IP>:8123/local/ux-deck/tv-popup.css`，確認可正常載入。
+> 驗證確認：在瀏覽器造訪 `http://<YOUR_HA_IP>:8123/local/ux-deck/huds/doorbell.png`，確認能正常顯示透明圓角 HUD。
 
 ---
 
-### 步驟 2：啟用客廳電視主題 (Theme)
+### 步驟 2：配置 Home Assistant `rest_command`
 
-1. 將 [themes/tv_frosted_hud.yaml](./themes/tv_frosted_hud.yaml) 複製至 Home Assistant 的 `/config/themes/` 目錄。
-2. 確認 `configuration.yaml` 中包含主題支援：
-   ```yaml
-   frontend:
-     themes: !include_dir_merge_named themes
-   ```
-3. 在 Home Assistant 中前往 **開發者工具** -> **YAML** -> 點擊 **重新載入主題**。
+在 Home Assistant 的 `configuration.yaml` 中確認已配置兩台電視的 PiPup 端點：
 
----
+```yaml
+rest_command:
+  pipup_notify_1f:
+    url: "http://192.168.31.232:7979/notify"
+    method: POST
+    content_type: "application/json"
+    payload: "{{ payload_json }}"
 
-### 步驟 3：部署電視彈窗通知自動化 (Automations)
+  pipup_notify_2f:
+    url: "http://192.168.31.215:7979/notify"
+    method: POST
+    content_type: "application/json"
+    payload: "{{ payload_json }}"
+```
 
-1. 將 [automations/tv_notifications.yaml](./automations/tv_notifications.yaml) 內的規則合併至您的 `/config/automations.yaml`。
-2. 替換您的門鈴、相機與家電實體名稱（例如 `binary_sensor.front_door_doorbell`、`camera.front_door`）。
-3. 支援兩大電視推播方案：
-   - **方案 A (最通用 - Notifications for Android TV)**：在電視安裝 `Notifications for Android TV` App，HA 配置 `notify.android_tv`，支援原生系統層覆蓋通知。
-   - **方案 B (進階相機串流 - PiPup)**：在電視透過 ADB 安裝 `PiPup`，支援直接在電視任意畫面中彈出 HTML 或監視器 live 快照。
-
----
-
-### 步驟 4：客廳電視專屬大看板 (Lovelace Dashboard)
-
-若電視端使用 **Fully Kiosk Browser**、**Wallpanel** 或 **Home Assistant Android TV App**：
-1. 建立一個新 Dashboard 或將 [dashboards/tv_dashboard.yaml](./dashboards/tv_dashboard.yaml) 匯入。
-2. 將主題設定為 `tv_frosted_hud`。
-3. 享受專為電視遙控器方向鍵設計的大卡片與即時監控視野。
+重載 Home Assistant 設定：**開發者工具** -> **YAML** -> **重新載入 REST 命令**。
 
 ---
 
-## 🎮 本地互動式模擬器 (Local Simulator)
+### 步驟 3：部署 7 大生活情境自動化規則 (Automations)
 
-在將配置推送至實體電視前，您可以在本機直接啟動互動式電視模擬器：
+將 [`deploy/android-tv/automations/tv_notifications.yaml`](./automations/tv_notifications.yaml) 內的自動化設定納入 `/config/automations.yaml`：
 
-- 開啟檔案：[simulator.html](./simulator.html)
-- 支援按鍵操作：
-  - **鍵盤方向鍵 ◀ / ▶**：切換遙控器焦點按鈕。
-  - **Enter 鍵**：觸發選中動作（如開門、通話、關閉）。
-  - **按鍵 1 / 2 / 3**：即時測試門鈴訪客、周邊警報、家電完成 3 種真實情境。
-  - **Esc 鍵**：手動關閉當前通知。
+1. **玄關門鈴** (`binary_sensor.front_door_doorbell`) ➔ `doorbell.png` (15秒)
+2. **洗衣完成** (`sensor.xi_yi_ji_status == 'complete'`) ➔ `washer_done.png` (25秒)
+3. **洗衣進度** (`sensor.xi_yi_ji_status == 'running'`) ➔ `washer_running.png` (15秒)
+4. **乾衣完成** (`sensor.gan_yi_ji_status == 'complete'`) ➔ `dryer_done.png` (25秒)
+5. **日程提醒** (`calendar.timetree_schedule`) ➔ `calendar.png` (20秒)
+6. **設備電量** (`sensor.nightlight_battery < 10`) ➔ `battery_low.png` (20秒)
+7. **外送到達** (`sensor.foodpanda_order_status == 'arrived'`) ➔ `delivery.png` (30秒)
+
+---
+
+### 步驟 4：實體電視指令驗證 (Testing & Verification)
+
+您可以在終端機透過 PowerShell 或 curl 直接推播測試 1F 客廳電視 (`192.168.31.232`)：
+
+#### 測試 1：門鈴訪客情境 (Solution B 圓角毛玻璃)
+```powershell
+$body = @{
+    duration = 15
+    position = 0
+    backgroundColor = "#00000000"
+    title = ""
+    message = ""
+    media = @{
+        image = @{
+            uri = "http://192.168.31.101:8123/local/ux-deck/huds/doorbell.png"
+            width = 480
+        }
+    }
+} | ConvertTo-Json -Depth 5
+
+Invoke-RestMethod -Uri "http://192.168.31.232:7979/notify" -Method Post -ContentType "application/json" -Body $body
+```
+
+#### 測試 2：洗衣完成情境
+```powershell
+$body = @{
+    duration = 15
+    position = 0
+    backgroundColor = "#00000000"
+    title = ""
+    message = ""
+    media = @{
+        image = @{
+            uri = "http://192.168.31.101:8123/local/ux-deck/huds/washer_done.png"
+            width = 480
+        }
+    }
+} | ConvertTo-Json -Depth 5
+
+Invoke-RestMethod -Uri "http://192.168.31.232:7979/notify" -Method Post -ContentType "application/json" -Body $body
+```
+
+---
+
+## 📂 檔案目錄架構 (Directory Layout)
+
+```
+UX-Deck/deploy/android-tv/
+├── DEPLOYMENT.md                  # 本部署手冊
+├── simulator.html                 # 本地 D-pad 互動模擬器
+├── automations/
+│   └── tv_notifications.yaml     # 7 大生活情境自動化範本
+├── dashboards/
+│   └── tv_dashboard.yaml         # 客廳大螢幕 Lovelace 儀表板
+├── themes/
+│   └── tv_frosted_hud.yaml       # 客廳毛玻璃深色主題
+└── www/                          # 部署至 HA /config/www/ux-deck/ 的靜態資產
+    ├── sentinel_icon.png         # 客廳守護犬 🐕 高清圖示
+    ├── animal-icons.svg          # 向量圖示庫
+    ├── tv-popup.css              # 電視 Toast 樣式表
+    └── huds/                     # 7 大情境透明圓角 PNG
+        ├── doorbell.png          # 🔔 訪客叮咚
+        ├── washer_done.png       # 🧺 洗衣完成
+        ├── washer_running.png    # ⏱️ 洗衣運轉中
+        ├── dryer_done.png        # 👕 乾衣完成
+        ├── calendar.png          # 📅 今日行程
+        ├── battery_low.png       # 🪫 設備電量警告
+        └── delivery.png          # 🛵 外送到達
+```
