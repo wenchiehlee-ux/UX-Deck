@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeAssistant Android TV: PiPup 實體推播 10-Foot HUD 驗證看板</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090b10;
+      --card-bg: #141824;
+      --border: #242c3d;
+      --accent: #38bdf8;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 32px 24px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.5;
+    }
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .header-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .header-title h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .badge-ip {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.85rem;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38bdf8;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    /* Comparison Section: Before vs After */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Grid of TV Screens */
+    .tv-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .tv-grid-2 { grid-template-columns: 1fr; }
+    }
+
+    /* Simulated 16:9 TV Frame */
+    .tv-frame-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .tv-frame-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 0 4px;
+    }
+    .tag-before { color: #f87171; }
+    .tag-after { color: #34d399; }
+
+    .tv-screen {
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border: 6px solid #1e2538;
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+      background-image: 
+        radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.4) 0%, rgba(0, 0, 0, 0.95) 100%),
+        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=60');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Subtitle area at bottom center */
+    .tv-subtitles {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.75);
+      padding: 4px 16px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      color: #ffffff;
+      white-space: nowrap;
+      z-index: 5;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    /* Old Legacy Notification (Position 0 = Top-Left) */
+    .pipup-toast-legacy {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: #4400C853; /* Old high-sat translucent green */
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 380px;
+      z-index: 10;
+      border: 1px solid rgba(0, 230, 118, 0.4);
+      backdrop-filter: blur(8px);
+    }
+    .pipup-toast-legacy .toast-img {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+    }
+    .pipup-toast-legacy .toast-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #00E676; /* Old neon green */
+      margin-bottom: 2px;
+    }
+    .pipup-toast-legacy .toast-msg {
+      font-size: 12px;
+      color: #FFFFFF;
+      line-height: 1.35;
+    }
+
+    /* New Standard 10-Foot Notification (Position 1 = Top-Right) */
+    .pipup-toast-modern {
+      position: absolute;
+      top: 20px;
+      right: 22px;
+      background: rgba(15, 23, 42, 0.933); /* Android PiPup #ee0f172a (AA=ee 93% Alpha, RGB=#0f172a Dark Slate) */
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 440px;
+      max-width: 90%;
+      z-index: 10;
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65), 0 0 15px rgba(56, 189, 248, 0.2);
+      font-family: "Zen Maru Gothic", -apple-system, sans-serif;
+    }
+    .pipup-toast-modern .toast-img {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+    }
+    .pipup-toast-modern .toast-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .pipup-toast-modern .toast-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: -0.01em;
+    }
+    .pipup-toast-modern .toast-msg {
+      font-size: 16px;
+      color: #f1f5f9;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    /* Gallery of All Deployed Scenarios */
+    .scenarios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 20px;
+    }
+    .scenario-item {
+      background: #0f131f;
+      border: 1px solid #1e2638;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .scenario-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    .scenario-name {
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .scenario-token-tag {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.78rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Mini TV Preview in Scenario Card */
+    .mini-tv {
+      aspect-ratio: 16 / 9;
+      background: #0a0c14;
+      border-radius: 10px;
+      border: 2px solid #232c40;
+      position: relative;
+      overflow: hidden;
+      background-image: linear-gradient(135deg, #111827 0%, #030712 100%);
+    }
+
+    /* Payload Codebox */
+    .codebox {
+      background: #06080d;
+      border: 1px solid #1a2233;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.76rem;
+      color: #94a3b8;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .highlight-param {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="header-title">
+        <span style="font-size: 2.2rem;">📺</span>
+        <div>
+          <h1>HomeAssistant on Android TV: PiPup 實機驗證看板</h1>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">
+            驗證 1F (192.168.31.232:7979) 與 2F (192.168.31.215:7979) 客廳電視之 10-Foot HUD 規範
+          </p>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <span class="badge-ip">1F TV: 192.168.31.232:7979</span>
+        <span class="badge-ip">2F TV: 192.168.31.215:7979</span>
+      </div>
+    </header>
+
+    <!-- SECTION 1: Before vs After -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <span>🔄</span>
+          <span>洗衣機狀態推播重構對比 (Washer Notification Alignment)</span>
+        </div>
+        <span style="font-size: 0.85rem; color: #94a3b8;">解決原本左上角偏小且色彩不協調問題</span>
+      </div>
+
+      <div class="tv-grid-2">
+        <!-- Before -->
+        <div class="tv-frame-wrap">
+          <div class="tv-frame-label">
+            <span class="tag-before">❌ 重構前 (Legacy): Position 0 / 小字體 / 遮擋頻道標誌</span>
+            <span style="font-size: 0.8rem; color: #64748b;">duration=120, size=14/12, #4400C853</span>
+          </div>
+          <div class="tv-screen">
+            <!-- Legacy Notification docked Top-Left -->
+            <div class="pipup-toast-legacy">
+              <img src="https://img.icons8.com/fluency/96/washing-machine.png" alt="Washer" class="toast-img">
+              <div>
+                <div class="toast-title">🫧 洗衣中</div>
+                <div class="toast-msg">執行中... 預計 18:45 完成</div>
+              </div>
+            </div>
+            <div class="tv-subtitles">「不要溫和地走進那個良夜，白晝應當在暮色中燃燒。」</div>
+          </div>
+        </div>
+
+        <!-- After -->
+        <div class="tv-frame-wrap">
+          <div class="tv-frame-label">
+            <span class="tag-after">✅ 重構後 (Deployed): Position 1 / 10-Foot 人體工學 / 93% 深灰毛玻璃</span>
+            <span style="font-size: 0.8rem; color: #34d399;">duration=15, size=20/16, #ee0f172a</span>
+          </div>
+          <div class="tv-screen">
+            <!-- Modern 10-Foot HUD docked Top-Right -->
+            <div class="pipup-toast-modern">
+              <img src="https://img.icons8.com/fluency/96/washing-machine.png" alt="Washer" class="toast-img">
+              <div class="toast-content">
+                <div class="toast-title" style="color: #38bdf8;">🫧 洗衣中</div>
+                <div class="toast-msg">執行中... 預計 18:45 完成</div>
+              </div>
+            </div>
+            <div class="tv-subtitles">「不要溫和地走進那個良夜，白晝應當在暮色中燃燒。」</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: All 6 Production Deployed Notification Scenarios -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-title">
+          <span>🎨</span>
+          <span>已部署至 automations.yaml 的 6 大客廳情境實機推播效果</span>
+        </div>
+        <span style="font-size: 0.85rem; color: #94a3b8;">100% 同步色彩語義、字體大小與背景透明度</span>
+      </div>
+
+      <div class="scenarios-grid">
+        <!-- 1. 🫧 洗衣 / 脫水 (Water Cycle) -->
+        <div class="scenario-item">
+          <div class="scenario-meta">
+            <div class="scenario-name">
+              <span>🫧</span>
+              <span>1. 洗衣中 / 預洗中 / 脫水中</span>
+            </div>
+            <span class="scenario-token-tag" style="color: #38bdf8;">titleColor: #38bdf8</span>
+          </div>
+          <div class="mini-tv">
+            <div class="pipup-toast-modern" style="top: 10px; right: 12px; padding: 10px 14px; width: 340px;">
+              <img src="https://img.icons8.com/fluency/96/washing-machine.png" alt="Washer" style="width: 38px; height: 38px;" class="toast-img">
+              <div class="toast-content">
+                <div class="toast-title" style="color: #38bdf8; font-size: 16px;">🫧 洗衣中</div>
+                <div class="toast-msg" style="font-size: 13px;">執行中... 預計 18:45 完成</div>
+              </div>
+            </div>
+          </div>
+          <div class="codebox">{"position": 1, "title": "🫧 洗衣中", <span class="highlight-param">"titleColor": "#38bdf8"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#ee0f172a"</span>, "duration": 15}</div>
+        </div>
+
+        <!-- 2. 🧺 洗衣完成！ (Laundry Done) -->
+        <div class="scenario-item">
+          <div class="scenario-meta">
+            <div class="scenario-name">
+              <span>🧺</span>
+              <span>2. 洗衣程序完成提醒</span>
+            </div>
+            <span class="scenario-token-tag" style="color: #34d399;">titleColor: #34d399</span>
+          </div>
+          <div class="mini-tv">
+            <div class="pipup-toast-modern" style="top: 10px; right: 12px; padding: 10px 14px; width: 340px; border-color: rgba(52, 211, 153, 0.4);">
+              <img src="https://img.icons8.com/fluency/96/washing-machine.png" alt="Washer" style="width: 38px; height: 38px;" class="toast-img">
+              <div class="toast-content">
+                <div class="toast-title" style="color: #34d399; font-size: 16px;">🧺 洗衣完成！</div>
+                <div class="toast-msg" style="font-size: 13px;">衣服洗好了，記得去晾喔 ✨</div>
+              </div>
+            </div>
+          </div>
+          <div class="codebox">{"position": 1, "title": "🧺 洗衣完成！", <span class="highlight-param">"titleColor": "#34d399"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#ee0f172a"</span>, "duration": 25}</div>
+        </div>
+
+        <!-- 3. ♨️ 烘乾中 (Drying Cycle) -->
+        <div class="scenario-item">
+          <div class="scenario-meta">
+            <div class="scenario-name">
+              <span>♨️</span>
+              <span>3. 烘乾運轉進行中</span>
+            </div>
+            <span class="scenario-token-tag" style="color: #fb923c;">titleColor: #fb923c</span>
+          </div>
+          <div class="mini-tv">
+            <div class="pipup-toast-modern" style="top: 10px; right: 12px; padding: 10px 14px; width: 340px; border-color: rgba(251, 146, 60, 0.4);">
+              <img src="https://img.icons8.com/fluency/96/washing-machine.png" alt="Dryer" style="width: 38px; height: 38px; filter: hue-rotate(160deg);" class="toast-img">
+              <div class="toast-content">
+                <div class="toast-title" style="color: #fb923c; font-size: 16px;">♨️ 烘乾中</div>
+                <div class="toast-msg" style="font-size: 13px;">烘乾中... 預計 20:30 完成</div>
+              </div>
+            </div>
+          </div>
+          <div class="codebox">{"position": 1, "title": "♨️ 烘乾中", <span class="highlight-param">"titleColor": "#fb923c"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#ee0f172a"</span>, "duration": 15}</div>
+        </div>
+
+        <!-- 4. 📅 今日行程 (TimeTree Calendar) -->
+        <div class="scenario-item">
+          <div class="scenario-meta">
+            <div class="scenario-name">
+              <span>📅</span>
+              <span>4. TimeTree 行程與日常行事曆</span>
+            </div>
+            <span class="scenario-token-tag" style="color: #38bdf8;">titleColor: #38bdf8</span>
+          </div>
+          <div class="mini-tv">
+            <div class="pipup-toast-modern" style="top: 10px; right: 12px; padding: 10px 14px; width: 340px;">
+              <img src="https://img.icons8.com/fluency/96/calendar.png" alt="Calendar" style="width: 38px; height: 38px;" class="toast-img">
+              <div class="toast-content">
+                <div class="toast-title" style="color: #38bdf8; font-size: 16px;">📅 今日行程</div>
+                <div class="toast-msg" style="font-size: 13px;">今天整天：家庭聚餐、採買食材</div>
+              </div>
+            </div>
+          </div>
+          <div class="codebox">{"position": 1, "title": "📅 今日行程", <span class="highlight-param">"titleColor": "#38bdf8"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#ee0f172a"</span>, "duration": 20}</div>
+        </div>
+
+        <!-- 5. 🔋 夜燈電量不足 (Battery Low) -->
+        <div class="scenario-item">
+          <div class="scenario-meta">
+            <div class="scenario-name">
+              <span>🔋</span>
+              <span>5. 感應夜燈低電量警示</span>
+            </div>
+            <span class="scenario-token-tag" style="color: #fbbf24;">titleColor: #fbbf24</span>
+          </div>
+          <div class="mini-tv">
+            <div class="pipup-toast-modern" style="top: 10px; right: 12px; padding: 10px 14px; width: 340px; border-color: rgba(251, 191, 36, 0.4);">
+              <img src="https://img.icons8.com/fluency/96/low-battery.png" alt="Battery" style="width: 38px; height: 38px;" class="toast-img">
+              <div class="toast-content">
+                <div class="toast-title" style="color: #fbbf24; font-size: 16px;">🔋 夜燈電量不足</div>
+                <div class="toast-msg" style="font-size: 13px;">電量 &lt; 10% 玄關夜燈 (8%)</div>
+              </div>
+            </div>
+          </div>
+          <div class="codebox">{"position": 1, "title": "🔋 夜燈電量不足", <span class="highlight-param">"titleColor": "#fbbf24"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#ee0f172a"</span>, "duration": 20}</div>
+        </div>
+
+        <!-- 6. 🛵 外送到了！ (Food Delivery) -->
+        <div class="scenario-item">
+          <div class="scenario-meta">
+            <div class="scenario-name">
+              <span>🛵</span>
+              <span>6. 外送到達即時通知</span>
+            </div>
+            <span class="scenario-token-tag" style="color: #f87171;">titleColor: #f87171</span>
+          </div>
+          <div class="mini-tv">
+            <div class="pipup-toast-modern" style="top: 10px; right: 12px; padding: 10px 14px; width: 340px; border-color: rgba(248, 113, 113, 0.4);">
+              <img src="https://img.icons8.com/fluency/96/delivery.png" alt="Delivery" style="width: 38px; height: 38px;" class="toast-img">
+              <div class="toast-content">
+                <div class="toast-title" style="color: #f87171; font-size: 16px;">🛵 外送到了！</div>
+                <div class="toast-msg" style="font-size: 13px;">請前往取餐</div>
+              </div>
+            </div>
+          </div>
+          <div class="codebox">{"position": 1, "title": "🛵 外送到了！", <span class="highlight-param">"titleColor": "#f87171"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#ee0f172a"</span>, "duration": 30}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
