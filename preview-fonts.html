@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mkdocs-life 休閒隨性生活字型即時預覽 (Live Font Previewer)</title>
+  
+  <!-- Google Web Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&family=LXGW+WenKai+TC:wght@300;400;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&family=Quicksand:wght@500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-studio: #f6f5f2;
+      --card-bg: #faf8f5;
+      --border-light: #e7e5e4;
+      --teal: #0d9488;
+      --teal-hover: #0f766e;
+      --terracotta: #e07a5f;
+      --text-main: #292524;
+      --text-muted: #57534e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg-studio);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+
+    /* Header Bar */
+    header {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      padding: 2rem 2.25rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(13, 148, 136, 0.1);
+      color: var(--teal);
+      border: 1px solid rgba(13, 148, 136, 0.2);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      width: fit-content;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #1c1917;
+      letter-spacing: -0.02em;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 900px;
+      line-height: 1.6;
+    }
+
+    /* Section 1: Side by Side Cards */
+    .section-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #1c1917;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .proposals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .proposal-card {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      padding: 1.75rem;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      position: relative;
+    }
+    .proposal-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px -4px rgba(13, 148, 136, 0.1);
+      border-color: #cbd5e1;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .card-title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .card-tag {
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      width: fit-content;
+    }
+    .tag-a { background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+    .tag-b { background: #fff7ed; color: #ea580c; border: 1px solid #fed7aa; }
+    .tag-c { background: #f0fdfa; color: #0d9488; border: 1px solid #ccfbf1; }
+    .tag-orig { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .card-specs {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .card-specs strong {
+      color: #1e293b;
+    }
+
+    /* Live Preview Inside Card */
+    .preview-card-inner {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 16px -2px rgba(13, 148, 136, 0.05);
+    }
+    .life-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(13, 148, 136, 0.1);
+      color: var(--teal);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      width: fit-content;
+      margin-bottom: 0.85rem;
+    }
+    .life-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #1c1917;
+      margin-bottom: 0.65rem;
+      line-height: 1.4;
+    }
+    .life-body {
+      font-size: 0.96rem;
+      color: #44403c;
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+    .life-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-light);
+      padding-top: 0.85rem;
+      font-size: 0.8rem;
+      color: #78716c;
+    }
+    .life-btn {
+      color: var(--teal);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* Font Families Mapping */
+    /* A: LXGW WenKai + Quicksand */
+    .font-a .life-title, .font-a .life-body { font-family: "LXGW WenKai TC", sans-serif; }
+    .font-a .life-tag, .font-a .life-footer { font-family: "Quicksand", sans-serif; }
+
+    /* B: Zen Maru Gothic + Comfortaa */
+    .font-b .life-title, .font-b .life-body { font-family: "Zen Maru Gothic", sans-serif; }
+    .font-b .life-tag, .font-b .life-footer { font-family: "Comfortaa", "Zen Maru Gothic", sans-serif; }
+
+    /* C: Noto Sans Light + Plus Jakarta */
+    .font-c .life-title { font-family: "Noto Sans TC", sans-serif; font-weight: 700; }
+    .font-c .life-body { font-family: "Noto Sans TC", sans-serif; font-weight: 350; letter-spacing: 0.025em; line-height: 1.95; }
+    .font-c .life-tag, .font-c .life-footer { font-family: "Plus Jakarta Sans", "Noto Sans TC", sans-serif; }
+
+    /* Original: Noto Serif TC (Too serious) */
+    .font-orig .life-title, .font-orig .life-body { font-family: "Noto Serif TC", serif; }
+    .font-orig .life-tag, .font-orig .life-footer { font-family: "Noto Sans TC", sans-serif; }
+
+    /* Section 2: Interactive Sandbox & Long Article Simulator */
+    .sandbox-container {
+      background: #ffffff;
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      padding: 2.25rem;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+      margin-bottom: 3.5rem;
+    }
+
+    .tab-bar {
+      display: flex;
+      gap: 10px;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tab-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+    .tab-btn.active {
+      background: var(--teal);
+      color: #ffffff;
+      border-color: var(--teal);
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+    }
+
+    /* Article simulator stage */
+    .article-stage {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 2.5rem 3rem;
+      transition: all 0.25s ease;
+    }
+    @media (max-width: 768px) {
+      .article-stage { padding: 1.5rem; }
+    }
+    .stage-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.35;
+      color: #1c1917;
+      outline: none;
+    }
+    .stage-meta {
+      font-size: 0.85rem;
+      color: #78716c;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .stage-paragraph {
+      font-size: 1.05rem;
+      line-height: 1.95;
+      color: #383431;
+      margin-bottom: 1.5rem;
+      outline: none;
+    }
+    .stage-blockquote {
+      border-left: 4px solid var(--terracotta);
+      background: rgba(224, 122, 95, 0.08);
+      padding: 1.15rem 1.4rem;
+      border-radius: 0 12px 12px 0;
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: #292524;
+      margin: 1.75rem 0;
+      outline: none;
+    }
+
+    .edit-hint {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-top: 1rem;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="badge-pill">✨ MKDOCS-LIFE INTERACTIVE LIVE FONT PREVIEWER</div>
+      <h1>🌿 生活風格休閒字型即時預覽體驗</h1>
+      <div class="subtitle">
+        擺脫鉛字宋體的嚴肅端莊，在真正的瀏覽器環境中體驗三大「隨性、放鬆、空氣感與手帳溫度」的繁體中文字型組合，並可在下方沙盒自由打字體驗！
+      </div>
+    </header>
+
+    <!-- SECTION 1: SIDE-BY-SIDE PROPOSALS -->
+    <div class="section-title">👀 1. 三大休閒提案 vs 原始宋體 並排即時對比</div>
+    <div class="section-desc">實際觀察各字體在生活日誌卡片中的呼吸感與親和力：</div>
+
+    <div class="proposals-grid">
+
+      <!-- PROPOSAL A -->
+      <div class="proposal-card font-a">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="card-tag tag-a">推薦首選 🌟 手寫手帳風</span>
+            <div class="card-title">方案 A：溫潤隨筆文楷體</div>
+          </div>
+        </div>
+        <div class="card-specs">
+          中文：<strong>霞鶩文楷 (LXGW WenKai TC)</strong><br>
+          英數：<strong>Quicksand (圓潤休閒體)</strong><br>
+          特質：手寫筆觸溫暖、像朋友隨手遞來的明信片或私密手帳日記。
+        </div>
+        <div class="preview-card-inner">
+          <div>
+            <div class="life-tag">🦌 2026-10-18 · 漫步手記</div>
+            <div class="life-title">陽光灑落陽台的早晨咖啡</div>
+            <div class="life-body">
+              今天早晨沒有設鬧鐘，任由窗邊微風吹動薄紗。手沖了一壺淺焙耶加雪菲，看著陽台上的龜背竹新長出的小嫩葉，忽然覺得生活原本就該如此簡單而寬裕。
+            </div>
+          </div>
+          <div class="life-footer">
+            <span>閱讀時間約 3 分鐘 · 日常隨想</span>
+            <span class="life-btn">閱讀全文 ↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROPOSAL B -->
+      <div class="proposal-card font-b">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="card-tag tag-b">療癒推薦 🌸 日系慢活風</span>
+            <div class="card-title">方案 B：日雜圓潤丸體</div>
+          </div>
+        </div>
+        <div class="card-specs">
+          中文：<strong>Zen Maru Gothic (日系圓體)</strong><br>
+          英數：<strong>Comfortaa (幾何萌圓體)</strong><br>
+          特質：端點飽滿圓潤無稜角，散發 MUJI 與生活繪本般的放鬆空氣感。
+        </div>
+        <div class="preview-card-inner">
+          <div>
+            <div class="life-tag">🦌 2026-10-18 · 漫步手記</div>
+            <div class="life-title">陽光灑落陽台的早晨咖啡</div>
+            <div class="life-body">
+              今天早晨沒有設鬧鐘，任由窗邊微風吹動薄紗。手沖了一壺淺焙耶加雪菲，看著陽台上的龜背竹新長出的小嫩葉，忽然覺得生活原本就該如此簡單而寬裕。
+            </div>
+          </div>
+          <div class="life-footer">
+            <span>閱讀時間約 3 分鐘 · 日常隨想</span>
+            <span class="life-btn">閱讀全文 ↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROPOSAL C -->
+      <div class="proposal-card font-c">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="card-tag tag-c">極簡現代 ☕ 北歐透氣風</span>
+            <div class="card-title">方案 C：透氣休閒輕黑體</div>
+          </div>
+        </div>
+        <div class="card-specs">
+          中文：<strong>Noto Sans TC (Light 350 / 寬字距)</strong><br>
+          英數：<strong>Plus Jakarta Sans</strong><br>
+          特質：行距擴大至 1.95，字距微開，像生活風格雜誌般的開闊透氣。
+        </div>
+        <div class="preview-card-inner">
+          <div>
+            <div class="life-tag">🦌 2026-10-18 · 漫步手記</div>
+            <div class="life-title">陽光灑落陽台的早晨咖啡</div>
+            <div class="life-body">
+              今天早晨沒有設鬧鐘，任由窗邊微風吹動薄紗。手沖了一壺淺焙耶加雪菲，看著陽台上的龜背竹新長出的小嫩葉，忽然覺得生活原本就該如此簡單而寬裕。
+            </div>
+          </div>
+          <div class="life-footer">
+            <span>閱讀時間約 3 分鐘 · 日常隨想</span>
+            <span class="life-btn">閱讀全文 ↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROPOSAL ORIG (FOR COMPARISON) -->
+      <div class="proposal-card font-orig" style="opacity: 0.85;">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="card-tag tag-orig">對照組 🏛️ 嚴肅傳統宋體</span>
+            <div class="card-title">對照：思源宋體 (Noto Serif)</div>
+          </div>
+        </div>
+        <div class="card-specs">
+          中文：<strong>Noto Serif TC (思源宋體)</strong><br>
+          英數：<strong>Newsreader (襯線體)</strong><br>
+          特質：筆鋒銳利端莊，學術與文藝評論感強烈，但作為日常生活散文顯得較為嚴肅生硬。
+        </div>
+        <div class="preview-card-inner">
+          <div>
+            <div class="life-tag">🦌 2026-10-18 · 漫步手記</div>
+            <div class="life-title">陽光灑落陽台的早晨咖啡</div>
+            <div class="life-body">
+              今天早晨沒有設鬧鐘，任由窗邊微風吹動薄紗。手沖了一壺淺焙耶加雪菲，看著陽台上的龜背竹新長出的小嫩葉，忽然覺得生活原本就該如此簡單而寬裕。
+            </div>
+          </div>
+          <div class="life-footer">
+            <span>閱讀時間約 3 分鐘 · 日常隨想</span>
+            <span class="life-btn">閱讀全文 ↗</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SECTION 2: INTERACTIVE SIMULATOR & SANDBOX -->
+    <div class="section-title">✍️ 2. 長文閱讀模擬器 & 即時文字打字沙盒</div>
+    <div class="section-desc">點擊下方按鈕可一鍵切換全站長文排版，您也可直接點擊文字進行編輯修改！</div>
+
+    <div class="sandbox-container">
+      <div class="tab-bar">
+        <button class="tab-btn active" onclick="switchFont('font-a', this)">🌟 方案 A：溫潤隨筆文楷體 (LXGW WenKai)</button>
+        <button class="tab-btn" onclick="switchFont('font-b', this)">🌸 方案 B：日雜圓潤丸體 (Zen Maru)</button>
+        <button class="tab-btn" onclick="switchFont('font-c', this)">☕ 方案 C：透氣休閒輕黑體 (Noto Sans Light)</button>
+        <button class="tab-btn" onclick="switchFont('font-orig', this)">🏛️ 對照：原版思源宋體 (Noto Serif)</button>
+      </div>
+
+      <div class="article-stage font-a" id="stage">
+        <div class="life-tag">🦌 2026-10-18 · 生活漫步手記</div>
+        <h2 class="stage-title" contenteditable="true">慢步在微風秋陽下的生活哲思 (點擊可修改標題)</h2>
+        <div class="stage-meta">
+          <span>文 / Wen-Chieh Lee</span> · <span>閱讀時間 4 分鐘</span> · <span>分類：日常隨想</span>
+        </div>
+        
+        <p class="stage-paragraph" contenteditable="true">
+          在步調緊湊的現代生活裡，我們總是在追趕下一座山頭、下一份報表。然而真正讓人心靈沉澱下來的，往往只是某個初秋午後，踩在微涼落葉上的清脆聲響。把步調放慢半拍，生活的細節才會如溫泉般緩緩漫過心頭。
+        </p>
+
+        <div class="stage-blockquote" contenteditable="true">
+          💭 生活反思：人生不需要時刻維持戰鬥姿態，保留一處隨性溫暖的自留地，才是走得長遠的定力所在。
+        </div>
+
+        <p class="stage-paragraph" contenteditable="true">
+          不管是播下幾顆種子等待發芽、釀一罈需要時光醞釀的桂花酒，還是單純在筆記本上記下一段剛浮現腦海的短句。這些看似無用的日常瑣碎，其實才是我們存在最堅實的錨。
+        </p>
+
+        <div class="edit-hint">💡 提示：以上文章區塊均支援即時直接打字，您可以輸入自己的文字親身體驗手感！</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchFont(fontClass, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const stage = document.getElementById('stage');
+      stage.className = 'article-stage ' + fontClass;
+    }
+  </script>
+
+</body>
+</html>
