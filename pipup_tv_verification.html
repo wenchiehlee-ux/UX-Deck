@@ -188,7 +188,7 @@
       position: absolute;
       top: 20px;
       right: 22px;
-      background: rgba(15, 23, 42, 0.933); /* Android PiPup #ee0f172a (AA=ee 93% Alpha, RGB=#0f172a Dark Slate) */
+      background: rgba(15, 23, 42, 0.40); /* Android PiPup #660f172a (AA=ee 93% Alpha, RGB=#0f172a Dark Slate) */
       border-radius: 16px;
       padding: 16px 20px;
       display: flex;
@@ -346,8 +346,8 @@
         <!-- After -->
         <div class="tv-frame-wrap">
           <div class="tv-frame-label">
-            <span class="tag-after">✅ 重構後 (Deployed): Position 1 / 10-Foot 人體工學 / 93% 深灰毛玻璃</span>
-            <span style="font-size: 0.8rem; color: #34d399;">duration=15, size=20/16, #ee0f172a</span>
+            <span class="tag-after">✅ 重構後 (Deployed): Position 1 / 10-Foot 人體工學 / 60% 透光度毛玻璃</span>
+            <span style="font-size: 0.8rem; color: #34d399;">duration=15, size=20/16, #660f172a</span>
           </div>
           <div class="tv-screen">
             <!-- Modern 10-Foot HUD docked Top-Right -->
@@ -393,7 +393,7 @@
               </div>
             </div>
           </div>
-          <div class="codebox">{"position": 1, "title": "🫧 洗衣中", <span class="highlight-param">"titleColor": "#38bdf8"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#ee0f172a"</span>, "duration": 15}</div>
+          <div class="codebox">{"position": 0, "title": "🫧 洗衣中", <span class="highlight-param">"titleColor": "#38bdf8"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#660f172a"</span>, "duration": 15}</div>
         </div>
 
         <!-- 2. 🧺 洗衣完成！ (Laundry Done) -->
@@ -414,7 +414,7 @@
               </div>
             </div>
           </div>
-          <div class="codebox">{"position": 1, "title": "🧺 洗衣完成！", <span class="highlight-param">"titleColor": "#34d399"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#ee0f172a"</span>, "duration": 25}</div>
+          <div class="codebox">{"position": 0, "title": "🧺 洗衣完成！", <span class="highlight-param">"titleColor": "#34d399"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#660f172a"</span>, "duration": 25}</div>
         </div>
 
         <!-- 3. ♨️ 烘乾中 (Drying Cycle) -->
@@ -435,7 +435,7 @@
               </div>
             </div>
           </div>
-          <div class="codebox">{"position": 1, "title": "♨️ 烘乾中", <span class="highlight-param">"titleColor": "#fb923c"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#ee0f172a"</span>, "duration": 15}</div>
+          <div class="codebox">{"position": 0, "title": "♨️ 烘乾中", <span class="highlight-param">"titleColor": "#fb923c"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#660f172a"</span>, "duration": 15}</div>
         </div>
 
         <!-- 4. 📅 今日行程 (TimeTree Calendar) -->
@@ -456,7 +456,7 @@
               </div>
             </div>
           </div>
-          <div class="codebox">{"position": 1, "title": "📅 今日行程", <span class="highlight-param">"titleColor": "#38bdf8"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#ee0f172a"</span>, "duration": 20}</div>
+          <div class="codebox">{"position": 0, "title": "📅 今日行程", <span class="highlight-param">"titleColor": "#38bdf8"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#660f172a"</span>, "duration": 20}</div>
         </div>
 
         <!-- 5. 🔋 夜燈電量不足 (Battery Low) -->
@@ -477,7 +477,7 @@
               </div>
             </div>
           </div>
-          <div class="codebox">{"position": 1, "title": "🔋 夜燈電量不足", <span class="highlight-param">"titleColor": "#fbbf24"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#ee0f172a"</span>, "duration": 20}</div>
+          <div class="codebox">{"position": 0, "title": "🔋 夜燈電量不足", <span class="highlight-param">"titleColor": "#fbbf24"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#660f172a"</span>, "duration": 20}</div>
         </div>
 
         <!-- 6. 🛵 外送到了！ (Food Delivery) -->
@@ -498,7 +498,7 @@
               </div>
             </div>
           </div>
-          <div class="codebox">{"position": 1, "title": "🛵 外送到了！", <span class="highlight-param">"titleColor": "#f87171"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#ee0f172a"</span>, "duration": 30}</div>
+          <div class="codebox">{"position": 0, "title": "🛵 外送到了！", <span class="highlight-param">"titleColor": "#f87171"</span>, "titleSize": 20, "messageSize": 16, <span class="highlight-param">"backgroundColor": "#660f172a"</span>, "duration": 30}</div>
         </div>
       </div>
     </div>

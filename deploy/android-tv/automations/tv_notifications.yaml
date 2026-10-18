@@ -33,7 +33,7 @@
     # - service: rest_command.pipup_notify_1f
     #   data:
     #     payload_json: >-
-    #       {"duration":15,"position":1,"title":"玄關訪客叮咚 🔔","titleColor":"#38bdf8","titleSize":20,"message":"大門有人按門鈴，門鎖維持安全上鎖中 🐾","messageColor":"#f1f5f9","messageSize":16,"backgroundColor":"#ee0f172a","media":{"image":{"uri":"https://img.icons8.com/fluency/96/doorbell.png","width":64}}}
+    #       {"duration":15,"position":0,"title":"玄關訪客叮咚 🔔","titleColor":"#38bdf8","titleSize":20,"message":"大門有人按門鈴，門鎖維持安全上鎖中 🐾","messageColor":"#f1f5f9","messageSize":16,"backgroundColor":"#660f172a","media":{"image":{"uri":"https://img.icons8.com/fluency/96/doorbell.png","width":64}}}
 
 # ------------------------------------------------------------------------------
 # 2. 家電運作完畢提醒 (Laundry / Dishwasher Complete Toast)
