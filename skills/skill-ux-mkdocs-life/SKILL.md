@@ -1,5 +1,6 @@
 ---
 name: skill-ux-mkdocs-life
+version: 1.1.0
 description: >-
   UX styling, design guidelines, and Material for MkDocs customizations for the mkdocs-life repository.
   Use this skill when enhancing the user experience, typography, layout, blog cards, or visual design
@@ -8,12 +9,17 @@ description: >-
 
 # UX Skill: mkdocs-life (Warm Editorial & Mindful Journal)
 
+> **Version**: `1.1.0` | **Updated**: `2026-10-18` | **Release Note**: 字體系統升級為方案 A 溫潤隨筆文楷體（LXGW WenKai TC + Quicksand）與 Google Fonts v2 動態載入架構
+
 This skill provides design patterns, CSS snippets, and layout rules for **mkdocs-life**, transforming standard MkDocs documentation into a graceful, warm, editorial-style personal journal and knowledge sanctuary.
 
 ## Visual Identity & Design Pillars
 
 1. **Warm Paper Palette**: Soft cream/warm paper surfaces (`#faf8f5`) that reduce eye fatigue during long reading sessions.
-2. **Editorial Typography**: Generous line spacing (`1.7`), refined heading hierarchy, and harmonious Traditional Chinese font stack (`Noto Serif TC` / `Noto Sans TC`).
+2. **Editorial Typography (方案 A 溫潤隨筆文楷體)**:
+   - **隨筆長文與標題**: `LXGW WenKai TC` (霞鶩文楷繁體) + 行距 `1.85 ~ 1.9`，營造手帳隨筆般親切溫暖的筆觸。
+   - **標籤與英數**: `Quicksand` (圓潤休閒英數體) + `Noto Sans TC`。
+   - **導航與按鈕**: `Noto Sans TC` (思源黑體) 保持清晰俐落。
 3. **Journal & Timeline Elements**: Beautiful quote callouts, milestone timeline markers, and card grids with subtle hover lifts.
 4. **Mindful Media Framing**: Rounded corners (`12px`) and gentle shadow framing for personal photos and journal screenshots.
 5. **Animal Mascot (林鹿 Mindful Forest Deer 🦌)**:
@@ -26,15 +32,17 @@ This skill provides design patterns, CSS snippets, and layout rules for **mkdocs
 ## Quick Start / Implementation
 
 ### 1. Include the Custom CSS & Icon Sprite
-Copy [mkdocs-life.css](./resources/mkdocs-life.css) into your `mkdocs-life` repository at `docs/stylesheets/extra.css`.
+Ensure `docs/stylesheets/life-theme.css` is linked in `extra_css`.
 
 ### 2. Configure `mkdocs.yml`
-Ensure your `mkdocs.yml` links the custom stylesheet and enables palette switching:
+In `mkdocs.yml`, set `font: false` to allow Google Fonts CSS2 modern dynamic loading via `docs/overrides/main.html`:
 
 ```yaml
 theme:
   name: material
-  custom_dir: overrides
+  custom_dir: docs/overrides
+  favicon: assets/images/deer-favicon.png
+  font: false # 由 overrides/main.html 與 life-theme.css 統一載入 Google Fonts v2
   palette:
     # Light Mode (Warm Editorial)
     - scheme: default
@@ -50,12 +58,10 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: 切換至暖白模式
-  font:
-    text: Noto Serif TC
-    code: JetBrains Mono
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/life-theme.css
 ```
 
 ---

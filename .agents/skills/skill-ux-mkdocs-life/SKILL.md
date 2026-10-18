@@ -1,5 +1,6 @@
 ---
 name: skill-ux-mkdocs-life
+version: 1.1.0
 description: >-
   UX styling, design guidelines, and Material for MkDocs customizations for the mkdocs-life repository.
   Use this skill when enhancing the user experience, typography, layout, blog cards, or visual design
@@ -7,6 +8,8 @@ description: >-
 ---
 
 # UX Skill: mkdocs-life (Warm Editorial & Mindful Journal)
+
+> **Version**: `1.1.0` | **Updated**: `2026-10-18` | **Release Note**: 字體系統升級為方案 A 溫潤隨筆文楷體（LXGW WenKai TC + Quicksand）與 Google Fonts v2 動態載入架構
 
 This skill provides design patterns, CSS snippets, and layout rules for **mkdocs-life**, transforming standard MkDocs documentation into a graceful, warm, editorial-style personal journal and knowledge sanctuary.
 

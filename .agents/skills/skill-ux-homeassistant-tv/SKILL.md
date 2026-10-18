@@ -1,5 +1,6 @@
 ---
 name: skill-ux-homeassistant-tv
+version: 1.1.0
 description: >-
   10-foot UI design, glanceable frosted HUD overlays, and remote-control accessible popup notifications
   for HomeAssistant on Android TV. Use this skill when designing, building, or styling Home Assistant
@@ -7,6 +8,8 @@ description: >-
 ---
 
 # UX Skill: HomeAssistant (Android TV 10-foot Popup UI & PiPup HUD)
+
+> **Version**: `1.1.0` | **Updated**: `2026-10-18` | **Release Note**: 實體電視驗證升級：統一採用 60% 半透明 Cyber Dark Slate (`#660f172a`) 與右上角錨定 (`position: 0`)
 
 This skill provides design guidelines, CSS specifications, PiPup REST API payloads, and HomeAssistant automation templates for **HomeAssistant on Android TV**, delivering high-visibility, elegant, non-intrusive living room popups.
 

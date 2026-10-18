@@ -1,5 +1,6 @@
 ---
 name: skill-ux-google-alert-manager
+version: 1.1.0
 description: >-
   UX styling, component patterns, and interaction design for GoogleAlertManager (GitHub Pages web dashboard).
   Use this skill when designing, building, or refining the alert feed triage, card layouts, filter chips,
@@ -7,6 +8,8 @@ description: >-
 ---
 
 # UX Skill: GoogleAlertManager (SaaS Signal Intelligence)
+
+> **Version**: `1.1.0` | **Updated**: `2026-10-18` | **Release Note**: 吉祥物升級為破曉警報鳥 (Alert Bird 🐦, Lucide bird) 與活力警報橘 (`#ea580c`) 語意色調
 
 This skill provides the design system, component patterns, and interaction rules for **GoogleAlertManager**, turning high-volume feed clutter into an organized, rapid-triage intelligence dashboard.
 

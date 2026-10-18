@@ -1,5 +1,6 @@
 ---
 name: skill-ux-design-system
+version: 1.1.0
 description: >-
   Master UX Design System and unified visual language across sibling repositories
   (mkdocs-life, GoogleAlertManager, YoutubeAudio.Fetch, mkdocs-investment, HomeAssistant TV).
@@ -8,6 +9,8 @@ description: >-
 ---
 
 # UX-Deck Master Design System
+
+> **Version**: `1.1.0` | **Updated**: `2026-10-18` | **Release Note**: 系統矩陣規格同步：更新 Android TV 10-foot HUD 為 60% 半透明 Cyber Dark Slate (`#660f172a`) 與右上角錨點 (`position: 0`)
 
 The UX-Deck Design System provides a cohesive visual architecture across our ecosystem of applications while preserving each project's domain-specific identity and functional needs.
 
