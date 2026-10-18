@@ -468,11 +468,11 @@
       cursor: text;
     }
 
-    /* Section 2: Merged Specs & Live Component Previews (Strict 2, 2, 2, 1 Grid) */
+    /* Section 2: Merged Specs & Live Component Previews (1, 1, 1, 1, 1, 1, 1 Layout) */
     .merged-ecosystem-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
       margin-bottom: 3.5rem;
     }
     .merged-project-card {
@@ -1742,13 +1742,13 @@
       </div>
     </div>
 
-    <!-- SECTION 2: MERGED PALETTE, TYPOGRAPHY & LIVE COMPONENT PREVIEWS (2, 2, 2, 1 LAYOUT) -->
+    <!-- SECTION 2: MERGED PALETTE, TYPOGRAPHY & LIVE COMPONENT PREVIEWS (1, 1, 1, 1, 1, 1, 1 LAYOUT) -->
     <div class="section-title">🎨 2. 色彩調性、專屬字體與真實元件展示 (Color, Typography & Live Previews)</div>
     <div class="section-desc">以白底為基準（White Basis），將七大兄弟專案的精準品牌色彩光譜、人文與科技專屬字體，與真實落地之 UI 實體元件緊密結合，並提供直達各站點的即時連線網址。</div>
 
     <div class="merged-ecosystem-grid">
 
-      <!-- ROW 1 - CARD 1: mkdocs-life -->
+      <!-- CARD 1: mkdocs-life -->
       <div class="merged-project-card">
         <div class="project-header-bar">
           <div class="project-identity">
@@ -1832,7 +1832,7 @@
         </div>
       </div>
 
-      <!-- ROW 1 - CARD 2: GoogleAlertManager -->
+      <!-- CARD 2: GoogleAlertManager -->
       <div class="merged-project-card">
         <div class="project-header-bar">
           <div class="project-identity">
@@ -1913,7 +1913,7 @@
         </div>
       </div>
 
-      <!-- ROW 2 - CARD 1: YoutubeAudio.Fetch -->
+      <!-- CARD 3: YoutubeAudio.Fetch -->
       <div class="merged-project-card">
         <div class="project-header-bar">
           <div class="project-identity">
@@ -2021,7 +2021,7 @@
         </div>
       </div>
 
-      <!-- ROW 2 - CARD 2: mkdocs-investment -->
+      <!-- CARD 4: mkdocs-investment -->
       <div class="merged-project-card">
         <div class="project-header-bar">
           <div class="project-identity">
@@ -2116,7 +2116,7 @@
         </div>
       </div>
 
-      <!-- ROW 3 - CARD 1: wenchiehlee.quickconnect.to -->
+      <!-- CARD 5: wenchiehlee.quickconnect.to -->
       <div class="merged-project-card">
         <div class="project-header-bar">
           <div class="project-identity">
@@ -2216,7 +2216,7 @@
         </div>
       </div>
 
-      <!-- ROW 3 - CARD 2: My-TW-Coverage -->
+      <!-- CARD 6: My-TW-Coverage -->
       <div class="merged-project-card">
         <div class="project-header-bar">
           <div class="project-identity">
@@ -2325,7 +2325,7 @@
         </div>
       </div>
 
-      <!-- ROW 4 - CARD 1 (FULL-WIDTH 1): HomeAssistant on Android TV -->
+      <!-- CARD 7: HomeAssistant on Android TV -->
       <div class="merged-project-card full-width">
         <div class="project-header-bar">
           <div class="project-identity">
@@ -2384,4 +2384,44 @@
 
     <!-- SECTION 3: VECTOR SCALE LADDER (WHITE BASIS) -->
     <div class="section-title">📐 3. 向量尺寸梯階測試 (14px ~ 64px)</div>
-    <div class="section-desc">驗證八大幾何吉祥物自桌面小圖示 (14px) 至客廳電視大螢幕 (64px) 之邊角清晰度與筆畫比例�
+    <div class="section-desc">驗證八大幾何吉祥物自桌面小圖示 (14px) 至客廳電視大螢幕 (64px) 之邊角清晰度與筆畫比例。</div>
+    <div class="scale-row">
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-xs ux-icon-deer"><use href="#icon-deer-life"></use></svg>
+        <span>14px (xs)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-sm ux-icon-falcon"><use href="#icon-falcon-radar"></use></svg>
+        <span>18px (sm)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-md ux-icon-whale"><use href="#icon-whale-sonic"></use></svg>
+        <span>24px (md 預設)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-lg ux-icon-bull"><use href="#icon-bull-fintech"></use></svg>
+        <span>32px (lg)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-xl ux-icon-bear"><use href="#icon-bear-defense"></use></svg>
+        <span>48px (xl)</span>
+      </div>
+
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-xl ux-icon-pangolin"><use href="#icon-pangolin-shield"></use></svg>
+        <span>48px (敏捷守護貓)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-xl ux-icon-owl"><use href="#icon-owl-coverage"></use></svg>
+        <span>48px (研究貓頭鷹)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-tv ux-icon-sentinel"><use href="#icon-sentinel-tv"></use></svg>
+        <span>64px (tv 10英呎)</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
