@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: transparent;
+      overflow: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 10px;
+    }
+    .toast-box {
+      background: rgba(15, 23, 42, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(56, 189, 248, 0.4);
+      border-radius: 20px; /* Real Smooth Rounded Corners! */
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.6), 0 0 15px rgba(56,189,248,0.2);
+      color: #ffffff;
+      width: 100%;
+    }
+    .toast-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      color: #d97706;
+      filter: drop-shadow(0 0 8px rgba(217, 119, 6, 0.6));
+    }
+    .toast-content {
+      flex: 1;
+      min-width: 0;
+    }
+    .toast-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .toast-msg {
+      font-size: 16px;
+      color: #f1f5f9;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="toast-box">
+    <!-- Inline SVG Sentinel Icon -->
+    <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8.5 8.5c-.38 1.05-1.08 2.03-2.34 2.5-1.93.72-3.58-.3-3.66-1-.11-.99 1.18-6.53 4-7 1.92-.32 3.65.85 3.65 2.24A7.5 7.5 0 0 1 14 5.28c0-1.39 1.84-2.6 3.77-2.28 2.82.47 4.11 6.01 4 7-.08.7-1.73 1.72-3.66 1-1.26-.47-1.85-1.45-2.24-2.5" />
+      <path d="M4.42 11.25A13.15 13.15 0 0 0 4 14.56C4 18.73 7.58 21 12 21s8-2.27 8-6.44a11.7 11.7 0 0 0-.49-3.31" />
+      <path d="M8 14v.5" />
+      <path d="M16 14v.5" />
+      <path d="M11.25 16.25h1.5L12 17z" />
+    </svg>
+    <div class="toast-content">
+      <div class="toast-title">🐕 客廳守護犬 · 圓角毛玻璃</div>
+      <div class="toast-msg">已啟用 20px 圓角與 78% 半透明毛玻璃 HUD 🐾</div>
+    </div>
+  </div>
+</body>
+</html>

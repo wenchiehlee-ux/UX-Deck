@@ -1,28 +1,45 @@
-# Home Assistant Automation Example: Android TV 10-foot Glancable Toast
-# Uses 'notify.android_tv_living_room' (Notifications for Android TV integration)
+# Home Assistant Automation Example: Android TV 10-foot Glancable Toast (PiPup REST + Lovelace)
+# Verified on Android TV (PiPup Port 7979)
 
-alias: "TV Popup: 大門訪客與智能偵測"
-description: "在電視右上角顯示毛玻璃通知，附帶即時串流快照或按鍵操作"
+# Standard REST Command Definition in Home Assistant (configuration.yaml)
+# rest_command:
+#   pipup_tv_notify:
+#     url: "http://{{ tv_ip | default('192.168.31.232') }}:7979/notify"
+#     method: POST
+#     headers:
+#       Content-Type: "application/json"
+#     payload: >-
+#       {
+#         "duration": {{ duration | default(10) }},
+#         "position": 0,
+#         "title": "{{ title }}",
+#         "titleColor": "{{ title_color | default('#38bdf8') }}",
+#         "titleSize": 20,
+#         "message": "{{ message }}",
+#         "messageColor": "#f1f5f9",
+#         "messageSize": 16,
+#         "backgroundColor": "#660f172a",
+#         "media": {{ media | default('{}') }}
+#       }
+
+alias: "TV Popup: 客廳守護者與智能門鈴偵測"
+description: "在 Android 電視右上角顯示 60% 半透明 Cyber Dark Slate HUD 通知 (position: 0, #660f172a)"
 trigger:
   - platform: state
     entity_id: binary_sensor.front_door_motion
     to: "on"
 action:
-  - service: notify.android_tv_living_room
+  - service: rest_command.pipup_tv_notify
     data:
-      title: "門鈴偵測提醒"
-      message: "玄關有人按門鈴，門鎖已保持上鎖狀態。"
-      data:
-        duration: 8
-        position: "top-right"
-        fontsize: "large"
-        transparency: "25%"
-        color: "#0a0c12"
-        interrupt: false
-        icon:
-          url: "https://brands.home-assistant.io/_/doorbell/icon.png"
+      tv_ip: "192.168.31.232"
+      duration: 10
+      title: "玄關動態偵測"
+      title_color: "#38bdf8"
+      message: "偵測到訪客接近玄關門口，已啟動即時安防監控錄影。"
+      media: >-
+        {"image": {"uri": "https://img.icons8.com/fluency/96/doorbell.png", "width": 120}}
 
-# Alternative: Lovelace Browser Mod Popup (for Fully Kiosk / Webview TV)
+# Alternative: Browser Mod Popup (for Fully Kiosk / Lovelace Webview TV)
 # service: browser_mod.popup
 # data:
 #   title: "客廳安全防護 (Living Room Sentinel)"
@@ -34,4 +51,3 @@ action:
 #         [[[
 #           return `<svg class="ux-icon ux-icon-sentinel" style="width:36px;height:36px;"><use href="#icon-sentinel-tv"/></svg>`;
 #         ]]]
-

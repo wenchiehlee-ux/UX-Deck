@@ -24,7 +24,7 @@ This document details the aesthetic boundaries and consistency guidelines that c
 | **GoogleAlertManager** | Electric Indigo (`#4f46e5`) | Clean Slate White (`#f8fafc`) | Signal Cyan (`#06b6d4`) | Crisp, organized, rapid |
 | **YoutubeAudio.Fetch** | Vibrant Purple (`#8b5cf6`) | Pure Obsidian (`#0f0f13`) | Neon Cyan / Magenta | Tactile, immersive, media-focused |
 | **mkdocs-investment** | Institutional Blue (`#2563eb`) | Dark Navy Slate (`#0a0e17`) | Emerald (`#10b981`) / Ruby (`#ef4444`) | Analytical, authoritative, precision |
-| **HomeAssistant TV** | High-vis Sky Blue (`#38bdf8`) | Frosted Scrim (`rgba(10,10,16,0.85)`) | Amber Warning (`#f59e0b`) | Glanceable, alert, living-room ambient |
+| **HomeAssistant TV** | High-vis Sky Blue (`#38bdf8`) / Amber (`#f59e0b`) | 60% Translucent Dark Slate (`#660f172a` / `rgba(15,23,42,0.40)`) | Amber Warning (`#f59e0b`) | Glanceable, alert, living-room ambient (Position 0: TopRight) |
 
 ### 2. Interaction & Component Density
 

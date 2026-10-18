@@ -19,7 +19,7 @@ The UX-Deck Design System provides a cohesive visual architecture across our eco
 | **GoogleAlertManager** | GitHub Pages (Web App) | SaaS Signal Intelligence | Sharp, Efficient, Productive | Rapid feed triage, signal-over-noise scanning |
 | **YoutubeAudio.Fetch** | GitHub Pages (Web App) | Obsidian Soundwave Dark | Immersive, Modern, Tactile | Engaging playback, tactile queue management |
 | **mkdocs-investment** | GitHub Pages (MkDocs) | High-Precision Fintech Slate | Institutional, Analytical, High-clarity | Dense financial metrics, KPI cards, table scanning |
-| **HomeAssistant TV** | Android TV (Popup/HUD) | 10-foot Frosted Glass HUD | Glanceable, Non-intrusive, Bold | Instant readability from 3–4m, D-pad navigable |
+| **HomeAssistant TV** | Android TV (PiPup / HUD) | 10-foot Frosted HUD (60% Translucent Dark Slate `#660f172a`) | Glanceable, Non-intrusive, Bold | Instant readability from 3–4m, Position 0 (TopRight) |
 
 ---
 
