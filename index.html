@@ -202,6 +202,101 @@
     .mascot-card.card-pangolin:hover::before { background: #0284c7; }
     .wrapper-pangolin { background: #f0f9ff; border: 1px solid #bae6fd; }
 
+    /* 6. wenchiehlee.quickconnect.to Top Bar Preview (Cyber Slate NAS 控制列) */
+    .preview-nas-menubar {
+      background: #0f172a;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.3);
+      border: 1px solid #334155;
+      font-family: "JetBrains Mono", "Inter", sans-serif;
+      margin-bottom: 1.15rem;
+    }
+    .nas-mock-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: #0f172a;
+      border-bottom: 1px solid #1e293b;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .nas-mock-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nas-mock-brand svg {
+      width: 22px;
+      height: 22px;
+      color: #38bdf8;
+      filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.6));
+    }
+    .nas-mock-site-title {
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: #f8fafc;
+      letter-spacing: -0.01em;
+    }
+    .nas-mock-badges {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .nas-mock-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #4ade80;
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      padding: 2px 8px;
+      border-radius: 9999px;
+    }
+    .nas-mock-pill {
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #38bdf8;
+      white-space: nowrap;
+    }
+    .nas-mock-tabs {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 16px 8px;
+      background: #1e293b;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nas-mock-tabs::-webkit-scrollbar { display: none; }
+    .nas-mock-tab {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #94a3b8;
+      padding: 3px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+    }
+    .nas-mock-tab:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #f1f5f9;
+    }
+    .nas-mock-tab.active {
+      background: #0284c7;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
     /* Preview: Synology NAS White Basis DevOps HUD */
     .preview-nas {
       background: #ffffff;
@@ -692,6 +787,84 @@
     }
     .life-btn:hover { color: #0f766e; }
 
+    /* 2. GoogleAlertManager Top Bar Preview (即時情報過濾選單列) */
+    .preview-alert-menubar {
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(234, 88, 12, 0.12);
+      border: 1px solid #fed7aa;
+      font-family: "Inter", "Noto Sans TC", sans-serif;
+      margin-bottom: 1.15rem;
+    }
+    .alert-mock-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: #ffffff;
+      border-bottom: 1px solid #ffedd5;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .alert-mock-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .alert-mock-brand svg {
+      width: 22px;
+      height: 22px;
+      color: #ea580c;
+    }
+    .alert-mock-site-title {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.01em;
+    }
+    .alert-mock-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #16a34a;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-family: "JetBrains Mono", monospace;
+    }
+    .alert-mock-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px 8px;
+      background: #fff7ed;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .alert-mock-tabs::-webkit-scrollbar { display: none; }
+    .alert-mock-tab {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #9a3412;
+      padding: 3px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+    }
+    .alert-mock-tab:hover {
+      background: #fed7aa;
+      color: #7c2d12;
+    }
+    .alert-mock-tab.active {
+      background: #ea580c;
+      color: #ffffff;
+    }
+
     /* 2. GoogleAlertManager Feed Card */
     .preview-alert {
       background: #ffffff;
@@ -777,6 +950,81 @@
       transition: background 0.2s ease;
     }
     .btn-alert-secondary:hover { background: #f1f5f9; }
+
+    /* 3. YoutubeAudio.Fetch Top Bar Preview (潮流多媒體選單列) */
+    .preview-soundwave-menubar {
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(139, 92, 246, 0.15);
+      border: 1px solid #e9d5ff;
+      font-family: "Plus Jakarta Sans", "Noto Sans TC", sans-serif;
+      margin-bottom: 1.15rem;
+    }
+    .soundwave-mock-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: #ffffff;
+      border-bottom: 1px solid #f3e8ff;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .soundwave-mock-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .soundwave-mock-brand svg {
+      width: 22px;
+      height: 22px;
+      color: #8b5cf6;
+    }
+    .soundwave-mock-site-title {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.015em;
+    }
+    .soundwave-mock-pill {
+      background: #faf5ff;
+      border: 1px solid #d8b4fe;
+      color: #7e22ce;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      font-family: "JetBrains Mono", monospace;
+    }
+    .soundwave-mock-tabs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px 8px;
+      background: #faf5ff;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .soundwave-mock-tabs::-webkit-scrollbar { display: none; }
+    .soundwave-mock-tab {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #6b21a8;
+      padding: 3px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+    }
+    .soundwave-mock-tab:hover {
+      background: #f3e8ff;
+      color: #581c87;
+    }
+    .soundwave-mock-tab.active {
+      background: #8b5cf6;
+      color: #ffffff;
+    }
 
     /* 3. YoutubeAudio.Fetch Tactile Soundwave Player (Clean White Studio Basis) */
     .preview-soundwave {
@@ -867,6 +1115,106 @@
       color: #64748b;
     }
 
+    /* 4. mkdocs-investment Top Bar Preview (Fintech Navy MkDocs 導航選單列) */
+    .preview-fintech-menubar {
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(30, 58, 138, 0.15);
+      border: 1px solid #bfdbfe;
+      font-family: "Inter", "Noto Sans TC", sans-serif;
+      margin-bottom: 1.15rem;
+    }
+    .fintech-mock-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: #1e3a8a;
+      border-bottom: 1px solid #1d4ed8;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .fintech-mock-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .fintech-mock-brand svg {
+      width: 22px;
+      height: 22px;
+      color: #93c5fd;
+      filter: drop-shadow(0 0 6px rgba(147, 197, 253, 0.5));
+    }
+    .fintech-mock-site-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+    .fintech-mock-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .fintech-mock-search {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.22);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .fintech-mock-pill {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+    .fintech-mock-tabs {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 6px 16px 8px;
+      background: #172554;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .fintech-mock-tabs::-webkit-scrollbar { display: none; }
+    .fintech-mock-tab {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      padding: 2px 0;
+      position: relative;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.18s ease;
+    }
+    .fintech-mock-tab:hover {
+      color: #ffffff;
+    }
+    .fintech-mock-tab.active {
+      color: #ffffff;
+      font-weight: 700;
+    }
+    .fintech-mock-tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2.5px;
+      background: #38bdf8;
+      border-radius: 2px;
+    }
+
     /* 4. mkdocs-investment Fintech Card (White / Crisp Slate Basis) */
     .preview-fintech {
       background: #ffffff;
@@ -927,6 +1275,106 @@
       display: flex;
       align-items: center;
       gap: 4px;
+    }
+
+    /* 5. My-TW-Coverage Top Bar Preview (Emerald Green 個股研報選單列) */
+    .preview-coverage-menubar {
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(5, 150, 105, 0.15);
+      border: 1px solid #a7f3d0;
+      font-family: "Inter", "Noto Sans TC", sans-serif;
+      margin-bottom: 1.15rem;
+    }
+    .coverage-mock-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: #059669;
+      border-bottom: 1px solid #047857;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .coverage-mock-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .coverage-mock-brand svg {
+      width: 22px;
+      height: 22px;
+      color: #a7f3d0;
+      filter: drop-shadow(0 0 6px rgba(167, 243, 208, 0.45));
+    }
+    .coverage-mock-site-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+    .coverage-mock-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .coverage-mock-search {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .coverage-mock-pill {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+    .coverage-mock-tabs {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 6px 16px 8px;
+      background: #047857;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .coverage-mock-tabs::-webkit-scrollbar { display: none; }
+    .coverage-mock-tab {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.88);
+      padding: 2px 0;
+      position: relative;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.18s ease;
+    }
+    .coverage-mock-tab:hover {
+      color: #ffffff;
+    }
+    .coverage-mock-tab.active {
+      color: #ffffff;
+      font-weight: 700;
+    }
+    .coverage-mock-tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2.5px;
+      background: #a7f3d0;
+      border-radius: 2px;
     }
 
     /* 5. My-TW-Coverage Taiwan Stock Research Radar Card */
@@ -1422,6 +1870,29 @@
 
         <div class="live-preview-section">
           <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+          
+          <!-- Top Bar & Tabs Menu Preview (即時情報過濾選單列真實展示) -->
+          <div class="preview-alert-menubar">
+            <div class="alert-mock-header">
+              <div class="alert-mock-brand">
+                <svg viewBox="0 0 24 24"><use href="#icon-falcon-radar"></use></svg>
+                <span class="alert-mock-site-title">GoogleAlertManager</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="alert-mock-status">● 監控中 (Live)</span>
+                <span style="font-size: 0.74rem; color: #64748b; font-family: 'JetBrains Mono', monospace; background: #f8fafc; border: 1px solid #e2e8f0; padding: 2px 8px; border-radius: 6px;">12 條新情報</span>
+              </div>
+            </div>
+            <div class="alert-mock-tabs">
+              <span class="alert-mock-tab active">全部情報 (All)</span>
+              <span class="alert-mock-tab">高優先級 (90%+)</span>
+              <span class="alert-mock-tab">⚡ 矽光子 / CPO</span>
+              <span class="alert-mock-tab">🤖 AI 算力晶片</span>
+              <span class="alert-mock-tab">關鍵字規則庫</span>
+              <span class="alert-mock-tab">歷史歸檔</span>
+            </div>
+          </div>
+
           <div class="preview-alert">
             <div class="alert-header">
               <div class="alert-badge-urgent">
@@ -1480,6 +1951,28 @@
 
         <div class="live-preview-section">
           <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+          
+          <!-- Top Bar & Tabs Menu Preview (潮流多媒體選單列真實展示) -->
+          <div class="preview-soundwave-menubar">
+            <div class="soundwave-mock-header">
+              <div class="soundwave-mock-brand">
+                <svg viewBox="0 0 24 24"><use href="#icon-whale-sonic"></use></svg>
+                <span class="soundwave-mock-site-title">YoutubeAudio.Fetch</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="soundwave-mock-pill">MP3 320K / FLAC</span>
+                <span style="font-size: 0.74rem; color: #7e22ce; background: #faf5ff; border: 1px solid #d8b4fe; padding: 2px 8px; border-radius: 6px; font-weight: 600;">v2.4.0</span>
+              </div>
+            </div>
+            <div class="soundwave-mock-tabs">
+              <span class="soundwave-mock-tab active">音訊擷取 (Fetch)</span>
+              <span class="soundwave-mock-tab">批次下載佇列 (Queue)</span>
+              <span class="soundwave-mock-tab">🎛️ 音質增強 (DSP)</span>
+              <span class="soundwave-mock-tab">播放歷史</span>
+              <span class="soundwave-mock-tab">偏好設定</span>
+            </div>
+          </div>
+
           <div class="preview-soundwave">
             <div class="player-top">
               <div class="album-art">
@@ -1567,6 +2060,33 @@
 
         <div class="live-preview-section">
           <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+          
+          <!-- Top Bar & Tabs Menu Preview (Fintech Navy 頂部導航選單列真實展示) -->
+          <div class="preview-fintech-menubar">
+            <div class="fintech-mock-header">
+              <div class="fintech-mock-brand">
+                <svg viewBox="0 0 24 24"><use href="#icon-bull-fintech"></use></svg>
+                <span class="fintech-mock-site-title">Wen-Chieh Lee 的投資研究</span>
+              </div>
+              <div class="fintech-mock-controls">
+                <div class="fintech-mock-search">
+                  <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  <span>搜尋...</span>
+                </div>
+                <div class="fintech-mock-pill">🏠 主題首頁</div>
+              </div>
+            </div>
+            <div class="fintech-mock-tabs">
+              <span class="fintech-mock-tab active">雙核心資產配置</span>
+              <span class="fintech-mock-tab">美股指數 ETF</span>
+              <span class="fintech-mock-tab">台股波段策略</span>
+              <span class="fintech-mock-tab">總體經濟指標</span>
+              <span class="fintech-mock-tab">量化回測驗證</span>
+              <span class="fintech-mock-tab">投研週記</span>
+              <span class="fintech-mock-tab">關於</span>
+            </div>
+          </div>
+
           <div class="preview-fintech">
             <div class="fintech-header">
               <div style="font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
@@ -1636,6 +2156,30 @@
 
         <div class="live-preview-section">
           <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+          
+          <!-- Top Bar & Tabs Menu Preview (Cyber Slate NAS 控制選單列真實展示) -->
+          <div class="preview-nas-menubar">
+            <div class="nas-mock-header">
+              <div class="nas-mock-brand">
+                <svg viewBox="0 0 24 24"><use href="#icon-pangolin-shield"></use></svg>
+                <span class="nas-mock-site-title">wenchiehlee.synology.me</span>
+              </div>
+              <div class="nas-mock-badges">
+                <span class="nas-mock-status">● DSM 7.2 在線</span>
+                <span class="nas-mock-pill">Tailscale 綠燈</span>
+                <span class="nas-mock-pill">🏠 主題首頁</span>
+              </div>
+            </div>
+            <div class="nas-mock-tabs">
+              <span class="nas-mock-tab active">DevOps 服務總覽</span>
+              <span class="nas-mock-tab">Docker 容器 (12)</span>
+              <span class="nas-mock-tab">Hyper Backup 備份</span>
+              <span class="nas-mock-tab">Tailscale 網狀網路</span>
+              <span class="nas-mock-tab">硬體健康 (DS920+)</span>
+              <span class="nas-mock-tab">儲存集區</span>
+            </div>
+          </div>
+
           <div class="preview-nas">
             <div class="nas-header-row">
               <div class="nas-title-box">
@@ -1712,6 +2256,33 @@
 
         <div class="live-preview-section">
           <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+          
+          <!-- Top Bar & Tabs Menu Preview (Emerald Green 個股研報選單列真實展示) -->
+          <div class="preview-coverage-menubar">
+            <div class="coverage-mock-header">
+              <div class="coverage-mock-brand">
+                <svg viewBox="0 0 24 24"><use href="#icon-owl-coverage"></use></svg>
+                <span class="coverage-mock-site-title">My-TW-Coverage · 台灣個股調研</span>
+              </div>
+              <div class="coverage-mock-controls">
+                <div class="coverage-mock-search">
+                  <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  <span>搜尋...</span>
+                </div>
+                <div class="coverage-mock-pill">🏠 主題首頁</div>
+              </div>
+            </div>
+            <div class="coverage-mock-tabs">
+              <span class="coverage-mock-tab active">個股覆蓋總覽</span>
+              <span class="coverage-mock-tab">2330 台積電</span>
+              <span class="coverage-mock-tab">半導體產業鏈</span>
+              <span class="coverage-mock-tab">AI 伺服器供應鏈</span>
+              <span class="coverage-mock-tab">高股息殖利率</span>
+              <span class="coverage-mock-tab">估值模型 (PER/PBR)</span>
+              <span class="coverage-mock-tab">關於</span>
+            </div>
+          </div>
+
           <div class="preview-coverage">
             <div class="coverage-header">
               <div>
@@ -1813,44 +2384,4 @@
 
     <!-- SECTION 3: VECTOR SCALE LADDER (WHITE BASIS) -->
     <div class="section-title">📐 3. 向量尺寸梯階測試 (14px ~ 64px)</div>
-    <div class="section-desc">驗證八大幾何吉祥物自桌面小圖示 (14px) 至客廳電視大螢幕 (64px) 之邊角清晰度與筆畫比例。</div>
-    <div class="scale-row">
-      <div class="scale-item">
-        <svg class="ux-icon ux-icon-xs ux-icon-deer"><use href="#icon-deer-life"></use></svg>
-        <span>14px (xs)</span>
-      </div>
-      <div class="scale-item">
-        <svg class="ux-icon ux-icon-sm ux-icon-falcon"><use href="#icon-falcon-radar"></use></svg>
-        <span>18px (sm)</span>
-      </div>
-      <div class="scale-item">
-        <svg class="ux-icon ux-icon-md ux-icon-whale"><use href="#icon-whale-sonic"></use></svg>
-        <span>24px (md 預設)</span>
-      </div>
-      <div class="scale-item">
-        <svg class="ux-icon ux-icon-lg ux-icon-bull"><use href="#icon-bull-fintech"></use></svg>
-        <span>32px (lg)</span>
-      </div>
-      <div class="scale-item">
-        <svg class="ux-icon ux-icon-xl ux-icon-bear"><use href="#icon-bear-defense"></use></svg>
-        <span>48px (xl)</span>
-      </div>
-
-      <div class="scale-item">
-        <svg class="ux-icon ux-icon-xl ux-icon-pangolin"><use href="#icon-pangolin-shield"></use></svg>
-        <span>48px (敏捷守護貓)</span>
-      </div>
-      <div class="scale-item">
-        <svg class="ux-icon ux-icon-xl ux-icon-owl"><use href="#icon-owl-coverage"></use></svg>
-        <span>48px (研究貓頭鷹)</span>
-      </div>
-      <div class="scale-item">
-        <svg class="ux-icon ux-icon-tv ux-icon-sentinel"><use href="#icon-sentinel-tv"></use></svg>
-        <span>64px (tv 10英呎)</span>
-      </div>
-    </div>
-
-  </div>
-
-</body>
-</html>
+    <div class="section-desc">驗證八大幾何吉祥物自桌面小圖示 (14px) 至客廳電視大螢幕 (64px) 之邊角清晰度與筆畫比例�
