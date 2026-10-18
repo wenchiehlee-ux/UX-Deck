@@ -532,6 +532,108 @@
       gap: 6px;
     }
 
+    /* 1. Life Top Bar Menu Preview (實體頂部導航與選單列預覽) */
+    .preview-life-menubar {
+      background: #009688;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(13, 148, 136, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-family: "Quicksand", "LXGW WenKai TC", -apple-system, sans-serif;
+      margin-bottom: 1.15rem;
+    }
+    .life-mock-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: #009688;
+      color: #ffffff;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .life-mock-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .life-mock-brand svg {
+      width: 22px;
+      height: 22px;
+      stroke: #2dd4bf;
+      stroke-width: 1.8;
+      fill: none;
+      filter: drop-shadow(0 0 6px rgba(45, 212, 191, 0.45));
+    }
+    .life-mock-site-title {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
+    .life-mock-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .life-mock-search {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.16);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .life-mock-pill {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      padding: 3px 10px;
+      border-radius: 9999px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+    .life-mock-tabs {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 6px 16px 8px;
+      background: #00897b;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .life-mock-tabs::-webkit-scrollbar { display: none; }
+    .life-mock-tab {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.88);
+      padding: 2px 0;
+      position: relative;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color 0.18s ease;
+    }
+    .life-mock-tab:hover {
+      color: #ffffff;
+    }
+    .life-mock-tab.active {
+      color: #ffffff;
+      font-weight: 700;
+    }
+    .life-mock-tab.active::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      right: 0;
+      height: 2.5px;
+      background: #ffffff;
+      border-radius: 2px;
+    }
+
     /* 1. Life Warm Editorial Card (方案 A: LXGW WenKai TC 溫潤隨筆手帳風) */
     .preview-life {
       background: #faf8f5;
@@ -1236,6 +1338,35 @@
 
         <div class="live-preview-section">
           <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+          
+          <!-- Top Bar & Tabs Menu Preview (新版頂部導航與選單列真實展示) -->
+          <div class="preview-life-menubar">
+            <div class="life-mock-header">
+              <div class="life-mock-brand">
+                <svg viewBox="0 0 24 24"><use href="#icon-deer-life"></use></svg>
+                <span class="life-mock-site-title">Wen-Chieh Lee的生活</span>
+              </div>
+              <div class="life-mock-controls">
+                <div class="life-mock-search">
+                  <svg style="width: 12px; height: 12px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                  <span>搜尋...</span>
+                </div>
+                <div class="life-mock-pill">🏠 主題首頁</div>
+              </div>
+            </div>
+            <div class="life-mock-tabs">
+              <span class="life-mock-tab active">生活</span>
+              <span class="life-mock-tab">種植</span>
+              <span class="life-mock-tab">養殖</span>
+              <span class="life-mock-tab">釀酒</span>
+              <span class="life-mock-tab">旅遊攝影</span>
+              <span class="life-mock-tab">旅遊</span>
+              <span class="life-mock-tab">標籤</span>
+              <span class="life-mock-tab">Blogger</span>
+              <span class="life-mock-tab">關於</span>
+            </div>
+          </div>
+
           <div class="preview-life">
             <div class="life-tag">
               <svg class="ux-icon ux-icon-deer" style="width: 14px; height: 14px;"><use href="#icon-deer-life"></use></svg>
