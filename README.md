@@ -136,7 +136,7 @@ python ./scripts/sync_skills.py --force
 ### 4. `My-TW-Coverage` (台股個股深度調研) — ✅ 已落地完成
 - **部署指南**：[deploy/tw-coverage/DEPLOYMENT.md](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/tw-coverage/DEPLOYMENT.md)
 - **吉祥物意象**：拍拍翅萌萌鴞 🦉 (`#icon-owl-coverage`)，象徵犀利個股洞見。
-- **亮點**：頂部浮動萌鴞品牌欄、showcase.html 統一配色徽章、圓角搜尋偏移防重疊、隱藏冗餘 corner。
+- **亮點**：頂部浮動萌鴞品牌欄、index.html 統一配色徽章、圓角搜尋偏移防重疊、隱藏冗餘 corner。
 
 ### 5. `HomeAssistant` (Android TV 10-Foot HUD) — ✅ 已實機上線
 - **實體部署套件**：專屬部署目錄位於 [deploy/android-tv/](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/android-tv/)，內含完整指南 [DEPLOYMENT.md](file:///C:/Users/WJLEE/SynologyDrive/NAS/github.com/UX-Deck/deploy/android-tv/DEPLOYMENT.md)。
