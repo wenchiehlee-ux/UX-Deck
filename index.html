@@ -373,82 +373,163 @@
       cursor: text;
     }
 
-    /* Section 2: Color Palette & Typography Matrix (Light Basis) */
-    .matrix-grid {
+    /* Section 2: Merged Specs & Live Component Previews (Strict 2, 2, 2, 1 Grid) */
+    .merged-ecosystem-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
       margin-bottom: 3.5rem;
     }
-    .matrix-card {
+    .merged-project-card {
       background: var(--surface-card);
       border: 1px solid var(--border-light);
-      border-radius: 18px;
-      padding: 1.75rem;
+      border-radius: 20px;
+      padding: 1.85rem;
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      gap: 1.35rem;
       box-shadow: var(--shadow-card);
+      transition: all 0.25s ease;
+      position: relative;
     }
-    .matrix-header {
+    .merged-project-card:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: var(--border-hover);
+    }
+    .merged-project-card.full-width {
+      grid-column: 1 / -1;
+    }
+    @media (max-width: 960px) {
+      .merged-ecosystem-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project-header-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--border-light);
       padding-bottom: 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-    .matrix-title {
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: #0f172a;
+    .project-identity {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.85rem;
+    }
+    .project-title-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .project-name {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.015em;
+      line-height: 1.3;
+    }
+    .project-category {
+      font-size: 0.82rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+    .live-url-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: "JetBrains Mono", monospace;
+      text-decoration: none;
+      background: #eff6ff;
+      color: #2563eb;
+      border: 1px solid #bfdbfe;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .live-url-pill:hover {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+    .specs-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      background: #f8fafc;
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 1.15rem 1.25rem;
+    }
+    .specs-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .specs-badge-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
     .matrix-swatches {
       display: flex;
       gap: 8px;
     }
     .swatch {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
       border: 1px solid rgba(0, 0, 0, 0.08);
       cursor: pointer;
       transition: transform 0.2s ease;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     }
     .swatch:hover {
       transform: scale(1.15);
     }
     .font-sample-box {
-      background: #f8fafc;
-      border: 1px solid var(--border-light);
-      border-radius: 12px;
-      padding: 1.15rem;
+      border-top: 1px dashed #e2e8f0;
+      padding-top: 0.75rem;
     }
     .font-name-tag {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: #64748b;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.4rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
       display: flex;
       justify-content: space-between;
     }
     .font-preview-text {
-      font-size: 1.05rem;
+      font-size: 0.96rem;
       color: #1e293b;
-      line-height: 1.55;
+      line-height: 1.5;
     }
-
-    /* Section 3: Live Component Previews (Clean High-Contrast Cards) */
-    .components-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3.5rem;
+    .live-preview-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .preview-section-header {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     /* 1. Life Warm Editorial Card */
@@ -1046,7 +1127,7 @@
 
       <!-- Whale -->
       <div class="mascot-card card-whale">
-        <a href="https://wenchiehlee.github.io/YoutubeAudio.Fetch/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-whale" title="造訪 YoutubeAudio.Fetch ↗">
+        <a href="https://zhongzheng782.github.io/YoutubeAudio.Fetch/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-whale" title="造訪 YoutubeAudio.Fetch ↗">
           <svg class="ux-icon ux-icon-xl ux-icon-whale"><use href="#icon-whale-sonic"></use></svg>
         </a>
         <div class="mascot-name">流暢聲波鯨 🐋</div>
@@ -1105,405 +1186,496 @@
       </div>
     </div>
 
-    <!-- SECTION 2: PALETTE & TYPOGRAPHY MATRIX (WHITE BASIS) -->
-    <div class="section-title">🎨 2. 色彩基調與專屬字體矩陣 (Color Palette & Typography Matrix)</div>
-    <div class="section-desc">依據各專案之領域屬性（生活文藝、SaaS情報、黑曜多媒體、精密財經、客廳HUD）精選專屬色票與字體組合。</div>
-    <div class="matrix-grid">
-      
-      <!-- mkdocs-life -->
-      <div class="matrix-card">
-        <div class="matrix-header">
-          <div class="matrix-title">
-            <svg class="ux-icon ux-icon-deer" style="width: 20px; height: 20px;"><use href="#icon-deer-life"></use></svg>
-            mkdocs-life · 暖陽人文誌
+    <!-- SECTION 2: MERGED PALETTE, TYPOGRAPHY & LIVE COMPONENT PREVIEWS (2, 2, 2, 1 LAYOUT) -->
+    <div class="section-title">🎨 2. 色彩調性、專屬字體與真實元件展示 (Color, Typography & Live Previews)</div>
+    <div class="section-desc">以白底為基準（White Basis），將七大兄弟專案的精準品牌色彩光譜、人文與科技專屬字體，與真實落地之 UI 實體元件緊密結合，並提供直達各站點的即時連線網址。</div>
+
+    <div class="merged-ecosystem-grid">
+
+      <!-- ROW 1 - CARD 1: mkdocs-life -->
+      <div class="merged-project-card">
+        <div class="project-header-bar">
+          <div class="project-identity">
+            <svg class="ux-icon ux-icon-lg ux-icon-deer"><use href="#icon-deer-life"></use></svg>
+            <div class="project-title-group">
+              <div class="project-name">mkdocs-life · 暖陽人文誌</div>
+              <div class="project-category">個人慢活隨筆與深度長文日誌</div>
+            </div>
           </div>
-          <div class="matrix-swatches">
-            <div class="swatch" style="background: #0d9488;" title="Primary: #0d9488 (Deep Sage)"></div>
-            <div class="swatch" style="background: #e07a5f;" title="Accent: #e07a5f (Terracotta)"></div>
-            <div class="swatch" style="background: #faf8f5;" title="Surface: #faf8f5 (Warm Paper)"></div>
+          <a href="https://wenchiehlee.github.io/mkdocs-life/" target="_blank" rel="noopener noreferrer" class="live-url-pill" title="造訪 mkdocs-life 線上站點">
+            <span>wenchiehlee.github.io/mkdocs-life</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <div class="specs-section">
+          <div class="specs-top-row">
+            <span class="specs-badge-label">🎨 品牌色彩光譜</span>
+            <div class="matrix-swatches">
+              <div class="swatch" style="background: #0d9488;" title="Primary: #0d9488 (Deep Sage / 林鹿青綠)"></div>
+              <div class="swatch" style="background: #e07a5f;" title="Accent: #e07a5f (Terracotta / 陶土暖橘)"></div>
+              <div class="swatch" style="background: #faf8f5;" title="Surface: #faf8f5 (Warm Paper / 暖紙白底)"></div>
+            </div>
+          </div>
+          <div class="font-sample-box">
+            <div class="font-name-tag">
+              <span>標題與人文內文規範</span>
+              <span>Noto Serif TC + Newsreader</span>
+            </div>
+            <div class="font-preview-text" style="font-family: 'Noto Serif TC', serif;">
+              漫步於清晨薄霧的林道，生活細節如詩句般沉靜舒展。
+            </div>
           </div>
         </div>
-        <div class="font-sample-box">
-          <div class="font-name-tag">
-            <span>標題與人文內文</span>
-            <span>Noto Serif TC + Newsreader</span>
-          </div>
-          <div class="font-preview-text" style="font-family: 'Noto Serif TC', serif;">
-            漫步於清晨薄霧的林道，生活細節如詩句般沉靜舒展。
+
+        <div class="live-preview-section">
+          <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+          <div class="preview-life">
+            <div class="life-tag">
+              <svg class="ux-icon ux-icon-deer" style="width: 14px; height: 14px;"><use href="#icon-deer-life"></use></svg>
+              2026-10-17 · 漫步手記
+            </div>
+            <div class="life-title">秋陽微風中的森林慢行哲學</div>
+            <div class="life-body">
+              踩在覆蓋金黃松針的小徑上，微風吹拂帶起樹梢沙沙輕響。偶遇駐足凝望的幾何林鹿，在光影斑駁間，心神重拾久違的清明與靜謐。
+            </div>
+            <div class="life-footer">
+              <span>閱讀時間約 4 分鐘 · 筆記分類：生活觀察</span>
+              <a href="https://wenchiehlee.github.io/mkdocs-life/" target="_blank" rel="noopener noreferrer" class="life-btn">閱讀全文 ↗</a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- GoogleAlertManager -->
-      <div class="matrix-card">
-        <div class="matrix-header">
-          <div class="matrix-title">
-            <svg class="ux-icon ux-icon-falcon" style="width: 20px; height: 20px;"><use href="#icon-falcon-radar"></use></svg>
-            GoogleAlertManager · SaaS 敏捷情報
+      <!-- ROW 1 - CARD 2: GoogleAlertManager -->
+      <div class="merged-project-card">
+        <div class="project-header-bar">
+          <div class="project-identity">
+            <svg class="ux-icon ux-icon-lg ux-icon-falcon"><use href="#icon-falcon-radar"></use></svg>
+            <div class="project-title-group">
+              <div class="project-name">GoogleAlertManager · SaaS 敏捷情報</div>
+              <div class="project-category">高信噪比關鍵字雷達與即時資訊分流</div>
+            </div>
           </div>
-          <div class="matrix-swatches">
-            <div class="swatch" style="background: #ea580c;" title="Primary: #ea580c (Alert Orange)"></div>
-            <div class="swatch" style="background: #f97316;" title="Accent: #f97316 (Sunset Orange)"></div>
-            <div class="swatch" style="background: #ffffff;" title="Surface: #ffffff (Pure White)"></div>
+          <a href="https://wenchiehlee-money.github.io/GoogleAlertManager/" target="_blank" rel="noopener noreferrer" class="live-url-pill" title="造訪 GoogleAlertManager 線上平台">
+            <span>wenchiehlee-money.github.io/GoogleAlertManager</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <div class="specs-section">
+          <div class="specs-top-row">
+            <span class="specs-badge-label">🎨 品牌色彩光譜</span>
+            <div class="matrix-swatches">
+              <div class="swatch" style="background: #ea580c;" title="Primary: #ea580c (Alert Orange / 警報橘)"></div>
+              <div class="swatch" style="background: #f97316;" title="Accent: #f97316 (Sunset Orange / 日落橘)"></div>
+              <div class="swatch" style="background: #ffffff;" title="Surface: #ffffff (Pure White / 純白基底)"></div>
+            </div>
+          </div>
+          <div class="font-sample-box">
+            <div class="font-name-tag">
+              <span>高信息密度 UI 規範</span>
+              <span>Inter + Noto Sans TC</span>
+            </div>
+            <div class="font-preview-text" style="font-family: 'Inter', 'Noto Sans TC', sans-serif; color: #ea580c;">
+              即時監測 32 組關鍵字動態，第一時間排除雜訊鎖定核心情報。
+            </div>
           </div>
         </div>
-        <div class="font-sample-box">
-          <div class="font-name-tag">
-            <span>高信息密度 UI</span>
-            <span>Inter + Noto Sans TC</span>
-          </div>
-          <div class="font-preview-text" style="font-family: 'Inter', 'Noto Sans TC', sans-serif; color: #ea580c;">
-            即時監測 32 組關鍵字動態，第一時間排除雜訊鎖定核心情報。
+
+        <div class="live-preview-section">
+          <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+          <div class="preview-alert">
+            <div class="alert-header">
+              <div class="alert-badge-urgent">
+                <svg class="ux-icon ux-icon-falcon" style="width: 13px; height: 13px; color: #dc2626;"><use href="#icon-falcon-radar"></use></svg>
+                緊急情報
+              </div>
+              <div class="alert-score">相關度 96%</div>
+            </div>
+            <div class="alert-title">TSMC 與 OpenAI 深度合作新進展：矽光子封裝架構全面升級</div>
+            <div class="alert-snippet">
+              最新供應鏈動態顯示，關鍵封裝製程良率已突破臨界點。<mark>台積電 CoWoS</mark> 產能擴產計畫預期提前一季完成，滿足下一代算力架構需求...
+            </div>
+            <div class="alert-actions">
+              <button class="btn-alert-primary">標記已讀</button>
+              <button class="btn-alert-secondary">封存情報</button>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- YoutubeAudio.Fetch -->
-      <div class="matrix-card">
-        <div class="matrix-header">
-          <div class="matrix-title">
-            <svg class="ux-icon ux-icon-whale" style="width: 20px; height: 20px;"><use href="#icon-whale-sonic"></use></svg>
-            YoutubeAudio.Fetch · 潮流多媒體
+      <!-- ROW 2 - CARD 1: YoutubeAudio.Fetch -->
+      <div class="merged-project-card">
+        <div class="project-header-bar">
+          <div class="project-identity">
+            <svg class="ux-icon ux-icon-lg ux-icon-whale"><use href="#icon-whale-sonic"></use></svg>
+            <div class="project-title-group">
+              <div class="project-name">YoutubeAudio.Fetch · 潮流多媒體</div>
+              <div class="project-category">高解析音訊無損擷取與觸感聲波播放器</div>
+            </div>
           </div>
-          <div class="matrix-swatches">
-            <div class="swatch" style="background: #9333ea;" title="Primary: #9333ea (Sonic Violet)"></div>
-            <div class="swatch" style="background: #06b6d4;" title="Accent: #06b6d4 (Soundwave Cyan)"></div>
-            <div class="swatch" style="background: #ffffff;" title="Surface: #ffffff (Studio White)"></div>
+          <a href="https://zhongzheng782.github.io/YoutubeAudio.Fetch/" target="_blank" rel="noopener noreferrer" class="live-url-pill" title="造訪 YoutubeAudio.Fetch 線上播放器">
+            <span>zhongzheng782.github.io/YoutubeAudio.Fetch</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <div class="specs-section">
+          <div class="specs-top-row">
+            <span class="specs-badge-label">🎨 品牌色彩光譜</span>
+            <div class="matrix-swatches">
+              <div class="swatch" style="background: #9333ea;" title="Primary: #9333ea (Sonic Violet / 聲波紫)"></div>
+              <div class="swatch" style="background: #06b6d4;" title="Accent: #06b6d4 (Soundwave Cyan / 串流青)"></div>
+              <div class="swatch" style="background: #ffffff;" title="Surface: #ffffff (Studio White / 工作室白底)"></div>
+            </div>
+          </div>
+          <div class="font-sample-box">
+            <div class="font-name-tag">
+              <span>現代工作室排版 + 等寬時間</span>
+              <span>Plus Jakarta Sans + JetBrains Mono</span>
+            </div>
+            <div class="font-preview-text" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+              Hi-Res Lossless Audio Extraction <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.85em; color: #7e22ce; font-weight: 700;">[03:42 / 96kHz]</span>
+            </div>
           </div>
         </div>
-        <div class="font-sample-box">
-          <div class="font-name-tag">
-            <span>現代工作室白底 + 時間標籤</span>
-            <span>Plus Jakarta Sans + JetBrains Mono</span>
-          </div>
-          <div class="font-preview-text" style="font-family: 'Plus Jakarta Sans', sans-serif;">
-            Hi-Res Lossless Audio Extraction <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.85em; color: #7e22ce; font-weight: 700;">[03:42 / 96kHz]</span>
+
+        <div class="live-preview-section">
+          <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+          <div class="preview-soundwave">
+            <div class="player-top">
+              <div class="album-art">
+                <svg class="ux-icon ux-icon-whale" style="width: 38px; height: 38px; color: #ffffff;"><use href="#icon-whale-sonic"></use></svg>
+              </div>
+              <div class="player-info">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <div class="track-title">Deep Sea Soundwave Resonance</div>
+                  <span style="background: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; font-size: 0.72rem; padding: 2px 8px; border-radius: 9999px; font-weight: 700; font-family: 'JetBrains Mono', monospace;">FLAC · 96kHz</span>
+                </div>
+                <div class="track-artist">Ambient Oceanics · Episode #42</div>
+                <div class="waveform-bars">
+                  <div class="wave-bar" style="height: 14px;"></div>
+                  <div class="wave-bar" style="height: 20px;"></div>
+                  <div class="wave-bar" style="height: 10px;"></div>
+                  <div class="wave-bar" style="height: 24px;"></div>
+                  <div class="wave-bar" style="height: 16px;"></div>
+                  <div class="wave-bar" style="height: 12px;"></div>
+                  <div class="wave-bar" style="height: 18px;"></div>
+                  <div class="wave-bar" style="height: 22px;"></div>
+                  <div class="wave-bar" style="height: 15px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="scrubber-bar">
+              <div class="scrubber-fill"></div>
+            </div>
+            <div class="time-row" style="margin-bottom: 1rem;">
+              <span>03:42</span>
+              <span style="color: #0284c7; font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                <span style="width: 6px; height: 6px; background: #0284c7; border-radius: 50%; display: inline-block;"></span>
+                STREAMING ACTIVE
+              </span>
+              <span>12:15</span>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #f1f5f9; padding-top: 0.85rem;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <button style="background: #8b5cf6; border: none; color: #ffffff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.35); font-size: 0.85rem; transition: transform 0.2s ease;">⏸</button>
+                <span style="font-size: 0.82rem; color: #64748b; font-weight: 500;">立體雙聲道 · 320 kbps</span>
+              </div>
+              <button style="background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                <span>儲存音訊 ⬇</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- mkdocs-investment -->
-      <div class="matrix-card">
-        <div class="matrix-header">
-          <div class="matrix-title">
-            <svg class="ux-icon ux-icon-bull" style="width: 20px; height: 20px;"><use href="#icon-bull-fintech"></use></svg>
-            mkdocs-investment · 嚴謹精準財經
+      <!-- ROW 2 - CARD 2: mkdocs-investment -->
+      <div class="merged-project-card">
+        <div class="project-header-bar">
+          <div class="project-identity">
+            <svg class="ux-icon ux-icon-lg ux-icon-bull"><use href="#icon-bull-fintech"></use></svg>
+            <div class="project-title-group">
+              <div class="project-name">mkdocs-investment · 嚴謹精準財經</div>
+              <div class="project-category">多頭攻堅與防禦避險之總體資產配置</div>
+            </div>
           </div>
-          <div class="matrix-swatches">
-            <div class="swatch" style="background: #2563eb;" title="Primary: #2563eb (Royal Blue)"></div>
-            <div class="swatch" style="background: #dc2626;" title="TW Gain: #dc2626"></div>
-            <div class="swatch" style="background: #16a34a;" title="US Gain / TW Loss: #16a34a"></div>
-            <div class="swatch" style="background: #f8fafc;" title="Surface: #f8fafc (Crisp Slate)"></div>
+          <a href="https://wenchiehlee.github.io/mkdocs-investment/" target="_blank" rel="noopener noreferrer" class="live-url-pill" title="造訪 mkdocs-investment 投資筆記">
+            <span>wenchiehlee.github.io/mkdocs-investment</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <div class="specs-section">
+          <div class="specs-top-row">
+            <span class="specs-badge-label">🎨 品牌色彩光譜</span>
+            <div class="matrix-swatches">
+              <div class="swatch" style="background: #2563eb;" title="Primary: #2563eb (Royal Blue / 皇家藍)"></div>
+              <div class="swatch" style="background: #dc2626;" title="TW Gain: #dc2626 (台股漲紅)"></div>
+              <div class="swatch" style="background: #16a34a;" title="US Gain / Defense: #16a34a (美股漲 / 台股避險綠)"></div>
+              <div class="swatch" style="background: #f8fafc;" title="Surface: #f8fafc (Crisp Slate / 晶脆灰階)"></div>
+            </div>
+          </div>
+          <div class="font-sample-box">
+            <div class="font-name-tag">
+              <span>財經指標與等寬數字排版</span>
+              <span>Inter + JetBrains Mono (Tabular)</span>
+            </div>
+            <div class="font-preview-text" style="font-family: 'Inter', sans-serif;">
+              TAIEX 權重報酬率 <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #dc2626;">+14.82%</span> · 本益比 16.4x
+            </div>
           </div>
         </div>
-        <div class="font-sample-box">
-          <div class="font-name-tag">
-            <span>財經指標與等寬數字</span>
-            <span>Inter + JetBrains Mono (Tabular)</span>
-          </div>
-          <div class="font-preview-text" style="font-family: 'Inter', sans-serif;">
-            TAIEX 權重報酬率 <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #dc2626;">+14.82%</span> · 本益比 16.4x
+
+        <div class="live-preview-section">
+          <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+          <div class="preview-fintech">
+            <div class="fintech-header">
+              <div style="font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
+                <span>核心配置與即時指標 (Portfolio Radar)</span>
+              </div>
+              <span style="font-size: 0.75rem; color: #64748b; font-family: 'JetBrains Mono', monospace; font-weight: 600;">LAST: 13:30:00</span>
+            </div>
+            <div class="fintech-kpi-row">
+              <div class="fintech-metric-card">
+                <div class="metric-label">加權指數 (TAIEX)</div>
+                <div class="metric-value">22,850.40</div>
+                <div class="metric-gain">
+                  <svg class="ux-icon ux-icon-bull" style="width: 15px; height: 15px;"><use href="#icon-bull-fintech"></use></svg>
+                  +182.35 (+0.80%) 多頭增長
+                </div>
+              </div>
+              <div class="fintech-metric-card">
+                <div class="metric-label">總體下檔防禦比例</div>
+                <div class="metric-value">36.5%</div>
+                <div class="metric-safe">
+                  <svg class="ux-icon ux-icon-bear" style="width: 15px; height: 15px;"><use href="#icon-bear-defense"></use></svg>
+                  +1.2% 防禦熊避風港穩健
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- My-TW-Coverage -->
-      <div class="matrix-card">
-        <div class="matrix-header">
-          <div class="matrix-title">
-            <svg class="ux-icon ux-icon-owl" style="width: 20px; height: 20px;"><use href="#icon-owl-coverage"></use></svg>
-            My-TW-Coverage · 台股個股深度調研
+      <!-- ROW 3 - CARD 1: wenchiehlee.quickconnect.to -->
+      <div class="merged-project-card">
+        <div class="project-header-bar">
+          <div class="project-identity">
+            <svg class="ux-icon ux-icon-lg ux-icon-pangolin"><use href="#icon-pangolin-shield"></use></svg>
+            <div class="project-title-group">
+              <div class="project-name">wenchiehlee.quickconnect.to · 私人雲端</div>
+              <div class="project-category">Synology NAS 自建私有雲與 Tailscale 堡壘</div>
+            </div>
           </div>
-          <div class="matrix-swatches">
-            <div class="swatch" style="background: #059669;" title="Primary: #059669 (Taiwan Pine Emerald / BUY 評級)"></div>
-            <div class="swatch" style="background: #d97706;" title="Accent: #d97706 (Research Amber / 財務估值)"></div>
-            <div class="swatch" style="background: #334155;" title="Badge Neutral: #334155 (Slate Neutral / 產業與個股徽章)"></div>
-            <div class="swatch" style="background: #dc2626;" title="TW Gain: #dc2626 (台股目標價紅字)"></div>
-            <div class="swatch" style="background: #ffffff;" title="Surface: #ffffff (純白研報基底)"></div>
+          <a href="https://wenchiehlee.synology.me" target="_blank" rel="noopener noreferrer" class="live-url-pill" title="造訪 Synology NAS 私有雲端中心">
+            <span>wenchiehlee.synology.me</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <div class="specs-section">
+          <div class="specs-top-row">
+            <span class="specs-badge-label">🎨 品牌色彩光譜</span>
+            <div class="matrix-swatches">
+              <div class="swatch" style="background: #0284c7;" title="Synology Blue: #0284c7"></div>
+              <div class="swatch" style="background: #38bdf8;" title="Neon Tech Glow: #38bdf8"></div>
+              <div class="swatch" style="background: #22c55e;" title="Healthy Online Green: #22c55e"></div>
+              <div class="swatch" style="background: #f0f9ff; border: 1px solid #bae6fd;" title="Light Sky Wrapper: #f0f9ff"></div>
+              <div class="swatch" style="background: #ffffff; border: 1px solid #e2e8f0;" title="White Basis: #ffffff"></div>
+            </div>
+          </div>
+          <div class="font-sample-box">
+            <div class="font-name-tag">
+              <span>DevOps 與系統架構字體</span>
+              <span>Roboto + Roboto Mono + LXGW WenKai TC</span>
+            </div>
+            <div class="font-preview-text" style="font-family: 'Roboto', sans-serif;">
+              Container Runner <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #0284c7;">Active</span> · Tailscale Funnel <span style="font-weight: 700; color: #22c55e;">Online 🛡️</span>
+            </div>
           </div>
         </div>
-        <div class="font-sample-box">
-          <div class="font-name-tag">
-            <span>估值雷達與財務指標</span>
-            <span>Plus Jakarta Sans + JetBrains Mono (Tabular)</span>
-          </div>
-          <div class="font-preview-text" style="font-family: 'Plus Jakarta Sans', sans-serif;">
-            2330.TW 評級 <span style="font-weight: 700; color: #059669;">BUY ↗</span> · 目標價 <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #dc2626;">NT$1,250</span> (PER 18.2x)
+
+        <div class="live-preview-section">
+          <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+          <div class="preview-nas">
+            <div class="nas-header-row">
+              <div class="nas-title-box">
+                <svg class="ux-icon ux-icon-pangolin" style="width: 24px; height: 24px; color: #38bdf8;"><use href="#icon-pangolin-shield"></use></svg>
+                <div class="nas-title">wenchiehlee.synology.me</div>
+              </div>
+              <div class="nas-status-badge">
+                <span style="width: 6px; height: 6px; background: #22c55e; border-radius: 50%; display: inline-block;"></span>
+                SERVICES OPERATIONAL 🛡️
+              </div>
+            </div>
+            <div class="nas-desc-text">
+              敏捷守護貓安全衛士：Synology NAS 自建私有雲運算中心，託管自動化 GitHub Actions Runner、反向代理、與個人知識庫站點。
+            </div>
+            <div class="nas-metrics-grid">
+              <div class="nas-subcard">
+                <div class="nas-subcard-label">系統 Uptime</div>
+                <div class="nas-subcard-val">48d 14h</div>
+              </div>
+              <div class="nas-subcard">
+                <div class="nas-subcard-label">Docker 容器</div>
+                <div class="nas-subcard-val" style="color: #4ade80;">12 運行中</div>
+              </div>
+              <div class="nas-subcard">
+                <div class="nas-subcard-label">儲存集 1 狀態</div>
+                <div class="nas-subcard-val">Normal</div>
+              </div>
+            </div>
+            <div class="nas-footer-row">
+              <span>Tailscale 私有網狀通道加密保護中</span>
+              <a href="https://wenchiehlee.synology.me" target="_blank" rel="noopener noreferrer" class="nas-btn-link">前往 NAS 站點 ↗</a>
+            </div>
           </div>
         </div>
       </div>
 
-
-      <!-- wenchiehlee.quickconnect.to -->
-      <div class="matrix-card">
-        <div class="matrix-header">
-          <div class="matrix-title">
-            <svg class="ux-icon ux-icon-pangolin" style="width: 20px; height: 20px;"><use href="#icon-pangolin-shield"></use></svg>
-            wenchiehlee.quickconnect.to · 私人雲端 DevOps 堡壘
+      <!-- ROW 3 - CARD 2: My-TW-Coverage -->
+      <div class="merged-project-card">
+        <div class="project-header-bar">
+          <div class="project-identity">
+            <svg class="ux-icon ux-icon-lg ux-icon-owl"><use href="#icon-owl-coverage"></use></svg>
+            <div class="project-title-group">
+              <div class="project-name">My-TW-Coverage · 台股深度調研</div>
+              <div class="project-category">台股基本面深度研報與估值安全邊際雷達</div>
+            </div>
           </div>
-          <div class="matrix-swatches">
-            <div class="swatch" style="background: #0284c7;" title="Synology Blue: #0284c7"></div>
-            <div class="swatch" style="background: #38bdf8;" title="Neon Tech Glow: #38bdf8"></div>
-            <div class="swatch" style="background: #22c55e;" title="Healthy Online Green: #22c55e"></div>
-            <div class="swatch" style="background: #f0f9ff; border: 1px solid #bae6fd;" title="Light Sky Wrapper: #f0f9ff"></div>
-            <div class="swatch" style="background: #ffffff; border: 1px solid #e2e8f0;" title="White Basis: #ffffff"></div>
+          <a href="https://wenchiehlee-money.github.io/My-TW-Coverage/" target="_blank" rel="noopener noreferrer" class="live-url-pill" title="造訪 My-TW-Coverage 深度調研報告">
+            <span>wenchiehlee-money.github.io/My-TW-Coverage</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <div class="specs-section">
+          <div class="specs-top-row">
+            <span class="specs-badge-label">🎨 品牌色彩光譜</span>
+            <div class="matrix-swatches">
+              <div class="swatch" style="background: #059669;" title="Primary: #059669 (Taiwan Pine Emerald / BUY 評級)"></div>
+              <div class="swatch" style="background: #d97706;" title="Accent: #d97706 (Research Amber / 財務估值)"></div>
+              <div class="swatch" style="background: #334155;" title="Badge Neutral: #334155 (Slate Neutral / 產業與個股徽章)"></div>
+              <div class="swatch" style="background: #dc2626;" title="TW Gain: #dc2626 (台股目標價紅字)"></div>
+              <div class="swatch" style="background: #ffffff;" title="Surface: #ffffff (純白研報基底)"></div>
+            </div>
+          </div>
+          <div class="font-sample-box">
+            <div class="font-name-tag">
+              <span>估值雷達與財務指標排版</span>
+              <span>Plus Jakarta Sans + JetBrains Mono (Tabular)</span>
+            </div>
+            <div class="font-preview-text" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+              2330.TW 評級 <span style="font-weight: 700; color: #059669;">BUY ↗</span> · 目標價 <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #dc2626;">NT$1,250</span> (PER 18.2x)
+            </div>
           </div>
         </div>
-        <div class="font-sample-box">
-          <div class="font-name-tag">
-            <span>DevOps 與系統架構</span>
-            <span>Roboto + Roboto Mono (Code) + LXGW WenKai TC</span>
-          </div>
-          <div class="font-preview-text" style="font-family: 'Roboto', sans-serif;">
-            Container Runner <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #0284c7;">Active</span> · Tailscale Funnel <span style="font-weight: 700; color: #22c55e;">Online 🛡️</span>
+
+        <div class="live-preview-section">
+          <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+          <div class="preview-coverage">
+            <div class="coverage-header">
+              <div>
+                <div class="coverage-badge-row">
+                  <span class="coverage-action-pill">BUY ↗ 強力買進</span>
+                  <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">半導體龍頭 · 核心覆蓋</span>
+                </div>
+                <div style="font-size: 1.35rem; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+                  <span>2330.TW 台積電</span>
+                  <svg class="ux-icon ux-icon-owl" style="width: 20px; height: 20px;"><use href="#icon-owl-coverage"></use></svg>
+                </div>
+              </div>
+              <div style="text-align: right;">
+                <div style="font-size: 0.72rem; color: #64748b; text-transform: uppercase; font-weight: 600;">現價 / 目標價</div>
+                <div style="font-size: 1.4rem; font-weight: 800; font-family: 'JetBrains Mono', monospace; color: #dc2626;">
+                  $1,085 <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">/ $1,250</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="font-size: 0.85rem; color: #475569; line-height: 1.6; margin-bottom: 0.5rem;">
+              洞察貓頭鷹調研亮點：受惠於 3nm 滿載與 CoWoS-L 擴產進度超前，Q3 毛利率攀升至 57.8%，下檔本益比安全邊際具備高防禦力。
+            </div>
+
+            <div class="coverage-metrics-grid">
+              <div class="coverage-subcard">
+                <div class="coverage-subcard-label">預估 PER</div>
+                <div class="coverage-subcard-val">18.2x</div>
+              </div>
+              <div class="coverage-subcard">
+                <div class="coverage-subcard-label">預估 ROE</div>
+                <div class="coverage-subcard-val" style="color: #059669;">29.8%</div>
+              </div>
+              <div class="coverage-subcard">
+                <div class="coverage-subcard-label">全年 EPS</div>
+                <div class="coverage-subcard-val">$45.80</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- HomeAssistant TV -->
-      <div class="matrix-card">
-        <div class="matrix-header">
-          <div class="matrix-title">
-            <svg class="ux-icon ux-icon-sentinel" style="width: 20px; height: 20px;"><use href="#icon-sentinel-tv"></use></svg>
-            HomeAssistant TV · 10 呎客廳毛玻璃 HUD
+      <!-- ROW 4 - CARD 1 (FULL-WIDTH 1): HomeAssistant on Android TV -->
+      <div class="merged-project-card full-width">
+        <div class="project-header-bar">
+          <div class="project-identity">
+            <svg class="ux-icon ux-icon-lg ux-icon-sentinel"><use href="#icon-sentinel-tv"></use></svg>
+            <div class="project-title-group">
+              <div class="project-name">HomeAssistant on Android TV · 10 呎客廳毛玻璃 HUD</div>
+              <div class="project-category">客廳 10-Foot 實況電視動態推播與居家情境通知</div>
+            </div>
           </div>
-          <div class="matrix-swatches">
-            <div class="swatch" style="background: #d97706;" title="Warm Caramel Amber (赤柴金): #d97706"></div>
-            <div class="swatch" style="background: #1e293b;" title="Translucent Dark Slate: #1e293b"></div>
-            <div class="swatch" style="background: #ffffff;" title="High-contrast Text: #ffffff"></div>
+          <a href="https://github.com/wenchiehlee-ux/UX-Deck/tree/main/deploy/android-tv" target="_blank" rel="noopener noreferrer" class="live-url-pill" title="查看 Android TV 整合與部署專案">
+            <span>GitHub: deploy/android-tv</span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <div class="specs-section">
+          <div class="specs-top-row">
+            <span class="specs-badge-label">🎨 品牌色彩光譜</span>
+            <div class="matrix-swatches">
+              <div class="swatch" style="background: #d97706;" title="Warm Caramel Amber (赤柴金): #d97706"></div>
+              <div class="swatch" style="background: #1e293b;" title="Translucent Dark Slate: #1e293b"></div>
+              <div class="swatch" style="background: #ffffff;" title="High-contrast Text: #ffffff"></div>
+              <div class="swatch" style="background: #38bdf8;" title="Neon Cyan Progress: #38bdf8"></div>
+            </div>
+          </div>
+          <div class="font-sample-box">
+            <div class="font-name-tag">
+              <span>10 英呎遠距一覽字體規範</span>
+              <span>Noto Sans TC (Bold 28px) + Inter</span>
+            </div>
+            <div class="font-preview-text" style="font-family: 'Noto Sans TC', sans-serif; font-size: 1.12rem; font-weight: 700; color: #d97706;">
+              客廳小管家 🐕 · 玄關訪客叮咚，門鎖安全上鎖中
+            </div>
           </div>
         </div>
-        <div class="font-sample-box">
-          <div class="font-name-tag">
-            <span>10 英呎遠距一覽字體</span>
-            <span>Noto Sans TC (Bold 28px) + Inter</span>
-          </div>
-          <div class="font-preview-text" style="font-family: 'Noto Sans TC', sans-serif; font-size: 1.15rem; font-weight: 700; color: #d97706;">
-            客廳小管家 🐕 · 玄關訪客叮咚，門鎖安全上鎖中
+
+        <div class="live-preview-section">
+          <div class="preview-section-header">⚡ 10-Foot 實況電視畫面模擬 (沙發觀看距離 3~4 公尺)</div>
+          <div class="preview-tv">
+            <div class="tv-mock-backdrop"></div>
+            <!-- Actual HUD Toast Component Matching 1F TV Real Output -->
+            <div class="tv-hud-toast">
+              <svg class="ux-icon tv-hud-icon"><use href="#icon-sentinel-tv"></use></svg>
+              <div class="tv-hud-content">
+                <div class="tv-hud-title">玄關訪客叮咚 🔔</div>
+                <div class="tv-hud-message">大門有人按門鈴，門鎖維持安全上鎖中 🐾</div>
+              </div>
+              <div class="tv-progress"></div>
+            </div>
+            <div class="tv-footer-hint">📺 模擬 1F 客廳 Android TV 1920x1080 視角 (隨生活情境動態推播)</div>
           </div>
         </div>
       </div>
 
     </div>
 
-    <!-- SECTION 3: LIVE COMPONENT PREVIEWS (WHITE BASIS) -->
-    <div class="section-title">💡 3. 七大專案真實實體元件展示 (Live Component Previews)</div>
-    <div class="section-desc">以白底為基準（White Basis），體驗在各專案的真實材質、陰影深度與字型組合下，吉祥物與介面元件的真實落地效果。</div>
-    <div class="components-grid">
-
-      <!-- 1. mkdocs-life -->
-      <div class="preview-life">
-        <div class="life-tag">
-          <svg class="ux-icon ux-icon-deer" style="width: 14px; height: 14px;"><use href="#icon-deer-life"></use></svg>
-          2026-10-17 · 漫步手記
-        </div>
-        <div class="life-title">秋陽微風中的森林慢行哲學</div>
-        <div class="life-body">
-          踩在覆蓋金黃松針的小徑上，微風吹拂帶起樹梢沙沙輕響。偶遇駐足凝望的幾何林鹿，在光影斑駁間，心神重拾久違的清明與靜謐。
-        </div>
-        <div class="life-footer">
-          <span>閱讀時間約 4 分鐘 · 筆記分類：生活觀察</span>
-          <a href="#" class="life-btn">閱讀全文 ↗</a>
-        </div>
-      </div>
-
-      <!-- 2. GoogleAlertManager -->
-      <div class="preview-alert">
-        <div class="alert-header">
-          <div class="alert-badge-urgent">
-            <svg class="ux-icon ux-icon-falcon" style="width: 13px; height: 13px; color: #dc2626;"><use href="#icon-falcon-radar"></use></svg>
-            緊急情報
-          </div>
-          <div class="alert-score">相關度 96%</div>
-        </div>
-        <div class="alert-title">TSMC 與 OpenAI 深度合作新進展：矽光子封裝架構全面升級</div>
-        <div class="alert-snippet">
-          最新供應鏈動態顯示，關鍵封裝製程良率已突破臨界點。<mark>台積電 CoWoS</mark> 產能擴產計畫預期提前一季完成，滿足下一代算力架構需求...
-        </div>
-        <div class="alert-actions">
-          <button class="btn-alert-primary">標記已讀</button>
-          <button class="btn-alert-secondary">封存情報</button>
-        </div>
-      </div>
-
-      <!-- 3. YoutubeAudio.Fetch -->
-      <div class="preview-soundwave">
-        <div class="player-top">
-          <div class="album-art">
-            <svg class="ux-icon ux-icon-whale" style="width: 38px; height: 38px; color: #ffffff;"><use href="#icon-whale-sonic"></use></svg>
-          </div>
-          <div class="player-info">
-            <div style="display: flex; align-items: center; justify-content: space-between;">
-              <div class="track-title">Deep Sea Soundwave Resonance</div>
-              <span style="background: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; font-size: 0.72rem; padding: 2px 8px; border-radius: 9999px; font-weight: 700; font-family: 'JetBrains Mono', monospace;">FLAC · 96kHz</span>
-            </div>
-            <div class="track-artist">Ambient Oceanics · Episode #42</div>
-            <div class="waveform-bars">
-              <div class="wave-bar" style="height: 14px;"></div>
-              <div class="wave-bar" style="height: 20px;"></div>
-              <div class="wave-bar" style="height: 10px;"></div>
-              <div class="wave-bar" style="height: 24px;"></div>
-              <div class="wave-bar" style="height: 16px;"></div>
-              <div class="wave-bar" style="height: 12px;"></div>
-              <div class="wave-bar" style="height: 18px;"></div>
-              <div class="wave-bar" style="height: 22px;"></div>
-              <div class="wave-bar" style="height: 15px;"></div>
-            </div>
-          </div>
-        </div>
-        <div class="scrubber-bar">
-          <div class="scrubber-fill"></div>
-        </div>
-        <div class="time-row" style="margin-bottom: 1rem;">
-          <span>03:42</span>
-          <span style="color: #0284c7; font-weight: 700; display: flex; align-items: center; gap: 4px;">
-            <span style="width: 6px; height: 6px; background: #0284c7; border-radius: 50%; display: inline-block;"></span>
-            STREAMING ACTIVE
-          </span>
-          <span>12:15</span>
-        </div>
-        <!-- Tactile Controls Row -->
-        <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #f1f5f9; padding-top: 0.85rem;">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <button style="background: #8b5cf6; border: none; color: #ffffff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.35); font-size: 0.85rem; transition: transform 0.2s ease;">⏸</button>
-            <span style="font-size: 0.82rem; color: #64748b; font-weight: 500;">立體雙聲道 · 320 kbps</span>
-          </div>
-          <button style="background: #f8fafc; border: 1px solid #e2e8f0; color: #334155; padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 4px;">
-            <span>儲存音訊 ⬇</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- 4. mkdocs-investment -->
-      <div class="preview-fintech">
-        <div class="fintech-header">
-          <div style="font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">
-            <span>核心配置與即時指標 (Portfolio Radar)</span>
-          </div>
-          <span style="font-size: 0.75rem; color: #64748b; font-family: 'JetBrains Mono', monospace; font-weight: 600;">LAST: 13:30:00</span>
-        </div>
-        <div class="fintech-kpi-row">
-          <div class="fintech-metric-card">
-            <div class="metric-label">加權指數 (TAIEX)</div>
-            <div class="metric-value">22,850.40</div>
-            <div class="metric-gain">
-              <svg class="ux-icon ux-icon-bull" style="width: 15px; height: 15px;"><use href="#icon-bull-fintech"></use></svg>
-              +182.35 (+0.80%) 多頭增長
-            </div>
-          </div>
-          <div class="fintech-metric-card">
-            <div class="metric-label">總體下檔防禦比例</div>
-            <div class="metric-value">36.5%</div>
-            <div class="metric-safe">
-              <svg class="ux-icon ux-icon-bear" style="width: 15px; height: 15px;"><use href="#icon-bear-defense"></use></svg>
-              +1.2% 防禦熊避風港穩健
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- 6. wenchiehlee.quickconnect.to (Synology NAS Cyber HUD) -->
-      <div class="preview-nas">
-        <div class="nas-header-row">
-          <div class="nas-title-box">
-            <svg class="ux-icon ux-icon-pangolin" style="width: 24px; height: 24px; color: #38bdf8;"><use href="#icon-pangolin-shield"></use></svg>
-            <div class="nas-title">wenchiehlee.synology.me</div>
-          </div>
-          <div class="nas-status-badge">
-            <span style="width: 6px; height: 6px; background: #22c55e; border-radius: 50%; display: inline-block;"></span>
-            SERVICES OPERATIONAL 🛡️
-          </div>
-        </div>
-        <div class="nas-desc-text">
-          裝甲穿山甲安全衛士：Synology NAS 自建私有雲運算中心，託管自動化 GitHub Actions Runner、反向代理、與個人知識庫站點。
-        </div>
-        <div class="nas-metrics-grid">
-          <div class="nas-subcard">
-            <div class="nas-subcard-label">系統 Uptime</div>
-            <div class="nas-subcard-val">48d 14h</div>
-          </div>
-          <div class="nas-subcard">
-            <div class="nas-subcard-label">Docker 容器</div>
-            <div class="nas-subcard-val" style="color: #4ade80;">12 運行中</div>
-          </div>
-          <div class="nas-subcard">
-            <div class="nas-subcard-label">儲存集 1 狀態</div>
-            <div class="nas-subcard-val">Normal</div>
-          </div>
-        </div>
-        <div class="nas-footer-row">
-          <span>Tailscale 私有網狀通道加密保護中</span>
-          <a href="https://wenchiehlee.synology.me" target="_blank" rel="noopener noreferrer" class="nas-btn-link">前往 NAS 站點 ↗</a>
-        </div>
-      </div>
-
-      <!-- 5. My-TW-Coverage Taiwan Stock Valuation Radar -->
-      <div class="preview-coverage">
-        <div class="coverage-header">
-          <div>
-            <div class="coverage-badge-row">
-              <span class="coverage-action-pill">BUY ↗ 強力買進</span>
-              <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">半導體龍頭 · 核心覆蓋</span>
-            </div>
-            <div style="font-size: 1.35rem; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 8px;">
-              <span>2330.TW 台積電</span>
-              <svg class="ux-icon ux-icon-owl" style="width: 20px; height: 20px;"><use href="#icon-owl-coverage"></use></svg>
-            </div>
-          </div>
-          <div style="text-align: right;">
-            <div style="font-size: 0.72rem; color: #64748b; text-transform: uppercase; font-weight: 600;">現價 / 目標價</div>
-            <div style="font-size: 1.4rem; font-weight: 800; font-family: 'JetBrains Mono', monospace; color: #dc2626;">
-              $1,085 <span style="font-size: 0.85rem; color: #64748b; font-weight: 600;">/ $1,250</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="font-size: 0.85rem; color: #475569; line-height: 1.6; margin-bottom: 0.5rem;">
-          洞察貓頭鷹調研亮點：受惠於 3nm 滿載與 CoWoS-L 擴產進度超前，Q3 毛利率攀升至 57.8%，下檔本益比安全邊際具備高防禦力。
-        </div>
-
-        <div class="coverage-metrics-grid">
-          <div class="coverage-subcard">
-            <div class="coverage-subcard-label">預估 PER</div>
-            <div class="coverage-subcard-val">18.2x</div>
-          </div>
-          <div class="coverage-subcard">
-            <div class="coverage-subcard-label">預估 ROE</div>
-            <div class="coverage-subcard-val" style="color: #059669;">29.8%</div>
-          </div>
-          <div class="coverage-subcard">
-            <div class="coverage-subcard-label">全年 EPS</div>
-            <div class="coverage-subcard-val">$45.80</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- 5. Full-width HomeAssistant TV Preview -->
-    <div style="margin-bottom: 3.5rem;">
-      <div style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.85rem; display: flex; align-items: center; gap: 8px; color: #0f172a;">
-        <svg class="ux-icon ux-icon-sentinel" style="width: 22px; height: 22px;"><use href="#icon-sentinel-tv"></use></svg>
-        HomeAssistant on Android TV: 10-Foot 實況電視畫面模擬 (智慧居家生活動態)
-      </div>
-      <div class="preview-tv">
-        <div class="tv-mock-backdrop"></div>
-        <!-- Actual HUD Toast Component Matching 1F TV Real Output -->
-        <div class="tv-hud-toast">
-          <svg class="ux-icon tv-hud-icon"><use href="#icon-sentinel-tv"></use></svg>
-          <div class="tv-hud-content">
-            <div class="tv-hud-title">玄關訪客叮咚 🔔</div>
-            <div class="tv-hud-message">大門有人按門鈴，門鎖維持安全上鎖中 🐾</div>
-          </div>
-          <div class="tv-progress"></div>
-        </div>
-        <div class="tv-footer-hint">📺 模擬 1F 客廳 Android TV 1920x1080 視角 (沙發觀看距離 3~4 公尺 · 隨生活情境動態推播)</div>
-      </div>
-    </div>
-
-    <!-- SECTION 4: VECTOR SCALE LADDER (WHITE BASIS) -->
-    <div class="section-title">📐 4. 向量尺寸梯階測試 (14px ~ 64px)</div>
+    <!-- SECTION 3: VECTOR SCALE LADDER (WHITE BASIS) -->
+    <div class="section-title">📐 3. 向量尺寸梯階測試 (14px ~ 64px)</div>
     <div class="section-desc">驗證八大幾何吉祥物自桌面小圖示 (14px) 至客廳電視大螢幕 (64px) 之邊角清晰度與筆畫比例。</div>
     <div class="scale-row">
       <div class="scale-item">
@@ -1529,11 +1701,19 @@
 
       <div class="scale-item">
         <svg class="ux-icon ux-icon-xl ux-icon-pangolin"><use href="#icon-pangolin-shield"></use></svg>
-        <span>48px (裝甲穿山甲)</span>
+        <span>48px (敏捷守護貓)</span>
       </div>
       <div class="scale-item">
         <svg class="ux-icon ux-icon-xl ux-icon-owl"><use href="#icon-owl-coverage"></use></svg>
         <span>48px (研究貓頭鷹)</span>
       </div>
       <div class="scale-item">
-        <s
+        <svg class="ux-icon ux-icon-tv ux-icon-sentinel"><use href="#icon-sentinel-tv"></use></svg>
+        <span>64px (tv 10英呎)</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
