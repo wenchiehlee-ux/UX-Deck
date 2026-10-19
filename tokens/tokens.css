@@ -278,14 +278,14 @@
   filter: drop-shadow(0 0 8px rgba(2, 132, 199, 0.45));
 }
 
-/* 8. Stag (InvestorConference): Sovereign Leadership Focus */
-.ux-icon-stag {
+/* 8. Eagle (InvestorConference): Sovereign Foresight & Institutional Leadership */
+.ux-icon-eagle {
   color: var(--ux-ir-primary, #22a553);
 }
-.ux-icon-stag:hover {
+.ux-icon-eagle:hover {
   transform: translateY(-2px) scale(1.08);
   color: var(--ux-ir-accent, #166534);
-  filter: drop-shadow(0 0 8px rgba(34, 165, 83, 0.4));
+  filter: drop-shadow(0 0 8px rgba(34, 165, 83, 0.45));
 }
 
 /* 9. Swan (VIX): Black Swan Tail Risk & Market Volatility Alert */

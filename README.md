@@ -40,7 +40,7 @@
 | **[My-TW-Coverage](#5-skill-ux-tw-coverage)** | GitHub Pages (MkDocs) | 台股個股深度調研 (Equity Radar) | **拍拍翅萌萌鴞 🦉 (Flapping Owlet)**<br>#icon-owl-coverage | 台灣冷杉綠 (#059669)、調研琥珀金 (#d97706)、紅漲綠跌 | BUY/HOLD 投資評級膠囊、目標價試算、PER/ROE/EPS 估值雷達 |
 | **[HomeAssistant](#6-skill-ux-homeassistant-tv)** | Android TV (Popup/HUD) | 10英呎客廳毛玻璃 (Frosted Glass HUD) | **客廳小管家 柴柴 🐕 (Faithful Shiba)**<br>#icon-sentinel-tv | 天際青輝光 (#0284c7)、毛玻璃深幕 (rgba(10,12,18,0.92)) | 3–4米超清晰大字階、電視遙控 D-pad 焦點框、生活事件自動倒數光條 |
 | **[wenchiehlee.quickconnect.to](#7-skill-ux-synology-nas)** | Synology NAS (Web Station) | 私人雲端 DevOps 堡壘 (Cyber Slate) | **裝甲穿山甲 🛡️ / 守護貓 🐱**<br>#icon-pangolin-shield | 群暉藍 (#0284c7)、黑曜賽博岩板 (#0f172a)、霓虹盾光 (#38bdf8) | 原生導航膠囊、Docker 容器狀態 HUD、Tailscale 私有通道徽章 |
-| **InvestorConference** | GitHub Pages (Vite/TS) | 法說領航庫 (IR Intelligence) | **領航雄鹿 🦌 (Sovereign Stag)**<br>#icon-stag-ir | 領航翡翠綠 (#22a553)、薄荷翠底 (#f0fdf4)、深墨翠字 (#166534) | 季度法說會矩陣、音檔逐字稿同步播放器、中英 IR 簡報下載鈕、MOPS 直連 |
+| **InvestorConference** | GitHub Pages (Vite/TS) | 法說領航庫 (IR Intelligence) | **領航雄鷹 🦅 (Sovereign Eagle)**<br>#icon-eagle-ir | 領航翡翠綠 (#22a553)、薄荷翠底 (#f0fdf4)、深墨翠字 (#166534) | 季度法說會矩陣、音檔逐字稿同步播放器、中英 IR 簡報下載鈕、MOPS 直連 |
 | **VIX** | GitHub Pages (Plotly App) | 全球波動率雷達 (Crash Sentinel) | **幾何黑天鵝 🦢 (Black Swan)**<br>#icon-swan-vix | 恐慌赤紅 (#ef4444)、警戒暖橘 (#f97316)、平靜綠 (#10b981)、曜石墨 | 即時波動率與恐慌指數 KPI、市場情緒光譜儀、歷史重大黑天鵝股災回測 |
 ---
 
