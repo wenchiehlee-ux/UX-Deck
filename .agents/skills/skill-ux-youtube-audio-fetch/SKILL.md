@@ -17,8 +17,8 @@ This skill provides UI components, visual styling, and multimodal media controls
 3. **Warm Amber Gold Accent (`#ad792d`)**: Golden highlight for timestamps (`.ts`, `.date`), channel group category tags (`DAILY`, `PLAYLIST`), and dynamic transcript sync callout borders (`.lyrics-live`).
 4. **Animal Mascot (聲波座頭鯨 Soundwave Singing Whale 🐋)**:
    - **Symbol**: `#icon-whale-sonic` (from [animal-icons.svg](../../tokens/icons/animal-icons.svg)).
-   - **Mascot Glow Badge**: `linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)` representing oceanic acoustic resonance, spectrum harmonics, and lossless audio fidelity.
-   - **Application**: Placed on top brand bar (`.yaf-brand-bar`), favicon set, and media player identity headers.
+   - **Mascot Glow Badge**: `linear-gradient(135deg, #a83245 0%, #ad792d 100%)` representing rich burgundy acoustic resonance, spectrum harmonics, and lossless audio fidelity.
+   - **Application**: Placed on media player identity headers and UX-Deck overview.
 
 ---
 

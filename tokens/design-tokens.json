@@ -45,7 +45,7 @@
       "surface": "#faf9f8",
       "surfaceCard": "#ffffff",
       "accent": "#ad792d",
-      "mascotGlow": "linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)",
+      "mascotGlow": "linear-gradient(135deg, #a83245 0%, #ad792d 100%)",
       "text": "#332b2d",
       "textMuted": "#766d6d",
       "purpose": "YouTube 影音音訊萃取、雙欄集數導覽、即時動態逐字稿字幕與影格同步播放器"

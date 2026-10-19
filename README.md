@@ -35,7 +35,7 @@
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **[mkdocs-life](#1-skill-ux-mkdocs-life)** | GitHub Pages (MkDocs) | 溫潤人文雜誌 (Warm Editorial) | **幾何林鹿 🦌 (Mindful Deer)**<br>#icon-deer-life | 鼠尾草綠 (#0d9488)、暖紙米白 (#faf8f5)、磚橘 (#e07a5f) | 故事卡片、反思引言塊、生命里程碑時間軸 |
 | **[GoogleAlertManager](#2-skill-ux-google-alert-manager)** | GitHub Pages (Web App) | SaaS 情報過濾 (Signal Intelligence) | **精密雷達隼 🦅 (Radar Falcon)**<br>#icon-falcon-radar | 疾光靛藍 (#4f46e5)、冷灰白、警示紅 | 快速分類篩選膠囊、未讀脈衝點、單鍵收藏/封存 |
-| **[YoutubeAudio.Fetch](#3-skill-ux-youtube-audio-fetch)** | GitHub Pages (Web App) | 白底工作室多媒體 (Studio Soundwave) | **流暢聲波鯨 🐋 (Sonic Whale)**<br>#icon-whale-sonic | 幻紫 (#8b5cf6)、聲波青藍 (#06b6d4)、純白底 (#ffffff) | 底部懸浮播放列、音軌波形動態、FLAC 96kHz 規格膠囊 |
+| **[YoutubeAudio.Fetch](#3-skill-ux-youtube-audio-fetch)** | GitHub Pages (Web App) | 典雅財經音訊 (Atmospheric Media) | **聲波座頭鯨 🐋 (Sonic Whale)**<br>#icon-whale-sonic | 典雅酒紅 (#a83245)、亮酒紅 (#bd3d50)、琥珀金 (#ad792d)、暖紙白 (#faf9f8) | 雙欄集數導覽、YouTube影格與即時逐字稿同步、Podcast RSS 訂閱標籤 |
 | **[mkdocs-investment](#4-skill-ux-mkdocs-investment)** | GitHub Pages (MkDocs) | 大盤資產配置 (Fintech Slate) | **幾何狂牛 🐂 / 守護熊 🐻**<br>#icon-bull-fintech / #icon-bear-defense | 皇室藍 (#2563eb)、大盤紅漲綠跌、安全防禦指標 | KPI 指標看板、等寬對齊數據表、多頭/避險多維圖表 |
 | **[My-TW-Coverage](#5-skill-ux-tw-coverage)** | GitHub Pages (MkDocs) | 台股個股深度調研 (Equity Radar) | **拍拍翅萌萌鴞 🦉 (Flapping Owlet)**<br>#icon-owl-coverage | 台灣冷杉綠 (#059669)、調研琥珀金 (#d97706)、紅漲綠跌 | BUY/HOLD 投資評級膠囊、目標價試算、PER/ROE/EPS 估值雷達 |
 | **[HomeAssistant](#6-skill-ux-homeassistant-tv)** | Android TV (Popup/HUD) | 10英呎客廳毛玻璃 (Frosted Glass HUD) | **客廳小管家 柴柴 🐕 (Faithful Shiba)**<br>#icon-sentinel-tv | 天際青輝光 (#0284c7)、毛玻璃深幕 (rgba(10,12,18,0.92)) | 3–4米超清晰大字階、電視遙控 D-pad 焦點框、生活事件自動倒數光條 |

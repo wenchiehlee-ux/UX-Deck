@@ -141,8 +141,8 @@
     .ux-icon-falcon { color: #ea580c; }
     .ux-icon-falcon:hover { transform: rotate(-6deg) scale(1.1); color: #c2410c; }
 
-    .ux-icon-whale { color: #9333ea; }
-    .ux-icon-whale:hover { transform: translateY(-3px) rotate(3deg); color: #7e22ce; }
+    .ux-icon-whale { color: #a83245; }
+    .ux-icon-whale:hover { transform: translateY(-3px) rotate(3deg); color: #8c2538; }
 
     .ux-icon-bull { color: #dc2626; }
     .ux-icon-bull:hover { transform: translateY(-3px) scale(1.1); color: #b91c1c; }
@@ -194,7 +194,7 @@
     }
     .mascot-card.card-deer:hover::before { background: #0d9488; }
     .mascot-card.card-falcon:hover::before { background: #ea580c; }
-    .mascot-card.card-whale:hover::before { background: #9333ea; }
+    .mascot-card.card-whale:hover::before { background: #a83245; }
     .mascot-card.card-bull:hover::before { background: #dc2626; }
     .mascot-card.card-bear:hover::before { background: #16a34a; }
     .mascot-card.card-sentinel:hover::before { background: #d97706; }
@@ -440,7 +440,7 @@
     }
     .wrapper-deer { background: #f0fdfa; border: 1px solid #ccfbf1; }
     .wrapper-falcon { background: #fff7ed; border: 1px solid #fed7aa; }
-    .wrapper-whale { background: #faf5ff; border: 1px solid #f3e8ff; }
+    .wrapper-whale { background: #fdf2f4; border: 1px solid #fce7eb; }
     .wrapper-bull { background: #fef2f2; border: 1px solid #fee2e2; }
     .wrapper-bear { background: #f0fdf4; border: 1px solid #dcfce7; }
     .wrapper-sentinel { background: #fffbeb; border: 1px solid #fde68a; }
@@ -2160,8 +2160,8 @@
             <span class="specs-badge-label">🎨 品牌色彩光譜</span>
             <div class="matrix-swatches">
               <div class="swatch" style="background: #a83245;" title="Primary: #a83245 (Crimson Wine / 典雅勃艮第酒紅)"></div>
+              <div class="swatch" style="background: #bd3d50;" title="Active Tab: #bd3d50 (Bright Wine / 作用中分頁亮酒紅)"></div>
               <div class="swatch" style="background: #ad792d;" title="Accent: #ad792d (Warm Amber Gold / 琥珀流金)"></div>
-              <div class="swatch" style="background: linear-gradient(135deg, #8b5cf6, #06b6d4);" title="Mascot Glow: #8b5cf6 ~ #06b6d4 (Soundwave Whale / 聲波座頭鯨霓虹)"></div>
               <div class="swatch" style="background: #faf9f8; border: 1px solid #e8e2df;" title="Surface: #faf9f8 (Warm Alabaster / 溫潤微暖白灰底)"></div>
               <div class="swatch" style="background: #332b2d;" title="Text: #332b2d (Warm Charcoal Plum / 暖調深褐墨字)"></div>
             </div>
@@ -2182,28 +2182,7 @@
           
           <!-- 單一完整落地式網頁應用容器 (完全一致之色調、字體與排版) -->
           <div class="yaf-app-container">
-            <!-- 常駐頂部品牌欄與跨專案導航鈕 -->
-            <div class="yaf-brand-bar">
-              <div class="yaf-brand-badge">
-                <div class="yaf-mascot-glow">
-                  <svg class="yaf-whale-icon"><use href="#icon-whale-sonic"/></svg>
-                </div>
-                <div class="yaf-brand-text">
-                  <span class="yaf-brand-title">YoutubeAudio.Fetch</span>
-                  <span class="yaf-brand-sub">Atmospheric Media · 聲波座頭鯨</span>
-                </div>
-              </div>
-              <div class="yaf-top-nav">
-                <a href="https://wenchiehlee-money.github.io/UX-Deck/" class="yaf-nav-pill" title="回到主題首頁">
-                  <span>🏠</span> 主題首頁
-                </a>
-                <a href="https://github.com/ZhongZheng782/YoutubeAudio.Fetch" target="_blank" rel="noopener noreferrer" class="yaf-nav-pill yaf-nav-pill-github" title="前往 GitHub 儲存庫">
-                  <span>📦</span> GitHub 儲存庫
-                </a>
-              </div>
-            </div>
-
-            <!-- Header: 標題、說明與分組頻道標籤列 -->
+            <!-- Header: 標題、說明與分組頻道標籤列 (與實體落地頁面結構 100% 一致) -->
             <div class="yaf-header">
               <h1>YoutubeAudio.Fetch</h1>
               <p>資料即時讀自 YoutubeAudio.Fetch 這個 repo（jsDelivr CDN），僅列出已有音檔的集數 ·
