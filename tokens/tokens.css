@@ -288,13 +288,13 @@
   filter: drop-shadow(0 0 8px rgba(34, 165, 83, 0.4));
 }
 
-/* 9. Cheetah (VIX): Lightning Volatility Reflex */
-.ux-icon-cheetah {
-  color: var(--ux-vix-panic, #ef4444);
+/* 9. Swan (VIX): Black Swan Tail Risk & Market Volatility Alert */
+.ux-icon-swan {
+  color: var(--ux-vix-surface-card, #0f172a);
 }
-.ux-icon-cheetah:hover {
-  transform: rotate(-4deg) scale(1.12);
-  color: var(--ux-vix-elevated, #f97316);
+.ux-icon-swan:hover {
+  transform: translateY(-2px) scale(1.08);
+  color: var(--ux-vix-panic, #ef4444);
   filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.5));
 }
 

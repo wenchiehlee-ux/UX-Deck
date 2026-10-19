@@ -176,9 +176,9 @@
         "significance": "Long-term institutional vision, stately earnings guidance and corporate leadership"
       },
       "vix": {
-        "name": "Volatility Cheetah",
-        "id": "icon-cheetah-vix",
-        "significance": "Instant reflex to market turbulence, lightning tail-risk detection"
+        "name": "Black Swan",
+        "id": "icon-swan-vix",
+        "significance": "Classic financial tail risk theory, profound market crash alertness and extreme volatility tracking"
       }
     }
   }
