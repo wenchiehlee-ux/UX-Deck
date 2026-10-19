@@ -1,4 +1,4 @@
-# YoutubeAudio.Fetch 部署指南 (Atmospheric Media Dark)
+# YoutubeAudio.Fetch 部署指南 (Atmospheric Media · 典雅酒紅與琥珀金)
 
 ## 吉祥物意象
 - **吉祥物**：聲波座頭鯨 (Soundwave Singing Whale 🐋)
