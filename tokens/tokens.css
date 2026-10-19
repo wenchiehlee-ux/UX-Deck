@@ -88,15 +88,15 @@
   --ux-alert-text-muted:    #64748b;
   --ux-alert-badge-urgent:  #dc2626;
 
-  /* 3. YoutubeAudio.Fetch (Atmospheric Media · Crimson Wine & Amber Gold) */
-  --ux-yt-primary:       #a83245;    /* Deep Crimson Wine / 典雅勃艮第酒紅 */
-  --ux-yt-primary-hover: #bd3d50;
-  --ux-yt-surface:       #faf9f8;    /* Warm Alabaster / 溫潤白灰微暖底 */
+  /* 3. YoutubeAudio.Fetch (Studio Soundwave · Sonic Violet & Soundwave Cyan) */
+  --ux-yt-primary:       #8b5cf6;    /* Sonic Violet / 幻紫聲波 */
+  --ux-yt-primary-hover: #7c3aed;
+  --ux-yt-surface:       #ffffff;    /* Studio White / 工作室純白 */
   --ux-yt-surface-card:  #ffffff;    /* Card Surface */
-  --ux-yt-accent:        #ad792d;    /* Warm Amber Gold / 琥珀流金 */
-  --ux-yt-mascot-glow:   linear-gradient(135deg, #a83245 0%, #ad792d 100%);
-  --ux-yt-text:          #332b2d;
-  --ux-yt-text-muted:    #766d6d;
+  --ux-yt-accent:        #06b6d4;    /* Soundwave Cyan / 串流青綠 */
+  --ux-yt-mascot-glow:   linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+  --ux-yt-text:          #0f172a;
+  --ux-yt-text-muted:    #64748b;
 
   /* 4. mkdocs-investment (High-Precision Fintech Dark/Slate) */
   --ux-invest-primary:       #2563eb; /* Institutional Royal Blue */

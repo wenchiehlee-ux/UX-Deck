@@ -40,15 +40,15 @@
       "purpose": "Alert feeds triage, keyword rules, rapid scanning"
     },
     "youtube-audio-fetch": {
-      "theme": "Atmospheric Media · 典雅酒紅與琥珀金",
-      "primary": "#a83245",
-      "surface": "#faf9f8",
+      "theme": "Studio Soundwave · 幻紫與串流青",
+      "primary": "#8b5cf6",
+      "surface": "#ffffff",
       "surfaceCard": "#ffffff",
-      "accent": "#ad792d",
-      "mascotGlow": "linear-gradient(135deg, #a83245 0%, #ad792d 100%)",
-      "text": "#332b2d",
-      "textMuted": "#766d6d",
-      "purpose": "YouTube 影音音訊萃取、雙欄集數導覽、即時動態逐字稿字幕與影格同步播放器"
+      "accent": "#06b6d4",
+      "mascotGlow": "linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)",
+      "text": "#0f172a",
+      "textMuted": "#64748b",
+      "purpose": "YouTube 影音音訊萃取、雙欄集數導覽、即時動態逐字稿字幕與立體聲播放面板"
     },
     "mkdocs-investment": {
       "theme": "Fintech Navy & High-Density Metrics",
