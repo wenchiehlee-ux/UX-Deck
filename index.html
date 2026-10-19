@@ -1047,24 +1047,29 @@
       border-bottom: 1px solid #e2e8f0;
       background: rgba(255, 255, 255, .9);
     }
+    .yaf-header-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
     .yaf-header h1 {
-      margin: 0 0 7px;
+      margin: 0;
       font-size: clamp(22px, 2.4vw, 28px);
       letter-spacing: -.04em;
       color: #0f172a;
       font-weight: 700;
     }
-    .yaf-header p {
-      margin: 0;
-      color: #64748b;
-      font-size: 13px;
-      line-height: 1.7;
-    }
-    .yaf-header p a {
+    .yaf-header-link {
       color: #8b5cf6;
+      font-size: 13px;
       text-decoration: underline;
       text-decoration-color: rgba(139, 92, 246, .4);
       text-underline-offset: 3px;
+      transition: color .18s ease;
+    }
+    .yaf-header-link:hover {
+      color: #06b6d4;
     }
     .yaf-tabs {
       display: flex;
@@ -2439,10 +2444,10 @@
 
             <!-- Header: 標題、說明與分組頻道標籤列 -->
             <div class="yaf-header">
-              <h1>YoutubeAudio.Fetch</h1>
-              <p>
-                <a href="https://zhongzheng782.github.io/YoutubeAudio.Fetch/feed.xml" target="_blank" rel="noopener noreferrer">在 Podcast App 訂閱全部頻道（RSS）</a>
-              </p>
+              <div class="yaf-header-row">
+                <h1>YoutubeAudio.Fetch</h1>
+                <a href="https://zhongzheng782.github.io/YoutubeAudio.Fetch/feed.xml" target="_blank" rel="noopener noreferrer" class="yaf-header-link">在 Podcast App 訂閱全部頻道（RSS）</a>
+              </div>
               <div class="yaf-tabs">
                 <div class="yaf-tab-group">
                   <div class="yaf-tab-group-title">DAILY</div>
