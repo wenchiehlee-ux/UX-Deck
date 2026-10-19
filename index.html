@@ -1181,10 +1181,240 @@
       color: #332b2d;
       font-weight: 700;
     }
-    .yaf-main audio {
+    /* Custom Themed Playback Panel (Wine Red & Amber Gold) */
+    .yaf-playback-panel {
+      background: linear-gradient(145deg, #ffffff, #faf8f7);
+      border: 1px solid rgba(168, 50, 69, 0.18);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 0 0 20px;
+      box-shadow: 0 4px 18px rgba(59, 38, 36, 0.05);
+    }
+    .yaf-playback-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .yaf-playback-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .yaf-meta-channel {
+      background: rgba(168, 50, 69, 0.08);
+      color: #a83245;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 6px;
+      border: 1px solid rgba(168, 50, 69, 0.2);
+    }
+    .yaf-meta-quality {
+      color: #766d6d;
+      font-size: 11px;
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 500;
+    }
+    .yaf-playback-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .yaf-pulse-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #a83245;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    .yaf-pulse-dot {
+      width: 7px;
+      height: 7px;
+      background: #a83245;
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(168, 50, 69, 0.7);
+      animation: yafPulse 1.8s infinite;
+    }
+    @keyframes yafPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .yaf-speed-pill {
+      background: #f4f1ef;
+      color: #332b2d;
+      border: 1px solid #e8e2df;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: "JetBrains Mono", monospace;
+    }
+    .yaf-scrubber-container {
+      padding: 6px 0 10px;
+      cursor: pointer;
+    }
+    .yaf-scrubber-track {
       width: 100%;
-      margin: 0 0 18px;
-      accent-color: #a83245;
+      height: 6px;
+      background: #e8e2df;
+      border-radius: 999px;
+      position: relative;
+    }
+    .yaf-scrubber-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #a83245, #bd3d50);
+      border-radius: 999px;
+      position: relative;
+      transition: width 0.1s linear;
+    }
+    .yaf-scrubber-handle {
+      width: 14px;
+      height: 14px;
+      background: #ad792d;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      right: -7px;
+      top: -4px;
+      box-shadow: 0 2px 6px rgba(173, 121, 45, 0.45);
+      transition: transform .15s ease;
+    }
+    .yaf-scrubber-container:hover .yaf-scrubber-handle {
+      transform: scale(1.2);
+    }
+    .yaf-playback-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .yaf-toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .yaf-btn-playback {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, #963044, #bd3d50);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 3px 12px rgba(168, 50, 69, 0.35);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .yaf-btn-playback:hover {
+      transform: scale(1.08);
+      box-shadow: 0 5px 16px rgba(168, 50, 69, 0.45);
+    }
+    .yaf-btn-skip {
+      background: #f4f1ef;
+      border: 1px solid #e8e2df;
+      color: #766d6d;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: "JetBrains Mono", monospace;
+      cursor: pointer;
+      transition: color .18s ease, border-color .18s ease;
+    }
+    .yaf-btn-skip:hover {
+      color: #a83245;
+      border-color: #a83245;
+    }
+    .yaf-time-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .yaf-time-elapsed {
+      color: #ad792d;
+      font-weight: 700;
+    }
+    .yaf-time-divider {
+      color: #c9b7b0;
+    }
+    .yaf-time-duration {
+      color: #766d6d;
+    }
+    .yaf-mini-waveform {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 22px;
+    }
+    .yaf-wave-bar {
+      width: 3px;
+      background: #a83245;
+      border-radius: 2px;
+      animation: yafWave 1.2s ease-in-out infinite alternate;
+    }
+    .yaf-wave-bar:nth-child(2) { background: #ad792d; animation-delay: 0.15s; }
+    .yaf-wave-bar:nth-child(3) { background: #bd3d50; animation-delay: 0.3s; }
+    .yaf-wave-bar:nth-child(4) { background: #a83245; animation-delay: 0.1s; }
+    .yaf-wave-bar:nth-child(5) { background: #ad792d; animation-delay: 0.45s; }
+    .yaf-wave-bar:nth-child(6) { background: #bd3d50; animation-delay: 0.25s; }
+    .yaf-wave-bar:nth-child(7) { background: #a83245; animation-delay: 0.5s; }
+    @keyframes yafWave {
+      0% { height: 6px; }
+      100% { height: 22px; }
+    }
+    .yaf-toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .yaf-volume-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .yaf-vol-icon { font-size: 13px; color: #766d6d; }
+    .yaf-vol-bar {
+      width: 50px;
+      height: 4px;
+      background: #e8e2df;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .yaf-vol-level {
+      height: 100%;
+      background: #ad792d;
+      border-radius: 999px;
+    }
+    .yaf-btn-download {
+      background: #ffffff;
+      border: 1px solid #e8e2df;
+      color: #332b2d;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 11.5px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: all .18s ease;
+    }
+    .yaf-btn-download:hover {
+      border-color: #a83245;
+      color: #a83245;
+      box-shadow: 0 2px 8px rgba(168, 50, 69, 0.15);
     }
     .yaf-lyrics-live {
       min-height: 54px;
@@ -2243,9 +2473,75 @@
               <!-- 右欄：播放面板與即時逐字稿/影格 -->
               <div class="yaf-main">
                 <h2>2026/10/16(五) 賴清德總統談台灣經濟【早晨財經速解讀】</h2>
-                <audio controls src="https://github.com/ZhongZheng782/YoutubeAudio.Fetch/releases/download/audio-yutinghaofinance_JiP3avKjocg/yutinghaofinance_JiP3avKjocg.m4a">
-                  <track kind="subtitles" srclang="zh-TW" label="逐字稿" src="https://zhongzheng782.github.io/YoutubeAudio.Fetch/yutinghaofinance/transcripts/yutinghaofinance_JiP3avKjocg.vtt">
-                </audio>
+                <!-- 精密落地播放控制面板 (Consistent Themed Playback Panel) -->
+                <div class="yaf-playback-panel">
+                  <audio id="yaf-real-audio" preload="metadata" src="https://github.com/ZhongZheng782/YoutubeAudio.Fetch/releases/download/audio-yutinghaofinance_JiP3avKjocg/yutinghaofinance_JiP3avKjocg.m4a">
+                    <track kind="subtitles" srclang="zh-TW" label="逐字稿" src="https://zhongzheng782.github.io/YoutubeAudio.Fetch/yutinghaofinance/transcripts/yutinghaofinance_JiP3avKjocg.vtt">
+                  </audio>
+
+                  <!-- 頂部資訊與串流狀態 -->
+                  <div class="yaf-playback-header">
+                    <div class="yaf-playback-meta">
+                      <span class="yaf-meta-channel">游庭皓的財經皓角</span>
+                      <span class="yaf-meta-quality">🎙️ M4A · 128kbps 立體聲</span>
+                    </div>
+                    <div class="yaf-playback-status">
+                      <span class="yaf-pulse-indicator">
+                        <span class="yaf-pulse-dot"></span>
+                        串流連線中
+                      </span>
+                      <span class="yaf-speed-pill">1.0x</span>
+                    </div>
+                  </div>
+
+                  <!-- 進度條軌道與撥放波形 -->
+                  <div class="yaf-scrubber-container" id="yaf-scrubber">
+                    <div class="yaf-scrubber-track">
+                      <div class="yaf-scrubber-fill" style="width: 2.2%;">
+                        <div class="yaf-scrubber-handle"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 控制列：撥放鍵、快進退、時間、音量與儲存鈕 -->
+                  <div class="yaf-playback-toolbar">
+                    <div class="yaf-toolbar-left">
+                      <button class="yaf-btn-playback" id="yaf-play-toggle" title="播放/暫停" type="button">
+                        <span id="yaf-play-icon">▶</span>
+                      </button>
+                      <button class="yaf-btn-skip" id="yaf-skip-back" title="倒退 15 秒" type="button">↺ 15s</button>
+                      <button class="yaf-btn-skip" id="yaf-skip-forward" title="快進 15 秒" type="button">15s ↻</button>
+                      <div class="yaf-time-label">
+                        <span class="yaf-time-elapsed" id="yaf-cur-time">00:00:24</span>
+                        <span class="yaf-time-divider">/</span>
+                        <span class="yaf-time-duration">40:39</span>
+                      </div>
+                    </div>
+
+                    <!-- 微型動態音訊頻譜波形 (Amber Gold & Wine Red) -->
+                    <div class="yaf-mini-waveform">
+                      <span class="yaf-wave-bar" style="height: 10px;"></span>
+                      <span class="yaf-wave-bar" style="height: 18px;"></span>
+                      <span class="yaf-wave-bar" style="height: 12px;"></span>
+                      <span class="yaf-wave-bar" style="height: 24px;"></span>
+                      <span class="yaf-wave-bar" style="height: 16px;"></span>
+                      <span class="yaf-wave-bar" style="height: 20px;"></span>
+                      <span class="yaf-wave-bar" style="height: 14px;"></span>
+                    </div>
+
+                    <div class="yaf-toolbar-right">
+                      <div class="yaf-volume-group">
+                        <span class="yaf-vol-icon">🔊</span>
+                        <div class="yaf-vol-bar">
+                          <div class="yaf-vol-level" style="width: 75%;"></div>
+                        </div>
+                      </div>
+                      <a href="https://github.com/ZhongZheng782/YoutubeAudio.Fetch/releases/download/audio-yutinghaofinance_JiP3avKjocg/yutinghaofinance_JiP3avKjocg.m4a" class="yaf-btn-download" target="_blank" rel="noopener noreferrer">
+                        <span>儲存音訊 ⬇</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
                 <div class="yaf-lyrics-live">播放後顯示即時逐字稿</div>
                 <div class="yaf-keyframe">
                   <img src="https://cdn.jsdelivr.net/gh/ZhongZheng782/YoutubeAudio.Fetch@main/data/yutinghaofinance/yutinghaofinance_JiP3avKjocg_keyframes/yutinghaofinance_JiP3avKjocg_000024.jpg" alt="00:00:24">
@@ -2928,6 +3224,6 @@
       });
     });
   </script>
-</body>
-</html>
-                                                                        
+
+  <!-- Interactive Script for Card 3 YoutubeAudio.Fetch Playback Panel -->
+  <script>

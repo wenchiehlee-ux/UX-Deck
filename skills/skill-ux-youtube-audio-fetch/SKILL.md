@@ -40,7 +40,7 @@ Classified into channel groups (`DAILY`, `PLAYLIST`) with pill-shaped buttons:
   - Displays episode date, duration, phase status badges (`Phase 3` Gold, `Phase 2` Blue, `Phase 1` Wine Red), and title.
   - Active item features an accent left indicator border (`#bd3d50`) and soft gradient tint.
 - **Right Column (Player & Multimodal Sync `.main`)**:
-  - **Native-styled Audio Player**: Clean scrubber with wine-red playhead and live stream indicator.
+  - **Themed Playback Control Panel (`.yaf-playback-panel`)**: Wine-red circular play/pause button (`linear-gradient(135deg, #963044, #bd3d50)`), smooth scrubber track with amber gold playhead, 15s skip controls, monospace timestamp (`JetBrains Mono`), animated spectrum wavebars, volume slider, and audio download button.
   - **Dynamic Live Transcript (`.lyrics-live`)**: Real-time scrolling transcript subtitle card with amber gold left accent border and warm glow background.
   - **Video Keyframe Alignment (`.keyframe`)**: High-contrast video snapshot cards synchronized with audio playback timestamp.
   - **Topic Chapters & Cue List (`.cue-list`)**: Clickable timestamps with topic inferences for quick jumping.
