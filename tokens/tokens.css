@@ -130,6 +130,37 @@
   --ux-tw-text:          #0f172a;
   --ux-tw-text-muted:    #475569;
 
+  /* 7. wenchiehlee.quickconnect.to (Synology NAS Private Cloud DevOps) */
+  --ux-nas-primary:       #0284c7; /* Synology Blue */
+  --ux-nas-primary-hover: #0369a1;
+  --ux-nas-accent:        #38bdf8; /* Glacier Cyan */
+  --ux-nas-surface:       #ffffff;
+  --ux-nas-surface-card:  #f0f9ff;
+  --ux-nas-border:        #bae6fd;
+  --ux-nas-text:          #0f172a;
+  --ux-nas-text-muted:    #475569;
+
+  /* 8. InvestorConference (Institutional IR Intelligence & Conference Digest) */
+  --ux-ir-primary:        #22a553; /* Institutional IR Green */
+  --ux-ir-primary-hover:  #1a9148;
+  --ux-ir-accent:         #166534; /* Forest Deep */
+  --ux-ir-surface:        #ffffff;
+  --ux-ir-surface-card:   #f0fdf4; /* Mint Clean Surface */
+  --ux-ir-border:         #bbf7d0;
+  --ux-ir-text:           #0a0a0a;
+  --ux-ir-text-muted:     #4b5563;
+
+  /* 9. VIX (Global Volatility & Crash Sentinel) */
+  --ux-vix-panic:         #ef4444; /* Panic Red (> 35 Extreme Fear) */
+  --ux-vix-elevated:      #f97316; /* Elevated Orange (20 ~ 35 Attention) */
+  --ux-vix-normal:        #10b981; /* Normal Green (15 ~ 20 Calm) */
+  --ux-vix-tracker:       #38bdf8; /* Glacier Blue Tracker */
+  --ux-vix-surface:       #ffffff;
+  --ux-vix-surface-card:  #0f172a; /* Obsidian Dark Cockpit */
+  --ux-vix-border:        #e2e8f0;
+  --ux-vix-text:          #0f172a;
+  --ux-vix-text-muted:    #475569;
+
   /* ==========================================================================
      Iconography System & Animal Mascot Tokens
      ========================================================================== */
@@ -236,3 +267,34 @@
   color: var(--ux-tw-primary-hover, #047857);
   filter: drop-shadow(0 0 8px rgba(5, 150, 105, 0.45));
 }
+
+/* 7. Pangolin / Agile Cat (Synology NAS): DevOps Sentinel Focus */
+.ux-icon-pangolin {
+  color: var(--ux-nas-primary, #0284c7);
+}
+.ux-icon-pangolin:hover {
+  transform: scale(1.12);
+  color: var(--ux-nas-primary-hover, #0369a1);
+  filter: drop-shadow(0 0 8px rgba(2, 132, 199, 0.45));
+}
+
+/* 8. Stag (InvestorConference): Sovereign Leadership Focus */
+.ux-icon-stag {
+  color: var(--ux-ir-primary, #22a553);
+}
+.ux-icon-stag:hover {
+  transform: translateY(-2px) scale(1.08);
+  color: var(--ux-ir-accent, #166534);
+  filter: drop-shadow(0 0 8px rgba(34, 165, 83, 0.4));
+}
+
+/* 9. Cheetah (VIX): Lightning Volatility Reflex */
+.ux-icon-cheetah {
+  color: var(--ux-vix-panic, #ef4444);
+}
+.ux-icon-cheetah:hover {
+  transform: rotate(-4deg) scale(1.12);
+  color: var(--ux-vix-elevated, #f97316);
+  filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.5));
+}
+

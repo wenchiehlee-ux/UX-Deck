@@ -74,6 +74,50 @@
         "symbolId": "icon-sentinel-tv",
         "rationale": "Loyal home protection, large eyes and pricked ears instantly recognizable from 3-4 meters away"
       }
+    },
+    "my-tw-coverage": {
+      "theme": "Taiwan Equities Deep Coverage & Valuation Radar",
+      "primary": "#059669",
+      "surface": "#ffffff",
+      "surfaceCard": "#f8fafc",
+      "accent": "#d97706",
+      "gainTW": "#dc2626",
+      "lossTW": "#16a34a",
+      "text": "#0f172a",
+      "textMuted": "#475569",
+      "purpose": "Individual Taiwan equity deep-dive reports, valuation radar, and target price models"
+    },
+    "synology-nas": {
+      "theme": "Private Cloud DevOps Sentinel",
+      "primary": "#0284c7",
+      "surface": "#ffffff",
+      "surfaceCard": "#f0f9ff",
+      "accent": "#38bdf8",
+      "text": "#0f172a",
+      "textMuted": "#475569",
+      "purpose": "Self-hosted private cloud services, Docker container status, and Tailscale mesh security"
+    },
+    "investor-conference": {
+      "theme": "Institutional IR Intelligence & Conference Digest",
+      "primary": "#22a553",
+      "surface": "#ffffff",
+      "surfaceCard": "#f0fdf4",
+      "accent": "#166534",
+      "text": "#0a0a0a",
+      "textMuted": "#6b7280",
+      "purpose": "Taiwan & US corporate earnings calls, bilingual transcripts, and investor relation slide matrices"
+    },
+    "vix": {
+      "theme": "Global Volatility & Crash Sentinel",
+      "primary": "#ef4444",
+      "surface": "#ffffff",
+      "surfaceCard": "#0f172a",
+      "accent": "#f97316",
+      "normal": "#10b981",
+      "tracker": "#38bdf8",
+      "text": "#0f172a",
+      "textMuted": "#475569",
+      "purpose": "Real-time monitoring of US VIX, Taiwan TAIFEX VIX, CNN Fear & Greed, and historical crash stress tests"
     }
   },
   "iconography": {
@@ -115,6 +159,26 @@
         "name": "Living Room Sentinel Guardian",
         "id": "icon-sentinel-tv",
         "significance": "10-foot glanceable home protection, high-contrast silhouette"
+      },
+      "synology-nas": {
+        "name": "Armored Pangolin & Agile Cat",
+        "id": "icon-pangolin-shield",
+        "significance": "Private network defense, impenetrable Docker and storage guardian"
+      },
+      "my-tw-coverage": {
+        "name": "Flapping Research Owlet",
+        "id": "icon-owl-coverage",
+        "significance": "Discerning financial insight, cute and rigorous equity analysis companion"
+      },
+      "investor-conference": {
+        "name": "Sovereign Stag",
+        "id": "icon-stag-ir",
+        "significance": "Long-term institutional vision, stately earnings guidance and corporate leadership"
+      },
+      "vix": {
+        "name": "Volatility Cheetah",
+        "id": "icon-cheetah-vix",
+        "significance": "Instant reflex to market turbulence, lightning tail-risk detection"
       }
     }
   }
