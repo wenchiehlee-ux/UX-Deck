@@ -289,12 +289,16 @@
 }
 
 /* 9. Swan (VIX): Black Swan Tail Risk & Market Volatility Alert */
+.ux-icon.ux-icon-swan,
 .ux-icon-swan {
   color: var(--ux-vix-surface-card, #0f172a);
+  fill: currentColor;
+  stroke: none;
 }
 .ux-icon-swan:hover {
   transform: translateY(-2px) scale(1.08);
   color: var(--ux-vix-panic, #ef4444);
+  fill: var(--ux-vix-panic, #ef4444);
   filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.5));
 }
 

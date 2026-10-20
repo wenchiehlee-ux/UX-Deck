@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sq-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="sq-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <!-- Giant Curved Bushy Tail -->
+  <path d="M 48 78 C 36 76 26 66 26 48 C 26 28 42 15 54 15 C 60 15 64 19 62 25 C 60 30 52 34 46 38 C 39 43 38 52 42 62 C 45 70 51 74 54 75 Z" fill="url(#sq-grad1)"/>
+  <!-- Tail inner flow accent -->
+  <path d="M 48 24 C 42 27 34 36 35 48 C 36 56 40 64 45 68 C 42 62 40 54 40 46 C 40 36 46 28 50 25 C 52 23 50 23 48 24 Z" fill="url(#sq-grad2)"/>
+  <!-- Body & Thigh -->
+  <path d="M 54 75 C 52 70 54 62 58 58 C 61 54 62 48 64 44 C 65 41 68 37 72 37 C 76 37 79 40 80 44 C 81 48 78 52 75 55 C 77 58 81 64 79 72 C 77 78 70 81 62 81 C 58 81 55 79 54 75 Z" fill="url(#sq-grad1)"/>
+  <!-- Ear -->
+  <polygon points="73,37 76,28 78,36" fill="url(#sq-grad2)"/>
+  <!-- Eye -->
+  <circle cx="75" cy="43" r="1.8" fill="#ffffff"/>
+  <circle cx="75.5" cy="43" r="1" fill="#451a03"/>
+  <!-- Snout & Whisker area -->
+  <path d="M 79 45 C 83 46 84 48 81 50 C 78 51 76 49 76 47 Z" fill="url(#sq-grad2)"/>
+  <!-- Paws holding acorn -->
+  <ellipse cx="73" cy="56" rx="4" ry="4.5" fill="#92400e"/>
+  <path d="M 69 54 C 71 52 75 52 77 54 C 75 57 71 57 69 54 Z" fill="#78350f"/>
+  <!-- Feet -->
+  <ellipse cx="65" cy="81" rx="6" ry="2.5" fill="url(#sq-grad2)"/>
+  <!-- Typography -->
+  <text x="60" y="102" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="9" fill="#0f172a" letter-spacing="2.5">SQUIRREL</text>
+  <text x="60" y="112" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="4.2" fill="#b45309" letter-spacing="1.2">― your tagline here ―</text>
+</svg>

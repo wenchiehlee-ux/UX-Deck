@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Round Monkey Head -->
+  <circle cx="12" cy="12" r="6" />
+  <!-- Big Iconic Round Ears -->
+  <path d="M6 12a3.5 3.5 0 1 1-3.5-3.5c1.5 0 2.8.9 3.3 2.2" />
+  <path d="M18 12a3.5 3.5 0 1 0 3.5-3.5c-1.5 0-2.8.9-3.3 2.2" />
+  <!-- Eyes -->
+  <circle cx="10" cy="11" r=".5" fill="currentColor" />
+  <circle cx="14" cy="11" r=".5" fill="currentColor" />
+  <!-- Snout & Smile -->
+  <path d="M10 14a2 2 0 0 0 4 0" />
+  <!-- Brow Arch -->
+  <path d="M8.5 9.5C9.5 8.5 11 8.5 12 9.5c1-1 2.5-1 3.5 0" />
+</svg>

@@ -28,3 +28,34 @@ tv_behance.png
 showcase_updated.png
 my_tw_coverage_*.png
 pipup_base.apk
+
+# Temporary scratch & exploration screenshots in root
+/*.png
+!/favicon.png
+!/exact_card7_hud.png
+*.jpg
+crop_*
+test_*
+inspect_*
+*_candidates.*
+*_proposal.*
+*_proposals.*
+*_investigation.*
+cute_pangolins.*
+preview_3034_vectors.*
+all_animals_*.png
+compare_*.png
+section*.png
+extracted_3034.*
+vector_*.svg
+svgrepo_rhino.svg
+magnific_rhino.png
+verify_output.png
+index_*.png
+# Scratch & temporary helper scripts in root
+/*.py
+!/render_all_huds.py
+!/generate_3_styles_preview.py
+owl_candidates_*.html
+owl_lucide_*.html
+

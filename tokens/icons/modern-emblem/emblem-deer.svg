@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="deer-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="deer-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+  </defs>
+  <!-- Background subtle badge shield -->
+  <path d="M 60 12 C 85 12 98 25 98 48 C 98 75 60 92 60 92 C 60 92 22 75 22 48 C 22 25 35 12 60 12 Z" fill="#ecfdf5" opacity="0.6"/>
+  <!-- Antlers (Symmetrical Nordic Geometric) -->
+  <path d="M 46 38 C 42 30 35 22 28 20 C 32 26 38 31 41 38 C 36 33 29 30 22 32 C 28 37 34 40 39 43 C 33 42 27 45 24 50 C 31 49 37 47 43 47 L 48 54 Z" fill="url(#deer-gold)"/>
+  <path d="M 74 38 C 78 30 85 22 92 20 C 88 26 82 31 79 38 C 84 33 91 30 98 32 C 92 37 86 40 81 43 C 87 42 93 45 96 50 C 89 49 83 47 77 47 L 72 54 Z" fill="url(#deer-gold)"/>
+  <!-- Deer Head & Ears -->
+  <path d="M 38 48 C 32 44 26 44 24 47 C 26 53 32 55 39 54 Z" fill="#059669"/>
+  <path d="M 82 48 C 88 44 94 44 96 47 C 94 53 88 55 81 54 Z" fill="#059669"/>
+  <!-- Head Crown & Muzzle -->
+  <path d="M 46 44 L 60 36 L 74 44 L 70 60 C 68 72 64 78 60 82 C 56 78 52 72 50 60 Z" fill="url(#deer-grad)"/>
+  <!-- Head inner highlight & snout -->
+  <path d="M 52 50 L 60 44 L 68 50 L 65 62 C 63 70 60 74 60 74 C 60 74 57 70 55 62 Z" fill="#a7f3d0"/>
+  <!-- Nose Tip -->
+  <polygon points="58,73 62,73 60,76" fill="#064e3b"/>
+  <!-- Elegant Eyes -->
+  <ellipse cx="53" cy="54" rx="2" ry="3" fill="#064e3b"/>
+  <ellipse cx="67" cy="54" rx="2" ry="3" fill="#064e3b"/>
+  <!-- Brand Typography -->
+  <text x="60" y="104" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="12" fill="#065f46" letter-spacing="3" text-anchor="middle">DEER</text>
+  <text x="60" y="113" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="5" fill="#10b981" letter-spacing="1.5" text-anchor="middle">― NORDIC LIFE ―</text>
+</svg>
