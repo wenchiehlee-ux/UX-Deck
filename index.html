@@ -2452,6 +2452,110 @@
       font-size: 0.72rem;
     }
 
+    /* VIX Dual-Axis Interactive Chart Simulation */
+    .vix-chart-wrapper {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 16px 18px 14px;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    }
+    .vix-chart-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .vix-chart-title {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: -0.01em;
+    }
+    .vix-badge-live {
+      font-size: 0.68rem;
+      font-weight: 700;
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      padding: 1px 6px;
+      border-radius: 9999px;
+    }
+    .vix-range-pills {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      background: #f1f5f9;
+      padding: 3px 4px;
+      border-radius: 8px;
+    }
+    .vix-range-btn {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #64748b;
+      padding: 2px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s ease;
+    }
+    .vix-range-btn:hover {
+      color: #0f172a;
+    }
+    .vix-range-btn.active {
+      background: #ffffff;
+      color: #0f172a;
+      font-weight: 700;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+    .vix-legend-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 12px;
+    }
+    .vix-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .vix-legend-line {
+      display: inline-block;
+      width: 16px;
+      border-radius: 2px;
+    }
+    .vix-chart-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+    .vix-chart-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid #f1f5f9;
+      font-size: 0.72rem;
+      color: #64748b;
+    }
+
+
     /* Section 4: Scale Row (White Basis) */
     .scale-row {
       display: flex;
@@ -3896,6 +4000,226 @@
                 <div class="vix-kpi-desc" style="color: #0369a1;">
                   <span>🔵 中立觀望 · Neutral Stance</span>
                 </div>
+              </div>
+            </div>
+
+            
+            <!-- Taiwan VIX vs TAIEX 走勢對照圖 (雙軸走勢圖 · 恐慌 30 臨界點 · 歷次股災旗幟) -->
+            <div class="vix-chart-wrapper">
+              <div class="vix-chart-topbar">
+                <div class="vix-chart-title">
+                  <span>Taiwan VIX vs TAIEX 走勢對照圖</span>
+                  <span class="vix-badge-live">Plotly 雙軸互動</span>
+                </div>
+                <div class="vix-range-pills">
+                  <span class="vix-range-btn">1M</span>
+                  <span class="vix-range-btn">3M</span>
+                  <span class="vix-range-btn">6M</span>
+                  <span class="vix-range-btn">1Y</span>
+                  <span class="vix-range-btn">3Y</span>
+                  <span class="vix-range-btn active">全部 (2010–2026)</span>
+                </div>
+              </div>
+
+              <div class="vix-legend-row">
+                <div class="vix-legend-item">
+                  <span class="vix-legend-line" style="background: #38bdf8; height: 4px;"></span>
+                  <span>TAIEX (台股指數 · 右軸)</span>
+                </div>
+                <div class="vix-legend-item">
+                  <span class="vix-legend-line" style="background: #10b981; height: 3px;"></span>
+                  <span>Taiwan VIX (台指 VIX · 左軸)</span>
+                </div>
+                <div class="vix-legend-item">
+                  <span class="vix-legend-line" style="background: #ef4444; height: 3px;"></span>
+                  <span>US VIX (標普 VIX · 左軸)</span>
+                </div>
+                <div class="vix-legend-item">
+                  <span class="vix-legend-line" style="height: 0; border-top: 2px dotted #f59e0b;"></span>
+                  <span>CNN Fear & Greed (美股情緒)</span>
+                </div>
+                <div class="vix-legend-item" style="color: #ef4444;">
+                  <span class="vix-legend-line" style="height: 0; border-top: 2px dashed #ef4444;"></span>
+                  <span style="font-weight: 700;">恐慌臨界點 (30)</span>
+                </div>
+                <div class="vix-legend-item" style="color: #dc2626; font-weight: 700;">
+                  <span>🚩 歷次黑天鵝股災回測旗幟</span>
+                </div>
+              </div>
+
+              <!-- Plotly Dual-Axis SVG Chart -->
+              <svg class="vix-chart-svg" viewBox="0 0 920 300">
+                <defs>
+                  <linearGradient id="taiex-area-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.25"/>
+                    <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.02"/>
+                  </linearGradient>
+                </defs>
+
+                <!-- Plot Background & Subtle Gridlines -->
+                <rect x="50" y="32" width="820" height="200" fill="#fafafa" rx="4" />
+
+                <!-- Horizontal Grid Lines & Y-Axis Labels -->
+                <!-- VIX = 90 / TAIEX = 51.9k -->
+                <line x1="50" y1="36" x2="870" y2="36" stroke="#e2e8f0" stroke-dasharray="2,3" />
+                <text x="44" y="39" text-anchor="end" font-size="9" fill="#94a3b8" font-family="'JetBrains Mono', monospace">90</text>
+                <text x="876" y="39" text-anchor="start" font-size="9" fill="#94a3b8" font-family="'JetBrains Mono', monospace">51.9k</text>
+
+                <!-- VIX = 70 / TAIEX = 40.4k -->
+                <line x1="50" y1="78" x2="870" y2="78" stroke="#e2e8f0" stroke-dasharray="2,3" />
+                <text x="44" y="81" text-anchor="end" font-size="9" fill="#94a3b8" font-family="'JetBrains Mono', monospace">70</text>
+                <text x="876" y="81" text-anchor="start" font-size="9" fill="#94a3b8" font-family="'JetBrains Mono', monospace">40.4k</text>
+
+                <!-- VIX = 50 / TAIEX = 28.8k -->
+                <line x1="50" y1="122" x2="870" y2="122" stroke="#e2e8f0" stroke-dasharray="2,3" />
+                <text x="44" y="125" text-anchor="end" font-size="9" fill="#94a3b8" font-family="'JetBrains Mono', monospace">50</text>
+                <text x="876" y="125" text-anchor="start" font-size="9" fill="#94a3b8" font-family="'JetBrains Mono', monospace">28.8k</text>
+
+                <!-- VIX = 30 恐慌臨界點 / TAIEX = 17.3k (Critical Threshold Line) -->
+                <line x1="50" y1="166" x2="870" y2="166" stroke="#ef4444" stroke-width="1.6" stroke-dasharray="5,4" />
+                <text x="44" y="169" text-anchor="end" font-size="9.5" fill="#ef4444" font-family="'JetBrains Mono', monospace" font-weight="700">30</text>
+                <text x="876" y="169" text-anchor="start" font-size="9" fill="#94a3b8" font-family="'JetBrains Mono', monospace">17.3k</text>
+
+                <!-- 臨界點 30 標籤 Badge -->
+                <rect x="54" y="154" width="92" height="17" rx="3" fill="#fef2f2" stroke="#fca5a5" stroke-width="0.8" />
+                <text x="58" y="166" font-size="9.5" fill="#ef4444" font-weight="700">恐慌臨界點 (30)</text>
+
+                <!-- VIX = 10 / TAIEX = 5.8k -->
+                <line x1="50" y1="210" x2="870" y2="210" stroke="#e2e8f0" stroke-dasharray="2,3" />
+                <text x="44" y="213" text-anchor="end" font-size="9" fill="#94a3b8" font-family="'JetBrains Mono', monospace">10</text>
+                <text x="876" y="213" text-anchor="start" font-size="9" fill="#94a3b8" font-family="'JetBrains Mono', monospace">5.8k</text>
+
+                <!-- Bottom Axis Line (VIX = 0) -->
+                <line x1="50" y1="232" x2="870" y2="232" stroke="#cbd5e1" stroke-width="1" />
+                <text x="44" y="235" text-anchor="end" font-size="9" fill="#94a3b8" font-family="'JetBrains Mono', monospace">0</text>
+                <text x="876" y="235" text-anchor="start" font-size="9" fill="#94a3b8" font-family="'JetBrains Mono', monospace">0</text>
+
+                <!-- Y-Axis Title Labels -->
+                <text x="24" y="130" transform="rotate(-90 24 130)" text-anchor="middle" font-size="9" font-weight="700" fill="#64748b">VIX 指數 (左軸)</text>
+                <text x="896" y="130" transform="rotate(90 896 130)" text-anchor="middle" font-size="9" font-weight="700" fill="#64748b">TAIEX 指數 (右軸)</text>
+
+                <!-- Event Shaded Rectangles (股災期間陰影區) -->
+                <!-- 2011 美債降評 -->
+                <rect x="98" y="32" width="28" height="200" fill="#c084fc" fill-opacity="0.18" />
+                <!-- 2015 陸股崩盤 -->
+                <rect x="300" y="32" width="26" height="200" fill="#c084fc" fill-opacity="0.18" />
+                <!-- 2018 206 選擇權與貿易戰 -->
+                <rect x="448" y="32" width="30" height="200" fill="#fdba74" fill-opacity="0.22" />
+                <!-- 2020 COVID 疫情閃崩 -->
+                <rect x="550" y="32" width="24" height="200" fill="#fca5a5" fill-opacity="0.32" />
+                <!-- 2022 通膨暴力升息熊市 -->
+                <rect x="655" y="32" width="46" height="200" fill="#fde047" fill-opacity="0.22" />
+                <!-- 2024 805 套利平倉股災 -->
+                <rect x="762" y="32" width="26" height="200" fill="#fca5a5" fill-opacity="0.32" />
+
+                <!-- Crash Event Flags 🚩 (歷次重大股災旗幟) -->
+                <!-- 2011 歐美債 -->
+                <g transform="translate(108, 12)">
+                  <path d="M 0 0 L 0 20 M 0 0 L 8 4 L 0 8 Z" fill="#ef4444" stroke="#ef4444" stroke-width="0.8" />
+                  <rect x="-18" y="-12" width="38" height="11" rx="2" fill="#ef4444" />
+                  <text x="1" y="-3.5" text-anchor="middle" font-size="7.2" fill="#ffffff" font-weight="700">2011 美債</text>
+                </g>
+
+                <!-- 2015 陸股熔斷 -->
+                <g transform="translate(310, 12)">
+                  <path d="M 0 0 L 0 20 M 0 0 L 8 4 L 0 8 Z" fill="#ef4444" stroke="#ef4444" stroke-width="0.8" />
+                  <rect x="-18" y="-12" width="38" height="11" rx="2" fill="#ef4444" />
+                  <text x="1" y="-3.5" text-anchor="middle" font-size="7.2" fill="#ffffff" font-weight="700">2015 陸股</text>
+                </g>
+
+                <!-- 2018 206 選擇權 -->
+                <g transform="translate(460, 12)">
+                  <path d="M 0 0 L 0 20 M 0 0 L 8 4 L 0 8 Z" fill="#ef4444" stroke="#ef4444" stroke-width="0.8" />
+                  <rect x="-18" y="-12" width="38" height="11" rx="2" fill="#ea580c" />
+                  <text x="1" y="-3.5" text-anchor="middle" font-size="7.2" fill="#ffffff" font-weight="700">2018 206</text>
+                </g>
+
+                <!-- 2020 COVID 疫情熔斷 (天量 VIX 82.69) -->
+                <g transform="translate(560, 12)">
+                  <path d="M 0 0 L 0 20 M 0 0 L 8 4 L 0 8 Z" fill="#b91c1c" stroke="#b91c1c" stroke-width="0.8" />
+                  <rect x="-24" y="-12" width="50" height="11" rx="2" fill="#b91c1c" />
+                  <text x="1" y="-3.5" text-anchor="middle" font-size="7.2" fill="#ffffff" font-weight="800">2020 疫情 82.7</text>
+                </g>
+
+                <!-- 2022 全球升息熊市 -->
+                <g transform="translate(675, 12)">
+                  <path d="M 0 0 L 0 20 M 0 0 L 8 4 L 0 8 Z" fill="#d97706" stroke="#d97706" stroke-width="0.8" />
+                  <rect x="-18" y="-12" width="38" height="11" rx="2" fill="#d97706" />
+                  <text x="1" y="-3.5" text-anchor="middle" font-size="7.2" fill="#ffffff" font-weight="700">2022 升息</text>
+                </g>
+
+                <!-- 2024 805 套利平倉 (TW VIX 48.20) -->
+                <g transform="translate(772, 12)">
+                  <path d="M 0 0 L 0 20 M 0 0 L 8 4 L 0 8 Z" fill="#b91c1c" stroke="#b91c1c" stroke-width="0.8" />
+                  <rect x="-24" y="-12" width="50" height="11" rx="2" fill="#b91c1c" />
+                  <text x="1" y="-3.5" text-anchor="middle" font-size="7.2" fill="#ffffff" font-weight="800">2024 805 48.2</text>
+                </g>
+
+                <!-- 1. TAIEX Area + Line (台股指數) -->
+                <path d="M 50 196 
+                         L 100 198 L 112 203 L 150 201 L 200 195 L 250 192 L 300 196 L 312 201 L 350 193 
+                         L 400 187 L 450 184 L 460 188 L 500 179 L 550 184 L 560 204 L 590 162 L 630 135 
+                         L 660 168 L 680 178 L 710 138 L 750 78 L 760 62 L 770 108 L 780 82 L 820 74 L 870 68 
+                         L 870 232 L 50 232 Z" 
+                      fill="url(#taiex-area-grad)" />
+                <path d="M 50 196 
+                         L 100 198 L 112 203 L 150 201 L 200 195 L 250 192 L 300 196 L 312 201 L 350 193 
+                         L 400 187 L 450 184 L 460 188 L 500 179 L 550 184 L 560 204 L 590 162 L 630 135 
+                         L 660 168 L 680 178 L 710 138 L 750 78 L 760 62 L 770 108 L 780 82 L 820 74 L 870 68" 
+                      fill="none" stroke="#0284c7" stroke-width="1.8" stroke-linejoin="round" />
+
+                <!-- 2. CNN Fear & Greed (美股情緒點狀線) -->
+                <path d="M 50 176 L 112 188 L 200 168 L 310 192 L 400 162 L 460 190 L 500 160 L 560 215 L 630 148 L 675 198 L 750 140 L 770 205 L 820 168 L 870 175" 
+                      fill="none" stroke="#f59e0b" stroke-width="1.2" stroke-dasharray="2,3" opacity="0.75" />
+
+                <!-- 3. US VIX (標普 VIX · 紅色線) -->
+                <path d="M 50 204 
+                         L 95 206 L 108 128 L 120 178 L 150 200 L 200 208 L 250 205 L 300 202 L 310 145 L 325 188 
+                         L 350 205 L 400 210 L 448 208 L 455 152 L 470 192 L 500 206 L 545 204 L 560 52 L 575 142 L 590 175 
+                         L 630 195 L 660 165 L 675 160 L 710 192 L 750 204 L 768 152 L 780 195 L 820 205 L 870 203" 
+                      fill="none" stroke="#ef4444" stroke-width="1.7" stroke-linejoin="round" />
+
+                <!-- 4. Taiwan VIX (台指 VIX · 綠色線) -->
+                <path d="M 50 208 
+                         L 95 209 L 110 148 L 125 186 L 150 204 L 200 210 L 250 208 L 300 205 L 312 165 L 325 194 
+                         L 350 208 L 400 212 L 448 210 L 458 158 L 470 196 L 500 208 L 545 206 L 562 138 L 578 165 L 590 186 
+                         L 630 200 L 660 178 L 675 174 L 710 198 L 750 206 L 770 128 L 782 182 L 820 195 L 870 188" 
+                      fill="none" stroke="#10b981" stroke-width="2" stroke-linejoin="round" />
+
+                <!-- Current Highlight Dots (2026 最新指標點) -->
+                <circle cx="870" cy="203" r="3" fill="#ef4444" />
+                <circle cx="870" cy="188" r="3.5" fill="#10b981" />
+                <circle cx="870" cy="68" r="3" fill="#0284c7" />
+
+                <!-- X-Axis Year Labels (2010 to 2026) -->
+                <text x="50" y="244" text-anchor="middle" font-size="9" fill="#64748b" font-family="'JetBrains Mono', monospace">2010</text>
+                <text x="150" y="244" text-anchor="middle" font-size="9" fill="#64748b" font-family="'JetBrains Mono', monospace">2012</text>
+                <text x="250" y="244" text-anchor="middle" font-size="9" fill="#64748b" font-family="'JetBrains Mono', monospace">2014</text>
+                <text x="350" y="244" text-anchor="middle" font-size="9" fill="#64748b" font-family="'JetBrains Mono', monospace">2016</text>
+                <text x="450" y="244" text-anchor="middle" font-size="9" fill="#64748b" font-family="'JetBrains Mono', monospace">2018</text>
+                <text x="550" y="244" text-anchor="middle" font-size="9" fill="#64748b" font-family="'JetBrains Mono', monospace">2020</text>
+                <text x="655" y="244" text-anchor="middle" font-size="9" fill="#64748b" font-family="'JetBrains Mono', monospace">2022</text>
+                <text x="765" y="244" text-anchor="middle" font-size="9" fill="#64748b" font-family="'JetBrains Mono', monospace">2024</text>
+                <text x="870" y="244" text-anchor="middle" font-size="9" fill="#64748b" font-family="'JetBrains Mono', monospace" font-weight="700">2026</text>
+
+                <!-- Plotly-style Mini Range Slider -->
+                <g transform="translate(0, 252)">
+                  <rect x="50" y="0" width="820" height="20" rx="3" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="0.8" />
+                  <!-- Mini sparkline inside slider -->
+                  <path d="M 50 15 L 110 8 L 200 14 L 310 10 L 450 13 L 560 3 L 670 10 L 770 7 L 870 12" fill="none" stroke="#ef4444" stroke-width="1" opacity="0.6" />
+                  <path d="M 50 17 L 150 16 L 350 15 L 500 13 L 560 15 L 630 8 L 760 3 L 870 4" fill="none" stroke="#0284c7" stroke-width="1" opacity="0.5" />
+                  <!-- Active Slider Range Window -->
+                  <rect x="50" y="0" width="820" height="20" fill="#38bdf8" fill-opacity="0.12" stroke="#0284c7" stroke-width="1.2" rx="3" />
+                  <!-- Slider Grab Handles -->
+                  <rect x="46" y="-1" width="7" height="22" rx="2" fill="#64748b" />
+                  <rect x="867" y="-1" width="7" height="22" rx="2" fill="#64748b" />
+                </g>
+              </svg>
+
+              <!-- Chart Meta Footer Bar -->
+              <div class="vix-chart-meta">
+                <span>資料來源：<strong>TAIFEX (台灣期貨交易所) · Yahoo Finance (^VIX, ^TWII) · CNN Money</strong></span>
+                <span style="font-family: 'JetBrains Mono', monospace;">更新頻率：每日收盤定時結算 (CST)</span>
               </div>
             </div>
 
