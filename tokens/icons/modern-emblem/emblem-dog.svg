@@ -1,254 +1,153 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
   <defs>
     <!-- Warm Golden Shiba Coat Gradients -->
-    <linearGradient id="shiba-coat" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f68b3e" />
-      <stop offset="100%" stop-color="#e36323" />
+    <linearGradient id="shiba-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f88939" />
+      <stop offset="100%" stop-color="#e0621f" />
     </linearGradient>
-    <linearGradient id="shiba-tail" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#f5853b" />
-      <stop offset="100%" stop-color="#df5c1b" />
+    <linearGradient id="shiba-far-leg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ecd8c8" />
+      <stop offset="100%" stop-color="#dfc2af" />
     </linearGradient>
-    <!-- Soft Warm Ambient Shield -->
+    <!-- Ambient Smart Home Sentinel Shield (Rich Warm Amber Glow) -->
     <radialGradient id="shiba-shield-warm" cx="50%" cy="45%" r="60%">
-      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.95" />
-      <stop offset="100%" stop-color="#fde68a" stop-opacity="0.35" />
+      <stop offset="0%" stop-color="#fffbeb" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#fed7aa" stop-opacity="0.75" />
     </radialGradient>
   </defs>
 
   <!-- Ambient Smart Home Sentinel Shield -->
-  <path d="M 60 12 C 86 12 98 25 98 48 C 98 73 60 90 60 90 C 60 90 22 73 22 48 C 22 25 34 12 60 12 Z" fill="url(#shiba-shield-warm)" stroke="#fcd34d" stroke-width="0.8" />
-
+  <path d="M 60 12 C 88 12 99 25 99 48 C 99 74 60 91 60 91 C 60 91 21 74 21 48 C 21 25 32 12 60 12 Z" fill="url(#shiba-shield-warm)" stroke="#fcd34d" stroke-width="1.2" />
 
   <!-- Smooth Vectorized Shiba Inu from iStock 2162280487 -->
-  <g transform="translate(26.65, 15.50) scale(0.2616)">
-    <!-- Far Legs & Underbelly Depth -->
-    <!-- Far Hind Leg -->
-    <g id="far-hind-leg">
-      <path d="M 72 144 L 88 152 L 80 185 L 77 220 L 67 220 L 67 178 Z" fill="#ecd3bf" stroke="#fed7aa" stroke-width="0.8" />
-      <path d="M 67 215 L 77 215 L 79 232 C 79 236 75 238 70 238 C 65 238 64 234 64 228 Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="0.8" />
-      <line x1="68" y1="228" x2="68" y2="236" stroke="#d5b39b" stroke-width="0.8" />
-      <line x1="74" y1="228" x2="74" y2="236" stroke="#d5b39b" stroke-width="0.8" />
-    </g>
+  <g transform="translate(23.19, 17.91) scale(0.2583)">
 
-    <!-- Far Front Leg -->
-    <g id="far-front-leg">
-      <path d="M 182 144 L 198 144 L 196 220 L 184 220 Z" fill="#ecd3bf" stroke="#fed7aa" stroke-width="0.8" />
-      <path d="M 184 215 L 196 215 L 198 245 C 198 250 194 252 189 252 C 184 252 183 248 183 240 Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="0.8" />
-      <line x1="187" y1="242" x2="187" y2="250" stroke="#d5b39b" stroke-width="0.8" />
-      <line x1="193" y1="242" x2="193" y2="250" stroke="#d5b39b" stroke-width="0.8" />
-    </g>
+  <defs>
+    <!-- Warm Golden Shiba Coat Gradients -->
+    <linearGradient id="shiba-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f88939" />
+      <stop offset="100%" stop-color="#e0621f" />
+    </linearGradient>
+    <linearGradient id="shiba-far-leg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#edd8c8" />
+      <stop offset="100%" stop-color="#dfc2af" />
+    </linearGradient>
+  </defs>
 
-    <!-- Underbelly Cream Stripe -->
-    <path d="M 88 144 C 115 152 135 152 152 144 L 152 154 C 135 162 115 162 88 152 Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="0.8" />
 
-    <!-- Tail Donut Body (Exact iStock Curled Tail) -->
-    <g id="donut-tail">
-      <path d="
-        M 48 100
-        C 44 94 45 80 47 72
-        C 52 58 64 54 75 54
-        C 86 54 94 64 94 76
-        C 94 88 88 98 80 102
-        C 76 100 74 94 74 88
-        C 74 78 70 70 64 70
-        C 57 70 56 78 56 86
-        C 56 94 64 102 74 104
-        C 67 103 62 100 60 94
-        C 58 89 60 84 63 80
-        C 67 76 74 78 76 81
-        C 78 84 77 88 74 89
-        C 71 90 70 88 70 86
-        Z" fill="url(#shiba-tail)" />
-      
-      <!-- White Underside / Tip of Curled Tail -->
-      <path d="
-        M 65 54
-        C 78 54 94 64 94 76
-        C 94 88 88 98 80 102
-        C 82 95 82 89 82 83
-        C 82 72 73 66 65 66
-        C 65 62 65 58 65 54
-        Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="0.6" />
-    </g>
+  <!-- 1. Far Hind Leg -->
+  <g id="far-hind-leg" fill="url(#shiba-far-leg)" stroke="#cbb09d" stroke-width="0.9" stroke-linejoin="round">
+    <path d="M 82 142 L 95 142 C 98 156 100 170 96 182 C 93 194 86 206 84 214 L 85 232 C 85 236 82 238 77 238 C 72 238 70 234 71 228 L 74 206 C 77 194 77 178 78 155 Z" />
+  </g>
+  <line x1="77" y1="230" x2="77" y2="237" stroke="#bca090" stroke-width="0.9" stroke-linecap="round" />
+  <line x1="82" y1="230" x2="82" y2="237" stroke="#bca090" stroke-width="0.9" stroke-linecap="round" />
 
-    <!-- Main Body Silhouette (Torso, Flank, Hind Leg Thigh) -->
-    <g id="main-body">
-      <path d="
-        M 48 100
-        C 42 106 35 116 30 127
-        C 26 142 32 165 33 186
-        L 33 224
-        C 34 228 39 232 44 232
-        C 48 232 49 226 49 216
-        C 49 195 46 189 54 175
-        C 62 160 76 148 91 138
-        C 105 142 130 148 144 154
-        C 148 168 152 185 162 200
-        C 168 185 174 168 176 150
-        C 178 135 180 120 182 108
-        C 174 104 165 100 155 100
-        C 120 100 90 100 48 100
-        Z" fill="url(#shiba-coat)" />
 
-      <!-- Near Hind Leg Cream Sock & Paw -->
-      <path d="
-        M 31 220
-        L 46 220
-        C 46 230 46 248 44 252
-        C 41 254 36 254 33 250
-        C 30 245 30 232 31 220
-        Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="0.8" />
-      <line x1="36" y1="243" x2="36" y2="251" stroke="#fed7aa" stroke-width="0.8" />
-      <line x1="41" y1="243" x2="41" y2="251" stroke="#fed7aa" stroke-width="0.8" />
+  <!-- Far Front Leg (Tapered, standing slightly behind) -->
+  <path d="
+    M 198 140
+    L 214 140
+    C 214 168 214 198 212 222
+    L 212 242
+    C 212 246 208 248 203 248
+    C 199 248 198 244 198 238
+    C 199 215 198 180 198 140
+    Z" fill="url(#shiba-far-leg)" stroke="#cbb09d" stroke-width="0.9" stroke-linejoin="round" />
+  <line x1="203" y1="239" x2="203" y2="246" stroke="#bca090" stroke-width="0.9" stroke-linecap="round" />
+  <line x1="208" y1="239" x2="208" y2="246" stroke="#bca090" stroke-width="0.9" stroke-linecap="round" />
 
-      <!-- Flank Fur Tuft Accents -->
-      <path d="M 36 135 C 38 138 38 142 36 145" fill="none" stroke="#d95818" stroke-width="1.2" stroke-linecap="round" />
-      <path d="M 39 140 C 41 143 41 147 39 150" fill="none" stroke="#d95818" stroke-width="1.2" stroke-linecap="round" />
-    </g>
 
-    <!-- Front Near Leg -->
-    <g id="front-near-leg">
-      <path d="
-        M 160 175
-        L 174 175
-        C 176 195 176 225 175 252
-        C 174 257 169 258 164 258
-        C 159 257 158 252 159 245
-        C 160 230 160 200 160 175
-        Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="0.8" />
-      
-      <!-- Orange Shoulder Sloping Wedge -->
-      <path d="
-        M 162 145
-        C 166 145 173 150 176 165
-        C 179 178 178 198 174 220
-        L 168 220
-        C 172 195 170 175 162 160
-        Z" fill="url(#shiba-coat)" />
+  <!-- 2. Cream Underbelly -->
+  <path d="M 95 142 C 120 148 145 148 168 144 L 168 152 C 145 158 120 157 95 148 Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="0.9" />
 
-      <line x1="165" y1="250" x2="165" y2="257" stroke="#fed7aa" stroke-width="0.8" />
-      <line x1="170" y1="250" x2="170" y2="257" stroke="#fed7aa" stroke-width="0.8" />
-    </g>
+  <!-- 3. Seamless Cream Urajiro (Continuous from Face to Chest and Forearm) -->
 
-    <!-- Chest & Neck Fur (Pure Cream Urajiro) -->
-    <path d="
-      M 155 100
-      C 160 110 164 125 164 142
-      C 164 158 162 170 160 175
-      C 166 175 172 170 175 160
-      C 178 145 180 130 182 118
-      C 184 106 186 100 194 94
-      C 180 98 168 100 155 100
-      Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="0.8" />
+  <!-- Seamless Cream Urajiro (Cheeks, Snout, Chin, Throat, Chest, Forearm & Paw) -->
+  <path d="
+    M 150 78
+    C 156 74 168 68 180 66
+    C 187 66 192 60 196 60
+    C 200 60 205 66 212 66
+    C 224 66 238 70 244 78
+    C 246 86 242 98 234 105
+    C 224 112 216 114 206 114
+    C 200 120 196 132 192 148
+    C 188 162 186 185 186 215
+    L 186 244
+    C 185 250 179 252 174 252
+    C 169 252 167 248 167 240
+    L 167 175
+    C 168 152 170 132 170 115
+    C 164 110 156 102 152 92
+    C 149 85 149 81 150 78
+    Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="0.9" stroke-linejoin="round" />
 
-    <!-- HEAD & EARS GROUP (Authentic Japanese Shiba Inu Proportions) -->
-    <g id="head-group">
-      <!-- Base Orange Head & Outer Ears -->
-      <path d="
-        M 144 62
-        L 142 34
-        C 141.5 32 144 31.5 145.5 33.5
-        L 168 42
-        C 177 39.5 187 39.5 196 41.5
-        L 214 22
-        C 216 20.5 218 22 217 24.5
-        L 226 56
-        C 229 65 230 76 228 86
-        C 225 97 216 105 202 107
-        C 190 109 178 109 166 107
-        C 153 104 145 95 142 84
-        C 140 75 142 66 144 62
-        Z" fill="url(#shiba-coat)" />
 
-      <!-- Left Inner Ear -->
-      <path d="
-        M 150 56
-        L 144.5 36.5
-        C 144 35.5 145.5 35.5 146 36.5
-        L 165 43.5
-        C 161 48 156 52 150 56
-        Z" fill="#fceee2" />
+<!-- 3. Main Orange Body (Back, Tail body, Rump, Rear Thigh, Head Base) -->
+  <path d="M 227.0 21.0 L 228.0 34.0 L 225.0 40.0 L 216.0 32.0 L 212.0 25.0 L 213.0 23.0 L 209.0 26.0 L 192.0 28.0 L 176.0 32.0 L 169.0 30.0 L 173.0 33.0 L 173.0 35.0 L 168.0 40.0 L 165.0 48.0 L 162.0 50.0 L 159.0 46.0 L 156.0 36.0 L 156.0 32.0 L 156.0 40.0 L 161.0 54.0 L 159.0 64.0 L 159.0 75.0 L 163.0 83.0 L 162.0 86.0 L 139.0 86.0 L 117.0 83.0 L 108.0 83.0 L 106.0 89.0 L 100.0 96.0 L 99.0 93.0 L 102.0 87.0 L 102.0 73.0 L 97.0 62.0 L 92.0 57.0 L 85.0 54.0 L 75.0 54.0 L 69.0 56.0 L 64.0 60.0 L 58.0 73.0 L 58.0 82.0 L 62.0 89.0 L 62.0 91.0 L 50.0 104.0 L 46.0 110.0 L 42.0 120.0 L 42.0 131.0 L 44.0 136.0 L 46.0 148.0 L 46.0 169.0 L 43.0 178.0 L 45.0 196.0 L 45.0 218.0 L 49.0 215.0 L 53.0 207.0 L 58.0 182.0 L 93.0 142.0 L 101.0 135.0 L 103.0 135.0 L 106.0 138.0 L 120.0 142.0 L 131.0 143.0 L 144.0 146.0 L 151.0 146.0 L 157.0 148.0 L 157.0 153.0 L 155.0 160.0 L 159.0 168.0 L 163.0 181.0 L 178.0 197.0 L 183.0 204.0 L 185.0 186.0 L 188.0 176.0 L 188.0 168.0 L 186.0 163.0 L 194.0 146.0 L 194.0 135.0 L 191.0 127.0 L 180.0 111.0 L 179.0 104.0 L 181.0 99.0 L 169.0 87.0 L 167.0 83.0 L 166.0 75.0 L 167.0 71.0 L 170.0 68.0 L 181.0 68.0 L 187.0 70.0 L 193.0 64.0 L 200.0 61.0 L 212.0 65.0 L 217.0 64.0 L 226.0 58.0 L 231.0 58.0 L 235.0 63.0 L 235.0 76.0 L 238.0 71.0 L 239.0 61.0 L 236.0 53.0 L 229.0 44.0 L 229.0 32.0 Z" fill="url(#shiba-orange)" stroke="#e0621f" stroke-width="0.5" stroke-linejoin="round" />
 
-      <!-- Right Inner Ear -->
-      <path d="
-        M 198 42.5
-        L 213 25
-        C 214 24 215 25 214.5 26
-        L 220 52
-        C 214 47 205 44.5 198 42.5
-        Z" fill="#fceee2" />
+  
+<!-- 4. Orange Shoulder Wedge (Drawn ON TOP of Chest and Forearm!) -->
+  <path d="M 160.0 115.0 L 160.0 173.0 L 164.0 183.0 L 178.0 197.0 L 183.0 204.0 L 185.0 186.0 L 188.0 176.0 L 188.0 168.0 L 186.0 163.0 L 194.0 146.0 L 194.0 135.0 L 191.0 127.0 L 182.0 115.0 Z" fill="url(#shiba-orange)" stroke="#e0621f" stroke-width="0.5" stroke-linejoin="round" />
 
-      <!-- Cream Urajiro Facial Mask (Cheeks, Muzzle, Chin) -->
-      <path d="
-        M 142 82
-        C 147 78 158 74 168 73
-        C 174 73 178 68 182 68
-        C 186 68 190 73 196 73
-        C 206 73 218 75 227 82
-        C 228 88 225 96 219 102
-        C 210 108 198 109 186 109
-        C 174 109 162 107 153 101
-        C 146 95 142 89 142 82
-        Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="0.8" />
+  
+<!-- 5. Near Hind Paw White Sock -->
+  <path d="M 42 208 L 58 208 C 59 218 60 236 58 244 C 56 248 50 250 46 250 C 42 250 41 244 41 234 Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="0.9" stroke-linejoin="round" />
 
-      <!-- Eyebrow Dots (Authentic 豆豆眉) -->
-      <ellipse cx="175.5" cy="60.9" rx="3.6" ry="2.9" transform="rotate(-8 175.5 60.9)" fill="#ffffff" />
-      <ellipse cx="193.7" cy="57.2" rx="3.6" ry="2.9" transform="rotate(10 193.7 57.2)" fill="#ffffff" />
+  
+<!-- 6. Donut Tail White Tip -->
+  <path d="M 56.0 74.0 L 57.0 82.0 L 59.0 87.0 L 57.0 82.0 L 57.0 73.0 L 63.0 60.0 L 69.0 55.0 L 75.0 53.0 L 85.0 53.0 L 92.0 56.0 L 98.0 62.0 L 101.0 67.0 L 103.0 73.0 L 103.0 87.0 L 100.0 95.0 L 105.0 89.0 L 108.0 82.0 L 122.0 83.0 L 109.0 82.0 L 107.0 80.0 L 108.0 75.0 L 106.0 71.0 L 107.0 70.0 L 104.0 61.0 L 100.0 57.0 L 94.0 54.0 L 91.0 50.0 L 89.0 50.0 L 87.0 48.0 L 74.0 52.0 L 72.0 51.0 L 70.0 53.0 L 70.0 55.0 L 62.0 56.0 L 61.0 62.0 L 59.0 64.0 Z" fill="#fff7ed" stroke="#fed7aa" stroke-width="0.8" stroke-linejoin="round" />
 
-      <!-- Dark Espresso Eyes -->
-      <ellipse cx="173.5" cy="69.5" rx="3.2" ry="3.7" transform="rotate(-5 173.5 69.5)" fill="#231714" />
-      <ellipse cx="198.5" cy="65.5" rx="3.2" ry="3.7" transform="rotate(8 198.5 65.5)" fill="#231714" />
+  
+<!-- 8. Inner Ears (Cream with Pink Blush) -->
+  <!-- Left Inner Ear -->
+  <path d="M 164 50 L 158 27 C 157 26 159 26 160 27 L 179 34 C 174 40 169 45 164 50 Z" fill="#fceee2" />
+  <!-- Right Inner Ear -->
+  <path d="M 212 31 L 228 15 C 229 14 230 15 229.5 16 L 235 44 C 228 39 219 35 212 31 Z" fill="#fceee2" />
 
-      <!-- Soft Eye Catchlight -->
-      <circle cx="172.8" cy="68.7" r="0.8" fill="#ffffff" />
-      <circle cx="197.8" cy="64.7" r="0.8" fill="#ffffff" />
+  <!-- 9. Flank Fur Tufts from iStock -->
+  <path d="M 46 138 C 48 141 48 145 46 148" fill="none" stroke="#c64d12" stroke-width="1.3" stroke-linecap="round" />
+  <path d="M 49 146 C 51 149 51 153 49 156" fill="none" stroke="#c64d12" stroke-width="1.3" stroke-linecap="round" />
 
-      <!-- Cute Inverted Triangle Nose -->
-      <path d="
-        M 184.5 76
-        C 184.5 75 193.5 75 193.5 76
-        C 194 78.5 190.5 81.5 189 81.5
-        C 187.5 81.5 184 78.5 184.5 76
-        Z" fill="#231714" />
-
-      <!-- Smiling Mouth & Cute Open Tongue -->
-      <!-- Open Mouth Cavity -->
-      <path d="
-        M 180 86.5
-        C 183 86.5 185 89 189 89
-        C 193 89 195 86.5 198 86.5
-        C 198 91 195 98 189 98
-        C 183 98 180 91 180 86.5
-        Z" fill="#3f1c19" />
-
-      <!-- Rosy Pink Tongue -->
-      <path d="
-        M 183 90
-        C 185 90 186 91 189 91
-        C 192 91 193 90 195 90
-        C 195 94.5 192.5 98 189 98
-        C 185.5 98 183 94.5 183 90
-        Z" fill="#fb7185" />
-      
-      <!-- Smile Whiskers / Lip Outlines -->
-      <path d="
-        M 189 81.5
-        L 189 85.5
-        M 174 82
-        C 176 84 179 86.5 183 86.5
-        C 186 86.5 188 85.5 189 85.5
-        C 190 85.5 192 86.5 195 86.5
-        C 199 86.5 202 84 204 82
-        " fill="none" stroke="#231714" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
-    </g>
+  <!-- 10. Forearm & Hind Paw Toe Dividers from iStock -->
+  <g stroke="#bca090" stroke-width="0.9" stroke-linecap="round">
+    <line x1="47" y1="234" x2="47" y2="245" />
+    <line x1="53" y1="234" x2="53" y2="245" />
+    <line x1="172" y1="240" x2="172" y2="252" />
+    <line x1="178" y1="240" x2="178" y2="252" />
   </g>
 
+  <!-- 11. Subtle Neck Creases from iStock -->
+  <path d="M 206 122 C 209 124 211 127 209 129" fill="none" stroke="#e0c2ae" stroke-width="1.1" stroke-linecap="round" />
+  <path d="M 209 128 C 212 130 214 133 212 135" fill="none" stroke="#e0c2ae" stroke-width="1.1" stroke-linecap="round" />
+
+  <!-- 12. Pristine Vector Facial Features (Aligned with Centroids) -->
+  <!-- Eyebrow Dots (è±†è±†çœ‰) -->
+  <ellipse cx="187.5" cy="53.9" rx="4.5" ry="3.4" transform="rotate(-10 187.5 53.9)" fill="#ffffff" stroke="#fed7aa" stroke-width="0.8" />
+  <ellipse cx="205.7" cy="50.2" rx="4.5" ry="3.4" transform="rotate(12 205.7 50.2)" fill="#ffffff" stroke="#fed7aa" stroke-width="0.8" />
+
+  <!-- Dark Espresso Eyes with Specular Highlights -->
+  <ellipse cx="184.8" cy="62.1" rx="4.2" ry="4.8" transform="rotate(-5 184.8 62.1)" fill="#1e140f" />
+  <ellipse cx="211.2" cy="57.9" rx="4.2" ry="4.8" transform="rotate(8 211.2 57.9)" fill="#1e140f" />
+  <circle cx="183.8" cy="60.5" r="1.1" fill="#ffffff" />
+  <circle cx="210.2" cy="56.3" r="1.1" fill="#ffffff" />
+
+  <!-- Cute Inverted Triangle Black Nose -->
+  <path d="M 194.5 70 C 194.5 68 206.5 68 206.5 70 C 207.5 73 202.5 76 200.5 76 C 198.5 76 193.5 73 194.5 70 Z" fill="#1e140f" />
+
+  <!-- Cheerful Open Mouth & Rosy Tongue -->
+  <path d="M 192 78 C 195 78 197 81 200.5 81 C 204 81 206 78 209 78 C 209 85 206 92 200.5 92 C 195 92 192 85 192 78 Z" fill="#3f1c19" />
+  <path d="M 195 81.5 C 197 81.5 198 82.5 200.5 82.5 C 203 82.5 204 81.5 206 81.5 C 206 87.5 203.5 92 200.5 92 C 197.5 92 195 87.5 195 81.5 Z" fill="#f472b6" />
+
+  <!-- Smile Outline -->
+  <path d="M 200.5 76 L 200.5 80 M 186 74 C 188 77 192 80 196 80 C 199 80 200.5 79 200.5 79 C 200.5 79 202 80 205 80 C 209 80 213 77 215 74" fill="none" stroke="#1e140f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+  </g>
 
   <!-- Ground Horizon Bar -->
-  <path d="M 22 83.00 L 98 83.00" stroke="#ea580c" stroke-width="1.2" stroke-linecap="round" />
+  <path d="M 21 83.00 L 99 83.00" stroke="#ea580c" stroke-width="1.3" stroke-linecap="round" />
 
   <!-- Official Brand Typography -->
   <text x="60" y="103" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="10" fill="#78350f" letter-spacing="3">SHIBA</text>
-  <text x="60" y="112" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="4.5" fill="#d97706" letter-spacing="1.4">― SMART HOME SENTINEL ―</text>
+  <text x="60" y="112" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="4.5" fill="#c2410c" letter-spacing="1.4">― SMART HOME SENTINEL ―</text>
 </svg>
