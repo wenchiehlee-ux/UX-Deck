@@ -60,9 +60,16 @@ When applying UX enhancements to any sibling repository:
    - Every list, table, or dashboard view must include designed empty states (explanatory illustration or icon + clear action button) and skeleton loading states.
 4. **Adaptive Responsiveness**:
    - Mobile-first responsiveness from `360px` up to `4K` displays (with Android TV specialized for `1920x1080` / `3840x2160`).
-5. **Animal Iconography & Mascot Refinements**:
-   - Every sibling application features a distinct, mathematically aligned animal mascot on a `24x24` vector grid (`currentColor`, `1.75px` stroke width, `2.25px` on TV).
-   - Read the complete [Animal Iconography Guide](./references/animal-iconography.md) and use the shared SVG sprite [animal-icons.svg](../../tokens/icons/animal-icons.svg).
+5. **Animal Iconography & Dual-Tier Mascot Architecture (雙軌圖標與吉祥物體系)**:
+   - **Modern Emblem 現代商標徽章 (宏觀品牌層 / 80-160px)**:
+     - 具備多色向量層次、品牌字標與背景盾牌/旭日圓盤。
+     - 專用於專案首頁 Hero 封面、GitHub README 頂部門面、About 系統關於彈窗與官方研報認證印鑑。
+   - **Lucide 極簡幾何線性圖標 (微觀介面層 / 16-24px)**:
+     - 遵循 `24x24` 向量網格 (`currentColor`、`1.8px` 線寬，電視端 `2.25px`)。
+     - 專用於高密度導航欄、數據表格狀態指示、篩選 Chip、按鈕圖標與側邊欄。
+   - **雙軌同源同根哲學**:
+     - 兩者共享相同的幾何特徵與神態姿態（如朝天狂牛角、知更鳥高翹尾、王者林鹿角、黑天鵝曜石羽翼），形成「遠看具品牌紋章威儀，近看具極簡操作效率」之完整閉環。
+   - 完整動物圖鑑與三大風格可參閱 [preview_animal_styles.html](../../preview_animal_styles.html) 與 [Animal Iconography Guide](./references/animal-iconography.md)。
 
 ---
 

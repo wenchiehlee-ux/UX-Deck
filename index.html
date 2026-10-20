@@ -2578,6 +2578,223 @@
       font-family: "JetBrains Mono", monospace;
       font-weight: 500;
     }
+
+    /* ==========================================================================
+       DUAL-TIER ICON & BRAND SYSTEM (Modern Emblem 徽章 × Lucide 極簡線性)
+       ========================================================================== */
+    .dual-tier-architecture-banner {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid #e2e8f0;
+      border-radius: 20px;
+      padding: 1.75rem 2rem;
+      margin: 1.5rem 0 2.5rem;
+      box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .dual-tier-architecture-banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #10b981, #f59e0b, #ef4444);
+    }
+    .dual-tier-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 1.25rem;
+    }
+    .dual-tier-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "Plus Jakarta Sans", "Noto Sans TC", sans-serif;
+    }
+    .dual-tier-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border: 1px solid #bfdbfe;
+      padding: 4px 12px;
+      border-radius: 9999px;
+    }
+    .dual-tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .tier-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.25rem;
+      transition: all 0.2s ease;
+    }
+    .tier-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px -2px rgba(15, 23, 42, 0.04);
+    }
+    .tier-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+    }
+    .tier-badge {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 6px;
+    }
+    .tier-badge.emblem-badge {
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+    }
+    .tier-badge.lucide-badge {
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+    }
+    .tier-spec {
+      font-size: 0.75rem;
+      color: #64748b;
+      font-family: "JetBrains Mono", monospace;
+    }
+    .tier-role {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.4rem;
+    }
+    .tier-desc {
+      font-size: 0.88rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .dual-tier-footer {
+      background: #f1f5f9;
+      border-radius: 10px;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.84rem;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    /* Mascot Duo Stage (Modern Emblem + Lucide) */
+    .mascot-duo-stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      margin-bottom: 1.15rem;
+    }
+    .emblem-tile {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 8px 10px 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+      transition: all 0.25s ease;
+      width: 110px;
+      height: 115px;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .emblem-tile:hover {
+      transform: translateY(-3px) scale(1.03);
+      border-color: #cbd5e1;
+      box-shadow: 0 8px 20px -2px rgba(15, 23, 42, 0.08);
+    }
+    .emblem-thumb {
+      width: 78px;
+      height: 78px;
+      object-fit: contain;
+    }
+    .duo-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .lucide-tile {
+      border-radius: 16px;
+      padding: 8px 10px 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      width: 110px;
+      height: 115px;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .lucide-tile .ux-icon-xl {
+      width: 50px;
+      height: 50px;
+      margin: auto 0;
+    }
+    .lucide-tile:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 8px 20px -2px rgba(15, 23, 42, 0.08);
+    }
+    .badge-role-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+    .badge-role-tag.emblem-tag {
+      background: #f8fafc;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+    .badge-role-tag.lucide-tag {
+      background: rgba(255, 255, 255, 0.9);
+      color: #334155;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    /* Section 2 Project Header Mini Emblem */
+    .project-emblem-badge-mini {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 3px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+    .project-emblem-badge-mini:hover {
+      transform: scale(1.08);
+      border-color: #cbd5e1;
+    }
+
   </style>
 </head>
 <body>
@@ -2689,7 +2906,7 @@
     <header>
       <div class="header-badge">✨ UX-DECK UNIFIED DESIGN SYSTEM</div>
       <h1>跨專案設計調性、風格與字體總覽</h1>
-      <div class="subtitle">以極簡白底（White Basis）為視覺根基，結合九大兄弟端點的精準品牌色調、人文/科技專屬字體排版與 Lucide 極簡幾何吉祥物矩陣。</div>
+      <div class="subtitle">以極簡白底（White Basis）為視覺根基，結合九大兄弟端點的精準品牌色調、雙軌圖標體系（Modern Emblem 宏觀品牌紋章 × Lucide 微觀介面線性）與人文/科技專屬字體排版。</div>
     </header>
 
     <!-- SECTION 1: MASCOTS (WHITE BASIS) -->
@@ -2699,106 +2916,214 @@
         🎨 檢視 26 隻動物三大風格（Lucide 線性 · Modern Emblem 徽章 · Kawaii Chibi 萌寵）全圖鑑 ↗
       </a>
     </div>
-    <div class="section-desc">延續 Lucide 的極簡幾何線條哲學，以 1.8px 標準線寬呈現高辨識度與親和感。點擊吉祥物圖示可直達各站點，面板內文字均支援自由反白與複製。</div>
+    <div class="section-desc">落實「宏觀品牌紋章 + 微觀功能線性」之雙軌圖標體系。左側展示 Modern Emblem 官方勳章，右側展示 Lucide 介面線性圖標。點擊圖示可直達各站點。</div>
+
+    <div class="dual-tier-architecture-banner">
+      <div class="dual-tier-header">
+        <div class="dual-tier-title">🏛️ Modern Emblem 官方紋章 × ⚡ Lucide 介面線性：雙軌圖標設計架構</div>
+        <div class="dual-tier-badge">DUAL-TIER SYSTEM</div>
+      </div>
+      <div class="dual-tier-grid">
+        <div class="tier-card tier-emblem">
+          <div class="tier-card-header">
+            <span class="tier-badge emblem-badge">🏛️ 宏觀品牌層 (Macro Brand)</span>
+            <span class="tier-spec">80px ~ 160px · 多色向量徽記</span>
+          </div>
+          <div class="tier-role">Modern Emblem 現代商標徽章</div>
+          <div class="tier-desc">富含層次、品牌字標與背景盾牌。專注於<strong>專案首頁 Hero 封面、GitHub README 頂部門面、About 系統關於彈窗與研報官方覆蓋印鑑</strong>，奠定獨立專案格局。</div>
+        </div>
+        <div class="tier-card tier-lucide">
+          <div class="tier-card-header">
+            <span class="tier-badge lucide-badge">⚡ 微觀介面層 (Micro UI)</span>
+            <span class="tier-spec">16px ~ 24px · 2px 單色線條</span>
+          </div>
+          <div class="tier-role">Lucide 極簡幾何線性圖標</div>
+          <div class="tier-desc">零干擾高密度呈現。專注於<strong>導航欄切換、表格狀態指示、篩選 Chip、按鈕圖標與側邊欄</strong>，確保毫秒級秒懂、高頻操作不疲勞。</div>
+        </div>
+      </div>
+      <div class="dual-tier-footer">
+        <span class="dual-tier-note">🎯 <strong>同源同根哲學</strong>：兩者共享相同的幾何象徵（如朝天狂牛角、知更鳥高翹尾、王者林鹿角、黑天鵝曜石羽翼），形成「遠看具品牌紋章威儀，近看具極簡操作效率」之完整閉環。</span>
+      </div>
+    </div>
     <div class="mascot-grid">
       <!-- Deer -->
       <div class="mascot-card card-deer">
-        <a href="https://wenchiehlee.github.io/mkdocs-life/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-deer" title="造訪 mkdocs-life ↗">
-          <svg class="ux-icon ux-icon-xl ux-icon-deer"><use href="#icon-deer-life"></use></svg>
-        </a>
+        <div class="mascot-duo-stage">
+          <a href="https://wenchiehlee.github.io/mkdocs-life/" target="_blank" rel="noopener noreferrer" class="emblem-tile" title="查看 Modern Emblem 徽章 · 造訪 mkdocs-life ↗">
+            <img src="./tokens/icons/modern-emblem/emblem-deer.svg" class="emblem-thumb" alt="幾何林鹿 Modern Emblem" />
+            <span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span>
+          </a>
+          <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
+          <a href="https://wenchiehlee.github.io/mkdocs-life/" target="_blank" rel="noopener noreferrer" class="lucide-tile wrapper-deer" title="查看 Lucide 線性圖標 · 造訪 mkdocs-life ↗">
+            <svg class="ux-icon ux-icon-xl ux-icon-deer"><use href="#icon-deer-life"></use></svg>
+            <span class="badge-role-tag lucide-tag">⚡ 介面線性</span>
+          </a>
+        </div>
         <div class="mascot-name">幾何林鹿 🦌</div>
         <div class="mascot-project">mkdocs-life (生活日誌)</div>
-        <div class="mascot-desc">純粹向外開展的幾何鹿角與優雅面部弧線，傳遞北歐漫步沉思的簡約與純淨。</div>
+        <div class="mascot-desc"><strong>宏觀</strong>以王者雄鹿立姿作為官方紋章門面；<strong>微觀</strong>以 24px 極簡對稱鹿角作為高密度導航與狀態線性圖標。</div>
       </div>
 
       <!-- Bird (GoogleAlertManager) -->
       <div class="mascot-card card-falcon">
-        <a href="https://wenchiehlee-money.github.io/GoogleAlertManager/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-falcon" title="造訪 GoogleAlertManager ↗">
-          <svg class="ux-icon ux-icon-xl ux-icon-falcon"><use href="#icon-falcon-radar"></use></svg>
-        </a>
+        <div class="mascot-duo-stage">
+          <a href="https://wenchiehlee-money.github.io/GoogleAlertManager/" target="_blank" rel="noopener noreferrer" class="emblem-tile" title="查看 Modern Emblem 徽章 · 造訪 GoogleAlertManager ↗">
+            <img src="./tokens/icons/modern-emblem/emblem-falcon.svg" class="emblem-thumb" alt="破曉警報鳥 Modern Emblem" />
+            <span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span>
+          </a>
+          <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
+          <a href="https://wenchiehlee-money.github.io/GoogleAlertManager/" target="_blank" rel="noopener noreferrer" class="lucide-tile wrapper-falcon" title="查看 Lucide 線性圖標 · 造訪 GoogleAlertManager ↗">
+            <svg class="ux-icon ux-icon-xl ux-icon-falcon"><use href="#icon-falcon-radar"></use></svg>
+            <span class="badge-role-tag lucide-tag">⚡ 介面線性</span>
+          </a>
+        </div>
         <div class="mascot-name">破曉警報鳥 🐦</div>
         <div class="mascot-project">GoogleAlertManager (SaaS)</div>
-        <div class="mascot-desc">Lucide 官方原生飛鳥搭配活力警報橘，象徵第一時間破曉啼鳴、高敏感度穿透海量資訊雜訊的敏捷情報雷達。</div>
+        <div class="mascot-desc"><strong>宏觀</strong>以破曉知更旭日圓盤作為系統門面；<strong>微觀</strong>以圓滾高翹尾飛鳥作為情報雷達與通報 Chip 線性標誌。</div>
       </div>
 
       <!-- Whale -->
       <div class="mascot-card card-whale">
-        <a href="https://zhongzheng782.github.io/YoutubeAudio.Fetch/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-whale" title="造訪 YoutubeAudio.Fetch ↗">
-          <svg class="ux-icon ux-icon-xl ux-icon-whale"><use href="#icon-whale-sonic"></use></svg>
-        </a>
+        <div class="mascot-duo-stage">
+          <a href="https://zhongzheng782.github.io/YoutubeAudio.Fetch/" target="_blank" rel="noopener noreferrer" class="emblem-tile" title="查看 Modern Emblem 徽章 · 造訪 YoutubeAudio.Fetch ↗">
+            <img src="./tokens/icons/modern-emblem/emblem-whale.svg" class="emblem-thumb" alt="聲波座頭鯨 Modern Emblem" />
+            <span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span>
+          </a>
+          <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
+          <a href="https://zhongzheng782.github.io/YoutubeAudio.Fetch/" target="_blank" rel="noopener noreferrer" class="lucide-tile wrapper-whale" title="查看 Lucide 線性圖標 · 造訪 YoutubeAudio.Fetch ↗">
+            <svg class="ux-icon ux-icon-xl ux-icon-whale"><use href="#icon-whale-sonic"></use></svg>
+            <span class="badge-role-tag lucide-tag">⚡ 介面線性</span>
+          </a>
+        </div>
         <div class="mascot-name">聲波座頭鯨 🐋</div>
         <div class="mascot-project">YoutubeAudio.Fetch (影音 Podcast 萃取)</div>
-        <div class="mascot-desc">深邃海洋共鳴與音訊波形頻率美學，象徵高解析 YouTube 音訊擷取、逐字稿動態字幕與影格同步共鳴。</div>
+        <div class="mascot-desc"><strong>宏觀</strong>以深海翻騰水花躍鯨作為播放器封面；<strong>微觀</strong>以聲波噴泉座頭鯨作為聲學控制與音軌切換指示。</div>
       </div>
 
       <!-- Bull -->
       <div class="mascot-card card-bull">
-        <a href="https://wenchiehlee.github.io/mkdocs-investment/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-bull" title="造訪 mkdocs-investment ↗">
-          <svg class="ux-icon ux-icon-xl ux-icon-bull"><use href="#icon-bull-fintech"></use></svg>
-        </a>
+        <div class="mascot-duo-stage">
+          <a href="https://wenchiehlee.github.io/mkdocs-investment/" target="_blank" rel="noopener noreferrer" class="emblem-tile" title="查看 Modern Emblem 徽章 · 造訪 mkdocs-investment ↗">
+            <img src="./tokens/icons/modern-emblem/emblem-bull.svg" class="emblem-thumb" alt="幾何狂牛 Modern Emblem" />
+            <span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span>
+          </a>
+          <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
+          <a href="https://wenchiehlee.github.io/mkdocs-investment/" target="_blank" rel="noopener noreferrer" class="lucide-tile wrapper-bull" title="查看 Lucide 線性圖標 · 造訪 mkdocs-investment ↗">
+            <svg class="ux-icon ux-icon-xl ux-icon-bull"><use href="#icon-bull-fintech"></use></svg>
+            <span class="badge-role-tag lucide-tag">⚡ 介面線性</span>
+          </a>
+        </div>
         <div class="mascot-name">幾何狂牛 🐂</div>
         <div class="mascot-project">mkdocs-investment (多頭攻堅)</div>
-        <div class="mascot-desc">向上挺拔的牛角弧度與力量感十足的面部輪廓，代表資本增長動能與市場 Alpha。</div>
+        <div class="mascot-desc"><strong>宏觀</strong>以沖天雙角赤陶狂牛盾牌作為多頭主頁門面；<strong>微觀</strong>以幾何牛角線條作為多頭突破與持股評等符號。</div>
       </div>
 
       <!-- Bear -->
       <div class="mascot-card card-bear">
-        <a href="https://wenchiehlee.github.io/mkdocs-investment/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-bear" title="造訪 mkdocs-investment ↗">
-          <svg class="ux-icon ux-icon-xl ux-icon-bear"><use href="#icon-bear-defense"></use></svg>
-        </a>
+        <div class="mascot-duo-stage">
+          <a href="https://wenchiehlee.github.io/mkdocs-investment/" target="_blank" rel="noopener noreferrer" class="emblem-tile" title="查看 Modern Emblem 徽章 · 造訪 mkdocs-investment ↗">
+            <img src="./tokens/icons/modern-emblem/emblem-bear.svg" class="emblem-thumb" alt="北歐守護熊 Modern Emblem" />
+            <span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span>
+          </a>
+          <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
+          <a href="https://wenchiehlee.github.io/mkdocs-investment/" target="_blank" rel="noopener noreferrer" class="lucide-tile wrapper-bear" title="查看 Lucide 線性圖標 · 造訪 mkdocs-investment ↗">
+            <svg class="ux-icon ux-icon-xl ux-icon-bear"><use href="#icon-bear-defense"></use></svg>
+            <span class="badge-role-tag lucide-tag">⚡ 介面線性</span>
+          </a>
+        </div>
         <div class="mascot-name">北歐守護熊 🐻</div>
         <div class="mascot-project">mkdocs-investment (防禦避險)</div>
-        <div class="mascot-desc">幾何圓耳與厚重安心的面部弧線，象徵固若金湯的資產避風港與下檔風險保護。</div>
+        <div class="mascot-desc"><strong>宏觀</strong>以冬眠防禦步態巨熊作為下檔風險護盾；<strong>微觀</strong>以圓耳線性熊頭標示空頭對沖與保守配置。</div>
       </div>
 
       <!-- Sentinel -->
       <div class="mascot-card card-sentinel">
-        <a href="https://github.com/wenchiehlee-ux/UX-Deck/tree/main/deploy/android-tv" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-sentinel" title="查看 Android TV 部署方案 ↗">
-          <svg class="ux-icon ux-icon-xl ux-icon-sentinel"><use href="#icon-sentinel-tv"></use></svg>
-        </a>
+        <div class="mascot-duo-stage">
+          <a href="https://github.com/wenchiehlee-ux/UX-Deck/tree/main/deploy/android-tv" target="_blank" rel="noopener noreferrer" class="emblem-tile" title="查看 Modern Emblem 徽章 · 查看 Android TV 部署方案 ↗">
+            <img src="./tokens/icons/modern-emblem/emblem-dog.svg" class="emblem-thumb" alt="客廳小管家 Modern Emblem" />
+            <span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span>
+          </a>
+          <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
+          <a href="https://github.com/wenchiehlee-ux/UX-Deck/tree/main/deploy/android-tv" target="_blank" rel="noopener noreferrer" class="lucide-tile wrapper-sentinel" title="查看 Lucide 線性圖標 · 查看 Android TV 部署方案 ↗">
+            <svg class="ux-icon ux-icon-xl ux-icon-sentinel"><use href="#icon-sentinel-tv"></use></svg>
+            <span class="badge-role-tag lucide-tag">⚡ 介面線性</span>
+          </a>
+        </div>
         <div class="mascot-name">客廳小管家 柴柴 🐕</div>
         <div class="mascot-project">HomeAssistant (Android TV)</div>
-        <div class="mascot-desc">忠誠靈巧的豎耳幾何柴柴，代表隨時留意全家生活動態（門鈴叮咚、家電完成、居家提醒）的貼心夥伴。</div>
+        <div class="mascot-desc"><strong>宏觀</strong>以忠誠端坐柴柴作為電視客廳情境總覽封面；<strong>微觀</strong>以豎耳線性犬首標記智慧家庭通知與即時監控。</div>
       </div>
 
       <!-- Cat (wenchiehlee.quickconnect.to) -->
       <div class="mascot-card card-pangolin">
-        <a href="https://wenchiehlee.synology.me" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-pangolin" title="造訪 wenchiehlee.synology.me ↗">
-          <svg class="ux-icon ux-icon-xl ux-icon-pangolin"><use href="#icon-pangolin-shield"></use></svg>
-        </a>
+        <div class="mascot-duo-stage">
+          <a href="https://wenchiehlee.synology.me" target="_blank" rel="noopener noreferrer" class="emblem-tile" title="查看 Modern Emblem 徽章 · 造訪 wenchiehlee.synology.me ↗">
+            <img src="./tokens/icons/modern-emblem/emblem-cat.svg" class="emblem-thumb" alt="敏捷守護貓 Modern Emblem" />
+            <span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span>
+          </a>
+          <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
+          <a href="https://wenchiehlee.synology.me" target="_blank" rel="noopener noreferrer" class="lucide-tile wrapper-pangolin" title="查看 Lucide 線性圖標 · 造訪 wenchiehlee.synology.me ↗">
+            <svg class="ux-icon ux-icon-xl ux-icon-pangolin"><use href="#icon-pangolin-shield"></use></svg>
+            <span class="badge-role-tag lucide-tag">⚡ 介面線性</span>
+          </a>
+        </div>
         <div class="mascot-name">敏捷守護貓 🐱</div>
         <div class="mascot-project">wenchiehlee.quickconnect.to (Synology NAS)</div>
-        <div class="mascot-desc">Lucide 官方原生幾何守護貓，以立體三角耳與沉靜眼神，象徵在後台巡守家庭伺服器與私有化 DevOps 服務的敏捷夥伴。</div>
+        <div class="mascot-desc"><strong>宏觀</strong>以幾何守護者之姿作為私有雲系統門面；<strong>微觀</strong>以三角耳幾何貓首標示 Docker 容器、Tailscale 與連線狀態。</div>
       </div>
 
       <!-- Owl -->
       <div class="mascot-card card-owl">
-        <a href="https://wenchiehlee-money.github.io/My-TW-Coverage/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-owl" title="造訪 My-TW-Coverage ↗">
-          <svg class="ux-icon ux-icon-xl ux-icon-owl"><use href="#icon-owl-coverage"></use></svg>
-        </a>
+        <div class="mascot-duo-stage">
+          <a href="https://wenchiehlee-money.github.io/My-TW-Coverage/" target="_blank" rel="noopener noreferrer" class="emblem-tile" title="查看 Modern Emblem 徽章 · 造訪 My-TW-Coverage ↗">
+            <img src="./tokens/icons/modern-emblem/emblem-owl.svg" class="emblem-thumb" alt="拍拍翅萌萌鴞 Modern Emblem" />
+            <span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span>
+          </a>
+          <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
+          <a href="https://wenchiehlee-money.github.io/My-TW-Coverage/" target="_blank" rel="noopener noreferrer" class="lucide-tile wrapper-owl" title="查看 Lucide 線性圖標 · 造訪 My-TW-Coverage ↗">
+            <svg class="ux-icon ux-icon-xl ux-icon-owl"><use href="#icon-owl-coverage"></use></svg>
+            <span class="badge-role-tag lucide-tag">⚡ 介面線性</span>
+          </a>
+        </div>
         <div class="mascot-name">拍拍翅萌萌鴞 🦉</div>
         <div class="mascot-project">My-TW-Coverage (台股個股覆蓋)</div>
-        <div class="mascot-desc">圓滾滾的治癒身軀配上一對拍動小肉翅與水汪汪大眼，以親和可愛的神態陪伴穿透台股基本面與估值安全邊際。</div>
+        <div class="mascot-desc"><strong>宏觀</strong>以治癒系萌鴞作為個股研報官方認證印鑑；<strong>微觀</strong>以大眼線性貓頭鷹作為研究評等與安全邊際欄位圖標。</div>
       </div>
 
       <!-- Eagle (InvestorConference) -->
       <div class="mascot-card card-eagle">
-        <a href="https://wenchiehlee-money.github.io/InvestorConference/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-eagle" title="造訪 InvestorConference ↗">
-          <svg class="ux-icon ux-icon-xl ux-icon-eagle"><use href="#icon-eagle-ir"></use></svg>
-        </a>
+        <div class="mascot-duo-stage">
+          <a href="https://wenchiehlee-money.github.io/InvestorConference/" target="_blank" rel="noopener noreferrer" class="emblem-tile" title="查看 Modern Emblem 徽章 · 造訪 InvestorConference ↗">
+            <img src="./tokens/icons/modern-emblem/emblem-eagle.svg" class="emblem-thumb" alt="領航雄鷹 Modern Emblem" />
+            <span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span>
+          </a>
+          <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
+          <a href="https://wenchiehlee-money.github.io/InvestorConference/" target="_blank" rel="noopener noreferrer" class="lucide-tile wrapper-eagle" title="查看 Lucide 線性圖標 · 造訪 InvestorConference ↗">
+            <svg class="ux-icon ux-icon-xl ux-icon-eagle"><use href="#icon-eagle-ir"></use></svg>
+            <span class="badge-role-tag lucide-tag">⚡ 介面線性</span>
+          </a>
+        </div>
         <div class="mascot-name">領航雄鷹 🦅</div>
         <div class="mascot-project">InvestorConference (法人說明會與 IR 庫)</div>
-        <div class="mascot-desc">具備銳利鉤喙與高瞻遠矚的幾何雄鷹側影，象徵登高俯瞰全球法人說明會、穿透財報雜音與鎖定企業長青遠景的深厚視界。</div>
+        <div class="mascot-desc"><strong>宏觀</strong>以展翅金紅雄鷹紋章作為法說會資料庫門面；<strong>微觀</strong>以銳利幾何鷹影作為重要事件與高階展望標籤。</div>
       </div>
 
       <!-- Swan (VIX) -->
       <div class="mascot-card card-swan">
-        <a href="https://wenchiehlee-money.github.io/VIX/" target="_blank" rel="noopener noreferrer" class="icon-wrapper wrapper-swan" title="造訪 VIX 全球波動率雷達 ↗">
-          <svg class="ux-icon ux-icon-xl ux-icon-swan"><use href="#icon-swan-vix"></use></svg>
-        </a>
+        <div class="mascot-duo-stage">
+          <a href="https://wenchiehlee-money.github.io/VIX/" target="_blank" rel="noopener noreferrer" class="emblem-tile" title="查看 Modern Emblem 徽章 · 造訪 VIX 全球波動率雷達 ↗">
+            <img src="./tokens/icons/modern-emblem/emblem-swan.svg" class="emblem-thumb" alt="幾何黑天鵝 Modern Emblem" />
+            <span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span>
+          </a>
+          <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
+          <a href="https://wenchiehlee-money.github.io/VIX/" target="_blank" rel="noopener noreferrer" class="lucide-tile wrapper-swan" title="查看 Lucide 線性圖標 · 造訪 VIX 全球波動率雷達 ↗">
+            <svg class="ux-icon ux-icon-xl ux-icon-swan"><use href="#icon-swan-vix"></use></svg>
+            <span class="badge-role-tag lucide-tag">⚡ 介面線性</span>
+          </a>
+        </div>
         <div class="mascot-name">幾何黑天鵝 🦢</div>
         <div class="mascot-project">VIX (全球波動率與黑天鵝雷達)</div>
-        <div class="mascot-desc">源自金融市場最經典的塔雷伯極端風險理論，象徵低機率、超乎預期的劇烈衝擊。深邃曜石羽翼搭配警示赤紅之喙，專注穿透黑天鵝與極端尾端風險。</div>
+        <div class="mascot-desc"><strong>宏觀</strong>以幾何黑天鵝極端風險徽章作為雷達封面；<strong>微觀</strong>以高對比曜石天鵝作為市場恐慌 30 閾值與壓力測試標記。</div>
       </div>
     </div>
 
