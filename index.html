@@ -156,6 +156,170 @@
     .ux-icon-owl { color: #059669; }
     .ux-icon-owl:hover { transform: translateY(-3px) scale(1.1); color: #047857; }
 
+
+    /* Squirrel Brand Styles (Synology-Photo-Tagger) */
+    .ux-icon-squirrel { color: #8b5cf6; }
+    .ux-icon-squirrel:hover { transform: translateY(-3px) scale(1.1); color: #7c3aed; filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.45)); }
+    .mascot-card.card-squirrel:hover::before { background: #8b5cf6; }
+    .wrapper-squirrel { background: #f5f3ff; border: 1px solid #ddd6fe; }
+
+    /* Photo Tagger Live Preview Mock */
+    .preview-tagger-menubar {
+      background: #ffffff;
+      border: 1px solid #e9d5ff;
+      border-radius: 12px;
+      padding: 12px 18px;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 10px rgba(139, 92, 246, 0.05);
+    }
+    .tagger-mock-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tagger-mock-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 0.96rem;
+      color: #4c1d95;
+    }
+    .tagger-mock-brand svg {
+      width: 20px;
+      height: 20px;
+      color: #8b5cf6;
+    }
+    .tagger-mock-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #7c3aed;
+      background: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      padding: 3px 10px;
+      border-radius: 9999px;
+    }
+    .tagger-mock-tabs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+    .tagger-mock-tab {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 8px;
+      color: #64748b;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .tagger-mock-tab:hover {
+      color: #4c1d95;
+      background: #faf5ff;
+    }
+    .tagger-mock-tab.active {
+      color: #ffffff;
+      background: #8b5cf6;
+      box-shadow: 0 2px 6px rgba(139, 92, 246, 0.35);
+    }
+    .preview-tagger {
+      background: #ffffff;
+      border: 1px solid #e9d5ff;
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.04);
+    }
+    .tagger-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 1.25rem;
+    }
+    .tagger-photo-card {
+      background: #faf5ff;
+      border: 1px solid #e9d5ff;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+    }
+    .tagger-photo-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(139, 92, 246, 0.12);
+      border-color: #c4b5fd;
+    }
+    .tagger-thumb {
+      height: 120px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    }
+    .tagger-meta-body {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .tagger-file-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      font-family: "JetBrains Mono", monospace;
+      color: #6b21a8;
+      font-weight: 700;
+    }
+    .tagger-confidence {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #d97706;
+      background: #fef3c7;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+    .tagger-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .tagger-chip {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: #f3e8ff;
+      color: #6b21a8;
+      border: 1px solid #e9d5ff;
+    }
+    .tagger-chip.highlight {
+      background: #fef3c7;
+      color: #b45309;
+      border-color: #fde68a;
+    }
+    .tagger-sync-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #059669;
+    }
+
     /* Mascot Grid (White Card Basis) */
     .mascot-grid {
       display: grid;
@@ -2900,18 +3064,25 @@
     <symbol id="icon-swan-vix" viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd">
       <path fill="currentColor" stroke="none" fill-rule="evenodd" d="M 16.80 15.66 C 16.88 15.57, 16.46 15.17, 16.19 14.95 C 15.91 14.73, 15.39 14.47, 15.13 14.33 C 14.86 14.20, 14.75 14.19, 14.60 14.16 C 14.45 14.13, 14.32 14.17, 14.25 14.16 C 14.17 14.14, 14.31 14.09, 14.16 14.07 C 14.01 14.06, 13.51 14.09, 13.37 14.07 C 13.22 14.06, 13.54 13.98, 13.28 13.98 C 13.01 13.98, 12.04 14.04, 11.78 14.07 C 11.52 14.10, 11.91 14.10, 11.69 14.16 C 11.47 14.22, 10.71 14.35, 10.46 14.42 C 10.21 14.50, 10.36 14.54, 10.19 14.60 C 10.03 14.66, 9.74 14.69, 9.49 14.78 C 9.24 14.86, 8.95 15.05, 8.70 15.13 C 8.45 15.20, 8.12 15.19, 7.99 15.22 C 7.86 15.25, 8.24 15.29, 7.90 15.30 C 7.57 15.32, 6.30 15.32, 5.96 15.30 C 5.63 15.29, 6.01 15.23, 5.88 15.22 C 5.74 15.20, 5.30 15.23, 5.17 15.22 C 5.04 15.20, 5.26 15.16, 5.08 15.13 C 4.91 15.10, 4.47 15.11, 4.11 15.04 C 3.76 14.97, 3.29 14.82, 2.97 14.69 C 2.65 14.56, 2.34 14.32, 2.18 14.25 C 2.01 14.17, 2.03 14.20, 2.00 14.25 C 1.97 14.29, 1.91 14.32, 2.00 14.51 C 2.09 14.70, 2.34 15.14, 2.53 15.39 C 2.72 15.64, 2.95 15.85, 3.15 16.01 C 3.34 16.17, 3.45 16.24, 3.67 16.36 C 3.89 16.48, 4.22 16.64, 4.47 16.71 C 4.72 16.79, 5.04 16.77, 5.17 16.80 C 5.30 16.83, 5.14 16.88, 5.26 16.89 C 5.38 16.90, 5.76 16.88, 5.88 16.89 C 5.99 16.90, 5.67 16.96, 5.96 16.98 C 6.26 16.99, 7.35 16.99, 7.64 16.98 C 7.93 16.96, 7.55 16.92, 7.73 16.89 C 7.90 16.86, 8.26 16.92, 8.70 16.80 C 9.14 16.68, 10.05 16.32, 10.37 16.19 C 10.69 16.05, 10.22 16.14, 10.63 16.01 C 11.05 15.88, 12.23 15.49, 12.84 15.39 C 13.44 15.29, 14.00 15.41, 14.25 15.39 C 14.50 15.38, 14.28 15.32, 14.33 15.30 C 14.39 15.29, 14.54 15.29, 14.60 15.30 C 14.66 15.32, 14.51 15.38, 14.69 15.39 C 14.86 15.41, 15.48 15.38, 15.66 15.39 C 15.83 15.41, 15.55 15.44, 15.74 15.48 C 15.94 15.52, 16.73 15.74, 16.80 15.66 Z M 3.06 8.61 C 3.01 8.86, 2.97 9.62, 2.97 9.84 C 2.97 10.06, 3.03 9.78, 3.06 9.93 C 3.09 10.08, 3.07 10.44, 3.15 10.72 C 3.22 11.00, 3.35 11.32, 3.50 11.60 C 3.64 11.88, 3.85 12.18, 4.03 12.40 C 4.20 12.62, 4.25 12.70, 4.56 12.93 C 4.86 13.15, 5.55 13.56, 5.88 13.72 C 6.20 13.88, 6.33 13.86, 6.49 13.89 C 6.65 13.92, 6.77 13.88, 6.85 13.89 C 6.92 13.91, 6.79 13.97, 6.93 13.98 C 7.08 14.00, 7.58 14.00, 7.73 13.98 C 7.87 13.97, 7.71 13.91, 7.81 13.89 C 7.92 13.88, 7.76 14.07, 8.34 13.89 C 8.93 13.72, 10.66 13.03, 11.34 12.84 C 12.01 12.65, 12.21 12.78, 12.40 12.75 C 12.59 12.72, 12.25 12.68, 12.48 12.66 C 12.72 12.65, 13.79 12.78, 13.81 12.66 C 13.82 12.54, 13.03 12.16, 12.57 11.96 C 12.12 11.75, 11.38 11.52, 11.07 11.43 C 10.77 11.34, 10.87 11.46, 10.72 11.43 C 10.58 11.40, 10.37 11.28, 10.19 11.25 C 10.02 11.22, 9.77 11.27, 9.67 11.25 C 9.56 11.24, 9.91 11.19, 9.58 11.16 C 9.24 11.13, 8.17 11.15, 7.64 11.07 C 7.11 11.00, 6.74 10.84, 6.41 10.72 C 6.07 10.60, 5.92 10.55, 5.61 10.37 C 5.30 10.19, 4.94 10.00, 4.56 9.67 C 4.17 9.33, 3.54 8.56, 3.32 8.34 C 3.10 8.12, 3.28 8.30, 3.23 8.34 C 3.19 8.39, 3.10 8.36, 3.06 8.61 Z M 18.92 2.44 C 18.67 2.26, 18.52 2.23, 18.30 2.18 C 18.08 2.12, 17.73 2.12, 17.59 2.09 C 17.46 2.06, 17.70 2.01, 17.51 2.00 C 17.32 1.99, 16.88 1.93, 16.45 2.00 C 16.02 2.07, 15.33 2.28, 14.95 2.44 C 14.57 2.60, 14.45 2.70, 14.16 2.97 C 13.86 3.23, 13.42 3.72, 13.19 4.03 C 12.95 4.33, 12.88 4.50, 12.75 4.82 C 12.62 5.14, 12.46 5.52, 12.40 5.96 C 12.34 6.41, 12.38 7.20, 12.40 7.46 C 12.41 7.73, 12.47 7.46, 12.48 7.55 C 12.50 7.64, 12.38 7.68, 12.48 7.99 C 12.59 8.30, 12.93 9.06, 13.10 9.40 C 13.28 9.74, 12.90 9.37, 13.54 10.02 C 14.19 10.66, 16.30 12.59, 16.98 13.28 C 17.65 13.97, 17.42 13.86, 17.59 14.16 C 17.77 14.45, 17.93 14.79, 18.04 15.04 C 18.14 15.29, 18.18 15.36, 18.21 15.66 C 18.24 15.95, 18.23 16.57, 18.21 16.80 C 18.20 17.04, 18.17 16.99, 18.12 17.07 C 18.08 17.14, 18.04 17.20, 17.95 17.24 C 17.86 17.29, 17.84 17.39, 17.59 17.33 C 17.35 17.27, 16.77 16.98, 16.45 16.89 C 16.13 16.80, 15.80 16.83, 15.66 16.80 C 15.51 16.77, 16.04 16.73, 15.57 16.71 C 15.10 16.70, 13.31 16.70, 12.84 16.71 C 12.37 16.73, 12.84 16.79, 12.75 16.80 C 12.66 16.82, 12.44 16.77, 12.31 16.80 C 12.18 16.83, 12.06 16.95, 11.96 16.98 C 11.85 17.01, 12.01 16.88, 11.69 16.98 C 11.37 17.08, 10.34 17.46, 10.02 17.59 C 9.69 17.73, 10.05 17.67, 9.75 17.77 C 9.46 17.87, 8.68 18.14, 8.26 18.21 C 7.83 18.28, 7.39 18.20, 7.20 18.21 C 7.01 18.23, 7.14 18.30, 7.11 18.30 C 7.08 18.30, 7.30 18.23, 7.02 18.21 C 6.74 18.20, 5.72 18.23, 5.44 18.21 C 5.16 18.20, 5.45 18.14, 5.35 18.12 C 5.25 18.11, 4.98 18.15, 4.82 18.12 C 4.66 18.09, 4.51 17.98, 4.38 17.95 C 4.25 17.92, 4.09 17.92, 4.03 17.95 C 3.97 17.98, 3.92 17.98, 4.03 18.12 C 4.13 18.27, 4.36 18.61, 4.64 18.83 C 4.92 19.05, 5.48 19.34, 5.70 19.44 C 5.92 19.55, 5.85 19.42, 5.96 19.44 C 6.08 19.47, 6.02 19.58, 6.41 19.62 C 6.79 19.67, 7.93 19.71, 8.26 19.71 C 8.58 19.71, 8.23 19.64, 8.34 19.62 C 8.46 19.61, 8.84 19.64, 8.96 19.62 C 9.08 19.61, 8.93 19.56, 9.05 19.53 C 9.17 19.50, 9.21 19.61, 9.67 19.44 C 10.12 19.28, 11.22 18.77, 11.78 18.56 C 12.34 18.36, 12.73 18.27, 13.01 18.21 C 13.29 18.15, 13.37 18.23, 13.45 18.21 C 13.54 18.20, 13.23 18.14, 13.54 18.12 C 13.85 18.11, 15.00 18.11, 15.30 18.12 C 15.61 18.14, 15.29 18.20, 15.39 18.21 C 15.49 18.23, 15.76 18.18, 15.92 18.21 C 16.08 18.24, 16.23 18.30, 16.36 18.39 C 16.49 18.48, 16.65 18.59, 16.71 18.74 C 16.77 18.89, 16.79 19.12, 16.71 19.27 C 16.64 19.42, 16.48 19.58, 16.27 19.62 C 16.07 19.67, 15.63 19.56, 15.48 19.53 C 15.33 19.50, 15.51 19.46, 15.39 19.44 C 15.27 19.43, 14.89 19.46, 14.78 19.44 C 14.66 19.43, 14.98 19.34, 14.69 19.36 C 14.39 19.37, 13.53 19.43, 13.01 19.53 C 12.50 19.64, 12.12 19.78, 11.60 19.97 C 11.09 20.16, 10.25 20.56, 9.93 20.68 C 9.61 20.80, 9.84 20.63, 9.67 20.68 C 9.49 20.72, 9.15 20.88, 8.87 20.94 C 8.59 21.00, 7.83 20.91, 7.99 21.03 C 8.15 21.15, 9.39 21.53, 9.84 21.65 C 10.30 21.77, 10.56 21.71, 10.72 21.74 C 10.88 21.77, 10.71 21.81, 10.81 21.82 C 10.91 21.84, 11.24 21.81, 11.34 21.82 C 11.44 21.84, 11.27 21.90, 11.43 21.91 C 11.59 21.93, 12.15 21.90, 12.31 21.91 C 12.47 21.93, 11.84 21.99, 12.40 22.00 C 12.95 22.01, 15.10 22.01, 15.66 22.00 C 16.21 21.99, 15.57 21.93, 15.74 21.91 C 15.92 21.90, 16.54 21.93, 16.71 21.91 C 16.89 21.90, 16.71 21.84, 16.80 21.82 C 16.89 21.81, 17.15 21.84, 17.24 21.82 C 17.33 21.81, 17.21 21.77, 17.33 21.74 C 17.45 21.71, 17.64 21.75, 17.95 21.65 C 18.26 21.54, 18.83 21.31, 19.18 21.12 C 19.53 20.93, 19.81 20.71, 20.06 20.50 C 20.31 20.30, 20.44 20.21, 20.68 19.89 C 20.91 19.56, 21.30 18.93, 21.47 18.56 C 21.65 18.20, 21.69 17.89, 21.74 17.68 C 21.78 17.48, 21.72 17.40, 21.74 17.33 C 21.75 17.26, 21.81 17.54, 21.82 17.24 C 21.84 16.95, 21.84 15.86, 21.82 15.57 C 21.81 15.27, 21.75 15.55, 21.74 15.48 C 21.72 15.41, 21.78 15.33, 21.74 15.13 C 21.69 14.92, 21.60 14.57, 21.47 14.25 C 21.34 13.92, 21.16 13.54, 20.94 13.19 C 20.72 12.84, 20.52 12.53, 20.15 12.13 C 19.78 11.74, 19.36 11.32, 18.74 10.81 C 18.12 10.30, 16.99 9.52, 16.45 9.05 C 15.91 8.58, 15.70 8.31, 15.48 7.99 C 15.26 7.67, 15.17 7.43, 15.13 7.11 C 15.08 6.79, 15.17 6.29, 15.22 6.05 C 15.26 5.82, 15.27 5.85, 15.39 5.70 C 15.51 5.55, 15.76 5.29, 15.92 5.17 C 16.08 5.05, 16.17 5.02, 16.36 5.00 C 16.55 4.97, 16.90 4.98, 17.07 5.00 C 17.23 5.01, 17.17 4.97, 17.33 5.08 C 17.49 5.20, 17.87 5.52, 18.04 5.70 C 18.20 5.88, 18.12 5.67, 18.30 6.14 C 18.48 6.61, 18.92 8.09, 19.09 8.52 C 19.27 8.95, 19.28 8.68, 19.36 8.70 C 19.43 8.71, 19.44 8.93, 19.53 8.61 C 19.62 8.28, 19.75 7.27, 19.89 6.76 C 20.02 6.24, 20.25 5.92, 20.33 5.52 C 20.40 5.13, 20.41 4.76, 20.33 4.38 C 20.24 4.00, 20.03 3.56, 19.80 3.23 C 19.56 2.91, 19.17 2.62, 18.92 2.44 Z M 18.74 3.85 C 18.83 3.85, 18.90 3.85, 19.00 3.94 C 19.11 4.03, 19.31 4.25, 19.36 4.38 C 19.40 4.51, 19.36 4.61, 19.27 4.73 C 19.18 4.85, 18.96 5.04, 18.83 5.08 C 18.70 5.13, 18.59 5.08, 18.48 5.00 C 18.36 4.91, 18.17 4.69, 18.12 4.56 C 18.08 4.42, 18.15 4.31, 18.21 4.20 C 18.27 4.10, 18.39 4.00, 18.48 3.94 C 18.56 3.88, 18.65 3.85, 18.74 3.85 Z" />
     </symbol>
+    <!-- 10. Synology-Photo-Tagger: Agile Organizing Squirrel (AI Vision Tagger & Photo Asset Collector) -->
+    <symbol id="icon-squirrel-tagger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15.236 22a3 3 0 0 0-2.2-5" />
+      <path d="M16 20a3 3 0 0 1 3-3h1a2 2 0 0 0 2-2v-2a4 4 0 0 0-4-4V4" />
+      <path d="M18 13h.01" />
+      <path d="M18 6a4 4 0 0 0-4 4 7 7 0 0 0-7 7c0-5 4-5 4-10.5a4.5 4.5 0 1 0-9 0 2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10" />
+    </symbol>
   </svg>
 
   <div class="container">
     <header>
       <div class="header-badge">✨ UX-DECK UNIFIED DESIGN SYSTEM</div>
       <h1>跨專案設計調性、風格與字體總覽</h1>
-      <div class="subtitle">以極簡白底（White Basis）為視覺根基，結合九大兄弟端點的精準品牌色調、雙軌圖標體系（Modern Emblem 宏觀品牌紋章 × Lucide 微觀介面線性）與人文/科技專屬字體排版。</div>
+      <div class="subtitle">以極簡白底（White Basis）為視覺根基，結合十大兄弟端點的精準品牌色調、雙軌圖標體系（Modern Emblem 宏觀品牌紋章 × Lucide 微觀介面線性）與人文/科技專屬字體排版。</div>
     </header>
 
     <!-- SECTION 1: MASCOTS (WHITE BASIS) -->
     <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin: 4rem 0 0.5rem;">
-      <div class="section-title" style="margin: 0;">🐾 1. 九大專案象徵幾何吉祥物 (Settled Geometric Mascots)</div>
+      <div class="section-title" style="margin: 0;">🐾 1. 十大專案象徵幾何吉祥物 (Settled Geometric Mascots)</div>
       <a href="./preview_animal_styles.html" class="live-url-pill" style="font-size: 0.8rem; background: #f8fafc; color: #0284c7; border: 1px solid #bae6fd;" title="瀏覽全端點 26 隻動物三大風格（Lucide 線性 · Modern Emblem 徽章 · Kawaii Chibi 萌寵）全圖鑑 ↗">
         🎨 檢視 26 隻動物三大風格（Lucide 線性 · Modern Emblem 徽章 · Kawaii Chibi 萌寵）全圖鑑 ↗
       </a>
@@ -3125,11 +3296,29 @@
         <div class="mascot-project">VIX (全球波動率與黑天鵝雷達)</div>
         <div class="mascot-desc"><strong>宏觀</strong>以幾何黑天鵝極端風險徽章作為雷達封面；<strong>微觀</strong>以高對比曜石天鵝作為市場恐慌 30 閾值與壓力測試標記。</div>
       </div>
+
+      <!-- Squirrel (Synology-Photo-Tagger) -->
+      <div class="mascot-card card-squirrel">
+        <div class="mascot-duo-stage">
+          <a href="https://zhongzheng782.github.io/Synology-Photo-Tagger/" target="_blank" rel="noopener noreferrer" class="emblem-tile" title="查看 Modern Emblem 徽章 · 造訪 Synology-Photo-Tagger ↗ (GitHub: ZhongZheng782/Synology-Photo-Tagger)">
+            <img src="./tokens/icons/modern-emblem/emblem-squirrel.svg" class="emblem-thumb" alt="採集松鼠 Modern Emblem" />
+            <span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span>
+          </a>
+          <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
+          <a href="https://zhongzheng782.github.io/Synology-Photo-Tagger/" target="_blank" rel="noopener noreferrer" class="lucide-tile wrapper-squirrel" title="查看 Lucide 線性圖標 · 造訪 Synology-Photo-Tagger ↗">
+            <svg class="ux-icon ux-icon-xl ux-icon-squirrel"><use href="#icon-squirrel-tagger"></use></svg>
+            <span class="badge-role-tag lucide-tag">⚡ 介面線性</span>
+          </a>
+        </div>
+        <div class="mascot-name">採集松鼠 🐿️</div>
+        <div class="mascot-project">Synology-Photo-Tagger (相片智慧標籤)</div>
+        <div class="mascot-desc"><strong>宏觀</strong>以抱握松果的靈巧松鼠作為相片資產徽章；<strong>微觀</strong>以大尾線性松鼠標記 AI 物件辨識、場景分類與 EXIF/XMP 智慧標籤入庫。</div>
+      </div>
     </div>
 
     <!-- SECTION 2: MERGED PALETTE, TYPOGRAPHY & LIVE COMPONENT PREVIEWS (1, 1, 1, 1, 1, 1, 1, 1, 1 LAYOUT) -->
     <div class="section-title">🎨 2. 色彩調性、專屬字體與真實元件展示 (Color, Typography & Live Previews)</div>
-    <div class="section-desc">以白底為基準（White Basis），將九大兄弟專案的精準品牌色彩光譜、人文與科技專屬字體，與真實落地之 UI 實體元件緊密結合，並提供直達各站點的即時連線網址。</div>
+    <div class="section-desc">以白底為基準（White Basis），將十大兄弟專案的精準品牌色彩光譜、人文與科技專屬字體，與真實落地之 UI 實體元件緊密結合，並提供直達各站點的即時連線網址。</div>
 
     <div class="merged-ecosystem-grid">
 
@@ -4602,11 +4791,160 @@
         </div>
       </div>
 
+      <!-- CARD 10: Synology-Photo-Tagger -->
+      <div class="merged-project-card">
+        <div class="project-header-bar">
+          <div class="project-identity">
+            <svg class="ux-icon ux-icon-lg ux-icon-squirrel"><use href="#icon-squirrel-tagger"></use></svg>
+            <div class="project-title-group">
+              <div class="project-name">Synology-Photo-Tagger · 雲端相片智慧標籤庫</div>
+              <div class="project-category">AI 視覺模型、智慧物件場景分流與 Synology Photos 自動化標記</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <a href="https://github.com/ZhongZheng782/Synology-Photo-Tagger" target="_blank" rel="noopener noreferrer" class="live-url-pill" style="background: #faf5ff; color: #7c3aed; border-color: #ddd6fe;" title="查看 GitHub 官方開源庫">
+              <span>GitHub: ZhongZheng782/Synology-Photo-Tagger</span>
+              <span>↗</span>
+            </a>
+            <a href="https://zhongzheng782.github.io/Synology-Photo-Tagger/" target="_blank" rel="noopener noreferrer" class="live-url-pill" style="background: #f5f3ff; color: #8b5cf6; border-color: #c4b5fd;" title="造訪 Synology-Photo-Tagger 線上入口">
+              <span>zhongzheng782.github.io/Synology-Photo-Tagger</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="specs-section">
+          <div class="specs-top-row">
+            <span class="specs-badge-label">🎨 品牌色彩光譜</span>
+            <div class="matrix-swatches">
+              <div class="swatch" style="background: #8b5cf6;" title="Primary: #8b5cf6 (Vision Violet / AI 視覺紫)"></div>
+              <div class="swatch" style="background: #f59e0b;" title="Accent: #f59e0b (Acorn Amber / 記憶暖琥珀)"></div>
+              <div class="swatch" style="background: #faf5ff;" title="Surface: #faf5ff (Soft Lilac Tint / 柔光紫白底)"></div>
+            </div>
+          </div>
+          <div class="font-sample-box">
+            <div class="font-name-tag">
+              <span>智慧相片標籤與元數據排版規範</span>
+              <span>Inter + JetBrains Mono + Noto Sans TC</span>
+            </div>
+            <div class="font-preview-text" style="font-family: 'Inter', 'Noto Sans TC', sans-serif; color: #7c3aed;">
+              AI 視覺模型自動解構光影與物件，將數萬張家庭記憶果實分門別類、精準索引入庫。
+            </div>
+          </div>
+        </div>
+
+        <div class="live-preview-section">
+          <div class="preview-section-header">⚡ 實體落地介面預覽</div>
+
+          <!-- Top Bar & Tabs Menu Preview -->
+          <div class="preview-tagger-menubar">
+            <div class="tagger-mock-header">
+              <div class="tagger-mock-brand">
+                <svg viewBox="0 0 24 24"><use href="#icon-squirrel-tagger"></use></svg>
+                <span>Synology-Photo-Tagger</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="tagger-mock-status">● AI 視覺模型在線 (CLIP / Vision Ready)</span>
+                <span style="font-size: 0.74rem; color: #6b21a8; font-family: 'JetBrains Mono', monospace; background: #f3e8ff; border: 1px solid #e9d5ff; padding: 2px 8px; border-radius: 6px;">已標記 12,480 張 · 準確率 99.2%</span>
+              </div>
+            </div>
+            <div class="tagger-mock-tabs">
+              <span class="tagger-mock-tab active">即時相片串流 (Photo Feed)</span>
+              <span class="tagger-mock-tab">人臉面孔偵測 (Faces)</span>
+              <span class="tagger-mock-tab">旅行與百岳場景 (Scenes)</span>
+              <span class="tagger-mock-tab">毛孩與寵物生活 (Pets)</span>
+              <span class="tagger-mock-tab">待處理隊列 (Queue: 14)</span>
+              <span class="tagger-mock-tab">標籤字典 (Taxonomy)</span>
+            </div>
+          </div>
+
+          <!-- Photo Tagger Cards Grid -->
+          <div class="preview-tagger">
+            <div class="tagger-grid">
+              
+              <!-- Photo 1: Shiba Pet -->
+              <div class="tagger-photo-card">
+                <div class="tagger-thumb" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+                  🐕 客廳柴柴小憩
+                </div>
+                <div class="tagger-meta-body">
+                  <div class="tagger-file-row">
+                    <span>IMG_20261021_0940.JPG</span>
+                    <span class="tagger-confidence">99% 置信</span>
+                  </div>
+                  <div class="tagger-chips">
+                    <span class="tagger-chip highlight">🏷️ 柴犬</span>
+                    <span class="tagger-chip">🏷️ 客廳沙發</span>
+                    <span class="tagger-chip">🏷️ 暖陽光暈</span>
+                    <span class="tagger-chip">🏷️ 寵物日常</span>
+                  </div>
+                  <div class="tagger-sync-badge">
+                    <span>✓</span> EXIF / Synology Photos 已同步
+                  </div>
+                </div>
+              </div>
+
+              <!-- Photo 2: Alishan Sunrise -->
+              <div class="tagger-photo-card">
+                <div class="tagger-thumb" style="background: linear-gradient(135deg, #8b5cf6 0%, #d97706 100%);">
+                  🏔️ 阿里山雲海金光
+                </div>
+                <div class="tagger-meta-body">
+                  <div class="tagger-file-row">
+                    <span>DSCF8921.RAF</span>
+                    <span class="tagger-confidence">98% 置信</span>
+                  </div>
+                  <div class="tagger-chips">
+                    <span class="tagger-chip highlight">🏷️ 阿里山</span>
+                    <span class="tagger-chip">🏷️ 雲海日落</span>
+                    <span class="tagger-chip">🏷️ 戶外風景</span>
+                    <span class="tagger-chip">🏷️ 台灣百岳</span>
+                  </div>
+                  <div class="tagger-sync-badge">
+                    <span>✓</span> EXIF / Synology Photos 已同步
+                  </div>
+                </div>
+              </div>
+
+              <!-- Photo 3: Hand Drip Coffee -->
+              <div class="tagger-photo-card">
+                <div class="tagger-thumb" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);">
+                  ☕ 手沖淺焙耶加雪菲
+                </div>
+                <div class="tagger-meta-body">
+                  <div class="tagger-file-row">
+                    <span>PANA_0142.RW2</span>
+                    <span class="tagger-confidence">96% 置信</span>
+                  </div>
+                  <div class="tagger-chips">
+                    <span class="tagger-chip highlight">🏷️ 手沖咖啡</span>
+                    <span class="tagger-chip">🏷️ 咖啡濾壺</span>
+                    <span class="tagger-chip">🏷️ 慢活日誌</span>
+                    <span class="tagger-chip">🏷️ 晨光隨筆</span>
+                  </div>
+                  <div class="tagger-sync-badge">
+                    <span>✓</span> EXIF / Synology Photos 已同步
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Bottom Action Footer -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; font-size: 0.8rem; color: #6b21a8; flex-wrap: wrap; gap: 8px; border-top: 1px dashed #e9d5ff; padding-top: 0.85rem;">
+              <span style="font-weight: 600;">⚡ 支援 Ollama 本地視覺模型與 CLIP 零樣本辨識，一鍵批次寫入 Synology Photos PostgreSQL / XMP Sidecar</span>
+              <a href="https://github.com/ZhongZheng782/Synology-Photo-Tagger" target="_blank" rel="noopener noreferrer" style="color: #7c3aed; font-weight: 700; text-decoration: none;">查看 GitHub 儲存庫與腳本 ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
     <!-- SECTION 3: VECTOR SCALE LADDER (WHITE BASIS) -->
     <div class="section-title">📐 3. 向量尺寸梯階測試 (14px ~ 64px)</div>
-    <div class="section-desc">驗證九大幾何吉祥物自桌面小圖示 (14px) 至客廳電視大螢幕 (64px) 之邊角清晰度與筆畫比例。</div>
+    <div class="section-desc">驗證十大幾何吉祥物自桌面小圖示 (14px) 至客廳電視大螢幕 (64px) 之邊角清晰度與筆畫比例。</div>
     <div class="scale-row">
       <div class="scale-item">
         <svg class="ux-icon ux-icon-xs ux-icon-deer"><use href="#icon-deer-life"></use></svg>
@@ -4644,6 +4982,10 @@
       <div class="scale-item">
         <svg class="ux-icon ux-icon-xl ux-icon-swan"><use href="#icon-swan-vix"></use></svg>
         <span>48px (幾何黑天鵝)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-xl ux-icon-squirrel"><use href="#icon-squirrel-tagger"></use></svg>
+        <span>48px (採集松鼠)</span>
       </div>
       <div class="scale-item">
         <svg class="ux-icon ux-icon-tv ux-icon-sentinel"><use href="#icon-sentinel-tv"></use></svg>

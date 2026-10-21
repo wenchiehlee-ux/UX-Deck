@@ -123,8 +123,19 @@ master_animals = [
         'lucide_file': 'lucide-swan.svg',
         'emblem_file': 'emblem-swan.svg'
     },
+    {
+        'id': 'squirrel',
+        'name_zh': '採集松鼠 🐿️',
+        'name_en': 'Organizing Squirrel',
+        'status': '✅ 已上線：Synology-Photo-Tagger',
+        'category': 'active',
+        'color': '#8b5cf6',
+        'desc': '象徵勤奮分類與珍藏記憶果實，負責 AI 視覺照片辨識、物件場景分類與 EXIF/XMP 智慧標籤入庫。',
+        'lucide_file': 'lucide-squirrel.svg',
+        'emblem_file': 'emblem-squirrel.svg'
+    },
 
-    # Section 2: 3034 Reserves (8 animals)
+    # Section 2: 3034 Reserves (7 animals)
     {
         'id': 'dolphin',
         'name_zh': '飛躍海豚',
@@ -201,17 +212,6 @@ master_animals = [
         'desc': '極簡幾何切面甲冑，象徵硬體極致安全性、堅不可摧與千年長青。',
         'lucide_file': 'lucide-turtle.svg',
         'emblem_file': 'emblem-turtle.svg'
-    },
-    {
-        'id': 'squirrel',
-        'name_zh': '數據松鼠',
-        'name_en': 'Storage Squirrel',
-        'status': '📦 備選動物庫存',
-        'category': 'reserve',
-        'color': '#f59e0b',
-        'desc': '蓬鬆大尾與抱果手勢，象徵勤勉歸檔、數據囤積與毫秒級快速檢索。',
-        'lucide_file': 'lucide-squirrel.svg',
-        'emblem_file': 'emblem-squirrel.svg'
     }
 ]
 
