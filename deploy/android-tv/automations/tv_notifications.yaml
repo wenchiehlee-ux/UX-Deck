@@ -82,67 +82,68 @@
 # ------------------------------------------------------------------------------
 - id: "tv_notify_calendar_schedule"
   alias: "TV HUD: 今日日程提醒"
-  description: "全天行程（早上08:00）、日曆事件即將開始（前15分鐘）、或上午電視開機時主動於客廳電視推播"
+  description: "每分鐘自動檢查 TimeTree 行程，在前 15 分鐘及行程開始當下於客廳 Android TV 顯示 18px 圓角毛玻璃 HUD。支援時間重疊行程與動態新增行程。"
   trigger:
-    # 觸發情境 A：每日晨間固定排程
-    - platform: time
-      at: "08:00:00"
-      id: "morning_schedule"
-    # 觸發情境 B：日曆事件即將開始前 15 分鐘動態觸發
-    - platform: calendar
-      event: start
-      offset: "-00:15:00"
-      entity_id: calendar.timetree  # 部署平台對齊實體：TimeTree
-      id: "calendar_upcoming_event"
-    # 觸發情境 C：日曆事件正式開始當下即時觸發
-    - platform: calendar
-      event: start
-      offset: "00:00:00"
-      entity_id: calendar.timetree
-      id: "calendar_event_start_now"
-    # 觸發情境 D：上午電視開機喚醒時，若今天有排程則主動播報
-    - platform: state
-      entity_id: media_player.ke_ting_de_dian_shi
-      to: "on"
-      id: "tv_morning_turn_on"
-  condition:
-    # 電視開機時僅在上午 07:00 ~ 12:00 播報一次，避免深夜開電視被打擾
-    - condition: or
-      conditions:
-        - condition: trigger
-          id: ["morning_schedule", "calendar_upcoming_event", "calendar_event_start_now"]
-        - condition: and
-          conditions:
-            - condition: trigger
-              id: "tv_morning_turn_on"
-            - condition: time
-              after: "07:00:00"
-              before: "12:00:00"
+    - platform: time_pattern
+      minutes: "/1"
   action:
-    # 【方案 B 首選】：極致美感 18px 圓角動態毛玻璃 HUD (帶入真實行程名稱與時間)
-    - service: shell_command.render_calendar_hud
-      continue_on_error: true
+    # 步驟 1：查詢現在至未來 16 分鐘內的所有行事曆事件（支援多行程重疊）
+    - service: calendar.get_events
+      target:
+        entity_id: calendar.timetree
       data:
-        title: >-
-          {% if trigger.id == 'calendar_event_start_now' %}行程現在開始 🔔{% else %}今日行程提醒 📅{% endif %}
-        message: >-
-          {% if trigger.id == 'calendar_event_start_now' %}
-            活動開始：{{ trigger.calendar_event.summary | default('今日行程') }} ({{ as_timestamp(trigger.calendar_event.start) | timestamp_custom('%H:%M') }}~{{ as_timestamp(trigger.calendar_event.end) | timestamp_custom('%H:%M') }}) ⏰
-          {% elif trigger.id == 'calendar_upcoming_event' %}
-            15分鐘後：{{ trigger.calendar_event.summary | default('今日行程') }} ({{ as_timestamp(trigger.calendar_event.start) | timestamp_custom('%H:%M') }}~{{ as_timestamp(trigger.calendar_event.end) | timestamp_custom('%H:%M') }}) ⏰
-          {% else %}
-            今日行程提醒 ⏰
-          {% endif %}
-    - service: rest_command.pipup_notify_1f
-      continue_on_error: true
-      data:
-        payload_json: >-
-          {"duration":60,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar_event.png?ts={{ as_timestamp(now()) }}","width":480}}}
-    - service: rest_command.pipup_notify_2f
-      continue_on_error: true
-      data:
-        payload_json: >-
-          {"duration":30,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar_event.png?ts={{ as_timestamp(now()) }}","width":480}}}
+        start_date_time: "{{ now() - timedelta(minutes=1) }}"
+        end_date_time: "{{ now() + timedelta(minutes=16) }}"
+      response_variable: cal_agenda
+    # 步驟 2：遍歷每個事件，分別檢查是否處於「15分鐘前」或「現在開始」觸發窗口
+    - repeat:
+        for_each: "{{ cal_agenda['calendar.timetree']['events'] | default([]) }}"
+        sequence:
+          - variables:
+              evt: "{{ repeat.item }}"
+              is_allday: "{{ 'T' not in evt.start }}"
+              diff_sec: "{{ as_timestamp(evt.start) - as_timestamp(now()) }}"
+              is_upcoming_15m: "{{ not is_allday and 840 <= diff_sec <= 930 }}"
+              is_start_now: "{{ not is_allday and -30 <= diff_sec <= 59 }}"
+          - choose:
+              - conditions:
+                  - condition: template
+                    value_template: "{{ is_upcoming_15m }}"
+                sequence:
+                  - service: shell_command.render_calendar_hud
+                    data:
+                      title: "今日行程提醒 📅"
+                      message: >-
+                        15分鐘後：{{ evt.summary }} ({{ as_timestamp(evt.start) | timestamp_custom('%H:%M') }}~{{ as_timestamp(evt.end) | timestamp_custom('%H:%M') }}) ⏰
+                  - service: rest_command.pipup_notify_1f
+                    continue_on_error: true
+                    data:
+                      payload_json: >-
+                        {"duration":60,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar_event.png?ts={{ as_timestamp(now()) }}","width":480}}}
+                  - service: rest_command.pipup_notify_2f
+                    continue_on_error: true
+                    data:
+                      payload_json: >-
+                        {"duration":30,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar_event.png?ts={{ as_timestamp(now()) }}","width":480}}}
+              - conditions:
+                  - condition: template
+                    value_template: "{{ is_start_now }}"
+                sequence:
+                  - service: shell_command.render_calendar_hud
+                    data:
+                      title: "行程現在開始 🔔"
+                      message: >-
+                        活動開始：{{ evt.summary }} ({{ as_timestamp(evt.start) | timestamp_custom('%H:%M') }}~{{ as_timestamp(evt.end) | timestamp_custom('%H:%M') }}) ⏰
+                  - service: rest_command.pipup_notify_1f
+                    continue_on_error: true
+                    data:
+                      payload_json: >-
+                        {"duration":60,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar_event.png?ts={{ as_timestamp(now()) }}","width":480}}}
+                  - service: rest_command.pipup_notify_2f
+                    continue_on_error: true
+                    data:
+                      payload_json: >-
+                        {"duration":30,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar_event.png?ts={{ as_timestamp(now()) }}","width":480}}}
 
 # ------------------------------------------------------------------------------
 # 6. 設備低電量警告 (Battery Low Warning)
