@@ -119,15 +119,30 @@
               after: "07:00:00"
               before: "12:00:00"
   action:
-    # 【方案 B 首選】：極致美感 18px 圓角透明 HUD (零白框、完美穿透電視畫面，1:1 對齊 UX-Deck)
+    # 【方案 B 首選】：極致美感 18px 圓角動態毛玻璃 HUD (帶入真實行程名稱與時間)
+    - service: shell_command.render_calendar_hud
+      continue_on_error: true
+      data:
+        title: >-
+          {% if trigger.id == 'calendar_event_start_now' %}行程現在開始 🔔{% else %}今日行程提醒 📅{% endif %}
+        message: >-
+          {% if trigger.id == 'calendar_event_start_now' %}
+            活動開始：{{ trigger.calendar_event.summary | default('今日行程') }} ({{ as_timestamp(trigger.calendar_event.start) | timestamp_custom('%H:%M') }}~{{ as_timestamp(trigger.calendar_event.end) | timestamp_custom('%H:%M') }}) ⏰
+          {% elif trigger.id == 'calendar_upcoming_event' %}
+            15分鐘後：{{ trigger.calendar_event.summary | default('今日行程') }} ({{ as_timestamp(trigger.calendar_event.start) | timestamp_custom('%H:%M') }}~{{ as_timestamp(trigger.calendar_event.end) | timestamp_custom('%H:%M') }}) ⏰
+          {% else %}
+            今日行程提醒 ⏰
+          {% endif %}
     - service: rest_command.pipup_notify_1f
+      continue_on_error: true
       data:
         payload_json: >-
-          {"duration":60,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar.png","width":480}}}
+          {"duration":60,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar_event.png?ts={{ as_timestamp(now()) }}","width":480}}}
     - service: rest_command.pipup_notify_2f
+      continue_on_error: true
       data:
         payload_json: >-
-          {"duration":30,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar.png","width":480}}}
+          {"duration":30,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar_event.png?ts={{ as_timestamp(now()) }}","width":480}}}
 
 # ------------------------------------------------------------------------------
 # 6. 設備低電量警告 (Battery Low Warning)
