@@ -11,7 +11,7 @@ def read_svg(path):
             return content.replace('<?xml version="1.0" encoding="utf-8"?>', '')
     return None
 
-# Section 1: Active Endpoints (10 animals)
+# Section 1: Active Endpoints (12 animals)
 master_animals = [
     {
         'id': 'deer',
@@ -194,11 +194,11 @@ master_animals = [
     {
         'id': 'rabbit',
         'name_zh': '敏捷白兔',
-        'name_en': 'Agile Hare / Rabbit',
-        'status': '📦 備選動物庫存',
-        'category': 'reserve',
-        'color': '#4ade80',
-        'desc': '長耳聽訊，先知先覺，象徵第一時間捕捉情報與敏捷躍進先機。',
+        'name_en': 'Agile Rabbit',
+        'status': '✅ 已上線：Skills Registry',
+        'category': 'active',
+        'color': '#059669',
+        'desc': '長耳俐落、表情親切，象徵快速探索技能、分類知識與跨專案重用。',
         'lucide_file': 'lucide-rabbit.svg',
         'emblem_file': 'emblem-rabbit.svg'
     },
@@ -329,7 +329,7 @@ def render_section1_2_card(item):
       </div>
     '''
 
-    status_badge_class = 'badge-active' if '已上線' in item['status'] else ('badge-eval' if '評選' in item['status'] else 'badge-reserve')
+    status_badge_class = 'badge-active' if item['category'] == 'active' else ('badge-eval' if '評選' in item['status'] else 'badge-reserve')
 
     return f'''
     <div class="card" data-category="{item['category']}">
@@ -397,6 +397,9 @@ def render_chibi_card(item):
 cards_active = ''.join(render_section1_2_card(it) for it in master_animals if it['category'] == 'active')
 cards_reserve = ''.join(render_section1_2_card(it) for it in master_animals if it['category'] == 'reserve')
 cards_chibi = ''.join(render_chibi_card(it) for it in chibi_animals)
+active_count = sum(1 for it in master_animals if it['category'] == 'active')
+reserve_count = sum(1 for it in master_animals if it['category'] == 'reserve')
+total_animal_count = active_count + reserve_count + len(chibi_animals)
 
 html_content = f'''<!DOCTYPE html>
 <html lang="zh-TW">
@@ -641,11 +644,11 @@ html_content = f'''<!DOCTYPE html>
       <div class="stat-group">
         <div class="stat-item">
           <span>現役與評選中端點：</span>
-          <span class="stat-num" style="color: #4ade80;">10 隻</span>
+          <span class="stat-num" style="color: #4ade80;">{active_count} 隻</span>
         </div>
         <div class="stat-item">
           <span>3034 / Lucide 備選：</span>
-          <span class="stat-num" style="color: #38bdf8;">8 隻</span>
+          <span class="stat-num" style="color: #38bdf8;">{reserve_count} 隻</span>
         </div>
         <div class="stat-item">
           <span>Kawaii Chibi 萌寵：</span>
@@ -653,7 +656,7 @@ html_content = f'''<!DOCTYPE html>
         </div>
         <div class="stat-item">
           <span>總收錄動物種類：</span>
-          <span class="stat-num" style="color: #fbbf24;">26 隻</span>
+          <span class="stat-num" style="color: #fbbf24;">{total_animal_count} 隻</span>
         </div>
       </div>
       <div style="font-size: 12px; color: #64748b;">
@@ -665,7 +668,7 @@ html_content = f'''<!DOCTYPE html>
   <!-- Section 1: Active Endpoints -->
   <div class="section-divider">
     <h2 class="section-title">
-      <span>🚀 第一部分：現役端點與進行中評選動物 (10 隻)</span>
+      <span>🚀 第一部分：現役端點與進行中評選動物 ({active_count} 隻)</span>
     </h2>
     <span class="section-badge" style="background: rgba(74, 222, 128, 0.15); color: #4ade80;">
       已部署至 9 大 Sibling Repositories & 進行中
@@ -678,10 +681,10 @@ html_content = f'''<!DOCTYPE html>
   <!-- Section 2: Reserve Animals -->
   <div class="section-divider">
     <h2 class="section-title">
-      <span>📦 第二部分：Modern Emblem & Lucide 備選儲備庫存 (8 隻)</span>
+      <span>📦 第二部分：Modern Emblem & Lucide 備選儲備庫存 ({reserve_count} 隻)</span>
     </h2>
     <span class="section-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">
-      3034.eps 現代徽章風格 & Lucide 極簡線性對照 (8 隻全備齊)
+      3034.eps 現代徽章風格 & Lucide 極簡線性對照 ({reserve_count} 隻全備齊)
     </span>
   </div>
   <div class="grid">

@@ -179,6 +179,11 @@
     max-width: 100%;
     max-height: 100%;
   }
+  .preview-white img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
   .preview-dark {
     width: 100%;
     height: 110px;
@@ -241,11 +246,11 @@
       <div class="stat-group">
         <div class="stat-item">
           <span>現役與評選中端點：</span>
-          <span class="stat-num" style="color: #4ade80;">10 隻</span>
+          <span class="stat-num" style="color: #4ade80;">12 隻</span>
         </div>
         <div class="stat-item">
           <span>3034 / Lucide 備選：</span>
-          <span class="stat-num" style="color: #38bdf8;">8 隻</span>
+          <span class="stat-num" style="color: #38bdf8;">6 隻</span>
         </div>
         <div class="stat-item">
           <span>Kawaii Chibi 萌寵：</span>
@@ -265,7 +270,7 @@
   <!-- Section 1: Active Endpoints -->
   <div class="section-divider">
     <h2 class="section-title">
-      <span>🚀 第一部分：現役端點與進行中評選動物 (10 隻)</span>
+      <span>🚀 第一部分：現役端點與進行中評選動物 (12 隻)</span>
     </h2>
     <span class="section-badge" style="background: rgba(74, 222, 128, 0.15); color: #4ade80;">
       已部署至 9 大 Sibling Repositories & 進行中
@@ -1187,16 +1192,47 @@
 
       <div class="card-desc">象徵勤奮分類與珍藏記憶果實，負責 AI 視覺照片辨識、物件場景分類與 EXIF/XMP 智慧標籤入庫。</div>
     </div>
+
+    <div class="card" data-category="active">
+      <div class="card-header">
+        <div>
+          <div class="animal-title">敏捷白兔 <span class="en-title">(Agile Rabbit)</span></div>
+          <span class="status-tag badge-active">✅ 已上線：Skills Registry</span>
+        </div>
+        <span class="id-tag" style="background: #05966915; color: #059669; border-color: #05966940;">rabbit</span>
+      </div>
+      <div class="compare-row">
+        <div class="col-box">
+          <div class="col-label">Modern Emblem 徽章</div>
+          <div class="preview-white"><img src="./tokens/icons/modern-emblem/emblem-rabbit.svg" alt="敏捷白兔 Skills Registry Modern Emblem 徽章" /></div>
+          <div class="col-meta">emblem-rabbit.svg</div>
+        </div>
+        <div class="col-box">
+          <div class="col-label">Lucide 極簡線性</div>
+          <div class="preview-dark" style="color: #059669;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 16a3 3 0 0 1 2.24 5" />
+              <path d="M18 12h.01" />
+              <path d="M18 21h-8a4 4 0 0 1-4-4 7 7 0 0 1 7-7h.2L9.6 6.4a1 1 0 1 1 2.8-2.8L15.8 7h.2c3.3 0 6 2.7 6 6v1a2 2 0 0 1-2 2h-1a3 3 0 0 0-3 3" />
+              <path d="M20 8.54V4a2 2 0 1 0-4 0v3" />
+              <path d="M7.612 12.524a3 3 0 1 0-1.6 4.3" />
+            </svg>
+          </div>
+          <div class="col-meta">lucide-rabbit.svg</div>
+        </div>
+      </div>
+      <div class="card-desc">長耳俐落、表情親切，象徵快速探索技能、分類知識與跨專案重用。</div>
+    </div>
     
   </div>
 
   <!-- Section 2: Reserve Animals -->
   <div class="section-divider">
     <h2 class="section-title">
-      <span>📦 第二部分：Modern Emblem & Lucide 備選儲備庫存 (8 隻)</span>
+      <span>📦 第二部分：Modern Emblem & Lucide 備選儲備庫存 (6 隻)</span>
     </h2>
     <span class="section-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">
-      3034.eps 現代徽章風格 & Lucide 極簡線性對照 (8 隻全備齊)
+      3034.eps 現代徽章風格 & Lucide 極簡線性對照 (6 隻全備齊)
     </span>
   </div>
   <div class="grid">
@@ -1578,75 +1614,6 @@
       </div>
 
       <div class="card-desc">冬眠防禦步態，象徵在極端空頭市場下保全資產價值的堅強護盾。</div>
-    </div>
-    
-    <div class="card" data-category="reserve">
-      <div class="card-header">
-        <div>
-          <div class="animal-title">敏捷白兔 <span class="en-title">(Agile Hare / Rabbit)</span></div>
-          <span class="status-tag badge-reserve">📦 備選動物庫存</span>
-        </div>
-        <span class="id-tag" style="background: #4ade8015; color: #4ade80; border-color: #4ade8040;">
-          rabbit
-        </span>
-      </div>
-
-      <div class="compare-row">
-        
-      <div class="col-box">
-        <div class="col-label">Modern Emblem 徽章</div>
-        <div class="preview-white">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
-  <defs>
-    <linearGradient id="rab-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#34d399"/>
-      <stop offset="100%" stop-color="#059669"/>
-    </linearGradient>
-    <linearGradient id="rab-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#6ee7b7"/>
-      <stop offset="100%" stop-color="#10b981"/>
-    </linearGradient>
-  </defs>
-  <!-- Rabbit Body & Silhouette -->
-  <path d="M 42 76 C 40 73 41 68 45 65 C 50 61 54 60 56 55 C 58 50 56 46 54 42 C 53 39 54 36 57 32 C 60 27 63 18 64 12 C 65 10 68 11 68 14 C 67 21 65 28 67 34 C 69 28 72 17 74 14 C 75 12 78 13 77 16 C 75 24 72 34 71 40 C 75 42 79 46 79 50 C 79 55 76 58 72 60 C 75 64 78 70 76 75 C 74 80 67 82 60 82 C 51 82 45 80 42 76 Z" fill="url(#rab-grad1)"/>
-  <!-- Front dynamic leap chest facet -->
-  <path d="M 57 42 C 59 46 63 48 68 46 C 72 44 74 41 71 40 C 67 38 61 38 57 42 Z" fill="url(#rab-grad2)"/>
-  <!-- Ear inner accent -->
-  <path d="M 65 17 C 64 23 63 30 65 35 C 66 33 67 28 67 22 C 67 19 66 17 65 17 Z" fill="#a7f3d0"/>
-  <!-- Eye -->
-  <circle cx="68" cy="44" r="2" fill="#ffffff"/>
-  <circle cx="68.5" cy="44" r="1" fill="#064e3b"/>
-  <!-- Fluffy tail -->
-  <circle cx="39" cy="73" r="4.5" fill="url(#rab-grad2)"/>
-  <circle cx="38" cy="72" r="2.5" fill="#ecfdf5"/>
-  <!-- Ground pace dash -->
-  <path d="M 34 84 C 48 83 72 83 86 84 C 88 84 88 86 86 86 C 72 85 48 85 34 86 C 32 86 32 84 34 84 Z" fill="#10b981" opacity="0.4"/>
-  <!-- Typography -->
-  <text x="60" y="102" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="9.5" fill="#0f172a" letter-spacing="2.5">RABBIT</text>
-  <text x="60" y="112" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="4.2" fill="#059669" letter-spacing="1.2">― your tagline here ―</text>
-</svg>
-        </div>
-        <div class="col-meta">emblem-rabbit.svg</div>
-      </div>
-    
-        
-      <div class="col-box">
-        <div class="col-label">Lucide 極簡線性</div>
-        <div class="preview-dark" style="color: #4ade80;">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M13 16a3 3 0 0 1 2.24 5" />
-  <path d="M18 12h.01" />
-  <path d="M18 21h-8a4 4 0 0 1-4-4 7 7 0 0 1 7-7h.2L9.6 6.4a1 1 0 1 1 2.8-2.8L15.8 7h.2c3.3 0 6 2.7 6 6v1a2 2 0 0 1-2 2h-1a3 3 0 0 0-3 3" />
-  <path d="M20 8.54V4a2 2 0 1 0-4 0v3" />
-  <path d="M7.612 12.524a3 3 0 1 0-1.6 4.3" />
-</svg>
-        </div>
-        <div class="col-meta">lucide-rabbit.svg</div>
-      </div>
-    
-      </div>
-
-      <div class="card-desc">長耳聽訊，先知先覺，象徵第一時間捕捉情報與敏捷躍進先機。</div>
     </div>
     
     <div class="card" data-category="reserve">
