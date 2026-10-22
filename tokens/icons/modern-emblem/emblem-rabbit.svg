@@ -1,17 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%" role="img" aria-labelledby="rabbit-title rabbit-desc">
   <title id="rabbit-title">Skills Registry Agile Rabbit emblem</title>
-  <desc id="rabbit-desc">An original leaping rabbit with ears swept back and motion lines, inside a mint green badge.</desc>
+  <desc id="rabbit-desc">A clean, solid leaping rabbit silhouette with streamlined ears and limbs, inside a mint green badge.</desc>
   <circle cx="60" cy="49" r="41" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.5"/>
 
-  <!-- Original leaping side profile: the backward sweep and open stride signal speed. -->
-  <path d="M42 53H28m16 7H33m16 7H39" fill="none" stroke="#6ee7b7" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M47 55c7-8 18-12 29-10 4-5 10-8 16-7-1 5-3 9-7 12 2 4 2 8 0 12l8 4-2 4-13-2c-5 4-12 5-19 2l-9 9-4-2 6-12c-3-3-5-6-5-10z" fill="#fff" stroke="#047857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M77 45c-3-8-9-20-16-22-4-1-5 2-2 6l12 15m13-1c0-8-2-19-7-21-4-2-6 1-4 5l5 18" fill="#fff" stroke="#047857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M70 40 62 28m17 12-5-13" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round"/>
-  <path d="M59 67c-5 2-10 7-14 13l-9 2 1 4 14 1c5-4 10-8 14-13m10-2c2 4 7 7 13 9l5 6 4-2-5-12c-6-5-11-8-17-9" fill="#fff" stroke="#047857" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M46 81 37 84m49 0 8 4" fill="none" stroke="#10b981" stroke-width="2.2" stroke-linecap="round"/>
-  <circle cx="84" cy="49" r="1.8" fill="#064e3b"/>
-  <path d="m91 57 4 1-4 2" fill="#34d399" stroke="#047857" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- A bespoke, compact silhouette: clean curves and negative space keep it legible at small sizes. -->
+  <path d="M71 39C61 29 49 19 36 19c5 9 15 18 31 25-1-2 1-4 4-5Z" fill="#34d399"/>
+  <path d="M75 39C70 26 61 12 49 10c3 12 10 24 23 34Z" fill="#10b981"/>
+  <path d="M40 55c7-8 18-12 30-11 3-7 10-11 18-10 5 1 8 4 11 7l6 2-7 4c-1 7-6 12-13 13-5 1-9 0-13-2-6 6-15 9-25 8-7-1-13-4-17-8-4-4-8-5-12-3 3-5 9-7 15-5Z" fill="#047857"/>
+  <path d="M72 56c7 1 12 5 17 8l10 2-1 4-12 1c-7-2-13-5-18-10Z" fill="#059669"/>
+  <path d="M67 57c-3 5-7 9-12 13l-7 8-5-2 4-11 8-12Z" fill="#059669"/>
+  <path d="M47 59c-6 1-13-1-18-5-3-2-7-2-10 0 1-6 6-10 12-10 6 0 11 4 16 8Z" fill="#10b981"/>
+  <path d="M77 59c2 4 6 7 11 10l-2 3c-8-2-14-6-19-12Z" fill="#047857"/>
+  <path d="M95 47c-2 2-4 2-6 1" fill="none" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="87" cy="39" r="1.8" fill="#ecfdf5"/>
+  <circle cx="27" cy="57" r="4.2" fill="#6ee7b7"/>
 
   <text x="60" y="101" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="8.5" fill="#064e3b" letter-spacing="1.7">SKILLS</text>
   <text x="60" y="111" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="4.1" fill="#059669" letter-spacing="1">― SKILLS REGISTRY ―</text>
