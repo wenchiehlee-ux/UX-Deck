@@ -119,61 +119,15 @@
               after: "07:00:00"
               before: "12:00:00"
   action:
-    # 推播至 1F 客廳電視 (192.168.31.232)
+    # 【方案 B 首選】：極致美感 18px 圓角透明 HUD (零白框、完美穿透電視畫面，1:1 對齊 UX-Deck)
     - service: rest_command.pipup_notify_1f
       data:
         payload_json: >-
-          {% if trigger.id == 'calendar_event_start_now' and trigger.calendar_event is defined %}
-            {
-              "duration": 90,
-              "position": 0,
-              "backgroundColor": "#cc0f172a",
-              "title": "行程現在開始 🔔",
-              "titleColor": "#38bdf8",
-              "titleSize": 20,
-              "message": "活動開始：{{ trigger.calendar_event.summary }} ⏰",
-              "messageColor": "#f8fafc",
-              "messageSize": 16,
-              "media": {
-                "image": {
-                  "uri": "http://192.168.31.101:8123/local/ux-deck/huds/calendar.png",
-                  "width": 120
-                }
-              }
-            }
-          {% elif trigger.id == 'calendar_upcoming_event' and trigger.calendar_event is defined %}
-            {
-              "duration": 90,
-              "position": 0,
-              "backgroundColor": "#cc0f172a",
-              "title": "今日行程提醒 📅",
-              "titleColor": "#38bdf8",
-              "titleSize": 20,
-              "message": "15分鐘後：{{ trigger.calendar_event.summary }} ({{ as_timestamp(trigger.calendar_event.start) | timestamp_custom('%H:%M') }}) ⏰",
-              "messageColor": "#f8fafc",
-              "messageSize": 16,
-              "media": {
-                "image": {
-                  "uri": "http://192.168.31.101:8123/local/ux-deck/huds/calendar.png",
-                  "width": 120
-                }
-              }
-            }
-          {% else %}
-            {
-              "duration": 30,
-              "position": 0,
-              "backgroundColor": "#00000000",
-              "title": "",
-              "message": "",
-              "media": {
-                "image": {
-                  "uri": "http://192.168.31.101:8123/local/ux-deck/huds/calendar.png",
-                  "width": 480
-                }
-              }
-            }
-          {% endif %}
+          {"duration":60,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar.png","width":480}}}
+    - service: rest_command.pipup_notify_2f
+      data:
+        payload_json: >-
+          {"duration":30,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar.png","width":480}}}
 
 # ------------------------------------------------------------------------------
 # 6. 設備低電量警告 (Battery Low Warning)
