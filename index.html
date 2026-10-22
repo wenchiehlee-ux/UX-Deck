@@ -380,6 +380,49 @@
     .wrapper-swan { background: #0f172a; border: 1px solid #334155; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15); }
     .wrapper-swan .ux-icon-swan, .vix-mock-brand .ux-icon-swan { color: #ffffff; }
 
+    /* Skills Registry / Agile Rabbit */
+    .ux-icon-rabbit { color: #059669; }
+    .ux-icon-rabbit:hover { transform: translateY(-3px) scale(1.08); color: #047857; }
+    .mascot-card.card-rabbit:hover::before { background: #059669; }
+    .wrapper-rabbit { background: #ecfdf5; border: 1px solid #a7f3d0; }
+    .skills-registry-preview {
+      border: 1px solid #d1fae5;
+      border-radius: 16px;
+      background: #f8fffb;
+      padding: clamp(14px, 2.5vw, 24px);
+      color: #0f172a;
+    }
+    .skills-registry-topbar, .skills-registry-brand, .skills-registry-actions,
+    .skills-registry-stats, .skills-registry-filters, .skills-card-meta,
+    .skills-card-footer { display: flex; align-items: center; }
+    .skills-registry-topbar { justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+    .skills-registry-brand { gap: 10px; font-weight: 800; color: #065f46; }
+    .skills-registry-brand img { width: 34px; height: 34px; object-fit: contain; }
+    .skills-registry-actions { gap: 8px; flex-wrap: wrap; }
+    .skills-registry-link { color: #047857; text-decoration: none; font-size: .78rem; font-weight: 700; padding: 6px 10px; border: 1px solid #a7f3d0; border-radius: 999px; background: #fff; }
+    .skills-registry-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 18px 20px; border: 1px solid #d1fae5; border-radius: 14px; background: linear-gradient(115deg, #fff 0%, #ecfdf5 100%); }
+    .skills-registry-hero h3 { font-size: clamp(1.1rem, 2vw, 1.45rem); color: #064e3b; margin-bottom: 4px; }
+    .skills-registry-hero p { color: #475569; font-size: .86rem; }
+    .skills-registry-search { margin: 16px 0 12px; background: #fff; border: 1px solid #a7f3d0; border-radius: 10px; padding: 10px 14px; color: #64748b; font-size: .82rem; }
+    .skills-registry-stats { gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+    .skills-stat { padding: 5px 9px; border-radius: 8px; background: #fff; border: 1px solid #d1fae5; font-size: .72rem; color: #475569; }
+    .skills-stat strong { color: #047857; font-family: "JetBrains Mono", monospace; }
+    .skills-registry-filters { gap: 7px; flex-wrap: wrap; margin-bottom: 14px; }
+    .skills-filter { padding: 4px 9px; border: 1px solid #d1d5db; border-radius: 999px; background: #fff; color: #475569; font-size: .68rem; }
+    .skills-filter.active { background: #059669; border-color: #059669; color: #fff; }
+    .skills-registry-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .skills-entry { min-width: 0; padding: 12px; border: 1px solid #e2e8f0; border-radius: 11px; background: #fff; }
+    .skills-entry h4 { color: #0f172a; font: 700 .77rem "JetBrains Mono", monospace; overflow-wrap: anywhere; margin: 0 0 6px; }
+    .skills-card-meta { justify-content: space-between; gap: 8px; margin-bottom: 6px; color: #047857; font-size: .67rem; }
+    .skills-entry p { color: #475569; font-size: .73rem; line-height: 1.55; min-height: 2.25em; }
+    .skills-card-footer { justify-content: space-between; gap: 8px; margin-top: 9px; padding-top: 8px; border-top: 1px solid #f1f5f9; color: #64748b; font-size: .66rem; }
+    .skills-card-footer a { color: #047857; font-weight: 700; text-decoration: none; }
+    @media (max-width: 640px) {
+      .skills-registry-hero { grid-template-columns: 1fr; }
+      .skills-registry-hero img { display: none; }
+      .skills-registry-list { grid-template-columns: 1fr; }
+    }
+
     /* 6. wenchiehlee.quickconnect.to Top Bar Preview (Synology Blue NAS 控制列) */
     .preview-nas-menubar {
       background: #ffffff;
@@ -3077,12 +3120,12 @@
     <header>
       <div class="header-badge">✨ UX-DECK UNIFIED DESIGN SYSTEM</div>
       <h1>跨專案設計調性、風格與字體總覽</h1>
-      <div class="subtitle">以極簡白底（White Basis）為視覺根基，結合十大兄弟端點的精準品牌色調、雙軌圖標體系（Modern Emblem 宏觀品牌紋章 × Lucide 微觀介面線性）與人文/科技專屬字體排版。</div>
+      <div class="subtitle">以極簡白底（White Basis）為視覺根基，結合十一個兄弟端點的精準品牌色調、雙軌圖標體系（Modern Emblem 宏觀品牌紋章 × Lucide 微觀介面線性）與人文/科技專屬字體排版。</div>
     </header>
 
     <!-- SECTION 1: MASCOTS (WHITE BASIS) -->
     <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin: 4rem 0 0.5rem;">
-      <div class="section-title" style="margin: 0;">🐾 1. 十大專案象徵幾何吉祥物 (Settled Geometric Mascots)</div>
+      <div class="section-title" style="margin: 0;">🐾 1. 十二隻專案象徵幾何吉祥物 (Settled Geometric Mascots)</div>
       <a href="./preview_animal_styles.html" class="live-url-pill" style="font-size: 0.8rem; background: #f8fafc; color: #0284c7; border: 1px solid #bae6fd;" title="瀏覽全端點 26 隻動物三大風格（Lucide 線性 · Modern Emblem 徽章 · Kawaii Chibi 萌寵）全圖鑑 ↗">
         🎨 檢視 26 隻動物三大風格（Lucide 線性 · Modern Emblem 徽章 · Kawaii Chibi 萌寵）全圖鑑 ↗
       </a>
@@ -3314,11 +3357,31 @@
         <div class="mascot-project">Synology-Photo-Tagger (相片智慧標籤)</div>
         <div class="mascot-desc"><strong>宏觀</strong>以抱握松果的靈巧松鼠作為相片資產徽章；<strong>微觀</strong>以大尾線性松鼠標記 AI 物件辨識、場景分類與 EXIF/XMP 智慧標籤入庫。</div>
       </div>
+
+      <!-- Agile Rabbit (Skills Registry) -->
+      <div class="mascot-card card-rabbit">
+        <div class="mascot-duo-stage">
+          <a href="https://github.com/wenchiehlee/skills" target="_blank" rel="noopener noreferrer" class="emblem-tile" title="查看敏捷白兔 Modern Emblem · 造訪 Skills Registry ↗">
+            <img src="./tokens/icons/modern-emblem/emblem-rabbit.svg" class="emblem-thumb" alt="敏捷白兔 Modern Emblem" />
+            <span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span>
+          </a>
+          <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
+          <a href="https://github.com/wenchiehlee/skills" target="_blank" rel="noopener noreferrer" class="lucide-tile wrapper-rabbit" title="查看 Lucide 白兔圖標 · 造訪 Skills Registry ↗">
+            <svg class="ux-icon ux-icon-xl ux-icon-rabbit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M13 16a3 3 0 0 1 2.24 5" /><path d="M18 12h.01" /><path d="M18 21h-8a4 4 0 0 1-4-4 7 7 0 0 1 7-7h.2L9.6 6.4a1 1 0 1 1 2.8-2.8L15.8 7h.2c3.3 0 6 2.7 6 6v1a2 2 0 0 1-2 2h-1a3 3 0 0 0-3 3" /><path d="M20 8.54V4a2 2 0 1 0-4 0v3" /><path d="M7.612 12.524a3 3 0 1 0-1.6 4.3" />
+            </svg>
+            <span class="badge-role-tag lucide-tag">⚡ 介面線性</span>
+          </a>
+        </div>
+        <div class="mascot-name">敏捷白兔 🐇</div>
+        <div class="mascot-project">Skills Registry (共享技能登錄庫)</div>
+        <div class="mascot-desc"><strong>宏觀</strong>以躍動白兔徽章呈現技能探索入口；<strong>微觀</strong>以 Lucide 白兔標示搜尋、分類與技能瀏覽功能。</div>
+      </div>
     </div>
 
     <!-- SECTION 2: MERGED PALETTE, TYPOGRAPHY & LIVE COMPONENT PREVIEWS (1, 1, 1, 1, 1, 1, 1, 1, 1 LAYOUT) -->
     <div class="section-title">🎨 2. 色彩調性、專屬字體與真實元件展示 (Color, Typography & Live Previews)</div>
-    <div class="section-desc">以白底為基準（White Basis），將十大兄弟專案的精準品牌色彩光譜、人文與科技專屬字體，與真實落地之 UI 實體元件緊密結合，並提供直達各站點的即時連線網址。</div>
+    <div class="section-desc">以白底為基準（White Basis），將十一個兄弟專案的精準品牌色彩光譜、人文與科技專屬字體，與真實落地之 UI 實體元件緊密結合，並提供直達各站點的即時連線網址。</div>
 
     <div class="merged-ecosystem-grid">
 
@@ -4940,11 +5003,92 @@
         </div>
       </div>
 
+      <!-- CARD 11: Skills Registry -->
+      <div class="merged-project-card">
+        <div class="project-header-bar">
+          <div class="project-identity">
+            <svg class="ux-icon ux-icon-lg ux-icon-rabbit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M13 16a3 3 0 0 1 2.24 5" /><path d="M18 12h.01" /><path d="M18 21h-8a4 4 0 0 1-4-4 7 7 0 0 1 7-7h.2L9.6 6.4a1 1 0 1 1 2.8-2.8L15.8 7h.2c3.3 0 6 2.7 6 6v1a2 2 0 0 1-2 2h-1a3 3 0 0 0-3 3" /><path d="M20 8.54V4a2 2 0 1 0-4 0v3" /><path d="M7.612 12.524a3 3 0 1 0-1.6 4.3" />
+            </svg>
+            <div class="project-title-group">
+              <div class="project-name">Skills Registry · 共享技能登錄庫</div>
+              <div class="project-category">跨儲存庫收集、版本化與重用的技能目錄</div>
+            </div>
+          </div>
+          <a href="https://github.com/wenchiehlee/skills" target="_blank" rel="noopener noreferrer" class="live-url-pill" style="background: #ecfdf5; color: #047857; border-color: #a7f3d0;" title="造訪 Skills Registry 儲存庫">
+            <span>github.com/wenchiehlee/skills</span><span>↗</span>
+          </a>
+        </div>
+
+        <div class="specs-section">
+          <div class="specs-top-row">
+            <span class="specs-badge-label">🎨 品牌色彩光譜</span>
+            <div class="matrix-swatches">
+              <div class="swatch" style="background: #059669;" title="Primary: #059669 (Registry Emerald)"></div>
+              <div class="swatch" style="background: #34d399;" title="Accent: #34d399 (Agile Mint)"></div>
+              <div class="swatch" style="background: #ecfdf5;" title="Surface: #ecfdf5 (Mint Surface)"></div>
+            </div>
+          </div>
+          <div class="font-sample-box">
+            <div class="font-name-tag"><span>共享技能索引與版本資訊</span><span>Inter + JetBrains Mono + Noto Sans TC</span></div>
+            <div class="font-preview-text" style="color: #047857;">集中探索可重用技能，查看用途、分類、版本與已知部署專案。</div>
+          </div>
+        </div>
+
+        <div class="live-preview-section">
+          <div class="preview-section-header">⚡ Skills Registry 網站介面草圖</div>
+          <div class="skills-registry-preview">
+            <div class="skills-registry-topbar">
+              <div class="skills-registry-brand"><img src="./tokens/icons/modern-emblem/emblem-rabbit.svg" alt="" /> Skills Registry</div>
+              <div class="skills-registry-actions">
+                <a class="skills-registry-link" href="https://github.com/wenchiehlee/skills" target="_blank" rel="noopener noreferrer">索引 YAML ↗</a>
+                <a class="skills-registry-link" href="https://github.com/wenchiehlee/skills" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              </div>
+            </div>
+            <div class="skills-registry-hero">
+              <div><h3>技能登錄庫</h3><p>從多個專案集中探索與重用經過版本管理的技能。</p></div>
+              <img src="./tokens/icons/modern-emblem/emblem-rabbit.svg" alt="敏捷白兔" style="width: 92px; height: 92px; object-fit: contain;" />
+            </div>
+            <div class="skills-registry-search">⌕　搜尋技能名稱、用途或關鍵字…</div>
+            <div class="skills-registry-stats">
+              <span class="skills-stat"><strong>64</strong> 項技能</span>
+              <span class="skills-stat"><strong>common</strong> 技能群組</span>
+              <span class="skills-stat">索引更新 <strong>2026-10-14</strong></span>
+            </div>
+            <div class="skills-registry-filters">
+              <span class="skills-filter active">全部</span><span class="skills-filter">basic</span><span class="skills-filter">document</span><span class="skills-filter">financial-data</span><span class="skills-filter">financial-strategy</span><span class="skills-filter">server</span>
+            </div>
+            <div class="skills-registry-list">
+              <article class="skills-entry">
+                <h4>skill-llm-api-client</h4><div class="skills-card-meta"><span>library</span><span>v1.0.8</span></div>
+                <p>統一的 LLM 客戶端，支援多供應商呼叫與自動備援。</p>
+                <div class="skills-card-footer"><span>部署於 8 個 repo</span><a href="https://github.com/wenchiehlee/skills/tree/main/common/skill-llm-api-client" target="_blank" rel="noopener noreferrer">技能詳情 →</a></div>
+              </article>
+              <article class="skills-entry">
+                <h4>skill-mlx-api-client-ocr</h4><div class="skills-card-meta"><span>document</span><span>v1.8.0</span></div>
+                <p>將 PDF 或圖片轉錄為 Markdown，供文件分析使用。</p>
+                <div class="skills-card-footer"><span>部署於 6 個 repo</span><a href="https://github.com/wenchiehlee/skills/tree/main/common/skill-mlx-api-client-ocr" target="_blank" rel="noopener noreferrer">技能詳情 →</a></div>
+              </article>
+              <article class="skills-entry">
+                <h4>skill-container-manager-orchestrator</h4><div class="skills-card-meta"><span>server</span><span>v1.0.0</span></div>
+                <p>跨平台容器管理、遠端協調與 GitOps 維運。</p>
+                <div class="skills-card-footer"><span>部署於 5 個 repo</span><a href="https://github.com/wenchiehlee/skills/tree/main/common/skill-container-manager-orchestrator" target="_blank" rel="noopener noreferrer">技能詳情 →</a></div>
+              </article>
+              <article class="skills-entry">
+                <h4>skill-stock-topcrash</h4><div class="skills-card-meta"><span>financial-strategy</span><span>v1.0.2</span></div>
+                <p>整理指數或個股的崩盤事件、風險情境與恢復天數。</p>
+                <div class="skills-card-footer"><span>部署於 3 個 repo</span><a href="https://github.com/wenchiehlee/skills/tree/main/common/skill-stock-topcrash" target="_blank" rel="noopener noreferrer">技能詳情 →</a></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <!-- SECTION 3: VECTOR SCALE LADDER (WHITE BASIS) -->
     <div class="section-title">📐 3. 向量尺寸梯階測試 (14px ~ 64px)</div>
-    <div class="section-desc">驗證十大幾何吉祥物自桌面小圖示 (14px) 至客廳電視大螢幕 (64px) 之邊角清晰度與筆畫比例。</div>
+    <div class="section-desc">驗證十二個端點吉祥物自桌面小圖示 (14px) 至客廳電視大螢幕 (64px) 之邊角清晰度與筆畫比例。</div>
     <div class="scale-row">
       <div class="scale-item">
         <svg class="ux-icon ux-icon-xs ux-icon-deer"><use href="#icon-deer-life"></use></svg>
@@ -4986,6 +5130,12 @@
       <div class="scale-item">
         <svg class="ux-icon ux-icon-xl ux-icon-squirrel"><use href="#icon-squirrel-tagger"></use></svg>
         <span>48px (採集松鼠)</span>
+      </div>
+      <div class="scale-item">
+        <svg class="ux-icon ux-icon-xl ux-icon-rabbit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M13 16a3 3 0 0 1 2.24 5" /><path d="M18 12h.01" /><path d="M18 21h-8a4 4 0 0 1-4-4 7 7 0 0 1 7-7h.2L9.6 6.4a1 1 0 1 1 2.8-2.8L15.8 7h.2c3.3 0 6 2.7 6 6v1a2 2 0 0 1-2 2h-1a3 3 0 0 0-3 3" /><path d="M20 8.54V4a2 2 0 1 0-4 0v3" /><path d="M7.612 12.524a3 3 0 1 0-1.6 4.3" />
+        </svg>
+        <span>48px (敏捷白兔)</span>
       </div>
       <div class="scale-item">
         <svg class="ux-icon ux-icon-tv ux-icon-sentinel"><use href="#icon-sentinel-tv"></use></svg>
