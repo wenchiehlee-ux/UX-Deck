@@ -109,7 +109,7 @@ views:
               - type: calendar
                 title: "📅 今日家庭行程 (Family Schedule)"
                 entities:
-                  - calendar.timetree_schedule # 請替換為您的行事曆實體
+                  - calendar.timetree # 部署平台實體
                 initial_view: dayGridDay
                 card_mod:
                   style: |

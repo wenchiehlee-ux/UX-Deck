@@ -92,11 +92,11 @@
     - platform: calendar
       event: start
       offset: "-00:15:00"
-      entity_id: calendar.timetree_schedule  # 請替換為您的行事曆實體（如 calendar.family / calendar.personal）
+      entity_id: calendar.timetree  # 部署平台對齊實體：TimeTree
       id: "calendar_upcoming_event"
     # 觸發情境 C：上午電視開機喚醒時，若今天有排程則主動播報
     - platform: state
-      entity_id: media_player.android_tv_1f
+      entity_id: media_player.ke_ting_de_dian_shi
       to: "on"
       id: "tv_morning_turn_on"
   condition:
