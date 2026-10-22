@@ -198,7 +198,7 @@ master_animals = [
         'status': '✅ 已上線：Skills Registry',
         'category': 'active',
         'color': '#059669',
-        'desc': '長耳俐落、表情親切，象徵快速探索技能、分類知識與跨專案重用。',
+        'desc': '耳尖後掠、四肢舒展的躍進姿態，象徵快速探索技能、分類知識與跨專案重用。',
         'lucide_file': 'lucide-rabbit.svg',
         'emblem_file': 'emblem-rabbit.svg'
     },
