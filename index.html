@@ -399,6 +399,10 @@
     .skills-registry-brand { gap: 10px; font-weight: 800; color: #065f46; }
     .skills-registry-brand img { width: 34px; height: 34px; object-fit: contain; }
     .skills-registry-actions { gap: 8px; flex-wrap: wrap; }
+    .skills-language-toggle { display: inline-flex; padding: 2px; gap: 2px; border: 1px solid #a7f3d0; border-radius: 999px; background: #fff; }
+    .skills-language-toggle button { border: 0; border-radius: 999px; padding: 4px 8px; background: transparent; color: #047857; font: 700 .66rem "Inter", "Noto Sans TC", sans-serif; cursor: pointer; }
+    .skills-language-toggle button[aria-pressed="true"] { background: #059669; color: #fff; }
+    .skills-language-toggle button:focus-visible { outline: 2px solid #047857; outline-offset: 2px; }
     .skills-registry-link { color: #047857; text-decoration: none; font-size: .78rem; font-weight: 700; padding: 6px 10px; border: 1px solid #a7f3d0; border-radius: 999px; background: #fff; }
     .skills-registry-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; padding: 18px 20px; border: 1px solid #d1fae5; border-radius: 14px; background: linear-gradient(115deg, #fff 0%, #ecfdf5 100%); }
     .skills-registry-hero h3 { font-size: clamp(1.1rem, 2vw, 1.45rem); color: #064e3b; margin-bottom: 4px; }
@@ -5037,47 +5041,51 @@
 
         <div class="live-preview-section">
           <div class="preview-section-header">⚡ Skills Registry 網站介面草圖</div>
-          <div class="skills-registry-preview">
+          <div class="skills-registry-preview" id="skills-registry-preview" lang="zh-TW">
             <div class="skills-registry-topbar">
               <div class="skills-registry-brand"><img src="./tokens/icons/modern-emblem/emblem-rabbit.svg" alt="" /> Skills Registry</div>
               <div class="skills-registry-actions">
-                <a class="skills-registry-link" href="https://github.com/wenchiehlee/skills" target="_blank" rel="noopener noreferrer">索引 YAML ↗</a>
+                <div class="skills-language-toggle" role="group" aria-label="Language / 語言">
+                  <button type="button" data-skills-lang="zh-TW" aria-pressed="true">繁中</button>
+                  <button type="button" data-skills-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <a class="skills-registry-link" href="https://github.com/wenchiehlee/skills/blob/main/skills-index.yaml" target="_blank" rel="noopener noreferrer"><span data-skills-zh="索引 YAML" data-skills-en="Skills index">索引 YAML</span> ↗</a>
                 <a class="skills-registry-link" href="https://github.com/wenchiehlee/skills" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
               </div>
             </div>
             <div class="skills-registry-hero">
-              <div><h3>技能登錄庫</h3><p>從多個專案集中探索與重用經過版本管理的技能。</p></div>
-              <img src="./tokens/icons/modern-emblem/emblem-rabbit.svg" alt="敏捷白兔" style="width: 92px; height: 92px; object-fit: contain;" />
+              <div><h3 data-skills-zh="技能登錄庫" data-skills-en="Reusable Skills Registry">技能登錄庫</h3><p data-skills-zh="從多個專案集中探索與重用經過版本管理的技能。" data-skills-en="Discover and reuse versioned skills collected from projects across the ecosystem.">從多個專案集中探索與重用經過版本管理的技能。</p></div>
+              <img src="./tokens/icons/modern-emblem/emblem-rabbit.svg" alt="Agile Rabbit / 敏捷白兔" style="width: 92px; height: 92px; object-fit: contain;" />
             </div>
-            <div class="skills-registry-search">⌕　搜尋技能名稱、用途或關鍵字…</div>
+            <div class="skills-registry-search">⌕　<span data-skills-zh="搜尋技能名稱、用途或關鍵字…" data-skills-en="Search skills by name, purpose, or keyword…">搜尋技能名稱、用途或關鍵字…</span></div>
             <div class="skills-registry-stats">
-              <span class="skills-stat"><strong>64</strong> 項技能</span>
-              <span class="skills-stat"><strong>common</strong> 技能群組</span>
-              <span class="skills-stat">索引更新 <strong>2026-10-14</strong></span>
+              <span class="skills-stat"><strong>64</strong> <span data-skills-zh="項技能" data-skills-en="skills">項技能</span></span>
+              <span class="skills-stat"><strong>common</strong> <span data-skills-zh="技能群組" data-skills-en="group">技能群組</span></span>
+              <span class="skills-stat"><span data-skills-zh="索引更新" data-skills-en="Index updated">索引更新</span> <strong>2026-10-14</strong></span>
             </div>
             <div class="skills-registry-filters">
-              <span class="skills-filter active">全部</span><span class="skills-filter">basic</span><span class="skills-filter">document</span><span class="skills-filter">financial-data</span><span class="skills-filter">financial-strategy</span><span class="skills-filter">server</span>
+              <span class="skills-filter active" data-skills-zh="全部" data-skills-en="All">全部</span><span class="skills-filter">basic</span><span class="skills-filter">document</span><span class="skills-filter">financial-data</span><span class="skills-filter">financial-strategy</span><span class="skills-filter">server</span>
             </div>
             <div class="skills-registry-list">
               <article class="skills-entry">
                 <h4>skill-llm-api-client</h4><div class="skills-card-meta"><span>library</span><span>v1.0.8</span></div>
-                <p>統一的 LLM 客戶端，支援多供應商呼叫與自動備援。</p>
-                <div class="skills-card-footer"><span>部署於 8 個 repo</span><a href="https://github.com/wenchiehlee/skills/tree/main/common/skill-llm-api-client" target="_blank" rel="noopener noreferrer">技能詳情 →</a></div>
+                <p data-skills-zh="統一的 LLM 客戶端，支援多供應商呼叫與自動備援。" data-skills-en="A unified LLM client with multi-provider support and automatic fallback.">統一的 LLM 客戶端，支援多供應商呼叫與自動備援。</p>
+                <div class="skills-card-footer"><span><span data-skills-zh="部署於" data-skills-en="Used by">部署於</span> 8 <span data-skills-zh="個 repo" data-skills-en="repos">個 repo</span></span><a href="https://github.com/wenchiehlee/skills/tree/main/common/skill-llm-api-client" target="_blank" rel="noopener noreferrer"><span data-skills-zh="技能詳情" data-skills-en="Details">技能詳情</span> →</a></div>
               </article>
               <article class="skills-entry">
                 <h4>skill-mlx-api-client-ocr</h4><div class="skills-card-meta"><span>document</span><span>v1.8.0</span></div>
-                <p>將 PDF 或圖片轉錄為 Markdown，供文件分析使用。</p>
-                <div class="skills-card-footer"><span>部署於 6 個 repo</span><a href="https://github.com/wenchiehlee/skills/tree/main/common/skill-mlx-api-client-ocr" target="_blank" rel="noopener noreferrer">技能詳情 →</a></div>
+                <p data-skills-zh="將 PDF 或圖片轉錄為 Markdown，供文件分析使用。" data-skills-en="Transcribe PDFs or images into Markdown for document analysis.">將 PDF 或圖片轉錄為 Markdown，供文件分析使用。</p>
+                <div class="skills-card-footer"><span><span data-skills-zh="部署於" data-skills-en="Used by">部署於</span> 6 <span data-skills-zh="個 repo" data-skills-en="repos">個 repo</span></span><a href="https://github.com/wenchiehlee/skills/tree/main/common/skill-mlx-api-client-ocr" target="_blank" rel="noopener noreferrer"><span data-skills-zh="技能詳情" data-skills-en="Details">技能詳情</span> →</a></div>
               </article>
               <article class="skills-entry">
                 <h4>skill-container-manager-orchestrator</h4><div class="skills-card-meta"><span>server</span><span>v1.0.0</span></div>
-                <p>跨平台容器管理、遠端協調與 GitOps 維運。</p>
-                <div class="skills-card-footer"><span>部署於 5 個 repo</span><a href="https://github.com/wenchiehlee/skills/tree/main/common/skill-container-manager-orchestrator" target="_blank" rel="noopener noreferrer">技能詳情 →</a></div>
+                <p data-skills-zh="跨平台容器管理、遠端協調與 GitOps 維運。" data-skills-en="Cross-platform container management, remote orchestration, and GitOps operations.">跨平台容器管理、遠端協調與 GitOps 維運。</p>
+                <div class="skills-card-footer"><span><span data-skills-zh="部署於" data-skills-en="Used by">部署於</span> 5 <span data-skills-zh="個 repo" data-skills-en="repos">個 repo</span></span><a href="https://github.com/wenchiehlee/skills/tree/main/common/skill-container-manager-orchestrator" target="_blank" rel="noopener noreferrer"><span data-skills-zh="技能詳情" data-skills-en="Details">技能詳情</span> →</a></div>
               </article>
               <article class="skills-entry">
                 <h4>skill-stock-topcrash</h4><div class="skills-card-meta"><span>financial-strategy</span><span>v1.0.2</span></div>
-                <p>整理指數或個股的崩盤事件、風險情境與恢復天數。</p>
-                <div class="skills-card-footer"><span>部署於 3 個 repo</span><a href="https://github.com/wenchiehlee/skills/tree/main/common/skill-stock-topcrash" target="_blank" rel="noopener noreferrer">技能詳情 →</a></div>
+                <p data-skills-zh="整理指數或個股的崩盤事件、風險情境與恢復天數。" data-skills-en="Summarize market crash events, risk context, and recovery time for an index or stock.">整理指數或個股的崩盤事件、風險情境與恢復天數。</p>
+                <div class="skills-card-footer"><span><span data-skills-zh="部署於" data-skills-en="Used by">部署於</span> 3 <span data-skills-zh="個 repo" data-skills-en="repos">個 repo</span></span><a href="https://github.com/wenchiehlee/skills/tree/main/common/skill-stock-topcrash" target="_blank" rel="noopener noreferrer"><span data-skills-zh="技能詳情" data-skills-en="Details">技能詳情</span> →</a></div>
               </article>
             </div>
           </div>
@@ -5224,6 +5232,22 @@
         }
       });
     });
+
+    const skillsRegistryPreview = document.getElementById('skills-registry-preview');
+    if (skillsRegistryPreview) {
+      skillsRegistryPreview.querySelectorAll('[data-skills-lang]').forEach(button => {
+        button.addEventListener('click', () => {
+          const language = button.dataset.skillsLang;
+          skillsRegistryPreview.lang = language;
+          skillsRegistryPreview.querySelectorAll('[data-skills-zh]').forEach(element => {
+            element.textContent = language === 'en' ? element.dataset.skillsEn : element.dataset.skillsZh;
+          });
+          skillsRegistryPreview.querySelectorAll('[data-skills-lang]').forEach(option => {
+            option.setAttribute('aria-pressed', String(option === button));
+          });
+        });
+      });
+    }
   </script>
 </body>
 </html>
