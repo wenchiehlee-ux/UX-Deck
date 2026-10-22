@@ -127,6 +127,45 @@ $body = @{
 Invoke-RestMethod -Uri "http://192.168.31.232:7979/notify" -Method Post -ContentType "application/json" -Body $body
 ```
 
+#### 測試 3：今日行事曆日程提醒 (Calendar Schedule HUD)
+```powershell
+$body = @{
+    duration = 20
+    position = 0
+    backgroundColor = "#00000000"
+    title = ""
+    message = ""
+    media = @{
+        image = @{
+            uri = "http://192.168.31.101:8123/local/ux-deck/huds/calendar.png"
+            width = 480
+        }
+    }
+} | ConvertTo-Json -Depth 5
+
+Invoke-RestMethod -Uri "http://192.168.31.232:7979/notify" -Method Post -ContentType "application/json" -Body $body
+```
+
+---
+
+## ❓ 為什麼 1F 客廳電視看不到行事曆日程？排查與修復手冊
+
+若您在 1F Android TV 沒看到日程推播或看板，請依照以下三點檢查：
+
+### 1. 觸發時機問題（已升級自動化）
+- **原先問題**：舊版自動化規則僅設定 `at: "08:00:00"`（早上 8 點單次觸發）。若 08:00 時電視處於關機/待機狀態，或是您在 08:00 後才開啟電視，電視將不會收到任何日程。
+- **最新解法**：已更新 [`tv_notifications.yaml`](./automations/tv_notifications.yaml)，加入三重智慧觸發：
+  1. ⏰ **晨間固定 08:00 晨報**。
+  2. 📺 **上午時段（07:00 ~ 12:00）電視開機時主動推播** (`media_player.android_tv_1f` 由 `off` 變 `on`)。
+  3. 🔔 **日曆行程即將開始前 15 分鐘動態提醒** (`platform: calendar`, `event: start`, `offset: -00:15:00`)。
+
+### 2. 實體電視與網路連線驗證
+- **測試命令**：直接在電腦 PowerShell 執行上述【測試 3】，如果 1F 電視右上角立即彈出透明圓角日曆卡片，表示 PiPup 服務正常、HA 圖片路徑正確（`http://192.168.31.101:8123/local/ux-deck/huds/calendar.png`）。
+- **PiPup 權限**：若電視沒反應，請確認 Android TV 上 PiPup App 已取得 **Display over other apps (顯示在其他應用程式上層)** 權限，且背景無被系統電池最佳化殺除。
+
+### 3. 客廳大螢幕儀表板看板 (Lovelace View)
+- 若您是在電視瀏覽器或 HA 看板中尋找日曆，請確認 [`dashboards/tv_dashboard.yaml`](./dashboards/tv_dashboard.yaml) 已載入最新的 10-foot 高對比家庭日程卡片模組。
+
 ---
 
 ## 📂 檔案目錄架構 (Directory Layout)

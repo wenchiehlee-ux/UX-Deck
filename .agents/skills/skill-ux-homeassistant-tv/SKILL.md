@@ -70,14 +70,14 @@ This skill provides design guidelines, CSS specifications, PiPup REST API payloa
   "message": "",
   "media": {
     "image": {
-      "uri": "http://192.168.31.101:8123/local/huds/doorbell.png",
+      "uri": "http://192.168.31.101:8123/local/ux-deck/huds/doorbell.png",
       "width": 480
     }
   }
 }
 ```
 
-> **提示**：Home Assistant 可將預渲染之透明 PNG 置於 `/config/www/huds/` 目錄，即可透過 `http://<ha-ip>:8123/local/huds/<scenario>.png` 本地極速提供給 Android TV，無須額外 Python 服務。
+> **提示**：Home Assistant 可將預渲染之透明 PNG 置於 `/config/www/ux-deck/huds/` 目錄，即可透過 `http://<ha-ip>:8123/local/ux-deck/huds/<scenario>.png` 本地極速提供給 Android TV，無須額外 Python 服務。
 
 ### 方案 A：極簡原生直角 Scrim Payload (Mode A)
 

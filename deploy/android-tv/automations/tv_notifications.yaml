@@ -82,15 +82,74 @@
 # ------------------------------------------------------------------------------
 - id: "tv_notify_calendar_schedule"
   alias: "TV HUD: 今日日程提醒"
-  description: "全天行程（早上08:00）或即將到來事件於電視推播"
+  description: "全天行程（早上08:00）、日曆事件即將開始（前15分鐘）、或上午電視開機時主動於客廳電視推播"
   trigger:
+    # 觸發情境 A：每日晨間固定排程
     - platform: time
       at: "08:00:00"
+      id: "morning_schedule"
+    # 觸發情境 B：日曆事件即將開始前 15 分鐘動態觸發
+    - platform: calendar
+      event: start
+      offset: "-00:15:00"
+      entity_id: calendar.timetree_schedule  # 請替換為您的行事曆實體（如 calendar.family / calendar.personal）
+      id: "calendar_upcoming_event"
+    # 觸發情境 C：上午電視開機喚醒時，若今天有排程則主動播報
+    - platform: state
+      entity_id: media_player.android_tv_1f
+      to: "on"
+      id: "tv_morning_turn_on"
+  condition:
+    # 電視開機時僅在上午 07:00 ~ 12:00 播報一次，避免深夜開電視被打擾
+    - condition: or
+      conditions:
+        - condition: trigger
+          id: ["morning_schedule", "calendar_upcoming_event"]
+        - condition: and
+          conditions:
+            - condition: trigger
+              id: "tv_morning_turn_on"
+            - condition: time
+              after: "07:00:00"
+              before: "12:00:00"
   action:
+    # 推播至 1F 客廳電視 (192.168.31.232)
     - service: rest_command.pipup_notify_1f
       data:
         payload_json: >-
-          {"duration":20,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar.png","width":480}}}
+          {% if trigger.id == 'calendar_upcoming_event' and trigger.calendar_event is defined %}
+            {
+              "duration": 25,
+              "position": 0,
+              "backgroundColor": "#cc0f172a",
+              "title": "📅 即將到來行程 (15分鐘後)",
+              "titleColor": "#38bdf8",
+              "titleSize": 20,
+              "message": "{{ trigger.calendar_event.summary }} ({{ as_timestamp(trigger.calendar_event.start) | timestamp_custom('%H:%M') }})",
+              "messageColor": "#f8fafc",
+              "messageSize": 16,
+              "media": {
+                "image": {
+                  "uri": "http://192.168.31.101:8123/local/ux-deck/huds/calendar.png",
+                  "width": 120
+                }
+              }
+            }
+          {% else %}
+            {
+              "duration": 20,
+              "position": 0,
+              "backgroundColor": "#00000000",
+              "title": "",
+              "message": "",
+              "media": {
+                "image": {
+                  "uri": "http://192.168.31.101:8123/local/ux-deck/huds/calendar.png",
+                  "width": 480
+                }
+              }
+            }
+          {% endif %}
 
 # ------------------------------------------------------------------------------
 # 6. 設備低電量警告 (Battery Low Warning)

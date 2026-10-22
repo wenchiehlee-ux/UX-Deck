@@ -104,3 +104,36 @@ views:
                       service: lock.unlock
                       target:
                         entity_id: lock.front_door_lock
+
+              # 3. 10 英呎電視高對比家庭行事曆卡片 (Glanceable 10-Foot Calendar)
+              - type: calendar
+                title: "📅 今日家庭行程 (Family Schedule)"
+                entities:
+                  - calendar.timetree_schedule # 請替換為您的行事曆實體
+                initial_view: dayGridDay
+                card_mod:
+                  style: |
+                    ha-card {
+                      background: rgba(15, 23, 42, 0.65) !important;
+                      border: 1.5px solid rgba(56, 189, 248, 0.35) !important;
+                      border-radius: 20px !important;
+                      backdrop-filter: blur(20px);
+                      -webkit-backdrop-filter: blur(20px);
+                      padding: 12px 16px;
+                      margin-top: 16px;
+                    }
+                    ha-card:focus, ha-card:focus-within {
+                      border-color: #38bdf8 !important;
+                      box-shadow: 0 0 25px rgba(56, 189, 248, 0.6) !important;
+                    }
+                    .fc-toolbar-title {
+                      font-size: 20px !important;
+                      font-weight: 700 !important;
+                      color: #38bdf8 !important;
+                    }
+                    .fc-event {
+                      font-size: 16px !important;
+                      font-weight: 600 !important;
+                      border-radius: 8px !important;
+                      padding: 4px 8px !important;
+                    }
