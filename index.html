@@ -5236,18 +5236,39 @@
 
     const skillsRegistryPreview = document.getElementById('skills-registry-preview');
     if (skillsRegistryPreview) {
+      const localeStorageKey = 'ux-language-preference';
+      const getInitialLanguage = () => {
+        try {
+          const savedLanguage = localStorage.getItem(localeStorageKey);
+          if (savedLanguage === 'zh-TW' || savedLanguage === 'en') return savedLanguage;
+        } catch (_) {
+          // Continue with the browser locale when storage is unavailable.
+        }
+        const browserLanguage = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+        return /^zh(?:-|$)/i.test(browserLanguage) ? 'zh-TW' : 'en';
+      };
+      const setPreviewLanguage = (language, persist = true) => {
+        skillsRegistryPreview.lang = language;
+        skillsRegistryPreview.querySelectorAll('[data-skills-zh]').forEach(element => {
+          element.textContent = language === 'en' ? element.dataset.skillsEn : element.dataset.skillsZh;
+        });
+        skillsRegistryPreview.querySelectorAll('[data-skills-lang]').forEach(option => {
+          option.setAttribute('aria-pressed', String(option.dataset.skillsLang === language));
+        });
+        if (persist) {
+          try {
+            localStorage.setItem(localeStorageKey, language);
+          } catch (_) {
+            // The language still changes for this visit if storage is unavailable.
+          }
+        }
+      };
       skillsRegistryPreview.querySelectorAll('[data-skills-lang]').forEach(button => {
         button.addEventListener('click', () => {
-          const language = button.dataset.skillsLang;
-          skillsRegistryPreview.lang = language;
-          skillsRegistryPreview.querySelectorAll('[data-skills-zh]').forEach(element => {
-            element.textContent = language === 'en' ? element.dataset.skillsEn : element.dataset.skillsZh;
-          });
-          skillsRegistryPreview.querySelectorAll('[data-skills-lang]').forEach(option => {
-            option.setAttribute('aria-pressed', String(option === button));
-          });
+          setPreviewLanguage(button.dataset.skillsLang);
         });
       });
+      setPreviewLanguage(getInitialLanguage(), false);
     }
   </script>
 </body>
