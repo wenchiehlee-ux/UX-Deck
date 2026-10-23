@@ -195,7 +195,7 @@ master_animals = [
         'id': 'rabbit',
         'name_zh': '敏捷白兔',
         'name_en': 'Agile Rabbit',
-        'status': '✅ 已上線：Skills Registry',
+        'status': '✅ 已上線：Skill-Deck',
         'category': 'active',
         'color': '#059669',
         'desc': '流暢的實心剪影、後掠長耳與舒展步伐，象徵快速探索技能、分類知識與跨專案重用。',
