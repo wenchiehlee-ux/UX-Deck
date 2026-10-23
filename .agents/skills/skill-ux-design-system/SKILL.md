@@ -1,6 +1,6 @@
 ---
 name: skill-ux-design-system
-version: 1.1.0
+version: 1.2.0
 description: >-
   Master UX Design System and unified visual language across sibling repositories
   (mkdocs-life, GoogleAlertManager, YoutubeAudio.Fetch, mkdocs-investment, HomeAssistant TV).
@@ -10,7 +10,7 @@ description: >-
 
 # UX-Deck Master Design System
 
-> **Version**: `1.1.0` | **Updated**: `2026-10-18` | **Release Note**: 系統矩陣規格同步：更新 Android TV 10-foot HUD 為 60% 半透明 Cyber Dark Slate (`#660f172a`) 與右上角錨點 (`position: 0`)
+> **Version**: `1.2.0` | **Updated**: `2026-10-23` | **Release Note**: 系統矩陣規格同步：更新 Android TV 10-foot HUD 為 60% 半透明 Cyber Dark Slate (`#660f172a`) 與右上角錨點 (`position: 0`)；新增繁中/英文瀏覽器語系偵測與偏好記憶規則
 
 The UX-Deck Design System provides a cohesive visual architecture across our ecosystem of applications while preserving each project's domain-specific identity and functional needs.
 
@@ -60,16 +60,9 @@ When applying UX enhancements to any sibling repository:
    - Every list, table, or dashboard view must include designed empty states (explanatory illustration or icon + clear action button) and skeleton loading states.
 4. **Adaptive Responsiveness**:
    - Mobile-first responsiveness from `360px` up to `4K` displays (with Android TV specialized for `1920x1080` / `3840x2160`).
-5. **Animal Iconography & Dual-Tier Mascot Architecture (雙軌圖標與吉祥物體系)**:
-   - **Modern Emblem 現代商標徽章 (宏觀品牌層 / 80-160px)**:
-     - 具備多色向量層次、品牌字標與背景盾牌/旭日圓盤。
-     - 專用於專案首頁 Hero 封面、GitHub README 頂部門面、About 系統關於彈窗與官方研報認證印鑑。
-   - **Lucide 極簡幾何線性圖標 (微觀介面層 / 16-24px)**:
-     - 遵循 `24x24` 向量網格 (`currentColor`、`1.8px` 線寬，電視端 `2.25px`)。
-     - 專用於高密度導航欄、數據表格狀態指示、篩選 Chip、按鈕圖標與側邊欄。
-   - **雙軌同源同根哲學**:
-     - 兩者共享相同的幾何特徵與神態姿態（如朝天狂牛角、知更鳥高翹尾、王者林鹿角、黑天鵝曜石羽翼），形成「遠看具品牌紋章威儀，近看具極簡操作效率」之完整閉環。
-   - 完整動物圖鑑與三大風格可參閱 [preview_animal_styles.html](../../preview_animal_styles.html) 與 [Animal Iconography Guide](./references/animal-iconography.md)。
+5. **Animal Iconography & Mascot Refinements**:
+   - Every sibling application features a distinct, mathematically aligned animal mascot on a `24x24` vector grid (`currentColor`, `1.75px` stroke width, `2.25px` on TV).
+   - Read the complete [Animal Iconography Guide](./references/animal-iconography.md) and use the shared SVG sprite [animal-icons.svg](../../tokens/icons/animal-icons.svg).
 
 ---
 
@@ -82,3 +75,13 @@ When working on a specific sibling repo, activate its dedicated skill:
 - [skill-ux-youtube-audio-fetch](../skill-ux-youtube-audio-fetch/SKILL.md): Dark obsidian media player, waveform bars, download progress.
 - [skill-ux-mkdocs-investment](../skill-ux-mkdocs-investment/SKILL.md): Fintech dark/slate theme, KPI cards, sticky data tables.
 - [skill-ux-homeassistant-tv](../skill-ux-homeassistant-tv/SKILL.md): 10-foot UI popups, D-pad focus outlines, frosted glass HUD.
+
+## Shared Language Behavior / 共用語言行為
+
+Apply this policy whenever this skill is used to design or implement user-facing interfaces:
+
+- Provide **English (`en`) and Traditional Chinese (`zh-TW`)** for interface labels, controls, navigation, and system messages.
+- On first visit, use a previously saved valid user choice if available. Otherwise inspect the browser's primary locale (`navigator.languages[0]`, falling back to `navigator.language`): any locale beginning with `zh` selects `zh-TW`; every other locale selects `en`.
+- Keep an accessible, visible language switch. When the user changes language, persist `zh-TW` or `en` in `localStorage` under `ux-language-preference`, restore that choice on later visits, and update the document's `lang` attribute. Never replace a saved user choice with browser detection.
+- Do not machine-translate skill descriptions, user-authored text, names, tickers, units, or technical values just because the interface language changes. Translate interface copy where approved translations exist; preserve source content otherwise. Use locale-aware date/number formatting only when it does not alter domain meaning.
+- For non-browser surfaces (such as Android TV notifications, generated images, and PDFs), use the host application's saved language preference. Do not assume browser APIs exist there; offer locale selection in the companion app or settings when that surface needs its own choice.
