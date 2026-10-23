@@ -11,7 +11,7 @@ def read_svg(path):
             return content.replace('<?xml version="1.0" encoding="utf-8"?>', '')
     return None
 
-# Section 1: Active Endpoints (12 animals)
+# Section 1: Active Endpoints (13 animals)
 master_animals = [
     {
         'id': 'deer',
@@ -45,6 +45,17 @@ master_animals = [
         'desc': '象徵深海聲納悠揚共鳴、沉浸式水下聲學與多模態音頻串流。',
         'lucide_file': 'lucide-whale.svg',
         'emblem_file': 'emblem-whale.svg'
+    },
+    {
+        'id': 'docker_whale',
+        'name_zh': '貨櫃藍鯨',
+        'name_en': 'Container Blue Whale',
+        'status': '✅ 已上線：Docker-Deck',
+        'category': 'active',
+        'color': '#2496ed',
+        'desc': '以背負貨櫃的藍鯨連結 Docker 映像探索、版本管理與容器啟動。',
+        'lucide_file': 'lucide-docker-whale.svg',
+        'emblem_file': 'emblem-docker-whale.svg'
     },
     {
         'id': 'bull',
@@ -711,10 +722,10 @@ html_content = f'''<!DOCTYPE html>
 '''
 
 # Write to both filenames so that both work seamlessly
-with open('preview_animal_styles.html', 'w', encoding='utf-8') as f:
+with open('preview_animal_styles.html', 'w', encoding='utf-8', newline='\r\n') as f:
     f.write(html_content)
 
-with open('preview_3034_and_lucide.html', 'w', encoding='utf-8') as f:
+with open('preview_3034_and_lucide.html', 'w', encoding='utf-8', newline='\r\n') as f:
     f.write(html_content)
 
 print('Updated both preview_animal_styles.html and preview_3034_and_lucide.html with complete Chibi Lucide pairings!')

@@ -27,10 +27,11 @@
 tokens/icons/
 ├── README.md                      # 本說明文件
 ├── animal-icons.svg               # SVG Symbol 集合檔案 (供 HTML <use> 直接引用)
-├── lucide/                        # 18 款 Lucide 極簡線性 SVG
+├── lucide/                        # 24 款 Lucide 極簡線性 SVG
 │   ├── lucide-deer.svg            # (已使用: mkdocs-life 幾何林鹿)
 │   ├── lucide-bird.svg            # (已使用: GoogleAlertManager 破曉鳥)
 │   ├── lucide-whale.svg           # (已使用: YoutubeAudio.Fetch 座頭鯨)
+│   ├── lucide-docker-whale.svg    # (已使用: Docker-Deck 貨櫃藍鯨)
 │   ├── lucide-bull.svg            # (已使用: mkdocs-investment 守護牛)
 │   ├── lucide-owl.svg             # (已使用: My-TW-Coverage 萌萌鴞)
 │   ├── lucide-cat.svg             # (已使用: NAS 守護貓)
@@ -47,8 +48,9 @@ tokens/icons/
 │   ├── lucide-camel.svg           # (候選: 耐力駱駝)
 │   └── lucide-bear.svg            # (候選: 防禦巨熊)
 │
-├── modern-emblem/                 # 9 款 3034.eps 現代商標徽章 SVG (無太陽版雄鷹)
+├── modern-emblem/                 # 3034.eps 與端點專用現代商標徽章 SVG (無太陽版雄鷹)
 │   ├── emblem-swan.svg
+│   ├── emblem-docker-whale.svg   # Docker-Deck 貨櫃藍鯨
 │   ├── emblem-rhino.svg
 │   ├── emblem-eagle.svg           # (已剔除背景太陽日輪)
 │   ├── emblem-eagle-pure.svg      # (純雄鷹主體向量，無字無太陽)

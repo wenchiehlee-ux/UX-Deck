@@ -1,6 +1,6 @@
 # Animal Iconography & Micro-Icon Refinements
 
-This document establishes the animal iconography language across all five sibling repositories, balancing emotional connection, functional clarity, and cross-platform fidelity.
+This document establishes the animal iconography language across sibling repositories and the UX-Deck portal, balancing emotional connection, functional clarity, and cross-platform fidelity.
 
 ```
                    +---------------------------------------+
@@ -11,7 +11,7 @@ This document establishes the animal iconography language across all five siblin
     +------------------+---------------+---------------+------------------+
     |                  |               |               |                  |
     v                  v               v               v                  v
-[Forest Deer 🦌]  [Falcon 🦅]     [Whale 🐋]      [Bull 🐂/Bear 🐻]  [Sentinel 🐕]
+[Forest Deer 🦌]  [Falcon 🦅]     [Whale 🐋]   [Docker Whale 🐳]  [Bull 🐂/Bear 🐻]  [Sentinel 🐕]
 mkdocs-life       AlertManager    YoutubeAudio    mkdocs-invest      HomeAssistant TV
 (Mindful Peace)   (Swift Radar)   (Sound Wave)    (Alpha & Risk)     (10-ft Glance)
 ```
@@ -67,7 +67,16 @@ Every icon must adhere to our unified geometric constraints:
 
 ---
 
-### 🐂🐻 4. mkdocs-investment — 幾何折紙公牛與風控熊 (Origami Bull & Defensive Bear)
+### 🐳 4. Docker-Deck — 貨櫃藍鯨 (Container Blue Whale)
+- **Symbol ID**: `#icon-docker-whale`
+- **Archetype**: Container Fleet Carrier & Image Guide.
+- **Visual Design**: A compact whale carrying stacked container blocks, in Docker blue.
+- **Application**:
+  - Docker image catalog identity and repository navigation.
+  - Image tag, freshness, size, and security status cues.
+  - Micro-Interaction: Restrained upward float on hover.
+
+### 🐂🐻 5. mkdocs-investment — 幾何折紙公牛與風控熊 (Origami Bull & Defensive Bear)
 - **Symbol IDs**: `#icon-bull-fintech` / `#icon-bear-defense`
 - **Archetype**: Capital Alpha Driver & Risk Guardian.
 - **Visual Design**:
@@ -80,7 +89,7 @@ Every icon must adhere to our unified geometric constraints:
 
 ---
 
-### 🐕 5. HomeAssistant TV — 客廳守護夜鷹/靈犬 (Living Room Sentinel)
+### 🐕 6. HomeAssistant TV — 客廳守護夜鷹/靈犬 (Living Room Sentinel)
 - **Symbol ID**: `#icon-sentinel-tv`
 - **Archetype**: Faithful Living Room Protector.
 - **Visual Design**: Alert pricked ears, high-contrast oversized eyes optimized for 3–4m viewing, radar broadcast rings above head.
