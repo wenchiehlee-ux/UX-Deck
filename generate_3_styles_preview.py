@@ -11,7 +11,8 @@ def read_svg(path):
             return content.replace('<?xml version="1.0" encoding="utf-8"?>', '')
     return None
 
-# Section 1: Active Endpoints (13 animals)
+# Section 1: Active Endpoints (13 animals - 1:1 aligned with index.html Settled Geometric Mascots)
+# Section 2: Reserves (6 animals)
 master_animals = [
     {
         'id': 'deer',
@@ -19,7 +20,7 @@ master_animals = [
         'name_en': 'Scandinavian Deer',
         'status': '✅ 已上線：mkdocs-life',
         'category': 'active',
-        'color': '#10b981',
+        'color': '#0d9488',
         'desc': '象徵北歐簡約森林生活、生活美學反思與優雅自然沉靜韻律。',
         'lucide_file': 'lucide-deer.svg',
         'emblem_file': 'emblem-deer.svg'
@@ -30,7 +31,7 @@ master_animals = [
         'name_en': 'Alert Falcon / Bird',
         'status': '✅ 已上線：GoogleAlertManager',
         'category': 'active',
-        'color': '#f97316',
+        'color': '#ea580c',
         'desc': '象徵清晨破曉鳴叫報訊、雷達俯瞰與晨光過濾降噪通知。',
         'lucide_file': 'lucide-bird.svg',
         'emblem_file': 'emblem-falcon.svg'
@@ -63,32 +64,21 @@ master_animals = [
         'name_en': 'Fintech Alpha Bull',
         'status': '✅ 已上線：mkdocs-investment (多頭)',
         'category': 'active',
-        'color': '#ef4444',
+        'color': '#dc2626',
         'desc': '象徵華爾街牛市多頭動能、資產成長動能與宏觀主動 Alpha。',
         'lucide_file': 'lucide-bull.svg',
         'emblem_file': 'emblem-bull.svg'
     },
     {
-        'id': 'owl',
-        'name_zh': '拍拍翅萌萌鴞',
-        'name_en': 'Research Owlet',
-        'status': '✅ 已上線：My-TW-Coverage',
+        'id': 'bear',
+        'name_zh': '北歐守護熊',
+        'name_en': 'Scandinavian Guardian Bear',
+        'status': '✅ 已上線：mkdocs-investment (防禦避險)',
         'category': 'active',
-        'color': '#8b5cf6',
-        'desc': '象徵個股深度研究智慧、夜間透視研報先機與萌態啟發。',
-        'lucide_file': 'lucide-owl.svg',
-        'emblem_file': 'emblem-owl.svg'
-    },
-    {
-        'id': 'cat',
-        'name_zh': '敏捷守護貓',
-        'name_en': 'Private Cloud Cat',
-        'status': '✅ 已上線：wenchiehlee.quickconnect.to',
-        'category': 'active',
-        'color': '#0284c7',
-        'desc': '象徵 24/7 私有雲默默巡視守護、輕靈敏捷與 DevOps 容器管理。',
-        'lucide_file': 'lucide-cat.svg',
-        'emblem_file': 'emblem-cat.svg'
+        'color': '#16a34a',
+        'desc': '冬眠防禦步態與厚重巨盾，象徵在極端空頭市場下保全資產價值的堅強防線。',
+        'lucide_file': 'lucide-bear.svg',
+        'emblem_file': 'emblem-bear.svg'
     },
     {
         'id': 'dog_sentinel',
@@ -102,10 +92,32 @@ master_animals = [
         'emblem_file': 'emblem-dog.svg'
     },
     {
+        'id': 'cat',
+        'name_zh': '敏捷守護貓',
+        'name_en': 'Private Cloud Cat',
+        'status': '✅ 已上線：wenchiehlee.quickconnect.to',
+        'category': 'active',
+        'color': '#0284c7',
+        'desc': '象徵 24/7 私有雲默默巡視守護、輕靈敏捷與 DevOps 容器管理。',
+        'lucide_file': 'lucide-cat.svg',
+        'emblem_file': 'emblem-cat.svg'
+    },
+    {
+        'id': 'owl',
+        'name_zh': '拍拍翅萌萌鴞',
+        'name_en': 'Research Owlet',
+        'status': '✅ 已上線：My-TW-Coverage',
+        'category': 'active',
+        'color': '#059669',
+        'desc': '象徵個股深度研究智慧、夜間透視研報先機與萌態啟發。',
+        'lucide_file': 'lucide-owl.svg',
+        'emblem_file': 'emblem-owl.svg'
+    },
+    {
         'id': 'eagle',
-        'name_zh': '破曉雄鷹 / 領航鷹',
+        'name_zh': '領航雄鷹',
         'name_en': 'Sovereign Eagle',
-        'status': '⚡ 整合評選中：InvestorConference',
+        'status': '✅ 已上線：InvestorConference',
         'category': 'active',
         'color': '#22a553',
         'desc': '象徵資本市場破曉領航、宏觀全景高空俯瞰與法人第一手訊息。',
@@ -113,24 +125,13 @@ master_animals = [
         'emblem_file': 'emblem-eagle.svg'
     },
     {
-        'id': 'rhino',
-        'name_zh': '重甲灰犀牛',
-        'name_en': 'Grey Rhino',
-        'status': '⚡ 整合評選中：VIX 波動率雷達',
-        'category': 'active',
-        'color': '#64748b',
-        'desc': '象徵宏觀不可阻擋的巨大衝擊（Grey Rhino）、系統性轉折動能。',
-        'lucide_file': 'lucide-rhino.svg',
-        'emblem_file': 'emblem-rhino.svg'
-    },
-    {
         'id': 'swan',
-        'name_zh': '幾何黑天鵝 / 天鵝',
+        'name_zh': '幾何黑天鵝',
         'name_en': 'Black Swan / Swan',
-        'status': '⚡ 整合評選中：VIX 波動率雷達',
+        'status': '✅ 已上線：VIX (全球波動率與黑天鵝雷達)',
         'category': 'active',
-        'color': '#ef4444',
-        'desc': '象徵極端市場尾端風險（Black Swan）、優雅冷酷與深水突襲。',
+        'color': '#0284c7',
+        'desc': '象徵極端市場尾端風險（Black Swan）、曜石羽翼、優雅冷酷與深水突襲。',
         'lucide_file': 'lucide-swan.svg',
         'emblem_file': 'emblem-swan.svg'
     },
@@ -145,8 +146,19 @@ master_animals = [
         'lucide_file': 'lucide-squirrel.svg',
         'emblem_file': 'emblem-squirrel.svg'
     },
+    {
+        'id': 'rabbit',
+        'name_zh': '敏捷白兔',
+        'name_en': 'Agile Rabbit',
+        'status': '✅ 已上線：Skill-Deck',
+        'category': 'active',
+        'color': '#059669',
+        'desc': '流暢的實心剪影、後掠長耳與舒展步伐，象徵快速探索技能、分類知識與跨專案重用。',
+        'lucide_file': 'lucide-rabbit.svg',
+        'emblem_file': 'emblem-rabbit.svg'
+    },
 
-    # Section 2: 3034 Reserves (7 animals)
+    # Section 2: Modern Emblem & Lucide Reserves (6 animals)
     {
         'id': 'dolphin',
         'name_zh': '飛躍海豚',
@@ -164,7 +176,7 @@ master_animals = [
         'name_en': 'Imperial Lion',
         'status': '📦 備選動物庫存',
         'category': 'reserve',
-        'color': '#eab308',
+        'color': '#d97706',
         'desc': '王者鬃毛與沉穩步態，象徵權威龍頭指標、藍籌企業霸主實力。',
         'lucide_file': 'lucide-lion.svg',
         'emblem_file': 'emblem-lion.svg'
@@ -192,26 +204,15 @@ master_animals = [
         'emblem_file': 'emblem-camel.svg'
     },
     {
-        'id': 'bear',
-        'name_zh': '防禦巨熊',
-        'name_en': 'Defensive Bear',
-        'status': '📦 備選動物庫存 (mkdocs-investment 空頭盾牌)',
+        'id': 'rhino',
+        'name_zh': '重甲灰犀牛',
+        'name_en': 'Grey Rhino',
+        'status': '📦 備選動物庫存',
         'category': 'reserve',
-        'color': '#78350f',
-        'desc': '冬眠防禦步態，象徵在極端空頭市場下保全資產價值的堅強護盾。',
-        'lucide_file': 'lucide-bear.svg',
-        'emblem_file': 'emblem-bear.svg'
-    },
-    {
-        'id': 'rabbit',
-        'name_zh': '敏捷白兔',
-        'name_en': 'Agile Rabbit',
-        'status': '✅ 已上線：Skill-Deck',
-        'category': 'active',
-        'color': '#059669',
-        'desc': '流暢的實心剪影、後掠長耳與舒展步伐，象徵快速探索技能、分類知識與跨專案重用。',
-        'lucide_file': 'lucide-rabbit.svg',
-        'emblem_file': 'emblem-rabbit.svg'
+        'color': '#64748b',
+        'desc': '象徵宏觀不可阻擋的巨大衝擊（Grey Rhino）、系統性轉折動能。',
+        'lucide_file': 'lucide-rhino.svg',
+        'emblem_file': 'emblem-rhino.svg'
     },
     {
         'id': 'turtle',
@@ -219,7 +220,7 @@ master_animals = [
         'name_en': 'Armored Turtle',
         'status': '📦 備選動物庫存',
         'category': 'reserve',
-        'color': '#14b8a6',
+        'color': '#10b981',
         'desc': '極簡幾何切面甲冑，象徵硬體極致安全性、堅不可摧與千年長青。',
         'lucide_file': 'lucide-turtle.svg',
         'emblem_file': 'emblem-turtle.svg'
@@ -310,7 +311,7 @@ def render_section1_2_card(item):
     emblem_box = f'''
       <div class="col-box">
         <div class="col-label">Modern Emblem 徽章</div>
-        <div class="preview-white">
+        <div class="preview-white" style="border: 1px solid {color}33;">
           {emblem_svg}
         </div>
         <div class="col-meta">{item['emblem_file']}</div>
@@ -328,7 +329,7 @@ def render_section1_2_card(item):
     lucide_box = f'''
       <div class="col-box">
         <div class="col-label">Lucide 極簡線性</div>
-        <div class="preview-dark" style="color: {color};">
+        <div class="preview-dark" style="color: {color}; border-color: {color}33; background: {color}0a;">
           {lucide_svg}
         </div>
         <div class="col-meta">{item['lucide_file']}</div>
@@ -340,7 +341,7 @@ def render_section1_2_card(item):
       </div>
     '''
 
-    status_badge_class = 'badge-active' if item['category'] == 'active' else ('badge-eval' if '評選' in item['status'] else 'badge-reserve')
+    status_badge_class = 'badge-active' if item['category'] == 'active' else 'badge-reserve'
 
     return f'''
     <div class="card" data-category="{item['category']}">
@@ -386,7 +387,7 @@ def render_chibi_card(item):
       <div class="compare-row">
         <div class="col-box">
           <div class="col-label">Kawaii Chibi 萌寵</div>
-          <div class="preview-white" style="height: 110px; padding: 6px;">
+          <div class="preview-white" style="height: 110px; padding: 6px; border: 1px solid {color}33;">
             {chibi_svg}
           </div>
           <div class="col-meta">{item['chibi_file']}</div>
@@ -394,7 +395,7 @@ def render_chibi_card(item):
 
         <div class="col-box">
           <div class="col-label">Lucide 極簡線性對照</div>
-          <div class="preview-dark" style="color: {color}; height: 110px;">
+          <div class="preview-dark" style="color: {color}; height: 110px; border-color: {color}33; background: {color}0a;">
             {lucide_svg}
           </div>
           <div class="col-meta">{item['lucide_file']}</div>
@@ -552,7 +553,6 @@ html_content = f'''<!DOCTYPE html>
     margin-top: 4px;
   }}
   .badge-active {{ background: rgba(34, 165, 83, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); }}
-  .badge-eval {{ background: rgba(234, 88, 12, 0.15); color: #fb923c; border: 1px solid rgba(251, 146, 60, 0.3); }}
   .badge-reserve {{ background: rgba(100, 116, 139, 0.15); color: #94a3b8; border: 1px solid rgba(148, 163, 184, 0.2); }}
   .id-tag {{
     font-size: 11px;
@@ -654,11 +654,11 @@ html_content = f'''<!DOCTYPE html>
     <div class="meta-stats">
       <div class="stat-group">
         <div class="stat-item">
-          <span>現役與評選中端點：</span>
+          <span>現役端點吉祥物：</span>
           <span class="stat-num" style="color: #4ade80;">{active_count} 隻</span>
         </div>
         <div class="stat-item">
-          <span>3034 / Lucide 備選：</span>
+          <span>Modern Emblem & Lucide 備選：</span>
           <span class="stat-num" style="color: #38bdf8;">{reserve_count} 隻</span>
         </div>
         <div class="stat-item">
@@ -682,7 +682,7 @@ html_content = f'''<!DOCTYPE html>
       <span>🚀 第一部分：現役端點與進行中評選動物 ({active_count} 隻)</span>
     </h2>
     <span class="section-badge" style="background: rgba(74, 222, 128, 0.15); color: #4ade80;">
-      已部署至 9 大 Sibling Repositories & 進行中
+      已部署至 13 大專案端點 (與 index.html 13 隻幾何吉祥物 1:1 完美對齊)
     </span>
   </div>
   <div class="grid">
@@ -695,7 +695,7 @@ html_content = f'''<!DOCTYPE html>
       <span>📦 第二部分：Modern Emblem & Lucide 備選儲備庫存 ({reserve_count} 隻)</span>
     </h2>
     <span class="section-badge" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">
-      3034.eps 現代徽章風格 & Lucide 極簡線性對照 ({reserve_count} 隻全備齊)
+      3034.eps 現代徽章風格 & Lucide 極簡線性對照 ({reserve_count} 隻儲備全備齊)
     </span>
   </div>
   <div class="grid">
@@ -728,4 +728,4 @@ with open('preview_animal_styles.html', 'w', encoding='utf-8', newline='\r\n') a
 with open('preview_3034_and_lucide.html', 'w', encoding='utf-8', newline='\r\n') as f:
     f.write(html_content)
 
-print('Updated both preview_animal_styles.html and preview_3034_and_lucide.html with complete Chibi Lucide pairings!')
+print(f'Successfully updated both preview_animal_styles.html and preview_3034_and_lucide.html! (Active: {active_count}, Reserve: {reserve_count})')
