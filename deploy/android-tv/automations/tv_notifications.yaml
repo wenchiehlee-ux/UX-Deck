@@ -9,7 +9,7 @@
 # ------------------------------------------------------------------------------
 - id: "tv_notify_doorbell_visitor"
   alias: "TV HUD: 門鈴訪客即時提醒"
-  description: "當門鈴觸發或玄關偵測到訪客時，於客廳 Android TV 顯示 15 秒 18px 圓角毛玻璃 HUD"
+  description: "當門鈴觸發或玄關偵測到訪客時，於客廳 Android TV 顯示 120 秒 18px 圓角毛玻璃 HUD"
   trigger:
     - platform: state
       entity_id: binary_sensor.front_door_doorbell
@@ -19,11 +19,11 @@
     - service: rest_command.pipup_notify_1f
       data:
         payload_json: >-
-          {"duration":15,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/doorbell.png","width":480}}}
+          {"duration":120,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/doorbell.png","width":480}}}
     - service: rest_command.pipup_notify_2f
       data:
         payload_json: >-
-          {"duration":15,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/doorbell.png","width":480}}}
+          {"duration":120,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/doorbell.png","width":480}}}
 
 # ------------------------------------------------------------------------------
 # 2. 洗衣機完成提醒 (Washer Complete Toast)
@@ -39,11 +39,11 @@
     - service: rest_command.pipup_notify_1f
       data:
         payload_json: >-
-          {"duration":25,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/washer_done.png","width":480}}}
+          {"duration":120,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/washer_done.png","width":480}}}
     - service: rest_command.pipup_notify_2f
       data:
         payload_json: >-
-          {"duration":25,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/washer_done.png","width":480}}}
+          {"duration":120,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/washer_done.png","width":480}}}
 
 # ------------------------------------------------------------------------------
 # 3. 洗衣機運轉進度 (Washer Running Status)
@@ -59,7 +59,7 @@
     - service: rest_command.pipup_notify_1f
       data:
         payload_json: >-
-          {"duration":15,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/washer_running.png","width":480}}}
+          {"duration":120,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/washer_running.png","width":480}}}
 
 # ------------------------------------------------------------------------------
 # 4. 乾衣完成提醒 (Dryer Complete Toast)
@@ -75,7 +75,7 @@
     - service: rest_command.pipup_notify_1f
       data:
         payload_json: >-
-          {"duration":25,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/dryer_done.png","width":480}}}
+          {"duration":120,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/dryer_done.png","width":480}}}
 
 # ------------------------------------------------------------------------------
 # 5. 家庭行事曆日程提醒 (TimeTree Calendar Alert) — 多事件合併 HUD
@@ -163,12 +163,12 @@
       continue_on_error: true
       data:
         payload_json: >-
-          {"duration":60,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar_event.png?ts={{ as_timestamp(now()) | int }}","width":480}}}
+          {"duration":120,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar_event.png?ts={{ as_timestamp(now()) | int }}","width":480}}}
     - service: rest_command.pipup_notify_2f
       continue_on_error: true
       data:
         payload_json: >-
-          {"duration":30,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar_event.png?ts={{ as_timestamp(now()) | int }}","width":480}}}
+          {"duration":120,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/calendar_event.png?ts={{ as_timestamp(now()) | int }}","width":480}}}
 
 # ------------------------------------------------------------------------------
 # 6. 設備低電量警告 (Battery Low Warning)
@@ -184,7 +184,7 @@
     - service: rest_command.pipup_notify_1f
       data:
         payload_json: >-
-          {"duration":20,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/battery_low.png","width":480}}}
+          {"duration":120,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/battery_low.png","width":480}}}
 
 # ------------------------------------------------------------------------------
 # 7. 外送到達提醒 (Foodpanda Delivery Alert)
@@ -200,7 +200,7 @@
     - service: rest_command.pipup_notify_1f
       data:
         payload_json: >-
-          {"duration":30,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/delivery.png","width":480}}}
+          {"duration":120,"position":0,"backgroundColor":"#00000000","title":"","message":"","media":{"image":{"uri":"http://192.168.31.101:8123/local/ux-deck/huds/delivery.png","width":480}}}
 
 # ==============================================================================
 # 附錄：Home Assistant configuration.yaml 必備 rest_command 配置
