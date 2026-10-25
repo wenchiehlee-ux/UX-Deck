@@ -42,7 +42,7 @@ master_animals = [
         'name_en': 'Sonic Whale',
         'status': '✅ 已上線：YoutubeAudio.Fetch',
         'category': 'active',
-        'color': '#0284c7',
+        'color': '#9333ea',
         'desc': '象徵深海聲納悠揚共鳴、沉浸式水下聲學與多模態音頻串流。',
         'lucide_file': 'lucide-whale.svg',
         'emblem_file': 'emblem-whale.svg'
