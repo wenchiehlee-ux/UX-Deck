@@ -12,10 +12,16 @@
   <g clip-path="url(#disc-clip)">
     <g transform="translate(2.50, 4.02) scale(0.1150)">
 
-      <rect x="240" y="290" width="260" height="300" fill="#a2c4c5"/>
-      <rect x="498" y="160" width="220" height="430" fill="#759aac"/>
-      <rect x="220" y="520" width="600" height="180" fill="#94b3a4"/>
-      <rect x="480" y="520" width="360" height="20" fill="#cfb584"/>
+      <!-- Unified Stepped Parkour Podium (ONLY ONE COLOR: #059669) -->
+      <path d="M 230 310
+               L 480 310
+               L 480 160
+               L 720 160
+               L 720 720
+               L 190 720
+               L 190 530
+               L 230 530 Z"
+            fill="#059669"/>
 
 <!-- === RABBIT ANATOMICAL LAYERS (Exact from VectorStock 64773074) === -->
       <!-- Back Ear (#ccccca) -->
@@ -44,6 +50,7 @@
 
       <!-- Espresso Nose (#2b2220) -->
       <path d="M 720 328 L 722 330 L 722 331 L 728 336 L 729 328 Z" fill="#2b2220"/>
+    
     
     </g>
   </g>
