@@ -1,4 +1,5 @@
 import os
+import shutil
 from playwright.sync_api import sync_playwright
 
 scenarios = [
@@ -61,6 +62,7 @@ scenarios = [
 ]
 
 os.makedirs('deploy/android-tv/huds', exist_ok=True)
+os.makedirs('deploy/android-tv/www/huds', exist_ok=True)
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)
@@ -83,16 +85,16 @@ with sync_playwright() as p:
       overflow: hidden;
     }}
     .tv-hud-toast {{
-      width: 480px;
+      width: 520px;
       background: rgba(15, 23, 42, 0.40);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid {s['accent']}55;
       border-radius: 18px;
-      padding: 1.25rem 1.35rem;
+      padding: 1.3rem 1.5rem;
       display: flex;
       align-items: center;
-      gap: 1.15rem;
+      gap: 1.25rem;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px {s['accent']}25;
       font-family: 'Zen Maru Gothic', 'Comfortaa', 'Noto Sans TC', sans-serif;
       position: relative;
@@ -110,10 +112,10 @@ with sync_playwright() as p:
       min-width: 0;
     }}
     .tv-hud-title {{
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-weight: 700;
       color: {s['accent']};
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.35rem;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -121,12 +123,13 @@ with sync_playwright() as p:
       letter-spacing: 0.01em;
     }}
     .tv-hud-message {{
-      font-size: 1rem;
-      color: #f1f5f9;
+      font-size: 1.15rem;
+      color: #ffffff;
       line-height: 1.5;
-      opacity: 0.96;
+      opacity: 0.98;
       font-family: 'Zen Maru Gothic', sans-serif;
-      font-weight: 500;
+      font-weight: 600;
+      letter-spacing: 0.01em;
     }}
     .tv-progress {{
       position: absolute;
@@ -161,7 +164,12 @@ with sync_playwright() as p:
         page.set_content(html, wait_until='networkidle')
         out_path = f"deploy/android-tv/huds/{s['id']}.png"
         page.locator('#toast').screenshot(path=out_path, omit_background=True)
+        # Also copy to www/huds
+        www_path = f"deploy/android-tv/www/huds/{s['id']}.png"
+        shutil.copy2(out_path, www_path)
+        if s['id'] == 'doorbell':
+            shutil.copy2(out_path, "exact_card7_hud.png")
         page.close()
-        print(f"Rendered {out_path}")
+        print(f"Rendered {out_path} and copied to {www_path}")
     browser.close()
 print("All scenarios rendered successfully!")
