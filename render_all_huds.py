@@ -20,12 +20,52 @@ scenarios = [
         'progress': '100%'
     },
     {
+        'id': 'washer_prewash',
+        'title': '洗衣機預洗中 🫧',
+        'msg': '預洗浸泡處理中... 請稍候 ✨',
+        'accent': '#38bdf8',
+        'icon_color': '#38bdf8',
+        'progress': '15%'
+    },
+    {
         'id': 'washer_running',
         'title': '洗衣機運轉中 ⏱️',
-        'msg': '運轉中... 預計 15:45 洗滌完成 🫧',
+        'msg': '主洗行程運轉中... 請稍候 🫧',
         'accent': '#38bdf8',
         'icon_color': '#38bdf8',
         'progress': '45%'
+    },
+    {
+        'id': 'washer_rinsing',
+        'title': '洗衣機漂洗中 💧',
+        'msg': '深層清水洗清中... 請稍候 ✨',
+        'accent': '#38bdf8',
+        'icon_color': '#38bdf8',
+        'progress': '70%'
+    },
+    {
+        'id': 'washer_spinning',
+        'title': '洗衣機脫水中 🌀',
+        'msg': '高速離心脫水中... 請稍候 💨',
+        'accent': '#38bdf8',
+        'icon_color': '#38bdf8',
+        'progress': '85%'
+    },
+    {
+        'id': 'washer_drying',
+        'title': '洗衣機烘乾中 ♨️',
+        'msg': '溫風除濕烘乾中... 請稍候 ✨',
+        'accent': '#fb923c',
+        'icon_color': '#fb923c',
+        'progress': '90%'
+    },
+    {
+        'id': 'washer_warning',
+        'title': '洗衣狀態待確認 ⚠️',
+        'msg': '未收到正式完成事件，請查看 LG ThinQ App 📱',
+        'accent': '#fbbf24',
+        'icon_color': '#fbbf24',
+        'progress': '90%'
     },
     {
         'id': 'dryer_done',
