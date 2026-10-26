@@ -243,7 +243,7 @@ chibi_animals = [
         'name_zh': 'Q版長頸鹿',
         'name_en': 'Chibi Giraffe',
         'color': '#f59e0b',
-        'desc': '左側萌寵以斑點圓耳與敦實坐姿展現親和力；右側 Lucide 線性嚴格對齊 Dreamstime 337577141 現代幾何標誌，具備長頸、雙角球頭、下腹拱門、垂尾與 14 處精準斑點，象徵高瞻遠矚與視野規劃。',
+        'desc': '左側萌寵以斑點圓耳與敦實坐姿展現親和力；右側 Lucide 線性 100% 嚴格忠實還原 Dreamstime 337577141 現代幾何標誌（Dzmitry Baranau 原創），具備優雅長頸、雙骨角球頭、下腹拱門、垂尾水滴毛簇、雙眼與 14 處精確斑點，象徵高瞻遠矚與宏觀規劃。',
         'chibi_file': 'chibi-giraffe.svg',
         'lucide_file': 'lucide-giraffe.svg'
     },
@@ -270,7 +270,7 @@ chibi_animals = [
         'name_zh': 'Q版小斑馬',
         'name_en': 'Chibi Zebra',
         'color': '#475569',
-        'desc': '黑白幾何相間條紋、粉嫩腮紅，象徵財務對帳黑白分明與結構化表格。',
+        'desc': '左側萌寵以黑白幾何相間條紋與粉嫩腮紅呈現；右側 Lucide 極簡線性 100% 忠實對齊 Shutterstock 2724042091 經典黑白斑馬圖標（Bahruz Rzayev 原創），具備俐落鋸齒鬃毛、面部縫隙條紋、四肢分立站姿與經典斜向條紋鏤空，象徵財務對帳黑白分明與結構化表格。',
         'chibi_file': 'chibi-zebra.svg',
         'lucide_file': 'lucide-zebra.svg'
     },
