@@ -243,7 +243,7 @@ chibi_animals = [
         'name_zh': 'Q版長頸鹿',
         'name_en': 'Chibi Giraffe',
         'color': '#f59e0b',
-        'desc': '斑點圓耳、小觸角與敦實坐姿，象徵高瞻遠矚、長期投資與視野規劃。',
+        'desc': '左側萌寵以斑點圓耳與敦實坐姿展現親和力；右側 Lucide 線性嚴格對齊 Dreamstime 337577141 現代幾何標誌，具備長頸、雙角球頭、下腹拱門、垂尾與 14 處精準斑點，象徵高瞻遠矚與視野規劃。',
         'chibi_file': 'chibi-giraffe.svg',
         'lucide_file': 'lucide-giraffe.svg'
     },
