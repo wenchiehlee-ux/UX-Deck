@@ -261,7 +261,7 @@ chibi_animals = [
         'name_zh': 'Q版小猴',
         'name_en': 'Chibi Monkey',
         'color': '#b45309',
-        'desc': '大圓耳朵、兩側幸運星星與俏皮微笑，象徵敏捷自動化爬蟲與靈巧交易。',
+        'desc': '左側萌寵以大圓耳朵、兩側幸運星星與俏皮微笑展現靈巧活力；右側 Lucide 極簡線性 100% 嚴格忠實還原 Dreamstime 10555506 經典猴子標誌（Furtaev 原創），具備兩側大圓耳月牙耳窩、心形眼眶雙眼珠高光、圓潤吻部與微笑鼻孔，象徵敏捷自動化爬蟲與靈巧交易。',
         'chibi_file': 'chibi-monkey.svg',
         'lucide_file': 'lucide-monkey.svg'
     },
