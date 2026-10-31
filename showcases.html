@@ -284,14 +284,6 @@
       color: #6b21a8;
       font-weight: 700;
     }
-    .tagger-confidence {
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: #d97706;
-      background: #fef3c7;
-      padding: 1px 6px;
-      border-radius: 4px;
-    }
     .tagger-chips {
       display: flex;
       flex-wrap: wrap;
@@ -318,6 +310,65 @@
       font-size: 0.7rem;
       font-weight: 600;
       color: #059669;
+    }
+    .tagger-mock-tabs .tagger-mock-tab {
+      appearance: none; border: 0; background: transparent; font: inherit; cursor: pointer;
+    }
+    .tagger-mock-screen { min-height: 300px; }
+    .tagger-mock-screen[hidden] { display: none !important; }
+    .tagger-page-heading { display:flex; justify-content:space-between; align-items:flex-start; gap:14px; margin-bottom:20px; }
+    .tagger-page-heading small { color:#8b5cf6; font:700 .68rem 'JetBrains Mono',monospace; letter-spacing:.1em; }
+    .tagger-page-heading h3 { margin:5px 0 4px; color:#3b2760; font-size:1.25rem; }
+    .tagger-page-heading p { margin:0; color:#746b80; font-size:.82rem; line-height:1.6; }
+    .tagger-live-pill { flex:none; padding:6px 10px; border:1px solid #ddd6fe; border-radius:99px; background:#faf5ff; color:#6b21a8; font-size:.72rem; }
+    .tagger-overview-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+    .tagger-overview-grid article { display:grid; gap:7px; padding:16px; border:1px solid #e9d5ff; border-radius:12px; background:#fff; }
+    .tagger-overview-grid small { color:#887b9c; font-size:.7rem; }
+    .tagger-overview-grid strong { color:#4c1d95; font-size:.9rem; }
+    .tagger-overview-grid span { color:#746b80; font-size:.72rem; }
+    .tagger-callout { display:grid; grid-template-columns:1fr auto; gap:5px 20px; align-items:center; margin-top:14px; padding:16px 18px; border:1px solid #fde68a; border-radius:12px; background:#fffbeb; }
+    .tagger-callout strong { color:#78350f; font-size:.88rem; }
+    .tagger-callout span { color:#866b45; font-size:.75rem; }
+    .tagger-callout button, .tagger-filter-row>button, .tagger-work-summary button, .tagger-settings-card button { border:0; border-radius:8px; padding:9px 13px; background:#8b5cf6; color:#fff; font:inherit; font-size:.75rem; font-weight:600; cursor:pointer; }
+    .tagger-callout button { grid-column:2; grid-row:1 / span 2; }
+    .tagger-filter-row { display:flex; align-items:flex-end; gap:10px; flex-wrap:wrap; margin:18px 0; }
+    .tagger-filter-row label { display:grid; gap:5px; color:#796d89; font-size:.72rem; }
+    .tagger-filter-row select, .tagger-filter-row input { min-width:145px; height:36px; border:1px solid #e9d5ff; border-radius:8px; padding:0 9px; background:#fff; color:#4c1d95; }
+    .tagger-source-list, .tagger-work-list { display:grid; gap:9px; }
+    .tagger-source-list article { display:grid; grid-template-columns:144px minmax(0,1fr) auto; align-items:center; gap:14px; padding:10px; border:1px solid #e9d5ff; border-radius:11px; background:#fff; }
+    .tagger-source-thumb, .tagger-result-thumb { display:grid; place-items:center; min-height:108px; border-radius:8px; color:#fff; font-weight:800; }
+    .tagger-source-thumb.amber, .tagger-result-thumb.amber { background:linear-gradient(135deg,#f59e0b,#b45309); }
+    .tagger-source-thumb.violet, .tagger-result-thumb.violet { background:linear-gradient(135deg,#8b5cf6,#4c1d95); }
+    .tagger-source-list article>div:nth-child(2) { display:grid; gap:4px; min-width:0; }
+    .tagger-source-list strong, .tagger-result-content strong { color:#3b2760; font-size:.82rem; }
+    .tagger-source-list span, .tagger-source-list small { color:#81768d; font-size:.7rem; }
+    .tagger-source-list b { color:#6b21a8; font-size:.7rem; }
+    .tagger-use-cases { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:17px 0; }
+    .tagger-use-cases button { display:grid; gap:5px; padding:13px; border:1px solid #e9d5ff; border-radius:10px; background:#fff; color:#6b21a8; text-align:left; cursor:pointer; }
+    .tagger-use-cases button.selected { border-color:#a78bfa; background:#faf5ff; box-shadow:0 0 0 2px #ede9fe; }
+    .tagger-use-cases strong { color:#3b2760; font-size:.82rem; }
+    .tagger-use-cases span { color:#81768d; font-size:.68rem; }
+    .tagger-work-summary { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:13px; border-radius:10px; background:#faf5ff; color:#6e617e; font-size:.72rem; }
+    .tagger-work-summary b { color:#4c1d95; }
+    .tagger-result-row { display:grid; grid-template-columns:144px minmax(0,1fr); gap:14px; padding:12px; border:1px solid #e9d5ff; border-radius:11px; background:#fff; }
+    .tagger-result-thumb { min-height:108px; }
+    .tagger-result-content { min-width:0; }
+    .tagger-result-content .tagger-file-row { gap:12px; }
+    .tagger-result-content p { margin:9px 0; color:#5e536d; font-size:.78rem; line-height:1.65; }
+    .tagger-result-state { color:#047857; font-size:.7rem; white-space:nowrap; }
+    .tagger-settings-card { display:flex; justify-content:space-between; align-items:center; gap:16px; margin:10px 0; padding:15px; border:1px solid #e9d5ff; border-radius:10px; background:#fff; }
+    .tagger-settings-card>div { display:grid; gap:5px; }
+    .tagger-settings-card strong { color:#3b2760; font-size:.82rem; }
+    .tagger-settings-card span, .tagger-settings-note { color:#81768d; font-size:.72rem; }
+    .tagger-mock-disclaimer { margin:18px 0 0; color:#8c8298; font-size:.68rem; }
+    @media(max-width:680px) {
+      .tagger-overview-grid, .tagger-use-cases { grid-template-columns:1fr; }
+      .tagger-source-list article { grid-template-columns:112px minmax(0,1fr); }
+      .tagger-source-list article>b { grid-column:2; }
+      .tagger-result-row { grid-template-columns:96px minmax(0,1fr); }
+      .tagger-source-thumb, .tagger-result-thumb { min-height:84px; }
+      .tagger-callout { grid-template-columns:1fr; }
+      .tagger-callout button { grid-column:1; grid-row:auto; justify-self:start; }
     }
 
     /* Mascot Grid (White Card Basis) */
@@ -6362,10 +6413,10 @@
        </div>
        <div class="project-title-group">
         <div class="project-name">
-         Synology-Photo-Tagger · 雲端相片智慧標籤庫
+         Synology Photo Tagger · 私人相片整理工作區
         </div>
         <div class="project-category">
-         AI 視覺模型、智慧物件場景分流與 Synology Photos 自動化標記 · 象徵吉祥物：採集松鼠 🐿️ (Vision Squirrel)
+         透過 Synology Photos API 與本機 AI 服務整理個人相片 · 品牌吉祥物：採集松鼠 🐿️
         </div>
        </div>
       </div>
@@ -6418,9 +6469,9 @@
      </div>
      <div class="live-preview-section">
       <div class="preview-section-header">
-       ⚡ 實體落地介面預覽
+       UX MOCKUP v1.1 · UX-Deck 視覺 × Mockup 1.0 導覽
       </div>
-      <!-- Top Bar & Tabs Menu Preview -->
+      <!-- Interactive UX mockup: IA follows Mockup 1.0; visual styling follows UX-Deck. -->
       <div class="preview-tagger-menubar">
        <div class="tagger-mock-header">
         <div class="tagger-mock-brand">
@@ -6428,162 +6479,66 @@
           <use href="#icon-squirrel-tagger">
           </use>
          </svg>
-         <span>
-          Synology-Photo-Tagger
-         </span>
+         <span>Synology Photo Tagger</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-         <span class="tagger-mock-status">
-          ● AI 視覺模型在線 (CLIP / Vision Ready)
-         </span>
-         <span style="font-size: 0.74rem; color: #6b21a8; font-family: 'JetBrains Mono', monospace; background: #f3e8ff; border: 1px solid #e9d5ff; padding: 2px 8px; border-radius: 6px;">
-          已標記 12,480 張 · 準確率 99.2%
-         </span>
-        </div>
+        <span class="tagger-mock-status">介面示意 · 個人空間</span>
        </div>
-       <div class="tagger-mock-tabs">
-        <span class="tagger-mock-tab active">
-         即時相片串流 (Photo Feed)
-        </span>
-        <span class="tagger-mock-tab">
-         人臉面孔偵測 (Faces)
-        </span>
-        <span class="tagger-mock-tab">
-         旅行與百岳場景 (Scenes)
-        </span>
-        <span class="tagger-mock-tab">
-         毛孩與寵物生活 (Pets)
-        </span>
-        <span class="tagger-mock-tab">
-         待處理隊列 (Queue: 14)
-        </span>
-        <span class="tagger-mock-tab">
-         標籤字典 (Taxonomy)
-        </span>
-       </div>
+       <nav class="tagger-mock-tabs" aria-label="Photo Tagger 示意導覽">
+        <button class="tagger-mock-tab active" type="button" data-mock-screen="overview">總覽</button>
+        <button class="tagger-mock-tab" type="button" data-mock-screen="sources">照片來源</button>
+        <button class="tagger-mock-tab" type="button" data-mock-screen="work">AI 標記工作</button>
+        <button class="tagger-mock-tab" type="button" data-mock-screen="results">工作結果</button>
+        <button class="tagger-mock-tab" type="button" data-mock-screen="settings">設定</button>
+       </nav>
       </div>
-      <!-- Photo Tagger Cards Grid -->
       <div class="preview-tagger">
-       <div class="tagger-grid">
-        <!-- Photo 1: Shiba Pet -->
-        <div class="tagger-photo-card">
-         <div class="tagger-thumb" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
-          🐕 客廳柴柴小憩
-         </div>
-         <div class="tagger-meta-body">
-          <div class="tagger-file-row">
-           <span>
-            IMG_20261021_0940.JPG
-           </span>
-           <span class="tagger-confidence">
-            99% 置信
-           </span>
-          </div>
-          <div class="tagger-chips">
-           <span class="tagger-chip highlight">
-            🏷️ 柴犬
-           </span>
-           <span class="tagger-chip">
-            🏷️ 客廳沙發
-           </span>
-           <span class="tagger-chip">
-            🏷️ 暖陽光暈
-           </span>
-           <span class="tagger-chip">
-            🏷️ 寵物日常
-           </span>
-          </div>
-          <div class="tagger-sync-badge">
-           <span>
-            ✓
-           </span>
-           EXIF / Synology Photos 已同步
-          </div>
-         </div>
-        </div>
-        <!-- Photo 2: Alishan Sunrise -->
-        <div class="tagger-photo-card">
-         <div class="tagger-thumb" style="background: linear-gradient(135deg, #8b5cf6 0%, #d97706 100%);">
-          🏔️ 阿里山雲海金光
-         </div>
-         <div class="tagger-meta-body">
-          <div class="tagger-file-row">
-           <span>
-            DSCF8921.RAF
-           </span>
-           <span class="tagger-confidence">
-            98% 置信
-           </span>
-          </div>
-          <div class="tagger-chips">
-           <span class="tagger-chip highlight">
-            🏷️ 阿里山
-           </span>
-           <span class="tagger-chip">
-            🏷️ 雲海日落
-           </span>
-           <span class="tagger-chip">
-            🏷️ 戶外風景
-           </span>
-           <span class="tagger-chip">
-            🏷️ 台灣百岳
-           </span>
-          </div>
-          <div class="tagger-sync-badge">
-           <span>
-            ✓
-           </span>
-           EXIF / Synology Photos 已同步
-          </div>
-         </div>
-        </div>
-        <!-- Photo 3: Hand Drip Coffee -->
-        <div class="tagger-photo-card">
-         <div class="tagger-thumb" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);">
-          ☕ 手沖淺焙耶加雪菲
-         </div>
-         <div class="tagger-meta-body">
-          <div class="tagger-file-row">
-           <span>
-            PANA_0142.RW2
-           </span>
-           <span class="tagger-confidence">
-            96% 置信
-           </span>
-          </div>
-          <div class="tagger-chips">
-           <span class="tagger-chip highlight">
-            🏷️ 手沖咖啡
-           </span>
-           <span class="tagger-chip">
-            🏷️ 咖啡濾壺
-           </span>
-           <span class="tagger-chip">
-            🏷️ 慢活日誌
-           </span>
-           <span class="tagger-chip">
-            🏷️ 晨光隨筆
-           </span>
-          </div>
-          <div class="tagger-sync-badge">
-           <span>
-            ✓
-           </span>
-           EXIF / Synology Photos 已同步
-          </div>
-         </div>
-        </div>
-       </div>
-       <!-- Bottom Action Footer -->
-       <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; font-size: 0.8rem; color: #6b21a8; flex-wrap: wrap; gap: 8px; border-top: 1px dashed #e9d5ff; padding-top: 0.85rem;">
-        <span style="font-weight: 600;">
-         ⚡ 支援 Ollama 本地視覺模型與 CLIP 零樣本辨識，一鍵批次寫入 Synology Photos PostgreSQL / XMP Sidecar
-        </span>
-        <a href="https://github.com/ZhongZheng782/Synology-Photo-Tagger" rel="noopener noreferrer" style="color: #7c3aed; font-weight: 700; text-decoration: none;" target="_blank">
-         查看 GitHub 儲存庫與腳本 ↗
-        </a>
-       </div>
+       <section class="tagger-mock-screen active" data-mock-panel="overview">
+        <div class="tagger-page-heading"><div><small>PHOTO WORKSPACE</small><h3>讓照片更容易被找到</h3><p>從 Synology Photos 選取照片，建立 AI 標記工作。</p></div><span class="tagger-live-pill">● 服務狀態</span></div>
+        <div class="tagger-overview-grid"><article><small>照片來源</small><strong>Synology Photos</strong><span>個人空間 · 已連線</span></article><article><small>AI 分析</small><strong>本機 MLX 服務</strong><span>原圖透過私有網路處理</span></article><article><small>寫入方式</small><strong>Photos API</strong><span>更新描述與標籤</span></article></div>
+        <div class="tagger-callout"><strong>開始整理照片</strong><span>選擇地點、日期範圍或已有標籤，建立符合需求的標記工作。</span><button type="button" data-mock-go="work">建立 AI 標記工作 →</button></div>
+       </section>
+       <section class="tagger-mock-screen" data-mock-panel="sources" hidden>
+        <div class="tagger-page-heading"><div><small>PHOTO SOURCES</small><h3>照片來源</h3><p>從 Synology Photos 讀取候選照片與既有 metadata。</p></div><span class="tagger-live-pill">個人空間</span></div>
+        <div class="tagger-filter-row"><label>空間<select><option>個人空間</option><option>共享空間</option></select></label><label>地點<select><option>全部地點</option><option selected>日本</option></select></label><label>標籤<select><option>全部標籤</option><option>旅行</option><option>家人</option></select></label><button type="button">載入照片</button></div>
+        <div class="tagger-source-list"><article><div class="tagger-source-thumb amber">城</div><div><strong>IMG_1297.HEIC</strong><span>犬山市 · 日本 · 2026/10/21</span><small>Synology Photos 人物：Mandy Lin</small></div><b>已有標籤 3</b></article><article><div class="tagger-source-thumb violet">街</div><div><strong>IMG_1320.HEIC</strong><span>犬山市 · 日本 · 2026/10/21</span><small>GPS 座標 · metadata 可檢視</small></div><b>已有標籤 2</b></article></div>
+       </section>
+       <section class="tagger-mock-screen" data-mock-panel="work" hidden>
+        <div class="tagger-page-heading"><div><small>AI TAGGING WORK</small><h3>建立 AI 標記工作</h3><p>選擇照片範圍；AI 產生描述與標籤後透過 Photos API 更新。</p></div></div>
+        <div class="tagger-use-cases"><button class="selected" type="button" data-mock-case="location" aria-pressed="true">UC-01 <strong>依地點</strong><span>找出日本照片</span></button><button type="button" data-mock-case="date" aria-pressed="false">UC-02 <strong>依日期區間</strong><span>選擇起訖日期</span></button><button type="button" data-mock-case="tagged" aria-pressed="false">UC-04 <strong>已有標籤</strong><span>補充描述與相關標籤</span></button></div>
+        <div class="tagger-filter-row" data-mock-case-fields="location"><label>照片空間<select><option>個人空間</option><option>共享空間</option></select></label><label>地點<select><option selected>日本</option><option>台灣</option></select></label><label>範圍上限<select><option>100 張</option><option>500 張</option><option>全部符合項目</option></select></label></div>
+        <div class="tagger-filter-row" data-mock-case-fields="date" hidden><label>照片空間<select><option>個人空間</option><option>共享空間</option></select></label><label>開始日期<input type="date" value="2026-01-01"></label><label>結束日期<input type="date" value="2026-10-31"></label></div>
+        <div class="tagger-filter-row" data-mock-case-fields="tagged" hidden><label>照片空間<select><option>個人空間</option><option>共享空間</option></select></label><label>現有標籤<select><option>選擇標籤</option><option>日本</option><option>家人</option><option>旅遊</option></select></label><label>範圍上限<select><option>100 張</option><option>500 張</option><option>全部符合項目</option></select></label></div>
+        <div class="tagger-work-summary"><span><b>候選照片</b> 依條件載入後顯示</span><span><b>執行方式</b> AI 分析 → Photos API 寫入 → 讀回核對</span><button type="button">建立工作</button></div>
+       </section>
+       <section class="tagger-mock-screen" data-mock-panel="results" hidden>
+        <div class="tagger-page-heading"><div><small>WORK RESULTS</small><h3>工作結果</h3><p>查看每張照片的處理狀態、描述、標籤與 Photos API 核對結果。</p></div><span class="tagger-live-pill">完成 18 · 處理中 2</span></div>
+        <div class="tagger-work-list"><article class="tagger-result-row"><div class="tagger-result-thumb violet">犬山城</div><div class="tagger-result-content"><div class="tagger-file-row"><strong>IMG_1297.HEIC</strong><span class="tagger-result-state">✓ 已寫入並核對</span></div><p>犬山市犬山城庭園中，Mandy Lin站在碎石步道前，背景可見日式城堡與樹木。</p><div class="tagger-chips"><span class="tagger-chip highlight">Mandy Lin</span><span class="tagger-chip">日本</span><span class="tagger-chip">犬山城</span><span class="tagger-chip">庭園</span></div></div></article><article class="tagger-result-row"><div class="tagger-result-thumb amber">咖啡廳</div><div class="tagger-result-content"><div class="tagger-file-row"><strong>IMG_1320.HEIC</strong><span class="tagger-result-state">◷ 正在分析</span></div><p>AI 產生描述後，將與候選照片既有描述合併，再更新相關標籤。</p><div class="tagger-chips"><span class="tagger-chip">等待分析完成</span></div></div></article></div>
+       </section>
+       <section class="tagger-mock-screen" data-mock-panel="settings" hidden>
+        <div class="tagger-page-heading"><div><small>SETTINGS</small><h3>設定與連線診斷</h3><p>一般標記流程不需操作 API 探索。</p></div></div>
+        <article class="tagger-settings-card"><div><strong>Photos API 探索</strong><span>檢查 NAS 支援的個人空間與共享空間 API 模組。</span></div><button type="button">探索 Photos API</button></article>
+        <article class="tagger-settings-card"><div><strong>AI 與 OCR 服務</strong><span>本機 MLX 視覺分析 · OCR 服務依設定執行</span></div><span class="tagger-settings-note">服務狀態與連線設定</span></article>
+        <p class="tagger-mock-disclaimer">此頁為 UX 示意稿。照片、數量及狀態都是範例，不代表線上服務即時資料。</p>
+       </section>
       </div>
+      <script>
+       (() => {
+        const root = document.currentScript.closest('.merged-project-card');
+        if (!root) return;
+        const tabs = [...root.querySelectorAll('[data-mock-screen]')];
+        const panels = [...root.querySelectorAll('[data-mock-panel]')];
+        function show(screen) {
+         tabs.forEach((tab) => tab.classList.toggle('active', tab.dataset.mockScreen === screen));
+         panels.forEach((panel) => { panel.hidden = panel.dataset.mockPanel !== screen; panel.classList.toggle('active', !panel.hidden); });
+        }
+        tabs.forEach((tab) => tab.addEventListener('click', () => show(tab.dataset.mockScreen)));
+        root.querySelectorAll('[data-mock-go]').forEach((button) => button.addEventListener('click', () => show(button.dataset.mockGo)));
+        root.querySelectorAll('[data-mock-case]').forEach((button) => button.addEventListener('click', () => {
+         root.querySelectorAll('[data-mock-case]').forEach((item) => { const selected = item === button; item.classList.toggle('selected', selected); item.setAttribute('aria-pressed', String(selected)); });
+         root.querySelectorAll('[data-mock-case-fields]').forEach((fields) => { fields.hidden = fields.dataset.mockCaseFields !== button.dataset.mockCase; });
+        }));
+       })();
+      </script>
      </div>
     </div>
     <!-- CARD 11: Skill-Deck -->
