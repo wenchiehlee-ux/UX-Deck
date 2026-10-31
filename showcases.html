@@ -345,11 +345,10 @@
     .tagger-source-list b { color:#6b21a8; font-size:.7rem; }
     .tagger-source-actions { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:14px; padding-top:13px; border-top:1px solid #ede4f5; color:#746b80; font-size:.72rem; }
     .tagger-source-actions button { border:0; border-radius:8px; padding:9px 13px; background:#8b5cf6; color:#fff; font:inherit; font-size:.75rem; font-weight:600; cursor:pointer; }
-    .tagger-use-cases { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:17px 0; }
-    .tagger-use-cases button { display:grid; gap:5px; padding:13px; border:1px solid #e9d5ff; border-radius:10px; background:#fff; color:#6b21a8; text-align:left; cursor:pointer; }
-    .tagger-use-cases button.selected { border-color:#a78bfa; background:#faf5ff; box-shadow:0 0 0 2px #ede9fe; }
-    .tagger-use-cases strong { color:#3b2760; font-size:.82rem; }
-    .tagger-use-cases span { color:#81768d; font-size:.68rem; }
+    .tagger-work-filters { margin-top:18px; padding:16px; border:1px solid #e9d5ff; border-radius:11px; background:#fff; }
+    .tagger-work-filters h4 { margin:0 0 4px; color:#4c1d95; font-size:.85rem; }
+    .tagger-work-filters>p { margin:0; color:#81768d; font-size:.7rem; line-height:1.6; }
+    .tagger-work-filters .tagger-filter-row { margin:14px 0 0; }
     .tagger-work-summary { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:13px; border-radius:10px; background:#faf5ff; color:#6e617e; font-size:.72rem; }
     .tagger-work-summary b { color:#4c1d95; }
     .tagger-result-row { display:grid; grid-template-columns:144px minmax(0,1fr); gap:14px; padding:12px; border:1px solid #e9d5ff; border-radius:11px; background:#fff; }
@@ -364,7 +363,7 @@
     .tagger-settings-card span, .tagger-settings-note { color:#81768d; font-size:.72rem; }
     .tagger-mock-disclaimer { margin:18px 0 0; color:#8c8298; font-size:.68rem; }
     @media(max-width:680px) {
-      .tagger-overview-grid, .tagger-use-cases { grid-template-columns:1fr; }
+      .tagger-overview-grid { grid-template-columns:1fr; }
       .tagger-source-list article { grid-template-columns:112px minmax(0,1fr); }
       .tagger-source-list article>b { grid-column:2; }
       .tagger-result-row { grid-template-columns:96px minmax(0,1fr); }
@@ -6501,10 +6500,9 @@
        </section>
        <section class="tagger-mock-screen" data-mock-panel="work" hidden>
         <div class="tagger-page-heading"><div><small>AI TAGGING WORK</small><h3>建立 AI 標記工作</h3><p>選擇照片範圍；AI 產生描述與標籤後透過 Photos API 更新。</p></div></div>
-        <div class="tagger-use-cases"><button class="selected" type="button" data-mock-case="location" aria-pressed="true">UC-01 <strong>依地點</strong><span>找出日本照片</span></button><button type="button" data-mock-case="date" aria-pressed="false">UC-02 <strong>依日期區間</strong><span>選擇起訖日期</span></button><button type="button" data-mock-case="tagged" aria-pressed="false">UC-04 <strong>已有標籤</strong><span>補充描述與相關標籤</span></button></div>
-        <div class="tagger-filter-row" data-mock-case-fields="location"><label>照片空間<select><option>個人空間</option><option>共享空間</option></select></label><label>地點<select><option selected>日本</option><option>台灣</option></select></label><label>範圍上限<select><option>100 張</option><option>500 張</option><option>全部符合項目</option></select></label></div>
-        <div class="tagger-filter-row" data-mock-case-fields="date" hidden><label>照片空間<select><option>個人空間</option><option>共享空間</option></select></label><label>開始日期<input type="date" value="2026-01-01"></label><label>結束日期<input type="date" value="2026-10-31"></label></div>
-        <div class="tagger-filter-row" data-mock-case-fields="tagged" hidden><label>照片空間<select><option>個人空間</option><option>共享空間</option></select></label><label>現有標籤<select><option>選擇標籤</option><option>日本</option><option>家人</option><option>旅遊</option></select></label><label>範圍上限<select><option>100 張</option><option>500 張</option><option>全部符合項目</option></select></label></div>
+        <div class="tagger-work-filters"><h4>選擇照片範圍</h4><p>可設定一個或多個條件；未設定的條件不會限制候選照片。</p>
+         <div class="tagger-filter-row"><label>照片空間<select><option>個人空間</option><option>共享空間</option></select></label><label>地點<select><option>不限地點</option><option selected>日本</option><option>台灣</option></select></label><label>開始日期<input type="date" value="2026-01-01"></label><label>結束日期<input type="date" value="2026-10-31"></label><label>已有標籤<select><option>不限標籤</option><option>家人</option><option>旅行</option><option>日本</option></select></label><label>候選上限<select><option>100 張</option><option>500 張</option><option>全部符合項目</option></select></label></div>
+        </div>
         <div class="tagger-work-summary"><span><b>候選照片</b> 依條件載入後顯示</span><span><b>執行方式</b> AI 分析 → Photos API 寫入 → 讀回核對</span><button type="button">建立工作</button></div>
        </section>
        <section class="tagger-mock-screen" data-mock-panel="results" hidden>
@@ -6531,10 +6529,6 @@
         }
         tabs.forEach((tab) => tab.addEventListener('click', () => show(tab.dataset.mockScreen)));
         root.querySelectorAll('[data-mock-go]').forEach((button) => button.addEventListener('click', () => show(button.dataset.mockGo)));
-        root.querySelectorAll('[data-mock-case]').forEach((button) => button.addEventListener('click', () => {
-         root.querySelectorAll('[data-mock-case]').forEach((item) => { const selected = item === button; item.classList.toggle('selected', selected); item.setAttribute('aria-pressed', String(selected)); });
-         root.querySelectorAll('[data-mock-case-fields]').forEach((fields) => { fields.hidden = fields.dataset.mockCaseFields !== button.dataset.mockCase; });
-        }));
        })();
       </script>
      </div>
