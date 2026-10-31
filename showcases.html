@@ -343,6 +343,8 @@
     .tagger-source-list strong, .tagger-result-content strong { color:#3b2760; font-size:.82rem; }
     .tagger-source-list span, .tagger-source-list small { color:#81768d; font-size:.7rem; }
     .tagger-source-list b { color:#6b21a8; font-size:.7rem; }
+    .tagger-source-actions { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:14px; padding-top:13px; border-top:1px solid #ede4f5; color:#746b80; font-size:.72rem; }
+    .tagger-source-actions button { border:0; border-radius:8px; padding:9px 13px; background:#8b5cf6; color:#fff; font:inherit; font-size:.75rem; font-weight:600; cursor:pointer; }
     .tagger-use-cases { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:17px 0; }
     .tagger-use-cases button { display:grid; gap:5px; padding:13px; border:1px solid #e9d5ff; border-radius:10px; background:#fff; color:#6b21a8; text-align:left; cursor:pointer; }
     .tagger-use-cases button.selected { border-color:#a78bfa; background:#faf5ff; box-shadow:0 0 0 2px #ede9fe; }
@@ -6484,19 +6486,20 @@
         <span class="tagger-mock-status">介面示意 · 個人空間</span>
        </div>
        <nav class="tagger-mock-tabs" aria-label="Photo Tagger 示意導覽">
-        <button class="tagger-mock-tab active" type="button" data-mock-screen="work" aria-pressed="true">AI 標記工作</button>
-        <button class="tagger-mock-tab" type="button" data-mock-screen="sources" aria-pressed="false">照片來源</button>
+        <button class="tagger-mock-tab active" type="button" data-mock-screen="sources" aria-pressed="true">照片來源</button>
+        <button class="tagger-mock-tab" type="button" data-mock-screen="work" aria-pressed="false">AI 標記工作</button>
         <button class="tagger-mock-tab" type="button" data-mock-screen="results" aria-pressed="false">工作結果</button>
         <button class="tagger-mock-tab" type="button" data-mock-screen="settings" aria-pressed="false">設定</button>
        </nav>
       </div>
       <div class="preview-tagger">
-       <section class="tagger-mock-screen" data-mock-panel="sources" hidden>
+       <section class="tagger-mock-screen active" data-mock-panel="sources">
         <div class="tagger-page-heading"><div><small>PHOTO SOURCES</small><h3>照片來源</h3><p>從 Synology Photos 讀取候選照片與既有 metadata。</p></div><span class="tagger-live-pill">個人空間</span></div>
         <div class="tagger-filter-row"><label>空間<select><option>個人空間</option><option>共享空間</option></select></label><label>地點<select><option>全部地點</option><option selected>日本</option></select></label><label>標籤<select><option>全部標籤</option><option>旅行</option><option>家人</option></select></label><button type="button">載入照片</button></div>
         <div class="tagger-source-list"><article><div class="tagger-source-thumb amber">城</div><div><strong>IMG_1297.HEIC</strong><span>犬山市 · 日本 · 2026/10/21</span><small>Synology Photos 人物：Mandy Lin</small></div><b>已有標籤 3</b></article><article><div class="tagger-source-thumb violet">街</div><div><strong>IMG_1320.HEIC</strong><span>犬山市 · 日本 · 2026/10/21</span><small>GPS 座標 · metadata 可檢視</small></div><b>已有標籤 2</b></article></div>
+        <div class="tagger-source-actions"><span>預覽候選照片後，依地點、日期或既有標籤建立工作。</span><button type="button" data-mock-go="work">建立 AI 標記工作 →</button></div>
        </section>
-       <section class="tagger-mock-screen active" data-mock-panel="work">
+       <section class="tagger-mock-screen" data-mock-panel="work" hidden>
         <div class="tagger-page-heading"><div><small>AI TAGGING WORK</small><h3>建立 AI 標記工作</h3><p>選擇照片範圍；AI 產生描述與標籤後透過 Photos API 更新。</p></div></div>
         <div class="tagger-use-cases"><button class="selected" type="button" data-mock-case="location" aria-pressed="true">UC-01 <strong>依地點</strong><span>找出日本照片</span></button><button type="button" data-mock-case="date" aria-pressed="false">UC-02 <strong>依日期區間</strong><span>選擇起訖日期</span></button><button type="button" data-mock-case="tagged" aria-pressed="false">UC-04 <strong>已有標籤</strong><span>補充描述與相關標籤</span></button></div>
         <div class="tagger-filter-row" data-mock-case-fields="location"><label>照片空間<select><option>個人空間</option><option>共享空間</option></select></label><label>地點<select><option selected>日本</option><option>台灣</option></select></label><label>範圍上限<select><option>100 張</option><option>500 張</option><option>全部符合項目</option></select></label></div>
