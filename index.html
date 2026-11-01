@@ -3014,15 +3014,21 @@
   
     
 
-    /* 3-Endpoint Navigation Grid for Mascot Cards */
+    
+    /* Smart Conditional Endpoints for Mascot Cards */
     .card-endpoints {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 6px;
       width: 100%;
       margin-top: auto;
       padding-top: 1rem;
       border-top: 1px solid var(--border-light);
+    }
+    .card-endpoints.ep-count-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .card-endpoints.ep-count-4 {
+      grid-template-columns: repeat(2, 1fr);
     }
     .endpoint-pill {
       display: inline-flex;
@@ -3031,7 +3037,7 @@
       gap: 4px;
       padding: 7px 4px;
       border-radius: 9px;
-      font-size: 0.72rem;
+      font-size: 0.73rem;
       font-weight: 700;
       text-decoration: none;
       border: 1px solid var(--border-light);
@@ -3044,7 +3050,7 @@
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
     }
     .endpoint-pill .ep-icon {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       line-height: 1;
       flex-shrink: 0;
     }
@@ -3068,6 +3074,11 @@
       color: #0f172a;
     }
     .endpoint-pill.ep-pages:hover {
+      background: #fffbeb;
+      border-color: #fde68a;
+      color: #b45309;
+    }
+    .endpoint-pill.ep-live:hover {
       background: #ecfdf5;
       border-color: #6ee7b7;
       color: #047857;
@@ -3194,7 +3205,7 @@
         🎨 檢視 27 隻動物三大風格（Lucide 線性 · Modern Emblem 徽章 · Kawaii Chibi 萌寵）全圖鑑 ↗
       </a>
 </div>
-<div class="section-desc">落實「宏觀品牌紋章 + 微觀介面線性」雙軌圖標識別：點擊官方紋章或線性圖示可直接檢視純向量 SVG 檔案；每張專案卡片下方均提供「🎨 Showcase 設計展示、📦 Repo 原始碼庫、🌐 GitHub Pages 正式站點」三大關鍵端點直達導航。</div>
+<div class="section-desc">落實「宏觀品牌紋章 + 微觀介面線性」雙軌圖標識別：點擊勳章或線性圖示可直接檢視純向量 SVG 檔案；每張專案卡片下方均提供「🎨 Showcase 設計展示、📦 Repo 原始碼庫、🌐 Live 正式站點（具備獨立實體者另含 🚀 Pages 靜態站）」直達導航。</div>
 <div class="dual-tier-architecture-banner">
 <div class="dual-tier-header">
 <div class="dual-tier-title">🏛️ Modern Emblem 官方紋章 × ⚡ Lucide 介面線性：雙軌圖標設計架構</div>
@@ -3241,7 +3252,7 @@
 <div class="mascot-desc"><strong>宏觀</strong>以王者雄鹿立姿作為官方紋章門面；<strong>微觀</strong>以 24px 極簡對稱鹿角作為高密度導航與狀態線性圖標。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-3">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#mkdocs-life" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
@@ -3250,9 +3261,9 @@
 <span class="ep-icon">📦</span>
 <span class="ep-label">Repo</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://wenchiehlee.github.io/mkdocs-life/" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
+<a class="endpoint-pill ep-live" href="https://wenchiehlee.github.io/mkdocs-life/" rel="noopener noreferrer" target="_blank" title="造訪線上正式站點 (GitHub Pages) ↗">
 <span class="ep-icon">🌐</span>
-<span class="ep-label">Pages</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
@@ -3274,7 +3285,7 @@
 <div class="mascot-desc"><strong>宏觀</strong>以破曉知更旭日圓盤作為系統門面；<strong>微觀</strong>以圓滾高翹尾飛鳥作為情報雷達與通報 Chip 線性標誌。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-3">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#google-alert-manager" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
@@ -3283,9 +3294,9 @@
 <span class="ep-icon">📦</span>
 <span class="ep-label">Repo</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://wenchiehlee-money.github.io/GoogleAlertManager/" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
+<a class="endpoint-pill ep-live" href="https://wenchiehlee-money.github.io/GoogleAlertManager/" rel="noopener noreferrer" target="_blank" title="造訪線上正式站點 (GitHub Pages) ↗">
 <span class="ep-icon">🌐</span>
-<span class="ep-label">Pages</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
@@ -3307,7 +3318,7 @@
 <div class="mascot-desc"><strong>宏觀</strong>以深海翻騰水花躍鯨作為播放器封面；<strong>微觀</strong>以聲波噴泉座頭鯨作為聲學控制與音軌切換指示。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-3">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#youtube-audio-fetch" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
@@ -3316,9 +3327,9 @@
 <span class="ep-icon">📦</span>
 <span class="ep-label">Repo</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://zhongzheng782.github.io/YoutubeAudio.Fetch/?channel=yutinghaofinance" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
+<a class="endpoint-pill ep-live" href="https://zhongzheng782.github.io/YoutubeAudio.Fetch/?channel=yutinghaofinance" rel="noopener noreferrer" target="_blank" title="造訪線上音訊播放正式站點 ↗">
 <span class="ep-icon">🌐</span>
-<span class="ep-label">Pages</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
@@ -3340,7 +3351,7 @@
 <div class="mascot-desc"><strong>宏觀</strong>以 Docker 藍鯨承載貨櫃作為品牌紋章；<strong>微觀</strong>以貨櫃藍鯨線性圖標連結映像探索與容器啟動。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-3">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#docker-deck" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
@@ -3349,9 +3360,9 @@
 <span class="ep-icon">📦</span>
 <span class="ep-label">Repo</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://github.com/wenchiehlee/dockers" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
+<a class="endpoint-pill ep-live" href="https://github.com/wenchiehlee/dockers" rel="noopener noreferrer" target="_blank" title="造訪 Docker-Deck 映像目錄 ↗">
 <span class="ep-icon">🌐</span>
-<span class="ep-label">Pages</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
@@ -3373,7 +3384,7 @@
 <div class="mascot-desc"><strong>宏觀</strong>以沖天雙角赤陶狂牛盾牌作為多頭主頁門面；<strong>微觀</strong>以幾何牛角線條作為多頭突破與持股評等符號。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-3">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#mkdocs-investment" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
@@ -3382,9 +3393,9 @@
 <span class="ep-icon">📦</span>
 <span class="ep-label">Repo</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://wenchiehlee.github.io/mkdocs-investment/" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
+<a class="endpoint-pill ep-live" href="https://wenchiehlee.github.io/mkdocs-investment/" rel="noopener noreferrer" target="_blank" title="造訪線上正式站點 (GitHub Pages) ↗">
 <span class="ep-icon">🌐</span>
-<span class="ep-label">Pages</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
@@ -3406,7 +3417,7 @@
 <div class="mascot-desc"><strong>宏觀</strong>以冬眠防禦步態巨熊作為下檔風險護盾；<strong>微觀</strong>以圓耳線性熊頭標示空頭對沖與保守配置。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-3">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#mkdocs-investment" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
@@ -3415,9 +3426,9 @@
 <span class="ep-icon">📦</span>
 <span class="ep-label">Repo</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://wenchiehlee.github.io/mkdocs-investment/" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
+<a class="endpoint-pill ep-live" href="https://wenchiehlee.github.io/mkdocs-investment/" rel="noopener noreferrer" target="_blank" title="造訪線上正式站點 (GitHub Pages) ↗">
 <span class="ep-icon">🌐</span>
-<span class="ep-label">Pages</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
@@ -3439,7 +3450,7 @@
 <div class="mascot-desc"><strong>宏觀</strong>以忠誠巡守柴柴作為電視客廳情境總覽封面；<strong>微觀</strong>以豎耳線性犬首標記智慧家庭通知與即時監控。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-3">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#homeassistant-tv" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
@@ -3448,9 +3459,9 @@
 <span class="ep-icon">📦</span>
 <span class="ep-label">Repo</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://github.com/wenchiehlee-ux/UX-Deck/tree/main/deploy/android-tv" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
+<a class="endpoint-pill ep-live" href="https://github.com/wenchiehlee-ux/UX-Deck/tree/main/deploy/android-tv" rel="noopener noreferrer" target="_blank" title="檢視 Android TV 部署方案與設定 ↗">
 <span class="ep-icon">🌐</span>
-<span class="ep-label">Pages</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
@@ -3472,18 +3483,18 @@
 <div class="mascot-desc"><strong>宏觀</strong>以幾何守護者之姿作為私有雲系統門面；<strong>微觀</strong>以三角耳幾何貓首標示 Docker 容器、Tailscale 與連線狀態。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-3">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#synology-nas" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
 </a>
-<a class="endpoint-pill ep-repo" href="https://wenchiehlee.quickconnect.to" rel="noopener noreferrer" target="_blank" title="📦 前往 GitHub 原始碼儲存庫">
+<a class="endpoint-pill ep-repo" href="https://wenchiehlee.quickconnect.to" rel="noopener noreferrer" target="_blank" title="造訪 QuickConnect 遠端入口 ↗">
 <span class="ep-icon">📦</span>
-<span class="ep-label">Repo</span>
+<span class="ep-label">Portal</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://wenchiehlee.synology.me" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
+<a class="endpoint-pill ep-live" href="https://wenchiehlee.synology.me" rel="noopener noreferrer" target="_blank" title="造訪 Synology NAS 私有雲端中心 (DDNS) ↗">
 <span class="ep-icon">🌐</span>
-<span class="ep-label">Pages</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
@@ -3505,7 +3516,7 @@
 <div class="mascot-desc"><strong>宏觀</strong>以治癒系萌鴞作為個股研報官方認證印鑑；<strong>微觀</strong>以大眼線性貓頭鷹作為研究評等與安全邊際欄位圖標。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-3">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#tw-coverage" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
@@ -3514,9 +3525,9 @@
 <span class="ep-icon">📦</span>
 <span class="ep-label">Repo</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://wenchiehlee-money.github.io/My-TW-Coverage/" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
+<a class="endpoint-pill ep-live" href="https://wenchiehlee-money.github.io/My-TW-Coverage/" rel="noopener noreferrer" target="_blank" title="造訪線上正式站點 (GitHub Pages) ↗">
 <span class="ep-icon">🌐</span>
-<span class="ep-label">Pages</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
@@ -3538,7 +3549,7 @@
 <div class="mascot-desc"><strong>宏觀</strong>以展翅高飛的綠色領航雄鷹紋章作為法說會資料庫門面；<strong>微觀</strong>以銳利幾何鷹影作為重要事件與高階展望標籤。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-3">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#investor-conference" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
@@ -3547,9 +3558,9 @@
 <span class="ep-icon">📦</span>
 <span class="ep-label">Repo</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://wenchiehlee-money.github.io/InvestorConference/" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
+<a class="endpoint-pill ep-live" href="https://wenchiehlee-money.github.io/InvestorConference/" rel="noopener noreferrer" target="_blank" title="造訪線上正式站點 (GitHub Pages) ↗">
 <span class="ep-icon">🌐</span>
-<span class="ep-label">Pages</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
@@ -3571,7 +3582,7 @@
 <div class="mascot-desc"><strong>宏觀</strong>以幾何黑天鵝極端風險徽章作為雷達封面；<strong>微觀</strong>以高對比曜石天鵝作為市場恐慌 30 閾值與壓力測試標記。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-3">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#vix" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
@@ -3580,9 +3591,9 @@
 <span class="ep-icon">📦</span>
 <span class="ep-label">Repo</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://wenchiehlee-money.github.io/VIX/" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
+<a class="endpoint-pill ep-live" href="https://wenchiehlee-money.github.io/VIX/" rel="noopener noreferrer" target="_blank" title="造訪線上正式站點 (GitHub Pages) ↗">
 <span class="ep-icon">🌐</span>
-<span class="ep-label">Pages</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
@@ -3604,7 +3615,7 @@
 <div class="mascot-desc"><strong>宏觀</strong>以抱握松果的靈巧松鼠作為相片資產徽章；<strong>微觀</strong>以大尾線性松鼠標記 AI 物件辨識、場景分類與 EXIF/XMP 智慧標籤入庫。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-4">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#synology-photo-tagger" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
@@ -3613,9 +3624,13 @@
 <span class="ep-icon">📦</span>
 <span class="ep-label">Repo</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://zhongzheng782.github.io/Synology-Photo-Tagger/" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
-<span class="ep-icon">🌐</span>
+<a class="endpoint-pill ep-pages" href="https://zhongzheng782.github.io/Synology-Photo-Tagger/" rel="noopener noreferrer" target="_blank" title="🚀 造訪 GitHub Pages 靜態專案頁 ↗">
+<span class="ep-icon">🚀</span>
 <span class="ep-label">Pages</span>
+</a>
+<a class="endpoint-pill ep-live" href="https://newton.tail28f10.ts.net:15056/" rel="noopener noreferrer" target="_blank" title="造訪 Tailscale 私網運行之 AI 相片標籤實體服務 ↗">
+<span class="ep-icon">🌐</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
@@ -3643,7 +3658,7 @@
 <div class="mascot-desc"><strong>宏觀</strong>以跑酷凌空飛躍的敏捷白兔紋章呈現技能探索的品牌入口；<strong>微觀</strong>以跑酷疾速白兔線性圖標標示搜尋、分類與技能瀏覽功能。</div>
 
 
-<div class="card-endpoints">
+<div class="card-endpoints ep-count-3">
 <a class="endpoint-pill ep-showcase" href="./showcases.html#skill-deck" rel="noopener noreferrer" target="_blank" title="🎨 查看 UX-Deck 設計展示（色彩光譜、字體與元件）">
 <span class="ep-icon">🎨</span>
 <span class="ep-label">Showcase</span>
@@ -3652,9 +3667,9 @@
 <span class="ep-icon">📦</span>
 <span class="ep-label">Repo</span>
 </a>
-<a class="endpoint-pill ep-pages" href="https://wenchiehlee.github.io/skills/" rel="noopener noreferrer" target="_blank" title="🌐 造訪 GitHub Pages 線上正式站點">
+<a class="endpoint-pill ep-live" href="https://wenchiehlee.github.io/skills/" rel="noopener noreferrer" target="_blank" title="造訪線上正式站點 (GitHub Pages) ↗">
 <span class="ep-icon">🌐</span>
-<span class="ep-label">Pages</span>
+<span class="ep-label">Live</span>
 </a>
 </div>
 </div>
