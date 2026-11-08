@@ -4910,11 +4910,15 @@
           if (!card || !d || !d.card) return;
           var tag = card.querySelector('.deck-tag');
           if (tag && d.card.tag) tag.textContent = d.card.tag;
+          var lbls = card.querySelectorAll('.stat-lbl');
           var vals = card.querySelectorAll('.stat-val');
+          if (lbls[0] && d.card.stat1) lbls[0].textContent = d.card.stat1.label;
           if (vals[0] && d.card.stat1) vals[0].textContent = d.card.stat1.value;
+          if (lbls[1] && d.card.stat2) lbls[1].textContent = d.card.stat2.label;
           if (vals[1] && d.card.stat2) vals[1].textContent = d.card.stat2.value;
         }).catch(function() {});
     })();
   </script>
+
 </body>
 </html>
