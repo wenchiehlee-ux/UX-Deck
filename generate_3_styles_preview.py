@@ -11,9 +11,8 @@ def read_svg(path):
             return content.replace('<?xml version="1.0" encoding="utf-8"?>', '')
     return None
 
-# Section 1: Active Endpoints (13 animals - 1:1 aligned with index.html Settled Geometric Mascots)
-# Section 2: Reserves (6 animals)
 master_animals = [
+# Section 1: Active Endpoints (20 animals - 1:1 aligned with index.html Settled Geometric Mascots)
     {
         'id': 'deer',
         'name_zh': '幾何林鹿',
@@ -157,8 +156,85 @@ master_animals = [
         'lucide_file': 'lucide-rabbit.svg',
         'emblem_file': 'emblem-rabbit.svg'
     },
+    {
+        'id': 'lion',
+        'name_zh': '投資金獅',
+        'name_en': 'Investment Golden Lion',
+        'status': '✅ 已上線：wenchiehlee-investment.github.io',
+        'category': 'active',
+        'color': '#d97706',
+        'desc': '以金獅象徵投資機構的穩健治理與長期守護，作為組織官方入口識別。',
+        'lucide_file': 'lucide-lion.svg',
+        'emblem_file': 'emblem-lion.svg'
+    },
+    {
+        'id': 'turtle',
+        'name_zh': '人文靈龜',
+        'name_en': 'Humanities Wise Turtle',
+        'status': '✅ 已上線：wenchiehlee-life.github.io',
+        'category': 'active',
+        'color': '#0f766e',
+        'desc': '以靈龜象徵耐心、平衡與長久，作為人文生活組織的官方入口識別。',
+        'lucide_file': 'lucide-turtle.svg',
+        'emblem_file': 'emblem-turtle.svg'
+    },
+    {
+        'id': 'elephant',
+        'name_zh': '工程知識象',
+        'name_en': 'Engineering Knowledge Elephant',
+        'status': '✅ 已上線：mkdocs',
+        'category': 'active',
+        'color': '#6366f1',
+        'desc': '以知識象代表記憶、脈絡與工程文件的可靠累積，作為技術知識基底識別。',
+        'lucide_file': 'lucide-elephant.svg',
+        'emblem_file': 'emblem-elephant.svg'
+    },
+    {
+        'id': 'personal_cat',
+        'name_zh': '個人品牌貓',
+        'name_en': 'Personal Brand Cat',
+        'status': '✅ 已上線：wenchiehlee.github.io',
+        'category': 'active',
+        'color': '#db2777',
+        'desc': '以靈巧親和的品牌貓串連個人作品、專案與公開資訊，作為個人官方入口識別。',
+        'lucide_file': 'lucide-cat.svg',
+        'emblem_file': 'emblem-cat.svg'
+    },
+    {
+        'id': 'camel',
+        'name_zh': '耐力駱駝',
+        'name_en': 'Endurance Camel',
+        'status': '✅ 已上線：ZhongZheng782/Mail-Deck',
+        'category': 'active',
+        'color': '#b45309',
+        'desc': '宏觀沿用圖鑑「耐力駱駝」紋章與赭金色系；微觀以駱駝剪影呈現長時運行與穩定郵件傳遞，部署於 /web/mail-deck/。',
+        'lucide_file': 'lucide-camel.svg',
+        'emblem_file': 'emblem-camel.svg'
+    },
+    {
+        'id': 'tiger',
+        'name_zh': '突破猛虎',
+        'name_en': 'Breakthrough Tiger',
+        'status': '✅ 已上線：ZhongZheng782/Photo-Deck',
+        'category': 'active',
+        'color': '#ea580c',
+        'desc': '宏觀採用突破猛虎紋章與活力琥珀橙色系，額頭王字威震山谷；微觀以猛虎線性圖標象徵影像探索的敏銳洞察與衝刺突破，部署於 /web/photo-deck/。',
+        'lucide_file': 'lucide-tiger.svg',
+        'emblem_file': 'emblem-tiger.svg'
+    },
+    {
+        'id': 'rhino',
+        'name_zh': '重甲灰犀牛',
+        'name_en': 'Grey Rhino',
+        'status': '✅ 已上線：ZhongZheng782/wenchiehlee.quickconnect.to',
+        'category': 'active',
+        'color': '#64748b',
+        'desc': '宏觀沿用圖鑑的「重甲灰犀牛」紋章與石板灰色系；微觀以犀牛剪影象徵私有雲門戶的防護與穩定連線，部署於 /web/。',
+        'lucide_file': 'lucide-rhino.svg',
+        'emblem_file': 'emblem-rhino.svg'
+    },
 
-    # Section 2: Modern Emblem & Lucide Reserves (6 animals)
+    # Section 2: Modern Emblem & Lucide Reserves (12 animals)
     {
         'id': 'dolphin',
         'name_zh': '飛躍海豚',
@@ -171,61 +247,6 @@ master_animals = [
         'emblem_file': 'emblem-dolphin.svg'
     },
     {
-        'id': 'lion',
-        'name_zh': '王者雄獅',
-        'name_en': 'Imperial Lion',
-        'status': '📦 備選動物庫存',
-        'category': 'reserve',
-        'color': '#d97706',
-        'desc': '王者鬃毛與沉穩步態，象徵權威龍頭指標、藍籌企業霸主實力。',
-        'lucide_file': 'lucide-lion.svg',
-        'emblem_file': 'emblem-lion.svg'
-    },
-    {
-        'id': 'elephant',
-        'name_zh': '穩健巨象',
-        'name_en': 'Steadfast Elephant',
-        'status': '📦 備選動物庫存',
-        'category': 'reserve',
-        'color': '#64748b',
-        'desc': '頂天立地、戲水長鼻，象徵萬億主權基金規模與堅如磐石穩健底盤。',
-        'lucide_file': 'lucide-elephant.svg',
-        'emblem_file': 'emblem-elephant.svg'
-    },
-    {
-        'id': 'camel',
-        'name_zh': '耐力駱駝',
-        'name_en': 'Endurance Camel',
-        'status': '📦 備選動物庫存',
-        'category': 'reserve',
-        'color': '#b45309',
-        'desc': '日落沙漠中長途跋涉，象徵穿越多空牛熊景氣週期與極強抗壓韌性。',
-        'lucide_file': 'lucide-camel.svg',
-        'emblem_file': 'emblem-camel.svg'
-    },
-    {
-        'id': 'rhino',
-        'name_zh': '重甲灰犀牛',
-        'name_en': 'Grey Rhino',
-        'status': '📦 備選動物庫存',
-        'category': 'reserve',
-        'color': '#64748b',
-        'desc': '象徵宏觀不可阻擋的巨大衝擊（Grey Rhino）、系統性轉折動能。',
-        'lucide_file': 'lucide-rhino.svg',
-        'emblem_file': 'emblem-rhino.svg'
-    },
-    {
-        'id': 'turtle',
-        'name_zh': '裝甲玄龜',
-        'name_en': 'Armored Turtle',
-        'status': '📦 備選動物庫存',
-        'category': 'reserve',
-        'color': '#10b981',
-        'desc': '極簡幾何切面甲冑，象徵硬體極致安全性、堅不可摧與千年長青。',
-        'lucide_file': 'lucide-turtle.svg',
-        'emblem_file': 'emblem-turtle.svg'
-    },
-    {
         'id': 'giraffe',
         'name_zh': '高瞻長頸鹿',
         'name_en': 'Sovereign Giraffe',
@@ -235,17 +256,6 @@ master_animals = [
         'desc': '優雅挺拔長頸與雙角，象徵高瞻遠矚、長期戰略佈局與宏觀全局觀測。',
         'lucide_file': 'lucide-giraffe.svg',
         'emblem_file': 'emblem-giraffe.svg'
-    },
-    {
-        'id': 'tiger',
-        'name_zh': '突破猛虎',
-        'name_en': 'Breakthrough Tiger',
-        'status': '📦 備選動物庫存',
-        'category': 'reserve',
-        'color': '#ea580c',
-        'desc': '額頭王字威震山谷，象徵主動出擊衝刺、爆發性業績增長與強大市場突破動能。',
-        'lucide_file': 'lucide-tiger.svg',
-        'emblem_file': 'emblem-tiger.svg'
     },
     {
         'id': 'monkey',
@@ -814,7 +824,7 @@ html_content = f'''<!DOCTYPE html>
       <span>🚀 第一部分：現役端點與進行中評選動物 ({active_count} 隻)</span>
     </h2>
     <span class="section-badge" style="background: rgba(74, 222, 128, 0.15); color: #4ade80;">
-      已部署至 13 大專案端點 (與 index.html 13 隻幾何吉祥物 1:1 完美對齊)
+      已部署至 {active_count} 大專案端點 (與 index.html {active_count} 隻幾何吉祥物 1:1 完美對齊)
     </span>
   </div>
   <div class="grid">
