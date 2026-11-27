@@ -3251,6 +3251,21 @@
       border-color: #93c5fd;
       color: #1d4ed8;
     }
+
+    .mascot-directory-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; margin:1.25rem 0 2rem; }
+    .mascot-directory-card { border-top:4px solid var(--mascot-accent); padding:1.25rem; gap:.9rem; }
+    .directory-card-head { display:flex; align-items:center; gap:.85rem; min-width:0; }
+    .directory-mascot { width:48px; height:48px; flex:0 0 48px; display:grid; place-items:center; border-radius:14px; background:var(--mascot-soft); border:1px solid var(--mascot-border); font-size:1.55rem; }
+    .directory-title-wrap { min-width:0; }
+    .directory-card-title { color:var(--mascot-accent); font-size:1rem; line-height:1.3; margin:0; }
+    .directory-project-name { color:#64748b; font-size:.78rem; line-height:1.45; margin-top:.25rem; overflow-wrap:anywhere; }
+    .directory-card-desc { color:#475569; font-size:.84rem; line-height:1.6; margin:0; }
+    .directory-palette { display:flex; align-items:center; gap:.4rem; flex-wrap:wrap; }
+    .directory-swatch { width:20px; height:20px; border:1px solid rgba(15,23,42,.08); border-radius:6px; }
+    .directory-palette-label { margin-left:.25rem; color:#64748b; font:600 .72rem/1.4 "JetBrains Mono",monospace; }
+    .directory-repo-link { display:inline-flex; align-items:center; align-self:flex-start; gap:.35rem; color:var(--mascot-accent); font-size:.8rem; font-weight:700; text-decoration:none; overflow-wrap:anywhere; }
+    .directory-repo-link:hover { text-decoration:underline; }
+    @media(max-width:680px) { .mascot-directory-grid { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -3465,7 +3480,7 @@
      集中瀏覽各端點的品牌色彩、專屬字體與真實元件預覽；點選吉祥物徽章可直接定位到對應專案。
     </div>
 <a class="showcase-back-link" href="./index.html">
-     ← 回到十三隻專案象徵幾何吉祥物
+     ← 回到二十組專案象徵幾何吉祥物
     </a>
 </header>
 <!-- DUAL TIER ARCHITECTURE BANNER -->
@@ -3524,7 +3539,7 @@
 <!-- MASCOT QUICK NAVIGATOR -->
 <div class="mascot-quick-nav">
 <div class="mascot-nav-title">
-     🐾 十三隻專案象徵幾何吉祥物快速跳轉：
+     🐾 二十組專案象徵幾何吉祥物快速跳轉：
     </div>
 <div class="mascot-nav-list">
 <a class="nav-mascot-chip chip-deer" href="#mkdocs-life">
@@ -3542,7 +3557,7 @@
 <a class="nav-mascot-chip chip-bull" href="#mkdocs-investment">
       🐂 幾何狂牛
      </a>
-<a class="nav-mascot-chip chip-bear" href="#mkdocs-investment">
+<a class="nav-mascot-chip chip-bear" href="#mkdocs-investment-bear">
       🐻 北歐守護熊
      </a>
 <a class="nav-mascot-chip chip-dog" href="#homeassistant-tv">
@@ -3566,6 +3581,14 @@
 <a class="nav-mascot-chip chip-rabbit" href="#skill-deck">
       🐇 敏捷白兔
      </a>
+
+<a class="nav-mascot-chip" href="#investment-home" style="background:#fffbeb;color:#b45309;border-color:#fde68a;">🦁 投資機構金獅</a>
+<a class="nav-mascot-chip" href="#life-home" style="background:#f0fdfa;color:#0f766e;border-color:#99f6e4;">🐢 人文生活靈龜</a>
+<a class="nav-mascot-chip" href="#mkdocs" style="background:#eef2ff;color:#4f46e5;border-color:#c7d2fe;">🐘 工程知識象</a>
+<a class="nav-mascot-chip" href="#personal-home" style="background:#fdf2f8;color:#be185d;border-color:#fbcfe8;">🐈 個人品牌貓</a>
+<a class="nav-mascot-chip" href="#mail-deck" style="background:#fff7ed;color:#b45309;border-color:#fed7aa;">🐪 耐力駱駝</a>
+<a class="nav-mascot-chip" href="#photo-deck" style="background:#ecfdf5;color:#047857;border-color:#a7f3d0;">🐇 影像探索兔</a>
+<a class="nav-mascot-chip" href="#quickconnect-rhino" style="background:#f8fafc;color:#475569;border-color:#cbd5e1;">🦏 重甲灰犀牛</a>
 </div>
 </div>
 <!-- SECTION 2: MERGED PALETTE, TYPOGRAPHY & LIVE COMPONENT PREVIEWS (1, 1, 1, 1, 1, 1, 1, 1, 1 LAYOUT) -->
@@ -3573,7 +3596,7 @@
     🎨 2. 色彩調性、專屬字體與真實元件展示 (Color, Typography &amp; Live Previews)
    </div>
 <div class="section-desc">
-    以白底為基準（White Basis），將十二個兄弟專案的精準品牌色彩光譜、人文與科技專屬字體，與真實落地之 UI 實體元件緊密結合，並提供直達各站點或專案儲存庫的連結。
+    以白底為基準（White Basis），將二十組專案的品牌色彩光譜、人文與科技專屬字體，與真實落地之 UI 實體元件緊密結合，並提供直達各站點或專案儲存庫的連結。
    </div>
 <div class="merged-ecosystem-grid">
 <!-- CARD 1: mkdocs-life -->
@@ -6993,6 +7016,109 @@
 </div>
 </div>
 <!-- CARD 12: Docker-Deck -->
+
+<section class="directory-intro" aria-label="補齊二十組專案吉祥物展示">
+  <div class="section-title" style="margin-top:2.5rem;">🧭 其餘專案吉祥物展示</div>
+  <div class="section-desc">以下補上其餘八個吉祥物項目；每張卡連到對應 GitHub repo，並沿用首頁的專屬色彩與定位。</div>
+  <div class="mascot-directory-grid">
+<article class="merged-project-card mascot-directory-card" id="mkdocs-investment-bear" style="--mascot-accent:#16a34a;--mascot-soft:#f0fdf4;--mascot-border:#dcfce7;">
+  <div class="directory-card-head">
+    <img class="directory-mascot" src="./tokens/icons/modern-emblem/emblem-bear.svg" alt=""/>
+    <div class="directory-title-wrap"><h3 class="directory-card-title">北歐守護熊</h3><div class="directory-project-name">mkdocs-investment · 防禦避險</div></div>
+  </div>
+  <p class="directory-card-desc">防禦配置、風險控管與安全邊際的穩健金融視覺。</p>
+  <div class="directory-palette" aria-label="品牌色票">
+    <span class="directory-swatch" style="background:#16a34a;"></span><span class="directory-swatch" style="background:#f0fdf4;border-color:#dcfce7;"></span><span class="directory-swatch" style="background:#dcfce7;"></span>
+    <span class="directory-palette-label">色彩基調 · #16a34a</span>
+  </div>
+  <a class="directory-repo-link" href="https://github.com/wenchiehlee/mkdocs-investment" target="_blank" rel="noopener noreferrer">📦 wenchiehlee/mkdocs-investment ↗</a>
+</article>
+<article class="merged-project-card mascot-directory-card" id="investment-home" style="--mascot-accent:#d97706;--mascot-soft:#fffbeb;--mascot-border:#fde68a;">
+  <div class="directory-card-head">
+    <img class="directory-mascot" src="./tokens/icons/modern-emblem/emblem-lion.svg" alt=""/>
+    <div class="directory-title-wrap"><h3 class="directory-card-title">投資機構金獅</h3><div class="directory-project-name">wenchiehlee-investment.github.io · 投資組織官方入口</div></div>
+  </div>
+  <p class="directory-card-desc">以金色獅徽呈現投資組織的權威識別與穩定導覽。</p>
+  <div class="directory-palette" aria-label="品牌色票">
+    <span class="directory-swatch" style="background:#d97706;"></span><span class="directory-swatch" style="background:#fffbeb;border-color:#fde68a;"></span><span class="directory-swatch" style="background:#fde68a;"></span>
+    <span class="directory-palette-label">色彩基調 · #d97706</span>
+  </div>
+  <a class="directory-repo-link" href="https://github.com/wenchiehlee-investment/wenchiehlee-investment.github.io" target="_blank" rel="noopener noreferrer">📦 wenchiehlee-investment/wenchiehlee-investment.github.io ↗</a>
+</article>
+<article class="merged-project-card mascot-directory-card" id="life-home" style="--mascot-accent:#0f766e;--mascot-soft:#f0fdfa;--mascot-border:#99f6e4;">
+  <div class="directory-card-head">
+    <img class="directory-mascot" src="./tokens/icons/modern-emblem/emblem-turtle.svg" alt=""/>
+    <div class="directory-title-wrap"><h3 class="directory-card-title">人文生活靈龜</h3><div class="directory-project-name">wenchiehlee-life.github.io · 生活組織官方入口</div></div>
+  </div>
+  <p class="directory-card-desc">以沉靜青綠色系承載生活文章與長期累積的知識內容。</p>
+  <div class="directory-palette" aria-label="品牌色票">
+    <span class="directory-swatch" style="background:#0f766e;"></span><span class="directory-swatch" style="background:#f0fdfa;border-color:#99f6e4;"></span><span class="directory-swatch" style="background:#99f6e4;"></span>
+    <span class="directory-palette-label">色彩基調 · #0f766e</span>
+  </div>
+  <a class="directory-repo-link" href="https://github.com/wenchiehlee-life/wenchiehlee-life.github.io" target="_blank" rel="noopener noreferrer">📦 wenchiehlee-life/wenchiehlee-life.github.io ↗</a>
+</article>
+<article class="merged-project-card mascot-directory-card" id="mkdocs" style="--mascot-accent:#4f46e5;--mascot-soft:#eef2ff;--mascot-border:#c7d2fe;">
+  <div class="directory-card-head">
+    <img class="directory-mascot" src="./tokens/icons/modern-emblem/emblem-elephant.svg" alt=""/>
+    <div class="directory-title-wrap"><h3 class="directory-card-title">工程知識象</h3><div class="directory-project-name">mkdocs · 工程技術文件中心</div></div>
+  </div>
+  <p class="directory-card-desc">以靛藍色系呈現工程文件、技術索引與層級清楚的閱讀體驗。</p>
+  <div class="directory-palette" aria-label="品牌色票">
+    <span class="directory-swatch" style="background:#4f46e5;"></span><span class="directory-swatch" style="background:#eef2ff;border-color:#c7d2fe;"></span><span class="directory-swatch" style="background:#c7d2fe;"></span>
+    <span class="directory-palette-label">色彩基調 · #4f46e5</span>
+  </div>
+  <a class="directory-repo-link" href="https://github.com/wenchiehlee/mkdocs" target="_blank" rel="noopener noreferrer">📦 wenchiehlee/mkdocs ↗</a>
+</article>
+<article class="merged-project-card mascot-directory-card" id="personal-home" style="--mascot-accent:#be185d;--mascot-soft:#fdf2f8;--mascot-border:#fbcfe8;">
+  <div class="directory-card-head">
+    <img class="directory-mascot" src="./tokens/icons/modern-emblem/emblem-cat.svg" alt=""/>
+    <div class="directory-title-wrap"><h3 class="directory-card-title">個人品牌貓</h3><div class="directory-project-name">wenchiehlee.github.io · 個人官方主站</div></div>
+  </div>
+  <p class="directory-card-desc">以親和的莓紅色系串連個人資訊、作品與公開入口。</p>
+  <div class="directory-palette" aria-label="品牌色票">
+    <span class="directory-swatch" style="background:#be185d;"></span><span class="directory-swatch" style="background:#fdf2f8;border-color:#fbcfe8;"></span><span class="directory-swatch" style="background:#fbcfe8;"></span>
+    <span class="directory-palette-label">色彩基調 · #be185d</span>
+  </div>
+  <a class="directory-repo-link" href="https://github.com/wenchiehlee/wenchiehlee.github.io" target="_blank" rel="noopener noreferrer">📦 wenchiehlee/wenchiehlee.github.io ↗</a>
+</article>
+<article class="merged-project-card mascot-directory-card" id="mail-deck" style="--mascot-accent:#b45309;--mascot-soft:#fff7ed;--mascot-border:#fed7aa;">
+  <div class="directory-card-head">
+    <img class="directory-mascot" src="./tokens/icons/modern-emblem/emblem-camel.svg" alt=""/>
+    <div class="directory-title-wrap"><h3 class="directory-card-title">耐力駱駝 (Endurance Camel)</h3><div class="directory-project-name">Mail-Deck · Synology Web Station /web/mail-deck/</div></div>
+  </div>
+  <p class="directory-card-desc">採用圖鑑駱駝紋章與赭金色系，象徵長時運行與穩定郵件服務。</p>
+  <div class="directory-palette" aria-label="品牌色票">
+    <span class="directory-swatch" style="background:#b45309;"></span><span class="directory-swatch" style="background:#fff7ed;border-color:#fed7aa;"></span><span class="directory-swatch" style="background:#fed7aa;"></span>
+    <span class="directory-palette-label">色彩基調 · #b45309</span>
+  </div>
+  <a class="directory-repo-link" href="https://github.com/ZhongZheng782/Mail-Deck" target="_blank" rel="noopener noreferrer">📦 ZhongZheng782/Mail-Deck ↗</a>
+</article>
+<article class="merged-project-card mascot-directory-card" id="photo-deck" style="--mascot-accent:#059669;--mascot-soft:#ecfdf5;--mascot-border:#a7f3d0;">
+  <div class="directory-card-head">
+    <img class="directory-mascot" src="./tokens/icons/modern-emblem/emblem-rabbit.svg" alt=""/>
+    <div class="directory-title-wrap"><h3 class="directory-card-title">影像探索兔</h3><div class="directory-project-name">Photo-Deck · Synology Web Station /web/photo-deck/</div></div>
+  </div>
+  <p class="directory-card-desc">採用白兔紋章與清新綠色系，呈現快速瀏覽、整理與影像探索。</p>
+  <div class="directory-palette" aria-label="品牌色票">
+    <span class="directory-swatch" style="background:#059669;"></span><span class="directory-swatch" style="background:#ecfdf5;border-color:#a7f3d0;"></span><span class="directory-swatch" style="background:#a7f3d0;"></span>
+    <span class="directory-palette-label">色彩基調 · #059669</span>
+  </div>
+  <a class="directory-repo-link" href="https://github.com/ZhongZheng782/Photo-Deck" target="_blank" rel="noopener noreferrer">📦 ZhongZheng782/Photo-Deck ↗</a>
+</article>
+<article class="merged-project-card mascot-directory-card" id="quickconnect-rhino" style="--mascot-accent:#64748b;--mascot-soft:#f8fafc;--mascot-border:#cbd5e1;">
+  <div class="directory-card-head">
+    <img class="directory-mascot" src="./tokens/icons/modern-emblem/emblem-rhino.svg" alt=""/>
+    <div class="directory-title-wrap"><h3 class="directory-card-title">重甲灰犀牛 (Grey Rhino)</h3><div class="directory-project-name">wenchiehlee.quickconnect.to · Synology Web Station /web/</div></div>
+  </div>
+  <p class="directory-card-desc">採用灰犀牛紋章與石板灰色系，呼應私有雲門戶的防護與穩定連線。</p>
+  <div class="directory-palette" aria-label="品牌色票">
+    <span class="directory-swatch" style="background:#64748b;"></span><span class="directory-swatch" style="background:#f8fafc;border-color:#cbd5e1;"></span><span class="directory-swatch" style="background:#cbd5e1;"></span>
+    <span class="directory-palette-label">色彩基調 · #64748b</span>
+  </div>
+  <a class="directory-repo-link" href="https://github.com/ZhongZheng782/wenchiehlee.quickconnect.to" target="_blank" rel="noopener noreferrer">📦 ZhongZheng782/wenchiehlee.quickconnect.to ↗</a>
+</article>
+  </div>
+</section>
 </div>
 </div>
 <script>
