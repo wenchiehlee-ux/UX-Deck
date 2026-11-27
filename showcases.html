@@ -3254,6 +3254,51 @@
 
 
     .complete-project-card { --project-accent:#475569; --project-soft:#f8fafc; }
+
+    .mail-portal-preview .preview-section-header { display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; }
+    .mail-portal-preview .preview-section-header a { color:#b45309; font-size:.8rem; font-weight:700; text-decoration:none; }
+    .mail-portal-preview .preview-section-header a:hover { text-decoration:underline; }
+    .mail-portal-frame { padding:1rem; border:1px solid #e7e5e4; border-radius:16px; background:#fff; color:#1f2937; box-shadow:0 10px 28px rgba(120,53,15,.06); }
+    .mail-preview-topbar { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding-bottom:.8rem; border-bottom:1px solid #e2e8f0; }
+    .mail-preview-brand,.mail-preview-meta { display:flex; align-items:center; gap:.6rem; }
+    .mail-preview-brand img { width:36px; height:36px; padding:3px; border:1px solid #fed7aa; border-radius:11px; background:#fff7ed; }
+    .mail-preview-brand strong { font-size:.9rem; }
+    .mail-preview-meta { color:#64748b; font-size:.68rem; }
+    .mail-preview-private,.mail-preview-state { display:inline-flex; align-items:center; gap:.35rem; padding:.3rem .55rem; border:1px solid #99f6e4; border-radius:999px; background:#f0fdfa; color:#0f766e; white-space:nowrap; }
+    .mail-preview-private i,.mail-preview-state i { width:7px; height:7px; border-radius:50%; background:#0f766e; }
+    .mail-preview-intro { padding:1.1rem 0 .8rem; }
+    .mail-preview-intro small,.mail-preview-heading small { color:#b45309; font:700 .65rem/1.4 'JetBrains Mono',ui-monospace,monospace; letter-spacing:.08em; }
+    .mail-preview-intro h3 { margin:.4rem 0; color:#1f2937; font-size:1.25rem; }
+    .mail-preview-intro p { margin:0; color:#64748b; font-size:.78rem; }
+    .mail-preview-status { padding:1rem; border:1px solid #e7e5e4; border-top:3px solid #b45309; border-radius:13px; background:#fff; }
+    .mail-preview-heading { display:flex; justify-content:space-between; align-items:center; gap:.7rem; }
+    .mail-preview-heading h4 { margin:.25rem 0 0; color:#1f2937; font-size:.9rem; }
+    .mail-preview-state { font-size:.65rem; }
+    .mail-preview-progress-copy { display:flex; align-items:baseline; gap:.7rem; margin-top:1rem; }
+    .mail-preview-progress-copy strong { color:#1f2937; font-size:1.2rem; }
+    .mail-preview-progress-copy span,.mail-preview-pending { color:#64748b; font-size:.68rem; }
+    .mail-preview-progress { height:7px; margin:.5rem 0; overflow:hidden; border-radius:99px; background:#f1f5f9; }
+    .mail-preview-progress span { display:block; width:18%; height:100%; border-radius:inherit; background:linear-gradient(90deg,#b45309,#d97706); }
+    .mail-preview-pending { display:flex; justify-content:space-between; }
+    .mail-preview-table-card { margin-top:1rem; padding:.85rem; border:1px solid #e7e5e4; border-radius:11px; }
+    .mail-preview-table-card>strong { font-size:.75rem; }
+    .mail-preview-table { margin-top:.65rem; overflow:hidden; border-radius:7px; font-size:.62rem; }
+    .mail-preview-table>div { display:grid; grid-template-columns:2fr repeat(4,minmax(45px,.75fr)); gap:.4rem; padding:.45rem; border-bottom:1px solid #e7e5e4; color:#475569; }
+    .mail-preview-table>div:last-child { border-bottom:0; }
+    .mail-preview-table-head { background:#fff7ed; color:#7c2d12!important; font-weight:700; }
+    .mail-preview-table-card>small,.mail-preview-merge>small { display:block; margin-top:.5rem; color:#64748b; font-size:.62rem; }
+    .mail-preview-merge { margin-top:.75rem; padding:.8rem; border:1px solid #99f6e4; border-radius:10px; background:#f0fdfa; }
+    .mail-preview-merge>div:first-child { display:flex; justify-content:space-between; gap:.5rem; color:#334155; font-size:.68rem; }
+    .mail-preview-merge>div:first-child span { color:#0f766e; font-weight:700; }
+    .mail-preview-merge-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.35rem; margin-top:.6rem; }
+    .mail-preview-merge-grid span { padding:.4rem; border:1px solid #99f6e4; border-radius:7px; background:#fff; color:#475569; font-size:.62rem; }
+    .mail-preview-org { display:grid; grid-template-columns:1fr 1fr; gap:.65rem; margin-top:.75rem; }
+    .mail-preview-org article { display:grid; gap:.3rem; padding:.75rem; border:1px solid #e7e5e4; border-radius:10px; background:#fff; }
+    .mail-preview-org b { color:#1f2937; font-size:.72rem; }
+    .mail-preview-org span { color:#b45309; font-size:.68rem; font-weight:700; }
+    .mail-preview-org small { color:#64748b; font-size:.62rem; }
+    .mail-preview-caption { margin:.7rem 0 0; color:#64748b; font-size:.76rem; line-height:1.6; }
+    @media(max-width:680px) { .mail-portal-frame { padding:.7rem; } .mail-preview-meta>span:first-child { display:none; } .mail-preview-table { overflow-x:auto; } .mail-preview-table>div { grid-template-columns:minmax(130px,2fr) repeat(4,minmax(38px,.75fr)); } .mail-preview-merge-grid { grid-template-columns:1fr 1fr; } .mail-preview-org { grid-template-columns:1fr; } }
     .complete-project-card .wrapper-tiger { background:#fff7ed; border:1px solid #fed7aa; }
     .complete-project-card .ux-icon-tiger { color:#ea580c; }
     .complete-project-card .ux-icon-tiger:hover { color:#c2410c; }
@@ -7102,10 +7147,21 @@
 <a class="emblem-tile" href="./tokens/icons/modern-emblem/emblem-camel.svg" target="_blank" rel="noopener noreferrer" title="檢視 耐力駱駝 (Endurance Camel) 官方紋章"><img class="emblem-thumb" src="./tokens/icons/modern-emblem/emblem-camel.svg" alt="耐力駱駝 (Endurance Camel) 官方紋章"/><span class="badge-role-tag emblem-tag">🏛️ 官方紋章</span></a>
 <div class="duo-divider"><span class="duo-arrow">⇄</span></div>
 <a class="lucide-tile" style="background:#fff7ed;border:1px solid #b4530955;color:#b45309;" href="./tokens/icons/lucide/lucide-camel.svg" target="_blank" rel="noopener noreferrer" title="檢視 耐力駱駝 (Endurance Camel) Lucide 動物剪影"><img class="ux-icon ux-icon-xl" src="./tokens/icons/lucide/lucide-camel.svg" alt=""/><span class="badge-role-tag lucide-tag">⚡ 介面線性</span></a></div>
-<div class="project-title-group"><div class="project-name">Mail-Deck · Synology Web Station /web/mail-deck/</div><div class="project-category">Synology 門戶 · 郵件服務入口與狀態導覽 · 吉祥物：耐力駱駝 (Endurance Camel) · 駱駝耐力</div></div></div>
+<div class="project-title-group"><div class="project-name">Mail-Deck · Synology Web Station /web/mail-deck/</div><div class="project-category">Synology 門戶 · Outlook／Gmail 郵件封存索引儀表板 · 吉祥物：耐力駱駝 (Endurance Camel) · 駱駝耐力</div></div></div>
 <div class="project-header-endpoints"><a class="header-ep-pill ep-deck" href="./index.html#mail-deck" title="回到 UX-Deck 吉祥物卡片"><span>🏠</span><span>Deck</span></a><a class="header-ep-pill ep-repo" href="https://github.com/ZhongZheng782/Mail-Deck" rel="noopener noreferrer" target="_blank" title="查看 GitHub 原始碼儲存庫"><span>📦</span><span>Repo</span></a><a class="header-ep-pill ep-live" href="https://newton.tail28f10.ts.net/mail-deck/" rel="noopener noreferrer" target="_blank" title="開啟線上正式入口"><span>🌐</span><span>newton.tail28f10.ts.net/mail-deck ↗</span></a></div></div>
 <div class="specs-section"><div class="specs-top-row"><span class="specs-badge-label">🎨 品牌色彩光譜</span><div class="matrix-swatches"><div class="swatch" style="background:#b45309;" title="品牌色 #b45309"></div><div class="swatch" style="background:#0f766e;" title="品牌色 #0f766e"></div><div class="swatch" style="background:#2563eb;" title="品牌色 #2563eb"></div><div class="swatch" style="background:#fff7ed;" title="品牌色 #fff7ed"></div></div></div><div class="font-sample-box"><div class="font-name-tag"><span>字體與資訊層級</span><span>Inter + JetBrains Mono</span></div><div class="font-preview-text" style="font-family:Inter,'Noto Sans TC',sans-serif;">MAIL ARCHIVE · WJ ＆ MANDY　｜　NAS 統計門戶</div></div><div class="ux-design-rationale"><strong>視覺與使用策略</strong><span>集中呈現 Outlook 與 Gmail 郵件庫的索引進度、資料來源與稽核摘要；郵件本文、SQLite 與 OAuth 憑證留在 NAS。</span></div></div>
-<div class="live-preview-section"><div class="preview-section-header">⚡ 實體落地介面預覽</div><div class="ux-mock-window"><div class="ux-mock-topline"><div class="ux-mock-brand"><img src="./tokens/icons/modern-emblem/emblem-camel.svg" alt=""/><strong>Mail-Deck</strong><span>Synology 門戶</span></div><div class="ux-mock-status"><i></i>線上服務</div></div><nav class="ux-mock-tabs" aria-label="介面導覽"><span class="ux-mock-tab active">資料概況</span><span class="ux-mock-tab">索引進度</span><span class="ux-mock-tab">資料組織</span><span class="ux-mock-tab">重複稽核</span><span class="ux-mock-tab">Gmail 管理</span></nav><div class="ux-mock-content"><div class="ux-mock-hero"><div><small>駱駝耐力 · UX SYSTEM</small><h3>郵件資料中心</h3><p>集中呈現 Outlook 與 Gmail 郵件庫的索引進度、資料來源與稽核摘要；郵件本文、SQLite 與 OAuth 憑證留在 NAS。</p></div><a href="https://newton.tail28f10.ts.net/mail-deck/" target="_blank" rel="noopener noreferrer">開啟入口 ↗</a></div><div class="ux-mock-metrics"><div class="ux-mock-metric"><span>郵件服務</span><strong>NAS</strong><small>私人資料</small></div><div class="ux-mock-metric"><span>PST / EML / MD</span><strong>3 路徑</strong><small>索引來源</small></div><div class="ux-mock-metric"><span>Gmail 管理</span><strong>受控</strong><small>不公開郵件本文</small></div></div><div class="ux-mock-feature"><div><b>介面設計重點</b><p>儀表板以 SQLite 端到端進度為核心，清楚拆分 PST、既有 EML 與 MD 路徑，並展示重複稽核與資料存放說明。</p></div><span class="ux-mock-mark" style="color:#b45309;">耐</span></div></div></div></div>
+<div class="live-preview-section mail-portal-preview">
+<div class="preview-section-header">⚡ Mail-Deck 門戶介面預覽 <a href="https://newton.tail28f10.ts.net/mail-deck/" target="_blank" rel="noopener noreferrer">開啟線上門戶 ↗</a></div>
+<div class="mail-portal-frame">
+<header class="mail-preview-topbar"><div class="mail-preview-brand"><img src="./tokens/icons/modern-emblem/emblem-camel.svg" alt=""/><strong>Mail-Deck</strong></div><div class="mail-preview-meta"><span>統計資料更新時間：NAS 快照</span><span class="mail-preview-private"><i></i>私人郵件資料</span></div></header>
+<div class="mail-preview-intro"><small>MAIL ARCHIVE · PRIVATE STATUS</small><h3>郵件資料中心</h3><p>集中查看 Outlook 與 Gmail 郵件庫的索引進度和資料概況。</p></div>
+<section class="mail-preview-status"><div class="mail-preview-heading"><div><small>KPI B · END-TO-END</small><h4>SQLite 端到端完成度</h4></div><span class="mail-preview-state"><i></i>索引狀態同步中</span></div><div class="mail-preview-progress-copy"><strong>— / —</strong><span>已匯入 SQLite／全部可索引來源檔</span></div><div class="mail-preview-progress"><span></span></div><div class="mail-preview-pending"><span>待處理 —</span><span>失敗 —</span></div>
+<div class="mail-preview-table-card"><strong>KPI A｜來源路徑待辦與明細</strong><div class="mail-preview-table"><div class="mail-preview-table-head"><span>處理路徑</span><span>來源總數</span><span>SQLite 已匯入</span><span>待處理</span><span>失敗</span></div><div><span>① PST → EML → SQLite</span><span>—</span><span>—</span><span>—</span><span>—</span></div><div><span>② 既有 EML → SQLite</span><span>—</span><span>—</span><span>—</span><span>—</span></div><div><span>③ MD → SQLite</span><span>—</span><span>—</span><span>—</span><span>—</span></div></div><small>表格僅展示資料結構；實際統計由 NAS 門戶讀取。</small></div>
+<div class="mail-preview-merge"><div><strong>郵件身分合併索引</strong><span>唯一郵件身分 —</span></div><div class="mail-preview-merge-grid"><span>既有 EML —</span><span>PST-EML —</span><span>MD —</span><span>跨來源重疊 —</span></div><small>依正規化 Message-ID 輔助去重；附件仍需核對。</small></div></section>
+<div class="mail-preview-org"><article><b>Outlook 封存</b><span>PST → EML → SQLite FTS</span><small>原始封存保留；索引流程可續跑</small></article><article><b>Gmail 帳戶</b><span>透過 Gmail API 查詢</span><small>OAuth 憑證與郵件正文留在 NAS</small></article></div>
+</div>
+<p class="mail-preview-caption">此為不含實際計數與郵件中繼資料的靜態介面示意，呈現線上門戶的白底駱駝品牌、SQLite 進度、三條來源路徑與合併稽核脈絡。</p>
+</div>
 </article>
 <article class="merged-project-card complete-project-card" id="photo-deck" style="--project-accent:#ea580c;--project-soft:#fff7ed;">
 <div class="project-header-bar"><div class="project-identity"><div class="mascot-duo-stage showcase-mascot-duo">
