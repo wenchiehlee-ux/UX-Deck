@@ -224,6 +224,138 @@ master_animals = [
         'desc': '極簡幾何切面甲冑，象徵硬體極致安全性、堅不可摧與千年長青。',
         'lucide_file': 'lucide-turtle.svg',
         'emblem_file': 'emblem-turtle.svg'
+    },
+    {
+        'id': 'giraffe',
+        'name_zh': '高瞻長頸鹿',
+        'name_en': 'Sovereign Giraffe',
+        'status': '📦 備選動物庫存',
+        'category': 'reserve',
+        'color': '#f59e0b',
+        'desc': '優雅挺拔長頸與雙角，象徵高瞻遠矚、長期戰略佈局與宏觀全局觀測。',
+        'lucide_file': 'lucide-giraffe.svg',
+        'emblem_file': 'emblem-giraffe.svg'
+    },
+    {
+        'id': 'tiger',
+        'name_zh': '突破猛虎',
+        'name_en': 'Breakthrough Tiger',
+        'status': '📦 備選動物庫存',
+        'category': 'reserve',
+        'color': '#ea580c',
+        'desc': '額頭王字威震山谷，象徵主動出擊衝刺、爆發性業績增長與強大市場突破動能。',
+        'lucide_file': 'lucide-tiger.svg',
+        'emblem_file': 'emblem-tiger.svg'
+    },
+    {
+        'id': 'monkey',
+        'name_zh': '靈巧小猴',
+        'name_en': 'Nimble Monkey',
+        'status': '📦 備選動物庫存',
+        'category': 'reserve',
+        'color': '#b45309',
+        'desc': '靈動大耳與敏銳神情，象徵敏捷自動化爬蟲、自適應智慧工作流與彈性腳本執行的靈動活力。',
+        'lucide_file': 'lucide-monkey.svg',
+        'emblem_file': 'emblem-monkey.svg'
+    },
+    {
+        'id': 'zebra',
+        'name_zh': '幾何斑馬',
+        'name_en': 'Equilibrium Zebra',
+        'status': '📦 備選動物庫存',
+        'category': 'reserve',
+        'color': '#475569',
+        'desc': '黑白相間分明線條，象徵財務對帳黑白分明、結構化表格數據與精確平衡原則。',
+        'lucide_file': 'lucide-zebra.svg',
+        'emblem_file': 'emblem-zebra.svg'
+    },
+    {
+        'id': 'hippo',
+        'name_zh': '沉靜河馬',
+        'name_en': 'Serene Hippo',
+        'status': '📦 備選動物庫存',
+        'category': 'reserve',
+        'color': '#0284c7',
+        'desc': '深水潛伏沉穩巨獸，象徵海量高吞吐資料儲存、抗壓底座架構與堅不可摧的穩定防線。',
+        'lucide_file': 'lucide-hippo.svg',
+        'emblem_file': 'emblem-hippo.svg'
+    },
+    {
+        'id': 'cheetah',
+        'name_zh': '疾速獵豹',
+        'name_en': 'Velocity Cheetah',
+        'status': '📦 備選動物庫存',
+        'category': 'reserve',
+        'color': '#f97316',
+        'desc': '流線型疾速獵手，象徵微秒級極速撮合交易、超低延遲運算管線與即時串流響應。',
+        'lucide_file': 'lucide-cheetah.svg',
+        'emblem_file': 'emblem-cheetah.svg'
+    },
+    {
+        'id': 'wolf',
+        'name_zh': '孤峰霜狼',
+        'name_en': 'Apex Wolf',
+        'status': '📦 備選動物庫存',
+        'category': 'reserve',
+        'color': '#3b82f6',
+        'desc': '傲立雪嶺之孤峰霜狼，象徵嚴密風控警覺心、團隊協同協議與無畏逆境的堅韌生存本能。',
+        'lucide_file': 'lucide-wolf.svg',
+        'emblem_file': 'emblem-wolf.svg'
+    },
+    {
+        'id': 'shark',
+        'name_zh': '深海獵鯊',
+        'name_en': 'Apex Shark',
+        'status': '📦 備選動物庫存',
+        'category': 'reserve',
+        'color': '#06b6d4',
+        'desc': '深海頂級巡航掠食者，象徵深水資本嗅覺、高敏銳流動性套利與無聲迅速的狙擊決斷。',
+        'lucide_file': 'lucide-shark.svg',
+        'emblem_file': 'emblem-shark.svg'
+    },
+    {
+        'id': 'fox',
+        'name_zh': '靈巧赤狐',
+        'name_en': 'Clever Fox',
+        'status': '📦 備選動物庫存',
+        'category': 'reserve',
+        'color': '#ef4444',
+        'desc': '雪地靈巧穿梭之赤狐，象徵機敏多變演算法、智慧型風險避障與戰術機動性。',
+        'lucide_file': 'lucide-fox.svg',
+        'emblem_file': 'emblem-fox.svg'
+    },
+    {
+        'id': 'penguin',
+        'name_zh': '極地企鵝',
+        'name_en': 'Polar Penguin',
+        'status': '📦 備選動物庫存',
+        'category': 'reserve',
+        'color': '#0f766e',
+        'desc': '嚴酷極地頂風前行，象徵長期價值投資耐力、零下極寒環境生存力與沉穩前進步伐。',
+        'lucide_file': 'lucide-penguin.svg',
+        'emblem_file': 'emblem-penguin.svg'
+    },
+    {
+        'id': 'gorilla',
+        'name_zh': '金剛巨猩',
+        'name_en': 'Titan Gorilla',
+        'status': '📦 備選動物庫存',
+        'category': 'reserve',
+        'color': '#475569',
+        'desc': '重磅銀背泰坦霸主，象徵億級底層重型分散式資料庫、巨量容災備份與無可撼動之定海神針。',
+        'lucide_file': 'lucide-gorilla.svg',
+        'emblem_file': 'emblem-gorilla.svg'
+    },
+    {
+        'id': 'panda',
+        'name_zh': '守護熊貓',
+        'name_en': 'Zenith Panda',
+        'status': '📦 備選動物庫存',
+        'category': 'reserve',
+        'color': '#10b981',
+        'desc': '恬淡自適國寶熊貓，象徵和諧平衡資產配置、可持續發展 ESG 與心如止水的低波投資哲學。',
+        'lucide_file': 'lucide-panda.svg',
+        'emblem_file': 'emblem-panda.svg'
     }
 ]
 
